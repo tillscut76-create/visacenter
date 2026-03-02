@@ -206,6 +206,8 @@ function unifyBranding() {
         if (matchesHref || matchesClass || matchesText) {
             // Exceptions: Don't redirect internal HTML links (like visa details) unless they are Kakao links
             if (href.endsWith('.html') && !href.includes('pf.kakao.com') && !href.includes('Consultation')) return;
+            // Exceptions: Don't redirect download links
+            if (el.hasAttribute('download') || href.includes('forms/')) return;
 
             el.setAttribute('href', 'contact.html');
             el.removeAttribute('target');
