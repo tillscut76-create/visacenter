@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Visa Application Information Form</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+            font-size: 11px;
+            line-height: 1.3;
+            color: #111;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* A4 사이즈 설정 */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px auto;
+            padding: 12mm 15mm;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .header-wrap {
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00247d;
+            /* UK Blue */
+        }
+
+        h1 {
+            color: #00247d;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 0 3px 0;
+        }
+
+        h2 {
+            color: #64748b;
+            font-size: 12px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            margin: 12px 0 5px 0;
+            background-color: #f8fafc;
+            padding: 4px 8px;
+            border-left: 4px solid #cf142b;
+            /* UK Red */
+            color: #1e1b4b;
+        }
+
+        .label-ko {
+            display: block;
+            font-size: 8px;
+            color: #64748b;
+            font-weight: normal;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 8px;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            border: 1px solid #94a3b8;
+            padding: 5px 8px;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            text-align: left;
+            font-size: 9px;
+            color: #334155;
+        }
+
+        input[type="text"] {
+            width: 98%;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 11px;
+            background: transparent;
+        }
+
+        .chk-label {
+            cursor: pointer;
+            margin-right: 10px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .input-line {
+            border-bottom: 1px solid #cbd5e1;
+            display: inline-block;
+        }
+
+        /* 면책 조항 스타일 */
+        .notice-footer {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #fef2f2;
+            border: 1px solid #fecdd3;
+            border-radius: 6px;
+            font-size: 9px;
+            color: #450a0a;
+            line-height: 1.4;
+        }
+
+        .notice-footer strong {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 10px;
+            color: #b91c1c;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+
+            .page {
+                margin: 0;
+                padding: 10mm;
+                box-shadow: none;
+                width: 100%;
+                page-break-after: always;
+            }
+
+            .page:last-child {
+                page-break-after: auto;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #00247d;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn no-print" onclick="window.print()">Print / Save as PDF</button>
+
+    <!-- PAGE 1 -->
+    <div class="page">
+        <div class="header-wrap">
+            <h1>UK Visa Application Information Form</h1>
+            <h2>영국 비자 신청서 기재사항 안내</h2>
+        </div>
+
+        <div style="text-align: right; font-size: 9px; color: #dc2626; font-weight: bold; margin-bottom: 5px;">
+            * All data must be written in English. (반드시 사실에 근거하여 영문으로 작성해 주세요.)
+        </div>
+
+        <!-- PART 1 -->
+        <div class="section-title">PART 1. Personal Identity <span>기본 인적 사항</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Family Name <span class="label-ko">성 (영문)</span></th>
+                    <td><input type="text"></td>
+                    <th>Given Name <span class="label-ko">이름 (영문)</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>City/Country of Birth <span class="label-ko">출생 도시 및 국가</span></th>
+                    <td><input type="text" placeholder="e.g. SEOUL, KOREA"></td>
+                    <th>Birthday / Gender <span class="label-ko">생년월일 / 성별</span></th>
+                    <td><input type="text" placeholder="YYYY-MM-DD / Male"></td>
+                </tr>
+                <tr>
+                    <th>Contact (Landline/Mobile) <span class="label-ko">연락처 (유선/무선)</span></th>
+                    <td><input type="text"></td>
+                    <th>E-mail Address <span class="label-ko">이메일 주소</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Marital Status <span class="label-ko">결혼 여부</span></th>
+                    <td colspan="3">
+                        <label class="chk-label"><input type="radio" name="marital"> Single</label>
+                        <label class="chk-label"><input type="radio" name="marital"> Married</label>
+                        <label class="chk-label"><input type="radio" name="marital"> Divorced</label>
+                        <label class="chk-label"><input type="radio" name="marital"> Widowed</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Children? <span class="label-ko">자녀 유무</span></th>
+                    <td><label class="chk-label"><input type="radio" name="child"> No</label> <label
+                            class="chk-label"><input type="radio" name="child"> Yes ( <input type="text"
+                                class="input-line" style="width:30px;"> )</label></td>
+                    <th>Name Change? <span class="label-ko">개명 여부</span></th>
+                    <td><label class="chk-label"><input type="radio" name="namechange"> No</label> <label
+                            class="chk-label"><input type="radio" name="namechange"> Yes</label></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Residency History -->
+        <div class="section-title">Residency History (Last 3 Years) <span>최근 3년 거주지 이력</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 15%;">
+                <col style="width: 50%;">
+                <col style="width: 15%;">
+                <col style="width: 20%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Address</th>
+                    <th>Full Detail <span class="label-ko">상세 주소 (우편번호 포함)</span></th>
+                    <th>Period <span class="label-ko">거주기간</span></th>
+                    <th>Ownership <span class="label-ko">소유형태 (Rent/Own)</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Current</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Previous</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Family Information -->
+        <div class="section-title">Parents & Spouse Information <span>부모 및 배우자 정보 (필수)</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 12%;">
+                <col style="width: 28%;">
+                <col style="width: 20%;">
+                <col style="width: 20%;">
+                <col style="width: 20%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Relation</th>
+                    <th>Full Name <span class="label-ko">성명 (영문)</span></th>
+                    <th>DOB <span class="label-ko">생년월일</span></th>
+                    <th>Nationality <span class="label-ko">국적</span></th>
+                    <th>Passport No. <span class="label-ko">여권번호 (해당시)</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Father</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <th>Mother</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <th>Spouse</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- PART 3: UK Travel -->
+        <div class="section-title">PART 2. UK Travel Plans <span>영국 여행 계획</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Planned Arrival <span class="label-ko">도착 예정일</span></th>
+                    <td><input type="text" placeholder="YYYY-MM-DD"></td>
+                    <th>Planned Duration <span class="label-ko">예정 체류 기간</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Purpose <span class="label-ko">여행 목적</span></th>
+                    <td colspan="3">
+                        <label class="chk-label"><input type="checkbox"> Tourism/Visiting</label>
+                        <label class="chk-label"><input type="checkbox"> Business</label>
+                        <label class="chk-label">Other: <input type="text" class="input-line"
+                                style="width:100px;"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Stay Address <span class="label-ko">영국 내 숙소(호텔) 주소</span></th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>UK Contact <span class="label-ko">영국 내 지인 정보</span></th>
+                    <td colspan="3">Name: <input type="text" class="input-line" style="width:150px;"> &nbsp; Tel/Email:
+                        <input type="text" class="input-line" style="width:150px;"></td>
+                </tr>
+                <tr>
+                    <th>Travel Companion <span class="label-ko">동행자 여부</span></th>
+                    <td colspan="3"><label class="chk-label"><input type="radio" name="comp"> No</label> <label
+                            class="chk-label"><input type="radio" name="comp"> Yes (Name/DOB/Relation: <input
+                                type="text" class="input-line" style="width:250px;"> )</label></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 15px; font-size: 8px; color: #94a3b8; text-align: center;" class="no-print">
+            (Continued on page 2 / 다음 페이지로 계속)
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page">
+        <!-- PART 4: Financial -->
+        <div class="section-title">PART 3. Financial & Economic Status <span>재정 및 경제 상태</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Annual Income <span class="label-ko">평균 1년 소득 금액</span></th>
+                    <td><input type="text"></td>
+                    <th>Monthly Expense <span class="label-ko">생활비 월 평균 지출</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Other Income <span class="label-ko">기타 소득 (저축, 주식)</span></th>
+                    <td><input type="text"></td>
+                    <th>Total Travel Budget <span class="label-ko">이번 여행 예상 경비</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Payer of Trip <span class="label-ko">경비 부담자</span></th>
+                    <td colspan="3"><input type="text" placeholder="Myself / Company / Parents"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Immigration History -->
+        <div class="section-title">PART 4. Immigration & Travel History <span>이민국 관련 및 여행 이력</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 70%;">
+                <col style="width: 30%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>1. Past 10 years visit to UK? <span class="label-ko">과거 10년 이내 영국 방문 여부</span></td>
+                    <td style="text-align: center;"><label class="chk-label"><input type="radio" name="h1"> No</label>
+                        <label class="chk-label"><input type="radio" name="h1"> Yes</label></td>
+                </tr>
+                <tr>
+                    <td>2. Immigration problems in UK? <span class="label-ko">영국 내 비이민규정 위반 사례</span></td>
+                    <td style="text-align: center;"><label class="chk-label"><input type="radio" name="h2"> No</label>
+                        <label class="chk-label"><input type="radio" name="h2"> Yes</label></td>
+                </tr>
+                <tr>
+                    <td>3. Received medical service in UK? <span class="label-ko">영국 내 의료 서비스 이용 경험</span></td>
+                    <td style="text-align: center;"><label class="chk-label"><input type="radio" name="h3"> No</label>
+                        <label class="chk-label"><input type="radio" name="h3"> Yes</label></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Travel History -->
+        <div class="section-title">International Travel History (Last 10 Years) <span>최근 10년 해외 여행 이력</span></div>
+        <div style="font-size:8px; color:#cf142b; margin-bottom:3px; font-weight:bold;">* Especially US, UK, EU, Canada
+            records are essential. (미국, 영국, 유럽, 캐나다 방문 이력은 반드시 기재)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:20%;">Country <span class="label-ko">국가</span></th>
+                    <th style="width:20%;">City <span class="label-ko">도시</span></th>
+                    <th style="width:30%;">Period (From~To) <span class="label-ko">방문 기간</span></th>
+                    <th style="width:30%;">Purpose <span class="label-ko">방문 목적</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Disclaimer -->
+        <div class="notice-footer">
+            <strong>Terms & Declaration (비자 신청 및 면책 동의)</strong>
+            <ul style="margin: 0; padding-left: 15px; list-style-type: none;">
+                <li>• The Embassy makes the final decision. Visa issuance is not guaranteed.
+                    <span class="label-ko" style="display:inline;">[안내] 비자 발급의 최종 결정은 대사관에 있으며, 발급을 100% 보장하지
+                        않습니다.</span>
+                </li>
+                <li style="margin-top: 3px;">• <strong>Any refusal is deemed to be due to the applicant's personal
+                        background or status</strong> (e.g., immigration history, insufficient financial proof), and the
+                    agency is not liable for such outcomes.
+                    <span class="label-ko" style="color: #b91c1c; font-weight: bold; display:inline;">[동의] 비자 거절 시, 이는
+                        신청인 본인의 개인 신상이나 결격 사유(과거 이력, 재정 증빙 미비 등)에 따른 결과임을 인정하며, 이에 대해 대행사에 책임을 묻지 않습니다.</span>
+                </li>
+                <li style="margin-top: 3px;">• Fees are non-refundable regardless of the result.
+                    <span class="label-ko" style="display:inline;">[비용] 심사 결과와 상관없이 발생한 수수료는 일체 환불되지 않습니다.</span>
+                </li>
+            </ul>
+
+            <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: flex-end;">
+                <div style="font-size: 11px;">Date (날짜): <span class="input-line"
+                        style="min-width: 100px; display: inline-block;"></span></div>
+                <div style="text-align: right; font-size: 11px; font-weight: bold;">Signature (서명): <span
+                        class="input-line"
+                        style="min-width: 150px; border-bottom: 1px solid #111; display: inline-block;"></span></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 8px; color: #94a3b8; text-align: center;" class="no-print">
+            All personal data will be securely destroyed immediately after processing. (개인정보는 업무 처리 후 즉시 폐기됩니다.)
+        </div>
+    </div>
+
+</body>
+
+</html>

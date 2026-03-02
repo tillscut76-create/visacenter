@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미국 / 괌 전자비자 안내 | New Tour Leaders</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="common.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            min-height: 100vh;
+        }
+
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .container-custom {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 50, 100, 0.05);
+            padding: 40px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-header {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .usa-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .usa-table th {
+            background-color: #f8fafc;
+            color: #64748b;
+            font-weight: 600;
+            padding: 15px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .usa-table td {
+            padding: 20px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .usa-table th:last-child {
+            border-right: none;
+        }
+
+        /* Fixed rowspan border issue: only remove border-right for cells in the actual last column */
+        .usa-table td:last-child:not([rowspan]),
+        .usa-table tr:first-child td:last-child {
+            border-right: none;
+        }
+
+        .price-text {
+            color: #2563eb;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .sub-desc {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        .border-right-important {
+            border-right: 1px solid #e2e8f0 !important;
+        }
+
+        .doc-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .doc-card {
+            background: #fff;
+            border: 1px solid #f1f5f9;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .doc-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .doc-card-icon {
+            font-size: 1.5rem;
+            color: #3b82f6;
+        }
+
+        .doc-card ul {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .doc-card ul li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 8px;
+        }
+
+        .doc-card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #cbd5e1;
+        }
+
+        .emphasize {
+            color: #ef4444;
+            font-weight: 700;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e293b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            background: #334155;
+        }
+
+        .notice-footer {
+            background: #f1f5f9;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="trust-badge"><i class="fa-solid fa-certificate"></i> Trusted Visa Agency</span>
+            <div class="top-contact">
+                <a href="contact.html"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="http://newpassport.co.kr/visa/index/images/logo.jpg"
+                        alt="New Tour Leaders"></a>
+            </div>
+            <nav>
+                <ul>
+                    <!-- Injected via common.js -->
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Apply (신청하기)</a>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container-custom">
+            <h2 style="font-size: 3.2rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px;">US 미국 / 괌 전자비자
+                안내</h2>
+            <p style="font-size: 1.15rem; font-weight: 400; opacity: 0.9;">관광 및 비즈니스 목적으로 미국 본토 및 괌에 입국하실 때 필요한 전자 여행
+                허가(ESTA 등) 안내입니다.</p>
+        </div>
+    </section>
+
+    <main class="container-custom pb-20">
+        <div class="main-card">
+            <!-- 1. 비자 종류 및 대행 요금 -->
+            <section class="mb-12">
+                <h3 class="section-header">※ 비자 종류 및 대행 요금</h3>
+                <div class="overflow-x-auto">
+                    <table class="usa-table">
+                        <thead>
+                            <tr>
+                                <th class="w-[20%]">국가 / 종류</th>
+                                <th class="w-[18%]">비자 요금</th>
+                                <th class="w-[18%]">체류 기간</th>
+                                <th class="w-[18%]">유효 기간</th>
+                                <th class="w-[18%]">소요 기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold text-gray-700">
+                                    미국 전자비자<br><span class="text-xs text-gray-400 font-normal">(ESTA)</span>
+                                </td>
+                                <td class="price-text border-right-important">85,000원</td>
+                                <td rowspan="2" class="text-sm">
+                                    <span class="font-bold">최대 90일</span><br>
+                                    <span class="text-[10px] text-gray-400 font-normal">(1회 입국 시)</span>
+                                </td>
+                                <td rowspan="2" class="text-sm">
+                                    <span class="font-bold">2년 복수</span><br>
+                                    <span class="text-[10px] text-gray-400 leading-tight block mt-1 font-normal">(단, 여권
+                                        만료일이 2년 미만<br>인 경우 여권 만료일까지)</span>
+                                </td>
+                                <td rowspan="2" class="text-sm">
+                                    <span class="font-bold">통상 1~3일</span><br>
+                                    <span class="text-[10px] text-gray-400 font-normal">(72시간 이내 결정)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold text-gray-700">
+                                    괌 전자비자<br><span class="text-xs text-gray-400 font-normal">(Guam e-Visa)</span>
+                                </td>
+                                <td class="price-text border-right-important">30,000원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 text-[11px] text-slate-400">
+                    * 2025년 11월부로 전자 여행허가 비용이 인상 및 변동 적용되었습니다.
+                </div>
+            </section>
+
+            <!-- 2. 필수 구비 서류 -->
+            <section class="mb-12">
+                <h3 class="section-header">※ 필수 구비 서류 (미국/괌 동일)</h3>
+                <p class="text-xs text-blue-600 mb-6 font-medium">모든 서류는 스마트폰으로 깨끗하게 촬영하거나 스캔하여 <strong
+                        class="underline">JPG 이미지 파일</strong>로 보내주셔야 합니다.</p>
+
+                <div class="doc-cards">
+                    <!-- Card 1 -->
+                    <div class="doc-card">
+                        <h4><span class="doc-card-icon">📘</span> 1. 여권 스캔본</h4>
+                        <ul>
+                            <li>입국 예정일로부터 <span class="emphasize">8개월 이상 유효</span>한 여권</li>
+                            <li>빛 번짐이나 그림자가 없어야 합니다.</li>
+                            <li>여권 하단의 두 줄의 정보(영문+숫자)가 모두 나오도록 하여야 합니다.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="doc-card">
+                        <h4><span class="doc-card-icon">📸</span> 2. 신청자 사진 (셀프 촬영)</h4>
+                        <ul>
+                            <li>사진은 <span class="emphasize">핸드폰으로 셀프로 촬영한 사진</span>을 주시면 됩니다.</li>
+                            <li>뒷배경이 있어도 상관없습니다.</li>
+                            <li>모자, 선글라스 등을 착용하지 않고 정면을 바라본 사진이어야 합니다.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="doc-card">
+                        <h4><span class="doc-card-icon">📝</span> 3. 인적사항 양식</h4>
+                        <ul>
+                            <li>비자 신청에 필요한 필수 인적사항을 작성해 주셔야 합니다.</li>
+                        </ul>
+                        <a href="USA_ESTA_Application_Form.html" target="_blank" class="download-btn">
+                            <i class="fa-solid fa-download"></i> 인적사항 양식 다운로드
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 안내 및 주의사항 -->
+            <section>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-3 flex items-center gap-2">🚀 접수 방법</h4>
+                        <ol class="text-sm text-blue-800 space-y-3 pl-1">
+                            <li>1. 이메일(<strong>kim83077@nate.com</strong>)로 서류 발급</li>
+                            <li>2. 발송 후 반드시 <strong>카카오톡 또는 전화</strong> 연락</li>
+                            <li>3. 서류 검토 후 입금 및 승인 진행</li>
+                        </ol>
+                    </div>
+                    <div class="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <h4 class="font-bold text-red-900 mb-3 flex items-center gap-2">🚨 필독 사항</h4>
+                        <ul class="text-sm text-red-800 space-y-2">
+                            <li>• 심사 결과는 보통 72시간 이내에 결정됩니다.</li>
+                            <li>• 최근 미국 보안 정책 강화로 인해 <strong class="underline">공항에서 탑승 직전 '허가 안됨'</strong>으로 변경되는 사례가 간혹
+                                있으니, 출국 당일 상태를 꼭 재확인 바랍니다.</li>
+                            <li>• 비자 승인은 보장되지 않으며 거절 시 비용 환불은 불가합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- Injected via common.js -->
+        </div>
+    </footer>
+</body>
+
+</html>

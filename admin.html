@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tour Leaders - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="config.js"></script>
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .admin-sidebar-link.active {
+            background: #1e293b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 min-h-screen">
+
+    <!-- Login Overlay -->
+    <div id="login-overlay" class="fixed inset-0 bg-slate-900 z-[9999] flex items-center justify-center">
+        <div class="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-md">
+            <div class="text-center mb-8">
+                <h1 class="text-2xl font-black text-slate-800">ADMIN LOGIN</h1>
+                <p class="text-slate-500">New Tour Leaders Management</p>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Admin ID</label>
+                    <input type="text" id="login-id"
+                        class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Password</label>
+                    <input type="password" id="login-pw"
+                        class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Security Code (보안 문자)</label>
+                    <div class="flex gap-2">
+                        <div id="captcha-display"
+                            class="flex-1 bg-slate-100 border border-slate-200 rounded-xl flex items-center justify-center font-black tracking-[10px] text-lg italic text-slate-400 select-none pointer-events-none"
+                            style="background-image: radial-gradient(#ccc 1px, transparent 1px); background-size: 10px 10px;">
+                            <!-- Injected by JS -->
+                        </div>
+                        <button onclick="generateCaptcha()"
+                            class="px-4 bg-slate-100 border border-slate-200 rounded-xl text-slate-500 hover:bg-slate-200">
+                            <i class="fa-solid fa-rotate"></i>
+                        </button>
+                    </div>
+                    <input type="text" id="login-captcha" placeholder="Enter 6 digits"
+                        class="w-full mt-2 px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <button onclick="handleLogin()"
+                    class="w-full py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-lg">Login
+                    to Dashboard</button>
+                <p id="login-error" class="text-red-500 text-sm text-center hidden">Invalid ID, Password, or Security
+                    Code.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard-app" class="flex hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-800 min-h-screen text-slate-300 p-6">
+            <h2 class="text-white text-xl font-black mb-10 px-2 tracking-tight">MANAGEMENT</h2>
+            <nav class="space-y-2">
+                <button onclick="switchTab('fees')"
+                    class="admin-sidebar-link active w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all">
+                    <i class="fa-solid fa-credit-card"></i> Fee Management
+                </button>
+                <button onclick="switchTab('notices')"
+                    class="admin-sidebar-link w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all">
+                    <i class="fa-solid fa-bullhorn"></i> Notice Management
+                </button>
+                <button onclick="switchTab('popups')"
+                    class="admin-sidebar-link w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all">
+                    <i class="fa-solid fa-window-maximize"></i> Popup Settings
+                </button>
+                <button onclick="switchTab('users')"
+                    class="admin-sidebar-link w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all">
+                    <i class="fa-solid fa-users-gear"></i> User Management
+                </button>
+                <div class="pt-10">
+                    <button onclick="handleLogout()"
+                        class="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-red-500/10 rounded-xl transition-all">
+                        <i class="fa-solid fa-power-off"></i> Logout
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="flex-1 p-10 h-screen overflow-y-auto">
+            <header class="flex justify-between items-center mb-10">
+                <h2 id="tab-title" class="text-3xl font-black text-slate-800">Fee Management</h2>
+                <button onclick="saveChanges()"
+                    class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:shadow-blue-500/30 transition-all">
+                    <i class="fa-solid fa-save"></i> Save All Changes
+                </button>
+            </header>
+
+            <!-- TAB: FEES -->
+            <div id="tab-fees" class="tab-content active transition-all">
+                <div class="flex justify-end mb-4 gap-2">
+                    <button onclick="addFeeGroup()"
+                        class="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-bold">+ 국가 추가</button>
+                    <button onclick="toggleFeeSummary()"
+                        class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-bold border border-blue-100 italic">현재
+                        요금 요약 (Summary)</button>
+                </div>
+                <div id="fee-summary-box"
+                    class="hidden mb-10 bg-slate-900 text-slate-300 p-8 rounded-3xl font-mono text-sm leading-relaxed overflow-x-auto border border-slate-800 shadow-2xl">
+                    <!-- Injected by JS -->
+                </div>
+                <div id="fee-container" class="space-y-6">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+
+            <!-- TAB: NOTICES -->
+            <div id="tab-notices" class="tab-content transition-all">
+                <div class="flex justify-end mb-4">
+                    <button onclick="addNoticeRow()"
+                        class="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-bold">+ 새 공지 추가</button>
+                </div>
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-x-auto">
+                    <table class="w-full min-w-[600px]">
+                        <thead class="bg-slate-50 border-b border-slate-200">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-bold text-slate-500 tracking-widest">대상
+                                </th>
+                                <th class="px-6 py-4 text-left text-sm font-bold text-slate-500 tracking-widest">내용</th>
+                                <th class="px-6 py-4 text-center text-sm font-bold text-slate-500 tracking-widest">
+                                    활성화</th>
+                                <th class="px-6 py-4 text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="notice-list">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TAB: POPUPS -->
+            <div id="tab-popups" class="tab-content transition-all">
+                <div id="popup-list" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+
+            <!-- TAB: USERS -->
+            <div id="tab-users" class="tab-content transition-all">
+                <div class="flex justify-end mb-4">
+                    <button onclick="addUserRow()"
+                        class="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-bold">+ New Admin</button>
+                </div>
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-x-auto">
+                    <table class="w-full min-w-[600px]">
+                        <thead class="bg-slate-50 border-b border-slate-200">
+                            <tr>
+                                <th class="px-8 py-4 text-left text-sm font-bold text-slate-500 tracking-widest">이름
+                                    (Name)</th>
+                                <th class="px-8 py-4 text-left text-sm font-bold text-slate-500 tracking-widest">연락처
+                                    (Phone)</th>
+                                <th class="px-8 py-4 text-left text-sm font-bold text-slate-500 tracking-widest">ID</th>
+                                <th class="px-8 py-4 text-left text-sm font-bold text-slate-500 tracking-widest">PW</th>
+                                <th class="px-8 py-4 text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-list">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let currentConfig = window.VisaConfig.get();
+        let currentCaptcha = '';
+
+        window.onload = function () {
+            generateCaptcha();
+            // Check for existing session
+            if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                document.getElementById('login-overlay').classList.add('hidden');
+                document.getElementById('dashboard-app').classList.remove('hidden');
+                renderAll();
+            }
+        };
+
+        function generateCaptcha() {
+            currentCaptcha = Math.floor(100000 + Math.random() * 900000).toString();
+            document.getElementById('captcha-display').innerText = currentCaptcha;
+            document.getElementById('login-captcha').value = '';
+        }
+
+        // 1. Authentication
+        function handleLogin() {
+            const id = document.getElementById('login-id').value;
+            const pw = document.getElementById('login-pw').value;
+            const captchaInput = document.getElementById('login-captcha').value;
+
+            if (captchaInput !== currentCaptcha) {
+                document.getElementById('login-error').innerText = "Security Code is incorrect.";
+                document.getElementById('login-error').classList.remove('hidden');
+                generateCaptcha();
+                return;
+            }
+
+            const admin = currentConfig.admins.find(u => u.id === id && u.pw === pw);
+
+            if (admin) {
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                document.getElementById('login-overlay').classList.add('hidden');
+                document.getElementById('dashboard-app').classList.remove('hidden');
+                renderAll();
+            } else {
+                document.getElementById('login-error').innerText = "Invalid ID or Password.";
+                document.getElementById('login-error').classList.remove('hidden');
+                generateCaptcha();
+            }
+        }
+
+        function handleLogout() {
+            sessionStorage.removeItem('adminLoggedIn');
+            window.location.reload();
+        }
+
+        // 2. Tab Navigation
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+
+            document.querySelectorAll('.admin-sidebar-link').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            const titles = { fees: 'Fee Management', notices: 'Notice Management', popups: 'Popup Settings', users: 'User Management' };
+            document.getElementById('tab-title').innerText = titles[tabId];
+
+            // Hide summary when switching
+            document.getElementById('fee-summary-box').classList.add('hidden');
+        }
+
+        function toggleFeeSummary() {
+            const box = document.getElementById('fee-summary-box');
+            if (!box.classList.contains('hidden')) {
+                box.classList.add('hidden');
+                return;
+            }
+
+            let summary = '<h4 class="text-white font-bold mb-4 text-lg border-b border-slate-700 pb-2">현재 적용 중인 요금 (Current Applied Fees)</h4>';
+            Object.keys(currentConfig.fees).forEach(country => {
+                summary += `<div class="mb-4"><span class="text-blue-400 font-bold">[${country.toUpperCase()}]</span><br/>`;
+                const cats = currentConfig.fees[country];
+                Object.keys(cats).forEach(cat => {
+                    const speeds = cats[cat];
+                    if (typeof speeds === 'object') {
+                        Object.keys(speeds).forEach(speed => {
+                            summary += `&nbsp;&nbsp;• ${cat} (${speed}): <span class="text-emerald-400">${Number(speeds[speed]).toLocaleString()}원</span><br/>`;
+                        });
+                    } else {
+                        summary += `&nbsp;&nbsp;• ${cat}: <span class="text-emerald-400">${Number(speeds).toLocaleString()}원</span><br/>`;
+                    }
+                });
+                summary += `</div>`;
+            });
+
+            box.innerHTML = summary;
+            box.classList.remove('hidden');
+        }
+
+        // 3. Rendering
+        function renderAll() {
+            renderFees();
+            renderNotices();
+            renderPopups();
+            renderUsers();
+        }
+
+        function renderFees() {
+            const container = document.getElementById('fee-container');
+            container.innerHTML = '';
+
+            Object.keys(currentConfig.fees).forEach(country => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl p-8 shadow-sm border border-slate-200';
+
+                // Collect existing rows from nested object
+                let rowsHtml = '';
+                const categories = currentConfig.fees[country];
+                Object.keys(categories).forEach(cat => {
+                    const speeds = categories[cat];
+                    // Handle case where it might be a direct value (though we aim for hierarchy)
+                    if (typeof speeds === 'object' && speeds !== null) {
+                        Object.keys(speeds).forEach(speed => {
+                            rowsHtml += createFeeRowHtml(country, cat, speed, speeds[speed]);
+                        });
+                    } else {
+                        rowsHtml += createFeeRowHtml(country, cat, '-', speeds);
+                    }
+                });
+
+                card.innerHTML = `
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-black uppercase text-blue-700 tracking-tight">${country}</h3>
+                        <div class="flex gap-2">
+                             <button onclick="addFeeRow('${country}')" class="text-xs bg-slate-800 text-white px-4 py-2 rounded-lg hover:bg-slate-700 font-bold tracking-tight transition-all shadow-md active:scale-95">+ 줄 추가 (Add Row)</button>
+                             <button onclick="deleteCountry('${country}')" class="text-xs text-red-500 hover:bg-red-50 px-3 py-2 rounded-lg transition-all">국가 삭제</button>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="text-slate-400 border-b border-slate-100 italic">
+                                    <th class="text-left py-3 px-2 font-bold w-1/3">Visa Category (비자 종류)</th>
+                                    <th class="text-left py-3 px-2 font-bold w-1/4">Speed (수속 기간)</th>
+                                    <th class="text-left py-3 px-2 font-bold">Price (요금)</th>
+                                    <th class="w-10"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="fee-rows-${country}">
+                                ${rowsHtml}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function createFeeRowHtml(country, cat = '', speed = '', price = 0) {
+            return `
+                <tr class="fee-row border-b border-slate-50 last:border-none" data-country="${country}">
+                    <td class="py-3 px-1">
+                        <input type="text" value="${cat}" class="fee-cat w-full bg-slate-50 border border-slate-100 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-400 transition-all font-medium" placeholder="예: 관광단수">
+                    </td>
+                    <td class="py-3 px-1">
+                        <input type="text" value="${speed}" class="fee-speed w-full bg-slate-50 border border-slate-100 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-400 transition-all" placeholder="예: 보통">
+                    </td>
+                    <td class="py-3 px-1">
+                        <input type="number" value="${price}" class="fee-price w-full bg-slate-50 border border-slate-100 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-400 transition-all font-mono text-blue-600 font-bold text-right" placeholder="0">
+                    </td>
+                    <td class="py-3 px-1 text-center">
+                        <button onclick="this.closest('tr').remove()" class="text-slate-300 hover:text-red-500 transition-colors"><i class="fa-solid fa-circle-xmark"></i></button>
+                    </td>
+                </tr>
+            `;
+        }
+
+        function addFeeRow(country) {
+            const tbody = document.getElementById(`fee-rows-${country}`);
+            const temp = document.createElement('tbody');
+            temp.innerHTML = createFeeRowHtml(country);
+            tbody.appendChild(temp.firstElementChild);
+        }
+
+        // 4. Data Operations: Fees (Simplified)
+        function addFeeGroup() {
+            const country = prompt("국가명을 입력하세요 (예: vietnam, thailand)");
+            if (country) {
+                const countryLower = country.toLowerCase().trim();
+                currentConfig.fees[countryLower] = { '신규 비자': { '보통': 0 } };
+                renderFees();
+            }
+        }
+
+        function deleteCountry(country) {
+            if (confirm(`정말 ${country} 요금표 전체를 삭제하시겠습니까?`)) {
+                delete currentConfig.fees[country];
+                renderFees();
+            }
+        }
+
+        function renderNotices() {
+            const list = document.getElementById('notice-list');
+            list.innerHTML = '';
+            currentConfig.notices.forEach((n, idx) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="px-6 py-4">
+                        <select class="notice-target bg-slate-50 border border-slate-200 px-3 py-2 rounded-lg text-sm" data-idx="${idx}">
+                            <option value="global" ${n.target === 'global' ? 'selected' : ''}>GLOBAL (전체)</option>
+                            <option value="japan-evisa" ${n.target === 'japan-evisa' ? 'selected' : ''}>JAPAN e-Visa (일본 전자비자)</option>
+                            <option value="japan-sticker" ${n.target === 'japan-sticker' ? 'selected' : ''}>JAPAN Sticker (일본 스키커비자)</option>
+                            <option value="japan-working" ${n.target === 'japan-working' ? 'selected' : ''}>JAPAN Working Holiday (일본 워킹홀리데이)</option>
+                            <option value="japan" ${n.target === 'japan' ? 'selected' : ''}>JAPAN (일본 전체)</option>
+                            <option value="uk" ${n.target === 'uk' ? 'selected' : ''}>UK (영국)</option>
+                            <option value="china" ${n.target === 'china' ? 'selected' : ''}>CHINA (중국)</option>
+                            <option value="india" ${n.target === 'india' ? 'selected' : ''}>INDIA (인도)</option>
+                            <option value="mongolia" ${n.target === 'mongolia' ? 'selected' : ''}>MONGOLIA (몽골)</option>
+                            <option value="usa" ${n.target === 'usa' ? 'selected' : ''}>USA (미국)</option>
+                            <option value="canada" ${n.target === 'canada' ? 'selected' : ''}>CANADA (캐나다)</option>
+                            <option value="russia" ${n.target === 'russia' ? 'selected' : ''}>RUSSIA (러시아)</option>
+                            <option value="thailand" ${n.target === 'thailand' ? 'selected' : ''}>THAILAND (태국)</option>
+                            <option value="myanmar" ${n.target === 'myanmar' ? 'selected' : ''}>MYANMAR (미얀마)</option>
+                            <option value="pakistan" ${n.target === 'pakistan' ? 'selected' : ''}>PAKISTAN (파키스탄)</option>
+                            <option value="taiwan" ${n.target === 'taiwan' ? 'selected' : ''}>TAIWAN (대만)</option>
+                            <option value="malaysia" ${n.target === 'malaysia' ? 'selected' : ''}>MALAYSIA (말레이시아)</option>
+                            <option value="europe" ${n.target === 'europe' ? 'selected' : ''}>EUROPE (유럽)</option>
+                        </select>
+                    </td>
+                    <td class="px-6 py-4">
+                        <input type="text" value="${n.text}" class="notice-text w-full bg-slate-50 border border-slate-200 px-4 py-2 rounded-lg text-sm" data-idx="${idx}">
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <input type="checkbox" ${n.active ? 'checked' : ''} class="notice-active w-5 h-5" data-idx="${idx}">
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <button onclick="deleteNotice(${idx})" class="text-red-400 hover:text-red-600"><i class="fa-solid fa-trash-can"></i></button>
+                    </td>
+                `;
+                list.appendChild(tr);
+            });
+        }
+
+        function renderPopups() {
+            const list = document.getElementById('popup-list');
+            list.innerHTML = '';
+            // Ensure we have exactly 3 popups to manage
+            const popups = currentConfig.popups || [];
+            while (popups.length < 3) {
+                popups.push({ id: popups.length + 1, active: false, title: '', content: '' });
+            }
+            currentConfig.popups = popups;
+
+            currentConfig.popups.forEach((p, idx) => {
+                const div = document.createElement('div');
+                div.className = 'bg-white p-6 rounded-3xl shadow-sm border border-slate-200 space-y-4';
+                div.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-slate-400">POPUP ${p.id}</span>
+                        <input type="checkbox" ${p.active ? 'checked' : ''} class="popup-active w-6 h-6 rounded border-slate-300" data-idx="${idx}">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 mb-1">제목 (Title)</label>
+                        <input type="text" value="${p.title || ''}" class="popup-title w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl outline-none text-sm" data-idx="${idx}" placeholder="팝업 제목">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 mb-1">내용 (Content)</label>
+                        <textarea rows="3" class="popup-content w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl outline-none text-sm" data-idx="${idx}" placeholder="팝업 내용">${p.content || ''}</textarea>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        function renderUsers() {
+            const list = document.getElementById('user-list');
+            list.innerHTML = '';
+            currentConfig.admins.forEach((u, idx) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="px-8 py-4"><input type="text" value="${u.name || ''}" class="user-name bg-slate-50 border border-slate-200 px-4 py-2 rounded-lg w-full" data-idx="${idx}" placeholder="실명"></td>
+                    <td class="px-8 py-4"><input type="text" value="${u.phone || ''}" class="user-phone bg-slate-50 border border-slate-200 px-4 py-2 rounded-lg w-full" data-idx="${idx}" placeholder="010-0000-0000"></td>
+                    <td class="px-8 py-4"><input type="text" value="${u.id}" class="user-id bg-slate-50 border border-slate-200 px-4 py-2 rounded-lg w-full" data-idx="${idx}"></td>
+                    <td class="px-8 py-4"><input type="text" value="${u.pw}" class="user-pw bg-slate-50 border border-slate-200 px-4 py-2 rounded-lg w-full" data-idx="${idx}"></td>
+                    <td class="px-8 py-4 text-center">
+                        ${u.id === 'admin' ? '<span class="text-xs text-slate-400">Master</span>' : `<button onclick="deleteUser(${idx})" class="text-red-400 hover:text-red-600"><i class="fa-solid fa-trash-can"></i></button>`}
+                    </td>
+                `;
+                list.appendChild(tr);
+            });
+        }
+
+        // 5. Data Operations: Notices & Popups
+        function addNoticeRow() {
+            currentConfig.notices.push({ id: Date.now(), target: 'global', text: '', active: true });
+            renderNotices();
+        }
+
+        function deleteNotice(idx) {
+            currentConfig.notices.splice(idx, 1);
+            renderNotices();
+        }
+
+        function addUserRow() {
+            currentConfig.admins.push({ id: '', pw: '' });
+            renderUsers();
+        }
+
+        function deleteUser(idx) {
+            currentConfig.admins.splice(idx, 1);
+            renderUsers();
+        }
+
+        function saveChanges() {
+            // 1. Collect Fees
+            const newFees = {};
+            document.querySelectorAll('.fee-row').forEach(row => {
+                const country = row.getAttribute('data-country');
+                const cat = row.querySelector('.fee-cat').value.trim();
+                const speed = row.querySelector('.fee-speed').value.trim();
+                const price = Number(row.querySelector('.fee-price').value);
+
+                if (!newFees[country]) newFees[country] = {};
+                if (!newFees[country][cat]) newFees[country][cat] = {};
+                newFees[country][cat][speed] = price;
+            });
+            currentConfig.fees = newFees;
+
+            // 2. Collect Notices
+            currentConfig.notices = [];
+            document.querySelectorAll('.notice-text').forEach((input, idx) => {
+                currentConfig.notices.push({
+                    id: Date.now() + idx,
+                    target: document.querySelector(`.notice-target[data-idx="${idx}"]`).value,
+                    text: input.value,
+                    active: document.querySelector(`.notice-active[data-idx="${idx}"]`).checked
+                });
+            });
+
+            // 3. Collect Popups
+            currentConfig.popups = [];
+            document.querySelectorAll('.popup-title').forEach((input, idx) => {
+                const active = document.querySelector(`.popup-active[data-idx="${idx}"]`).checked;
+                const title = input.value.trim();
+                const content = document.querySelector(`.popup-content[data-idx="${idx}"]`).value.trim();
+
+                currentConfig.popups.push({
+                    id: idx + 1,
+                    active: active,
+                    title: title,
+                    content: content
+                });
+            });
+
+            // 4. Collect Users
+            currentConfig.admins = [];
+            document.querySelectorAll('.user-id').forEach((input, idx) => {
+                currentConfig.admins.push({
+                    name: document.querySelector(`.user-name[data-idx="${idx}"]`).value,
+                    phone: document.querySelector(`.user-phone[data-idx="${idx}"]`).value,
+                    id: input.value,
+                    pw: document.querySelector(`.user-pw[data-idx="${idx}"]`).value
+                });
+            });
+
+            window.VisaConfig.set(currentConfig);
+            alert('설정이 성공적으로 저장되었습니다!');
+            renderAll();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>UK Visa Application Personal Info</title>
+<style>
+body { font-family: 'Arial', sans-serif; font-size: 11pt; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+td { padding: 5px; vertical-align: bottom; border-bottom: 1px solid #ccc; }
+.label { font-weight: bold; width: 160px; background-color: #f2f2f2; border-right: 1px solid #ccc; color: #00247d; }
+.input { color: #000; padding-left: 10px; }
+.section-header { background-color: #00247d; color: white; font-weight: bold; padding: 8px; margin-top: 25px; margin-bottom: 10px; font-size: 1.1em; border-radius: 4px; }
+h1 { text-align: center; color: #cf142b; border-bottom: 3px solid #00247d; padding-bottom: 15px; margin-bottom: 30px; }
+p.intro { color: #666; text-align: center; font-style: italic; margin-bottom: 30px; }
+</style>
+</head>
+<body>
+
+<h1>UK Visa Application Form (영국 비자 신청서)</h1>
+<p class="intro">For Standard Visitor Visa. Please fill in English. (영국 방문 비자 신청용)</p>
+
+<div class="section-header">1. Personal Details (인적사항)</div>
+<table>
+    <tr>
+        <td class="label">Surname (성):</td>
+        <td class="input"></td>
+        <td class="label">First Name (이름):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Date of Birth (생년월일):</td>
+        <td class="input">YYYY-MM-DD</td>
+        <td class="label">Place of Birth:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Country of Birth:</td>
+        <td class="input"></td>
+        <td class="label">Current Nationality:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Marital Status (결혼):</td>
+        <td class="input" colspan="3">Single / Married / Separated / Divorced / Widow(er)</td>
+    </tr>
+    <tr>
+        <td class="label">Home Address (주소):</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Ownership Status:</td>
+        <td class="input" colspan="3">Own / Rent / Other / Time at Address: _____ years</td>
+    </tr>
+</table>
+
+<div class="section-header">2. Passport Information (여권 정보)</div>
+<table>
+    <tr>
+        <td class="label">Passport Number:</td>
+        <td class="input"></td>
+        <td class="label">Place of Issue:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Date of Issue (발급일):</td>
+        <td class="input"></td>
+        <td class="label">Valid Until (만료일):</td>
+        <td class="input"></td>
+    </tr>
+</table>
+
+<div class="section-header">3. Occupation & Income (직업 및 소득)</div>
+<table>
+    <tr>
+        <td class="label">Employment Status:</td>
+        <td class="input" colspan="3">Employed / Self-Employed / Student / Retired / Unemployed</td>
+    </tr>
+    <tr>
+        <td class="label">Employer/School Name:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Employer Address:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Annual Income (GBP/KRW):</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Typical Monthly Spend:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+     <tr>
+        <td class="label">Cost of Trip (GBP/KRW):</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+</table>
+
+<div class="section-header">4. Family Details (가족 사항)</div>
+<table>
+    <tr>
+        <td class="label">Father's Name/DOB:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Mother's Name/DOB:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Spouse Name/DOB:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Dependent Children:</td>
+        <td class="input" colspan="3">No / Yes (Details...)</td>
+    </tr>
+</table>
+
+<div class="section-header">5. Travel Information (여행 정보)</div>
+<table>
+    <tr>
+        <td class="label">Date of Arrival (UK):</td>
+        <td class="input"></td>
+        <td class="label">Date of Departure:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Main Reason for Visit:</td>
+        <td class="input" colspan="3">Tourism / Business / Visit Family / Study</td>
+    </tr>
+    <tr>
+        <td class="label">Accommodation:</td>
+        <td class="input" colspan="3">(Where will you stay in the UK?)</td>
+    </tr>
+</table>
+
+<div class="section-header">6. Travel History (여행 기록)</div>
+<table>
+    <tr>
+        <td class="label">Traveled to UK in past 10 years?</td>
+        <td class="input" colspan="3">No / Yes (Date/Purpose)</td>
+    </tr>
+    <tr>
+        <td class="label">Traveled to USA/CA/AU/NZ/Schengen in past 10 years?</td>
+        <td class="input" colspan="3">No / Yes (Countries/Dates)</td>
+    </tr>
+    <tr>
+        <td class="label">Traveled to other countries in past 10 years?</td>
+        <td class="input" colspan="3">No / Yes (List 2 most recent)</td>
+    </tr>
+</table>
+
+
+<div style="margin-top: 50px; text-align: center; page-break-inside: avoid;">
+    <p>I declare that the information provided is true and correct.</p>
+    <br>
+    <p><strong>Date (신청일):</strong> _______________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Signature (서명):</strong> _______________________</p>
+</div>
+
+</body>
+</html>

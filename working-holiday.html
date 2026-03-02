@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본 워킹홀리데이 프리미엄 대행 - 뉴투어리더스</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Core Scripts -->
+    <script src="config.js"></script>
+    <script src="common.js" defer></script>
+    <script src="script.js" defer></script>
+    <style>
+        @keyframes bounce-subtle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-bounce-subtle {
+            animation: bounce-subtle 2s infinite ease-in-out;
+        }
+
+        .animate-spin-slow {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .lucide {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8FAFC] font-sans text-slate-800" data-country-target="japan-working">
+    <!-- Global Header (Injected by common.js) -->
+    <header class="global-header"></header>
+
+    <!-- 1. HERO SECTION -->
+    <div
+        class="bg-gradient-to-r from-[#0F172A] to-[#1E293B] text-white pt-24 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto relative z-10 text-center">
+            <div
+                class="inline-block px-4 py-1.5 bg-blue-600/20 border border-blue-500/30 text-blue-300 font-bold rounded-full text-sm mb-6 backdrop-blur-sm">
+                ✨ 2026년도 주부산일본국총영사관 완벽 대비
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+                일본 워킹홀리데이 합격의 기준,<br />
+                <span class="text-blue-400">디테일의 차이</span>가 결과를 만듭니다.
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                막막하게 느껴지는 복잡한 서류 준비, 이제 혼자 고민하지 마세요.<br />
+                까다로운 필수 증명서 점검부터 나만의 스토리가 돋보이는 이유서·계획서 방향성까지.<br />
+                수많은 합격 데이터로 증명된 뉴투어리더스의 노하우로 가장 든든하게 서포트합니다.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html"
+                    class="px-8 py-4 bg-[#FEE500] hover:bg-[#FACC15] text-[#3c1e1e] font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    온라인 신청 / 문의
+                </a>
+                <a href="https://m.booking.naver.com/booking/13/bizes/1382304/items/6641228?area=pll&lang=ko&service-target=map-pc&startDate=2026-03-02&tab=book&theme=place"
+                    target="_blank"
+                    class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2">
+                    <i data-lucide="calendar"></i>
+                    방문 예약 하기
+                </a>
+                <a href="#documents"
+                    class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl backdrop-blur-sm transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="file-text"></i>
+                    완벽 준비 체크리스트
+                </a>
+            </div>
+        </div>
+
+        <!-- Decorative background element -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10">
+            <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-red-600 blur-3xl"></div>
+            <div class="absolute top-40 -left-40 w-96 h-96 rounded-full bg-blue-600 blur-3xl"></div>
+        </div>
+    </div>
+
+    <!-- 2. CRITICAL ALERTS -->
+    <section class="max-w-6xl mx-auto -mt-10 px-4 sm:px-6 lg:px-8 relative z-20">
+        <div class="bg-white rounded-2xl shadow-xl p-1 border-t-4 border-red-600">
+            <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                <div class="p-6 flex gap-4 items-start">
+                    <div class="bg-red-50 p-3 rounded-full text-red-600 shrink-0">
+                        <i data-lucide="alert-circle" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">양식 변경 주의 (25년 4분기~)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">이력서와 조사표 양식이 전면 변경되었습니다. 반드시 최신 양식을 다운로드하여
+                            작성해야 합니다.</p>
+                    </div>
+                </div>
+                <div class="p-6 flex gap-4 items-start">
+                    <div class="bg-amber-50 p-3 rounded-full text-amber-600 shrink-0">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">발급일자 엄수 (14일 이내)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">은행 잔고증명서와 출입국사실증명서는 영사관 제출 시점 기준
+                            <strong>가급적
+                                1주일, 최대 14일 이내</strong> 발급분이어야 합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-6 flex gap-4 items-start">
+                    <div class="bg-blue-50 p-3 rounded-full text-blue-600 shrink-0">
+                        <i data-lucide="check-circle" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">재신청 허용 확대</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">한국 국적자의 워킹홀리데이 신청 기회가 <strong>기존 1회에서 최대
+                                2회로
+                                확대</strong>되었습니다. (과거 불합격자도 재도전 가능)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SCHEDULE & JURISDICTION -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">2026년도 신청 및 발표 일정</h2>
+            <p class="text-slate-600">주부산일본국총영사관 본접수 기준입니다. 일정을 미리 확인하고 여유 있게 서류를 준비하세요.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[500px]">
+                    <thead>
+                        <tr class="bg-slate-50 text-slate-700 border-b border-slate-200">
+                            <th class="py-4 px-6 font-semibold">분기</th>
+                            <th class="py-4 px-6 font-semibold">신청 기간</th>
+                            <th class="py-4 px-6 font-semibold">합격 발표일</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-bold text-slate-700">제 1사분기</td>
+                            <td class="py-4 px-6">1월 19일(월) ~ 1월 23일(금)</td>
+                            <td class="py-4 px-6 font-semibold">2월 24일(화)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-bold text-slate-700">제 2사분기</td>
+                            <td class="py-4 px-6">4월 13일(월) ~ 4월 17일(금)</td>
+                            <td class="py-4 px-6 font-semibold">5월 18일(월)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-bold text-slate-700">제 3사분기</td>
+                            <td class="py-4 px-6">7월 13일(월) ~ 7월 17일(금)</td>
+                            <td class="py-4 px-6 font-semibold">8월 18일(화)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-bold text-slate-700">제 4사분기</td>
+                            <td class="py-4 px-6">10월 12일(월) ~ 10월 16일(금)</td>
+                            <td class="py-4 px-6 font-semibold">11월 16일(월)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-6 flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="map-pin" class="w-6 h-6 text-blue-600"></i>
+                    <h3 class="font-bold text-lg text-slate-900">대행 가능한 주민등록상 주소지</h3>
+                </div>
+                <p class="text-slate-700 font-medium text-lg leading-relaxed mb-4">
+                    부산광역시, 울산광역시, 대구광역시, 경상남도, 경상북도
+                </p>
+                <div class="bg-white/60 p-4 rounded-xl text-sm text-slate-600 mt-auto">
+                    <strong>안내사항:</strong> 합격자는 발표 이후 여권을 제출해야 하며, 제출일 기준 업무일 기준 6일 ~ 최대 2주일이 소요됩니다. (통상 6일)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PROCESS -->
+    <section class="bg-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">접수 및 진행 절차</h2>
+                <p class="text-slate-400">뉴투어리더스는 고객님의 편의를 위해 등기 접수와 방문 접수 모두 완벽하게 지원합니다.</p>
+            </div>
+
+            <!-- Toggle Tabs -->
+            <div class="flex justify-center mb-10">
+                <div class="bg-slate-800 p-1 rounded-xl inline-flex" id="tab-container">
+                    <button onclick="switchTab('visit')" id="tab-visit-btn"
+                        class="px-8 py-3 rounded-lg font-bold transition-all bg-blue-600 text-white shadow-lg">
+                        방문 / 내방 접수
+                    </button>
+                    <button onclick="switchTab('mail')" id="tab-mail-btn"
+                        class="px-8 py-3 rounded-lg font-bold transition-all text-slate-400 hover:text-white">
+                        등기 우편 접수
+                    </button>
+                </div>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="space-y-6">
+                <div class="bg-slate-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
+                    <div
+                        class="bg-blue-600 text-white text-xl font-black w-14 h-14 rounded-full flex items-center justify-center shrink-0 shadow-lg">
+                        1</div>
+                    <div id="step-1-content">
+                        <h3 class="text-xl font-bold mb-3 text-blue-400">서류 전달</h3>
+                        <div class="space-y-2 text-slate-300 visit-only">
+                            <p class="font-semibold text-white">원활한 상담과 대기시간 단축을 위해 <span class="text-green-400">네이버
+                                    예약
+                                    시스템</span> 이용을 권장합니다.</p>
+                            <p>• 예약 고객이 우선 상담되며, 별도 예약 없이도 접수 일자 내 방문은 가능합니다.</p>
+                            <p>• 주말 접수(토요일): 지정된 토요일만 예약 접수 가능 (네이버 예약 필수, 09:00~12:00)</p>
+                            <p>• 평일 업무시간: 08:30 ~ 18:00</p>
+                        </div>
+                        <div class="space-y-2 text-slate-300 mail-only hidden">
+                            <p class="font-semibold text-white">모든 서류를 우체국을 통해 빠른 등기로 보내주세요.</p>
+                            <p>• 별도 예약 없이 접수 일자 내에 도착할 수 있게 보내주세요.</p>
+                            <div class="bg-slate-700/50 p-4 rounded-xl mt-3 text-sm">
+                                <p><strong>[주소]</strong> (48795) 부산광역시 동구 초량중로 114, 104동 B124호 (범양레우스 센트럴베이, 초량동)
+                                </p>
+                                <p class="mt-1"><strong>[받는사람]</strong> (주)뉴투어리더스 010-9238-5418</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
+                    <div
+                        class="bg-blue-600 text-white text-xl font-black w-14 h-14 rounded-full flex items-center justify-center shrink-0 shadow-lg">
+                        2</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 text-blue-400">서류 꼼꼼 점검 및 피드백</h3>
+                        <p class="text-slate-300 leading-relaxed mb-3" id="step-2-text">
+                            현장 방문 시 준비하신 서류의 구비 상태를 즉시 확인해 드립니다. (대기 인원이 많을 경우, 접수 후 전문가가 상세히 재검토합니다.)
+                        </p>
+                        <div
+                            class="bg-blue-900/20 border border-blue-800/50 p-4 rounded-xl text-slate-300 space-y-2 text-sm">
+                            <p class="flex gap-2"><i data-lucide="check-circle" class="text-blue-400 shrink-0"></i>
+                                서류
+                                검토 중 누락되거나 보완이 필요한 부분이 발견되면 신속하게 안내해 드립니다.</p>
+                            <p class="flex gap-2"><i data-lucide="check-circle" class="text-blue-400 shrink-0"></i>
+                                가장
+                                중요한 '이유서'와 '계획서'는 지원자님의 진정성과 스토리가 영사관에 잘 전달될 수 있도록 전체적인 흐름과 방향성을 세심하게 점검해 드립니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-800 rounded-2xl p-6 flex flex-col md:flex-row gap-4 items-start">
+                        <div
+                            class="bg-slate-700 text-slate-300 text-xl font-black w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                            3</div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2 text-white">영사관 접수</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">총영사관 접수일에 대행 접수 후 안내 문자를 발송해 드립니다. 영사관
+                                요청으로 추가 서류 발생 시 별도 연락드릴 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-6 flex flex-col md:flex-row gap-4 items-start">
+                        <div
+                            class="bg-slate-700 text-slate-300 text-xl font-black w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                            4</div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2 text-white">합격 발표 및 여권 제출</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">합격 발표일 개별 및 홈페이지를 통해 안내드립니다. 합격자는 지정된
+                                기간까지
+                                여권을 제출해주셔야 비자 발급이 완료됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. THE ULTIMATE DOCUMENT CHECKLIST -->
+    <section id="documents" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">제출 서류 리스트 (총 14종)</h2>
+            <p class="text-slate-600 font-medium">단 하나의 서류라도 규격에 맞지 않으면 접수 및 합격이 불가합니다.<br />아래의 상세 유의사항을 글자 하나까지
+                꼼꼼히
+                확인해 주세요.</p>
+            <div class="mt-6">
+                <a href="forms/부산영사관 체크리스트.pdf" download
+                    class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-900 text-white px-6 py-3 rounded-xl font-bold transition-colors">
+                    <i data-lucide="download"></i> 영사관 공식 체크리스트 다운로드
+                </a>
+            </div>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Category 1 -->
+            <div>
+                <div class="flex items-center gap-3 mb-6 border-b-2 border-slate-800 pb-3">
+                    <i data-lucide="file-text" class="text-blue-600"></i>
+                    <h3 class="text-xl font-bold text-slate-900">1. 본인 작성 필수 서류 (양식 다운로드)</h3>
+                </div>
+
+                <div class="grid gap-4">
+                    <div
+                        class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
+                            <h4 class="font-bold text-lg text-slate-900 flex items-center gap-2">
+                                (1) 사증(VISA) 신청서 <span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">사진부착
+                                    필수</span>
+                            </h4>
+                            <a href="forms/일본사증신청서 워홀.pdf" download
+                                class="text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg flex items-center gap-2 font-medium transition-colors">
+                                <i data-lucide="download"></i> 양식 다운로드
+                            </a>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
+                            <li>자필 및 타이핑 모두 가능</li>
+                            <li>신청인의 휴대전화번호 정확하게 기입</li>
+                            <li>일본 방문 이력은 <strong>최종 일정만 기입</strong></li>
+                            <li class="text-red-600 font-semibold">신청일은 공란으로 두고, 신청인 서명은 반드시 자필로 기입</li>
+                        </ul>
+                        <div class="mt-4 bg-amber-50 p-4 rounded-lg border border-amber-100 flex gap-3">
+                            <i data-lucide="camera" class="text-amber-600 shrink-0"></i>
+                            <div class="text-sm">
+                                <p class="font-bold text-amber-900 mb-1">[매우 중요] 부착용 증명사진 1매 규격</p>
+                                <p class="text-amber-800">• <strong>크기:</strong> 가로 4.5cm(or 3.5cm) × 세로 4.5cm</p>
+                                <p class="text-amber-800">• <strong>얼굴 길이:</strong> 정수리에서 턱까지 길이가 <span
+                                        class="underline font-bold">3.2cm~3.6cm</span> 해당되는지 반드시 확인!</p>
+                                <p class="text-amber-800">• 무배경, 최근 6개월 이내 촬영. (신청서 사진과 여권 사진이 같을 경우, 여권 발급일이 6개월
+                                    이내여야
+                                    함)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-xl border border-red-200 shadow-sm relative overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                                25년 4분기 양식 변경</div>
+                            <h4 class="font-bold text-lg text-slate-900 flex items-center gap-2 mb-3">
+                                (5) 이력서
+                            </h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
+                                <li>학력: <strong>고교 기록부터</strong> 기입. (입학일~졸업/재학/휴학 등 해당일자 기입). 학교명/학부/학과 일문 또는 영어로
+                                    기입.
+                                </li>
+                                <li>직력: 현재까지 근무/아르바이트(단기 포함, 6개월 이상) 이력 작성. 일문 또는 영어 기입.</li>
+                                <li>일본 체재력: 출생 후 일본 방문 기간/목적/체재장소 모두 작성. 횟수가 많으면 '별지첨부' 기재 후 별지에 작성.</li>
+                                <li class="text-red-600 font-medium">우측 상단의 날짜는 작성일 기준으로 기입</li>
+                            </ul>
+                            <a href="forms/【新様式】履歴書 (1).docx" download
+                                class="mt-4 w-full text-sm bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2 font-medium transition-colors">
+                                <i data-lucide="download"></i> 새 이력서 양식 다운로드
+                            </a>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-red-200 shadow-sm relative overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                                25년 4분기 양식 변경</div>
+                            <h4 class="font-bold text-lg text-slate-900 flex items-center gap-2 mb-3">
+                                (8) 조사표
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-4">
+                                반드시 신청자 <strong>본인이 직접 작성</strong>해야 하며, 작성일 및 서명을 자필로 기입해야 합니다. 과거 불합격 이력이 있다면 새로운
+                                심사에
+                                영향이 없으므로 정직하게 작성하세요.
+                            </p>
+                            <a href="forms/【新様式】調査票.docx" download
+                                class="mt-auto w-full text-sm bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2 font-medium transition-colors">
+                                <i data-lucide="download"></i> 새 조사표 양식 다운로드
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div>
+                <div class="flex items-center gap-3 mb-6 border-b-2 border-slate-800 pb-3">
+                    <i data-lucide="book-open" class="text-blue-600"></i>
+                    <h3 class="text-xl font-bold text-slate-900">2. 합격의 핵심 포인트 (이유서 및 계획서)</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-lg text-slate-900 mb-3">(6) 이유서 (워킹홀리데이 지원 이유)</h4>
+                        <p class="text-sm text-slate-600 mb-4">자유 양식 / 일본어 or 영어 기재 / 작성일 및 서명 기입</p>
+                        <div class="bg-slate-50 p-4 rounded-lg text-sm text-slate-700 space-y-2">
+                            <p>• <strong>작성 요령:</strong> 사증 면제를 이용한 단순 관광여행이 아닌, '왜 반드시 워킹홀리데이 제도를 이용해야 하는가'를 구체적으로
+                                기재하십시오.</p>
+                            <p>• 최소 <strong>A4 용지 1장 이상</strong> 분량 권장.</p>
+                            <p className="text-red-600 text-xs mt-2">* 대리 작성의 느낌이 나거나 인터넷에 떠도는 흔한 템플릿을 복사하면 불합격 확률이
+                                매우
+                                높아집니다. 본인만의 스토리를 담아주세요.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-lg text-slate-900 mb-3">(7) 계획서 (일본 입국 후 활동 계획)</h4>
+                        <p class="text-sm text-slate-600 mb-4">자유 양식 / 일본어 or 영어 기재 / 작성일 및 서명 기입</p>
+                        <div class="bg-slate-50 p-4 rounded-lg text-sm text-slate-700 space-y-2">
+                            <p>• <strong>작성 요령:</strong> 단순한 방문 장소 나열이 아니라, 그 활동을 통해 어떤 것을 경험하고 싶은지, 그것이 나의 목적과 미래에
+                                어떻게
+                                기여하는지 구체적으로 작성하세요.</p>
+                            <p>• 최소 <strong>A4 용지 1장 이상</strong> 분량 권장.</p>
+                            <p className="text-blue-600 text-xs mt-2">* 처음 작성하시는 분은 '바나나워홀' 등의 사이트에서 합격자 수기를 참고하여
+                                방향성을
+                                잡으시는 것을 추천합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div>
+                <div class="flex items-center gap-3 mb-6 border-b-2 border-slate-800 pb-3">
+                    <i data-lucide="globe" class="text-blue-600"></i>
+                    <h3 class="text-xl font-bold text-slate-900">3. 신분 및 기록 증명 서류 (공공기관 발급)</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">(2) 여권 복사본 (매우 중요)</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
+                                <li>인적 사항 페이지 전체 (서명란 포함)</li>
+                                <li><strong>일본 입출국 기록 스탬프(or 스티커)</strong>가 있는 페이지 전부 복사 (타국가는 대상 아님)</li>
+                                <li>만18세 이후 90일 이상 출입국 사실이 있는 경우 해당 사증/스탬프 페이지 복사</li>
+                            </ul>
+                            <div class="bg-red-50 p-3 rounded-lg border border-red-100 text-sm">
+                                <p class="font-bold text-red-800 mb-1">★ 여권 복사 엄수 방법 ★</p>
+                                <p class="text-red-700">1. 반드시 <strong>흑백</strong>으로, <strong>1:1 실제 크기 비율</strong>로
+                                    복사
+                                    (확대/축소 절대 금지)</p>
+                                <p class="text-red-700">2. 여권 커버를 제거하고 A4 용지 중앙에 위치하도록 복사</p>
+                                <p class="text-red-700">3. 불가 사항: 컬러복사, 폰카 촬영 후 인쇄, 스캔 후 인쇄 절대 불가</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">(3) 한국 출입국 사실 증명서</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
+                                <li class="font-semibold text-blue-700">가급적 제출 기준일 1주일 내 발급 (최대 14일)</li>
+                                <li>조회기간: <strong>출생일부터 제출 직전일</strong>까지</li>
+                                <li>개명자는 개명 전/후를 각각 모두 제출</li>
+                                <li>해당 기간 내 출입국 기록이 없더라도 "기록 대조 기간 내 출입국기록 없음"이 표기된 서류로 제출</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">(9, 10) 기본증명서 및 주민등록 서류</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
+                                <li><strong>(9) 기본증명서:</strong> 반드시 <strong>'상세'</strong>로 발급. 제출일 기준 3개월 이내. 주민등록번호
+                                    전체
+                                    표기.</li>
+                                <li><strong>(10) 주민등록초본 또는 등본:</strong> 제출일 기준 3개월 이내. 주민번호 전체 표기. (주민등록증 앞/뒷면 복사본도
+                                    가능)
+                                </li>
+                                <li><strong class="text-red-600">남자의 경우:</strong> 병역(兵役) 사항이 반드시 기록되어 있어야 함 (주민등록초본
+                                    상에
+                                    병역 기록이 있다면 병적증명서 생략 가능)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 4 -->
+            <div>
+                <div class="flex items-center gap-3 mb-6 border-b-2 border-slate-800 pb-3">
+                    <i data-lucide="credit-card" class="text-blue-600"></i>
+                    <h3 class="text-xl font-bold text-slate-900">4. 재정 및 학력/능력 증명</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">(11) 은행 잔고증명서</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
+                            <li class="font-semibold text-red-600">2024년부터 거래내역서(3개월) 폐지, 잔고증명서만 제출</li>
+                            <li>잔고 기준: <strong>1인당 280만 원 이상</strong> (귀국 항공권 및 초기 체재비)</li>
+                            <li class="font-semibold text-blue-700">발급 시점: 가급적 접수일 기준 1주일 이내 (최대 14일)</li>
+                            <li>이름, 계좌번호, 발급일 명시 (마스킹 처리 불가)</li>
+                            <li>가족 계좌 사용 시: 부양 가족의 잔고증명서 + 부양 관계를 입증하는 <strong>가족관계증명서</strong> 추가 제출 필수</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">(4) 최종학력 증명서</h4>
+                            <p class="text-sm text-slate-600 mb-1">• 재학/휴학/제적/졸업 증명서 (국문 제출 가능)</p>
+                            <p class="text-sm text-slate-600 mb-1">• 교환/단기 유학 등 재학했던 타 학교 수료 증명 자료 동봉</p>
+                            <p class="text-sm text-slate-600">• 해외(일본/한국 외) 졸업 시 국문/영문 번역본 첨부</p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100">
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">(12) 일본어 능력 입증 (선택)</h4>
+                            <p class="text-sm text-slate-600">• JLPT, JPT 자격증 / 어학원 수료증 / 학교 성적증명서 등</p>
+                            <p class="text-sm text-red-600 font-medium mt-1">※ 객관적 자료가 없다면 이유서/이력서 내에 지금까지의 일본어 학습
+                                이력 및
+                                수준을 자세히 기재할 것</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. EXPERT TIPS -->
+    <section class="bg-blue-900 text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <i data-lucide="award" class="w-8 h-8 text-yellow-400"></i>
+                <h2 class="text-3xl font-bold text-center">뉴투어리더스 합격 솔루션</h2>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <h3 class="text-xl font-bold text-yellow-400 mb-6 flex items-center gap-2">
+                    <i data-lucide="alert-triangle"></i> 자주 발생하는 불합격 사례 (주의 요망)
+                </h3>
+                <ul class="space-y-4 text-slate-200">
+                    <li class="flex gap-3">
+                        <span class="font-black text-red-400">1.</span>
+                        <p><strong>오래된 서류:</strong> 사진이 6개월을 초과했거나, 은행 잔고 및 출입국증명서가 발급된 지 2주가 지난 경우.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="font-black text-red-400">2.</span>
+                        <p><strong>형식적인 이유서:</strong> 대리 작성 기관에 맡겨 비슷한 형식과 내용이 중복 제출되는 경우 영사관에서 즉시 걸러집니다. 반드시 본인의
+                            경험과 미래
+                            계획을 연결하여 구체적으로 적으세요.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="font-black text-red-400">3.</span>
+                        <p><strong>비자 목적 위반:</strong> 취업(돈)이 주 목적이거나, 단순 여행이 목적임을 너무 강조하면 불합격입니다. '워킹홀리데이' 제도만의
+                            취지(문화
+                            교류, 여행 자금을 위한 부수적 노동)를 이해해야 합니다.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="font-black text-red-400">4.</span>
+                        <p><strong>여권 복사 불량:</strong> 스캔, 컬러, 축소/확대 등 규정에 어긋난 여권 복사본 제출.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6.5 FUN INTERACTIVE CHECKLIST -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-3xl shadow-xl border border-blue-100 overflow-hidden relative">
+            <div class="absolute top-0 left-0 w-full h-2 bg-slate-100">
+                <div id="progress-bar"
+                    class="h-full bg-gradient-to-r from-blue-400 to-green-400 transition-all duration-700 ease-out"
+                    style="width: 0%"></div>
+            </div>
+            <div class="p-8 md:p-10">
+                <div class="text-center mb-8">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-50 text-blue-600 rounded-full mb-4"
+                        id="checklist-icon">
+                        <i data-lucide="sparkles" class="w-8 h-8"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">나의 워홀 합격률 알아보기</h2>
+                    <p class="text-slate-600">준비하신 항목을 하나씩 체크해보세요. 꼼꼼하게 준비할수록 합격률이 쑥쑥 올라갑니다!</p>
+                </div>
+
+                <div class="space-y-3 mb-8" id="checklist-items">
+                    <!-- Javascript will populate this -->
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-100 relative overflow-hidden">
+                    <div class="relative z-10">
+                        <p class="text-sm font-bold text-slate-500 mb-2">현재 나의 예상 합격률</p>
+                        <div id="progress-percent"
+                            class="text-5xl font-black mb-3 transition-colors duration-500 text-slate-500">
+                            0%
+                        </div>
+                        <p id="progress-message" class="font-bold text-slate-700 transition-colors">
+                            하나씩 체크하며 합격의 기운을 채워보세요!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6.7 SECRET EASTER EGG (럭키 박스 이벤트) -->
+    <section class="py-8 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto mb-16">
+        <div id="lucky-box-idle" onclick="startLuckyDraw()"
+            class="flex flex-col items-center justify-center p-6 cursor-pointer group hover:bg-slate-100 rounded-3xl transition-all duration-300 opacity-80 hover:opacity-100">
+            <div class="relative">
+                <i data-lucide="gift"
+                    class="w-16 h-16 text-red-500 animate-bounce group-hover:scale-110 transition-transform duration-300"></i>
+                <div
+                    class="absolute -top-2 -right-2 bg-yellow-400 text-xs font-bold text-slate-900 px-2 py-1 rounded-full animate-pulse">
+                    Click!</div>
+            </div>
+            <p class="mt-4 text-sm font-bold text-slate-500 group-hover:text-slate-800 transition-colors">
+                잠깐! 여기까지 꼼꼼히 읽어주신 분들을 위해 준비한 <span class="text-red-500">시크릿 박스</span>를 열어보세요.
+            </p>
+        </div>
+
+        <div id="lucky-box-opening" class="hidden flex flex-col items-center justify-center p-12 text-center">
+            <i data-lucide="gift" class="w-20 h-20 text-red-500 animate-spin-slow"></i>
+            <p class="mt-6 font-bold text-xl text-slate-700 animate-pulse">두구두구두구... 행운을 확인하는 중!</p>
+        </div>
+
+        <div id="lucky-box-opened" class="hidden">
+            <div
+                class="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 p-1.5 rounded-3xl shadow-2xl transform hover:-translate-y-1 transition-transform">
+                <div
+                    class="bg-white rounded-[1.25rem] p-8 md:p-10 border border-dashed border-amber-300 text-center relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none flex justify-around items-center">
+                        <i data-lucide="sparkles" class="w-24 h-24 text-yellow-500"></i>
+                        <i data-lucide="sparkles" class="w-32 h-32 text-amber-500"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <i data-lucide="party-popper" class="w-16 h-16 text-red-500 mx-auto mb-4 animate-bounce"></i>
+                        <div class="inline-block bg-red-100 text-red-600 font-bold px-3 py-1 rounded-full text-sm mb-4">
+                            🎉 럭키 드로우 당첨</div>
+                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 mb-3">수수료 <span
+                                class="text-red-600 text-4xl">20% 할인</span> 쿠폰</h3>
+                        <p class="text-slate-600 mb-8 max-w-md mx-auto leading-relaxed">축하합니다! 마지막까지 꼼꼼하게 읽어주신
+                            <strong>'상위 1% 예비 워홀러'</strong>로 인정되어 깜짝 할인 쿠폰이 발급되었습니다.
+                        </p>
+                        <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-6 inline-block w-full max-w-sm">
+                            <p class="text-xs text-slate-500 font-bold mb-1">상담 시 꼭 아래의 시크릿 코드를 말씀해 주세요!</p>
+                            <p
+                                class="text-2xl font-black text-slate-800 tracking-widest bg-white py-3 rounded-lg border border-slate-200 shadow-inner">
+                                LUCKY-NEWTOUR</p>
+                        </div>
+                        <p class="mt-6 text-sm text-amber-600 font-medium">* 본 혜택은 이 페이지를 끝까지 확인하신 분들께만 제공되는 비밀
+                            혜택입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER / CTA -->
+    <footer id="contact" class="bg-slate-50 py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">복잡한 서류 준비, 이제 안심하고 맡기세요</h2>
+            <p class="text-slate-600 mb-10">전문가의 꼼꼼한 사전 검토로 불합격 리스크를 최소화합니다.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                    <i data-lucide="phone" class="w-8 h-8 text-blue-600 mb-3"></i>
+                    <h4 class="font-bold text-slate-900">전화 상담</h4>
+                    <p class="text-slate-600 mt-2 font-bold text-lg">051-818-0801</p>
+                    <p class="text-sm text-slate-500">김성훈 팀장</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                    <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center mb-3">
+                        <span class="font-black text-slate-900 text-sm">TALK</span>
+                    </div>
+                    <h4 class="font-bold text-slate-900">카카오톡</h4>
+                    <p class="text-slate-600 mt-2 font-bold text-lg">newtour0801</p>
+                    <p class="text-sm text-slate-500">실시간 채팅 상담</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                    <i data-lucide="mail" class="w-8 h-8 text-blue-600 mb-3"></i>
+                    <h4 class="font-bold text-slate-900">이메일</h4>
+                    <p class="text-slate-600 mt-2 font-bold text-sm">kim83077@nate.com</p>
+                    <p class="text-sm text-slate-500">서류 초안 전송</p>
+                </div>
+            </div>
+            <div class="text-sm text-slate-500 text-left bg-slate-100 p-6 rounded-xl inline-block max-w-2xl w-full">
+                <p class="font-bold text-slate-700 mb-2">서류 보내실 곳 (등기/방문)</p>
+                <p>(48795) 부산광역시 동구 초량중로 114, 104동 B124호</p>
+                <p>(범양레우스 센트럴베이, 초량동) (주)뉴투어리더스 앞</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Global Footer (Injected by common.js) -->
+    <footer class="footer-global">
+        <div class="container"></div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Tab Switching Logic
+        function switchTab(tab) {
+            const visitBtn = document.getElementById('tab-visit-btn');
+            const mailBtn = document.getElementById('tab-mail-btn');
+            const visitContent = document.querySelectorAll('.visit-only');
+            const mailContent = document.querySelectorAll('.mail-only');
+            const step2Text = document.getElementById('step-2-text');
+
+            if (tab === 'visit') {
+                visitBtn.classList.add('bg-blue-600', 'text-white', 'shadow-lg');
+                visitBtn.classList.remove('text-slate-400', 'hover:text-white');
+                mailBtn.classList.remove('bg-blue-600', 'text-white', 'shadow-lg');
+                mailBtn.classList.add('text-slate-400', 'hover:text-white');
+
+                visitContent.forEach(el => el.classList.remove('hidden'));
+                mailContent.forEach(el => el.classList.add('hidden'));
+                step2Text.innerText = "현장 방문 시 준비하신 서류의 구비 상태를 즉시 확인해 드립니다. (대기 인원이 많을 경우, 접수 후 전문가가 상세히 재검토합니다.)";
+            } else {
+                mailBtn.classList.add('bg-blue-600', 'text-white', 'shadow-lg');
+                mailBtn.classList.remove('text-slate-400', 'hover:text-white');
+                visitBtn.classList.remove('bg-blue-600', 'text-white', 'shadow-lg');
+                visitBtn.classList.add('text-slate-400', 'hover:text-white');
+
+                mailContent.forEach(el => el.classList.remove('hidden'));
+                visitContent.forEach(el => el.classList.add('hidden'));
+                step2Text.innerText = "서류가 도착하면 안내 연락을 드린 후, 곧바로 전문가의 꼼꼼한 검토가 시작됩니다.";
+            }
+        }
+
+        // 2. Checklist Logic
+        const checklistItems = [
+            "이유서와 계획서에 나만의 진정성 있는 스토리를 가득 담았다.",
+            "증명사진(4.5x4.5, 얼굴길이 엄수) 규격을 완벽하게 맞췄다.",
+            "여권 복사본은 여권 커버를 벗기고 1:1 흑백으로 깔끔하게 복사했다.",
+            "은행 잔고증명서는 280만원 이상, 14일 이내 발급분으로 준비했다.",
+            "일본어 능력 검증자료(일본어 관련 합격증 혹은 성적증명서, 학원 인강 수강증 혹은 일본어 성적표 ) 혹은 일본어 능력관련된 사유서(검증자료 부재시) 준비했다.",
+            "든든한 파트너 뉴투어리더스와 함께 합격할 준비가 되었다! ✈️"
+        ];
+        let checkedIndices = [];
+
+        function renderChecklist() {
+            const container = document.getElementById('checklist-items');
+            container.innerHTML = checklistItems.map((item, index) => `
+                <label class="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all border ${checkedIndices.includes(index) ? 'bg-blue-50 border-blue-200 shadow-sm' : 'bg-slate-50 border-transparent hover:bg-slate-100'}">
+                    <div class="relative flex items-center justify-center shrink-0 w-6 h-6 rounded-md border-2 border-blue-300 bg-white">
+                        <input type="checkbox" class="opacity-0 absolute w-full h-full cursor-pointer" onchange="toggleCheck(${index})" ${checkedIndices.includes(index) ? 'checked' : ''}>
+                        ${checkedIndices.includes(index) ? '<i data-lucide="check-circle" class="w-5 h-5 text-blue-600"></i>' : ''}
+                    </div>
+                    <span class="text-sm md:text-base font-medium transition-colors ${checkedIndices.includes(index) ? 'text-blue-900' : 'text-slate-700'}">
+                        ${item}
+                    </span>
+                </label>
+            `).join('');
+            lucide.createIcons();
+            updateProgress();
+        }
+
+        function toggleCheck(index) {
+            if (checkedIndices.includes(index)) {
+                checkedIndices = checkedIndices.filter(i => i !== index);
+            } else {
+                checkedIndices.push(index);
+            }
+            renderChecklist();
+        }
+
+        function updateProgress() {
+            const progress = Math.round((checkedIndices.length / checklistItems.length) * 100);
+            const progressBar = document.getElementById('progress-bar');
+            const percentText = document.getElementById('progress-percent');
+            const message = document.getElementById('progress-message');
+            const iconContainer = document.getElementById('checklist-icon');
+
+            progressBar.style.width = progress + '%';
+            percentText.innerText = progress + '%';
+
+            if (progress === 100) {
+                percentText.style.color = '#10B981';
+                message.innerText = "✨ 완벽합니다! 100% 합격 기운이 충전되었습니다! ✨";
+                message.className = "font-bold text-green-600 text-lg animate-pulse";
+                iconContainer.innerHTML = '<i data-lucide="award" class="w-8 h-8 text-yellow-500 animate-bounce"></i>';
+            } else if (progress >= 50) {
+                percentText.style.color = '#3B82F6';
+                message.innerText = "합격이 눈앞에 보입니다! 조금만 더 힘내세요!";
+                message.className = "font-bold text-slate-700";
+                iconContainer.innerHTML = '<i data-lucide="sparkles" class="w-8 h-8 text-blue-500"></i>';
+            } else {
+                percentText.style.color = '#64748B';
+                message.innerText = progress > 0 ? "좋습니다! 꼼꼼한 준비가 합격을 만듭니다." : "하나씩 체크하며 합격의 기운을 채워보세요!";
+                message.className = "font-bold text-slate-700";
+                iconContainer.innerHTML = '<i data-lucide="sparkles" class="w-8 h-8"></i>';
+            }
+            lucide.createIcons();
+        }
+
+        // 3. Lucky Draw Logic
+        function startLuckyDraw() {
+            document.getElementById('lucky-box-idle').classList.add('hidden');
+            document.getElementById('lucky-box-opening').classList.remove('hidden');
+
+            setTimeout(() => {
+                document.getElementById('lucky-box-opening').classList.add('hidden');
+                document.getElementById('lucky-box-opened').classList.remove('hidden');
+            }, 1500);
+        }
+
+        // Init
+        renderChecklist();
+    </script>
+</body>
+
+</html>

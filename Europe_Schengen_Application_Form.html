@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schengen Visa Application Form</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #111;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* A4 Page Setup */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 15mm;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .header-wrap {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #0369a1;
+            /* Schengen Blue */
+            position: relative;
+        }
+
+        h1 {
+            color: #0369a1;
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .doc-no {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 10px;
+            color: #94a3b8;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            margin-top: 20px;
+            color: #111;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span {
+            font-size: 10px;
+            font-weight: normal;
+            color: #64748b;
+            margin-left: 8px;
+        }
+
+        .section-title::before {
+            content: '■';
+            color: #0369a1;
+            margin-right: 6px;
+            font-size: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            border: 1px solid #475569;
+            padding: 8px 10px;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            text-align: left;
+            color: #334155;
+            font-size: 11px;
+        }
+
+        .label-ko {
+            display: block;
+            font-size: 9px;
+            color: #64748b;
+            font-weight: normal;
+            margin-top: 1px;
+        }
+
+        td {
+            text-align: left;
+        }
+
+        /* Input Styles */
+        input[type="text"] {
+            width: 98%;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 12px;
+            background: transparent;
+        }
+
+        .chk-label {
+            cursor: pointer;
+            margin-right: 12px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 11px;
+        }
+
+        .input-line {
+            border-bottom: 1px solid #94a3b8;
+            padding-bottom: 1px;
+            display: inline-block;
+        }
+
+        .notice-footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px dashed #cbd5e1;
+            font-size: 11px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+
+            .page {
+                margin: 0;
+                padding: 10mm;
+                box-shadow: none;
+                width: 100%;
+            }
+
+            .print-btn {
+                display: none;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0369a1;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+
+    <div class="page">
+
+        <div class="header-wrap">
+            <h1>Schengen Visa Application Form</h1>
+            <h2>유럽 쉥겐비자 신청서 기재사항</h2>
+        </div>
+
+        <!-- Part 1: Personal Information -->
+        <div class="section-title">PART 1. Personal Information <span>기본 인적 사항</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Family Name <span class="label-ko">성</span></th>
+                    <td><input type="text"></td>
+                    <th>First Name <span class="label-ko">이름</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>City of Birth <span class="label-ko">출생 도시</span></th>
+                    <td><input type="text"></td>
+                    <th>Country of Birth <span class="label-ko">출생 국가</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>E-mail <span class="label-ko">이메일</span></th>
+                    <td><input type="text"></td>
+                    <th>Cell-phone <span class="label-ko">휴대폰 번호</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Marital Status <span class="label-ko">결혼 여부</span></th>
+                    <td colspan="3">
+                        <label class="chk-label"><input type="radio" name="marital"> Single (미혼)</label>
+                        <label class="chk-label"><input type="radio" name="marital"> Married (결혼)</label>
+                        <label class="chk-label"><input type="radio" name="marital"> Divorced (이혼)</label>
+                        <label class="chk-label"><input type="radio" name="marital"> Other (기타)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Home Address <span class="label-ko">자택 주소</span></th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Purpose of Entry <span class="label-ko">입국 목적</span></th>
+                    <td colspan="3">
+                        <label class="chk-label"><input type="checkbox"> Visiting (지인방문)</label>
+                        <label class="chk-label"><input type="checkbox"> Tourism (관광)</label>
+                        <label class="chk-label"><input type="checkbox"> Business (출장)</label>
+                        <label class="chk-label"><input type="checkbox"> Transit (경유)</label><br>
+                        <label class="chk-label" style="margin-top:5px;">Other (기타): <input type="text"
+                                class="input-line" style="width:150px;"></label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Part 2: Employment Information -->
+        <div class="section-title">PART 2. Occupation & Employment <span>직업 및 재직 정보</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Name of Employer <span class="label-ko">직장(학교)명</span></th>
+                    <td><input type="text"></td>
+                    <th>Occupation <span class="label-ko">직책</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Work Phone <span class="label-ko">직장 전화번호</span></th>
+                    <td><input type="text"></td>
+                    <th>Company Address <span class="label-ko">직장 주소</span></th>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Part 3: Visa History -->
+        <div class="section-title">PART 3. Schengen Visa History <span>과거 쉥겐비자 취득 여부</span></div>
+        <div style="border: 1px solid #475569; padding: 15px; background: #f8fafc;">
+            <div style="margin-bottom: 10px; font-weight: bold;">
+                Have you been issued Schengen visas before? (과거 쉥겐비자 취득 이력이 있습니까?)
+            </div>
+            <label class="chk-label" style="font-size: 13px; margin-bottom: 10px;">
+                <input type="radio" name="v_history"> No (아니오)
+            </label>
+            <br>
+            <label class="chk-label" style="font-size: 13px; margin-bottom: 10px;">
+                <input type="radio" name="v_history"> Yes (예) - Please provide the validity dates below:
+            </label>
+
+            <div style="margin-left: 25px; display: flex; gap: 30px; align-items: center;">
+                <div>
+                    <span style="font-size: 11px; color: #475569;">From (발급일):</span>
+                    <input type="text" class="input-line" style="width: 120px;" placeholder="DD-MON-YYYY">
+                </div>
+                <div>
+                    <span style="font-size: 11px; color: #475569;">To (만료일):</span>
+                    <input type="text" class="input-line" style="width: 120px;" placeholder="DD-MON-YYYY">
+                </div>
+            </div>
+        </div>
+
+        <div class="notice-footer">
+            <div
+                style="background-color: #f1f5f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: #334155; border-left: 4px solid #0369a1;">
+                <strong>※ [Important Notice / 중요 안내]</strong><br>
+                The final decision on visa issuance rests entirely with the Consulate (Embassy). Please be advised that
+                submission of documents does not guarantee a visa, and the result may vary based on the consul's
+                discretionary judgment. We recommend finalizing your travel arrangements only after your visa has been
+                approved.<br>
+                <span style="font-size: 10px; margin-top: 5px; display: block; color: #64748b;">(비자 발급 여부는 전적으로 영사관의
+                    주관적이고 독자적인 판단에 따릅니다. 서류 접수가 비자 발급을 보장하지 않으며, 심사 결과는 영사의 권한에 의해 결정됩니다. 따라서 비자 승인 전 발생할 수 있는 항공/숙박 취소
+                    위약금 등에 대해 당사는 책임지지 않으므로, 반드시 승인 확인 후 최종 결제를 진행하시기 바랍니다.)</span>
+            </div>
+            I hereby certify that the information provided in this form is true and correct to the best of my
+            knowledge.<br>
+            본인은 위 기재사항이 사실임을 확인하며, 비자 신청서 작성에 필요한 정보를 정직하게 제공하였습니다.<br>
+
+            <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>
+                    Date (신청일): <span class="input-line" style="width: 150px;"></span>
+                </div>
+                <div style="text-align: right;">
+                    Signature (신청인 서명): <span class="input-line" style="width: 180px;"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

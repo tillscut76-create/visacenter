@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Electronic Travel Authorisation (ETA) Guide | New Tour Leaders</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="common.js" defer></script>
+    <script src="script.js" defer></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .section-title {
+            color: #00247d;
+            /* UK Blue */
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(to right, #00247d 0%, #cf142b 100%);
+            margin-bottom: 30px;
+            border-radius: 2px;
+            width: 100px;
+        }
+
+        .eta-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .eta-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-blue {
+            color: #00247d;
+            font-weight: 700;
+        }
+
+        .highlight-red {
+            color: #cf142b;
+            font-weight: 700;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 48px;
+        }
+
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: #00247d;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #00247d 0%, #00154a 100%);
+        }
+    </style>
+</head>
+
+<body data-country-target="uk">
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="trust-badge"><i class="fa-solid fa-certificate"></i> Trusted Visa Agency <span
+                    class="kr-inline">(비자 대행 전문)</span></span>
+            <div class="top-contact">
+                <!-- Injected via common.js -->
+                <a href="contact.html"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="http://newpassport.co.kr/visa/index/images/logo.jpg"
+                        alt="New Tour Leaders"></a>
+            </div>
+            <nav>
+                <ul>
+                    <!-- Injected via common.js -->
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Apply (신청하기)</a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto py-12 px-4 space-y-16">
+
+        <!-- Hero Section -->
+        <section class="hero-gradient rounded-[2.5rem] p-12 text-white text-center relative overflow-hidden shadow-2xl">
+            <div class="absolute top-0 right-0 p-8 opacity-10 text-9xl transform rotate-12">🇬🇧</div>
+            <div class="relative z-10 space-y-6">
+                <div
+                    class="inline-block bg-white/20 backdrop-blur-md px-6 py-2 rounded-full border border-white/30 text-sm font-bold tracking-wider mb-2">
+                    OFFICIAL UPDATE: EFFECTIVE JAN 2025
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight">UK ETA for Koreans</h1>
+                <p class="text-xl md:text-2xl text-blue-100 font-medium">영국 전자여행허가 사전 승인 제도 (대한민국 국적자 전용)</p>
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <div class="bg-white/10 px-6 py-3 rounded-2xl border border-white/20">
+                        <span class="block text-blue-300 text-xs font-bold uppercase mb-1">Stay Period</span>
+                        <span class="text-lg font-bold">Up to 180 Days</span>
+                    </div>
+                    <div class="bg-white/10 px-6 py-3 rounded-2xl border border-white/20">
+                        <span class="block text-blue-300 text-xs font-bold uppercase mb-1">Validity</span>
+                        <span class="text-lg font-bold">2 Years (Multiple)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Notice -->
+        <section class="bg-blue-50 border-l-8 border-blue-600 p-8 rounded-r-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+                <i class="fa-solid fa-circle-exclamation text-blue-600 text-3xl mt-1"></i>
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-blue-900">신청 전 필수 확인 사항 (Important Notice)</h3>
+                    <ul class="space-y-3 text-blue-800">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i>
+                            <span><strong>대상:</strong> 대한민국 국적의 <span
+                                    class="underline decoration-2">전자여권(e-passport)</span> 소지자</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i>
+                            <span><strong>시행일:</strong> 2025년 1월 8일부터 한국인 여행객 필수 적용</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i>
+                            <span><strong>목적:</strong> 관광, 친지 방문, 단기 학업 (6개월 미만) 등</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms & Samples -->
+        <section class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <h2 class="section-title"><i class="fa-solid fa-file-pdf"></i> 1. Application Form / 신청서 양식</h2>
+            <div class="section-divider"></div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-1">
+                    <p class="font-bold text-slate-800 mb-2">UK ETA Application Information Form</p>
+                    <p class="text-slate-500 text-sm mb-6">당사에 제출하실 ETA 신청용 개인정보 기재사항 양식입니다. 아래 버튼을 클릭하여 내용을 기재하고 인쇄/저장해
+                        주세요.</p>
+                    <a href="UK_ETA_Application_Form.html" target="_blank"
+                        class="inline-flex items-center gap-2 bg-slate-800 text-white font-bold py-3 px-8 rounded-xl hover:bg-slate-700 transition-all shadow-lg">
+                        <i class="fa-solid fa-file-pen"></i> 신청서 양식 열기 (Fill & Print)
+                    </a>
+                </div>
+                <div class="hidden md:block w-px h-24 bg-slate-100"></div>
+                <div class="flex-1">
+                    <p class="font-bold text-slate-800 mb-2">간편 신청 및 상담</p>
+                    <p class="text-slate-500 text-sm mb-4">여권 사본을 전달해주시면 더 빠른 신청이 가능합니다.</p>
+                    <a href="contact.html" class="text-blue-600 font-bold hover:underline">상담 및 신청하기 &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements & Process -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- 1. Requirements -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-list-check"></i> 2. Requirements / 준비물</h2>
+                <div class="section-divider"></div>
+                <div class="space-y-6">
+                    <div class="eta-card flex items-center gap-6">
+                        <div class="bg-blue-100 p-4 rounded-2xl text-blue-600 text-2xl">
+                            <i class="fa-solid fa-passport"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Passport Copy (Scan)</h4>
+                            <p class="text-slate-500 text-sm">유효한 여권 사본 <span class="highlight-red">[유효기간 6개월 이상]</span>
+                            </p>
+                            <p class="text-xs text-blue-700 mt-1">* 여권 하단부 바코드(MRZ)가 선명하게 찍힌 파일 필수</p>
+                        </div>
+                    </div>
+                    <div class="eta-card flex items-center gap-6">
+                        <div class="bg-indigo-100 p-4 rounded-2xl text-indigo-600 text-2xl">
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">ID Photo File</h4>
+                            <p class="text-slate-500 text-sm">여권용 사진 파일 (6개월 이내 촬영분)</p>
+                        </div>
+                    </div>
+                    <div class="eta-card flex items-center gap-6">
+                        <div class="bg-red-100 p-4 rounded-2xl text-red-600 text-2xl">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Email Address</h4>
+                            <p class="text-slate-500 text-sm">결과를 수신할 정확한 이메일 주소</p>
+                        </div>
+                    </div>
+                    <div class="eta-card flex items-center gap-6">
+                        <div class="bg-green-100 p-4 rounded-2xl text-green-600 text-2xl">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Payment Method</h4>
+                            <p class="text-slate-500 text-sm">해외 결제 가능한 신용/체크카드</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Application Process -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-arrows-rotate"></i> 3. Process / 진행 절차</h2>
+                <div class="section-divider"></div>
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 space-y-10">
+                    <div class="process-step" data-step="1">
+                        <h4 class="font-bold text-slate-800">서류 전달 및 상담</h4>
+                        <p class="text-sm text-slate-500 mt-1">카카오톡 또는 이메일로 여권 사본 전달</p>
+                    </div>
+                    <div class="process-step" data-step="2">
+                        <h4 class="font-bold text-slate-800">온라인 신청 대행</h4>
+                        <p class="text-sm text-slate-500 mt-1">전문 대행 직원이 영국 정부 사이트 등록</p>
+                    </div>
+                    <div class="process-step" data-step="3">
+                        <h4 class="font-bold text-slate-800">수수료 결제</h4>
+                        <p class="text-sm text-slate-500 mt-1">대사관 수수료 및 대행 수수료 결제</p>
+                    </div>
+                    <div class="process-step" data-step="4">
+                        <h4 class="font-bold text-slate-800">ETA 승인 및 발송</h4>
+                        <p class="text-sm text-slate-500 mt-1">심사 완료 후 승인서를 PDF로 전달 (통상 3일 이내)</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Fees & Timeline -->
+        <section class="bg-slate-900 rounded-[2.5rem] p-12 text-white shadow-2xl">
+            <h2 class="text-3xl font-black mb-10 text-center">Fees & Processing Time</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl text-center">
+                    <div class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-4">Processing Time</div>
+                    <div class="text-5xl font-black mb-2">Within 3 Days</div>
+                    <p class="text-slate-400 text-sm">최장 3일 이내 승인 (대부분 수 시간 내 승인)</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl text-center">
+                    <div class="text-green-400 text-sm font-bold uppercase tracking-widest mb-4">Total Service Fee</div>
+                    <div class="text-5xl font-black mb-2" data-fee-id="uk-eta">60,000 KRW</div>
+                    <p class="text-slate-400 text-sm">정부 수수료 £10 포함 + 대행료 합계</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA Section -->
+        <section class="text-center py-8">
+            <div class="space-y-8">
+                <h3 class="text-3xl font-bold text-slate-800">복잡한 영국 ETA 신청, 전문가에게 맡기세요!</h3>
+                <p class="text-slate-500 max-w-2xl mx-auto">잘못된 정보 입력으로 인한 거절 리스크를 최소화하고, 빠르고 정확하게 승인받으실 수 있도록 도와드립니다.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="contact.html"
+                        class="inline-flex items-center gap-3 bg-[#FEE500] text-[#3c1e1e] font-extrabold py-5 px-14 rounded-full text-xl transition-all hover:scale-105 active:scale-95 shadow-xl">
+                        <i class="fa-solid fa-comments"></i> Apply / Consultation (신청 및 상담)
+                    </a>
+                    <a href="tel:051-818-0801"
+                        class="inline-flex items-center gap-3 bg-slate-800 text-white font-extrabold py-5 px-14 rounded-full text-xl transition-all hover:scale-105 active:scale-95 shadow-xl">
+                        <i class="fa-solid fa-phone"></i> 전화 상담문의
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- Injected via common.js -->
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐나다 전자여행허가(eTA) 신청서</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #111;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* A4 사이즈 페이지 설정 */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 15mm 15mm;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .header-wrap {
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #be123c;
+            /* Canada Red */
+            position: relative;
+        }
+
+        h1 {
+            color: #be123c;
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .notice-box {
+            background-color: #fff1f2;
+            border: 1px solid #fecdd3;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 11px;
+            color: #4c0519;
+            line-height: 1.5;
+        }
+
+        .notice-title {
+            font-weight: 800;
+            color: #be123c;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            margin-top: 20px;
+            color: #111;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '■';
+            color: #be123c;
+            margin-right: 6px;
+            font-size: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            border: 1px solid #475569;
+            padding: 8px 10px;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            text-align: center;
+            color: #334155;
+        }
+
+        td {
+            text-align: left;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* 입력 폼 스타일 */
+        input[type="text"] {
+            width: 98%;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 12px;
+            background: transparent;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+
+        .check-label {
+            cursor: pointer;
+            margin-right: 15px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .question-list {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .question-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #cbd5e1;
+            padding: 8px 0;
+        }
+
+        .question-item:last-child {
+            border-bottom: none;
+        }
+
+        .question-text {
+            width: 85%;
+            padding-right: 10px;
+        }
+
+        .question-answer {
+            width: 15%;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .input-line {
+            border-bottom: 1px solid #94a3b8;
+            padding-bottom: 1px;
+            display: inline-block;
+        }
+
+        /* 인쇄 설정 */
+        @media print {
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+
+            .page {
+                margin: 0;
+                padding: 10mm;
+                box-shadow: none;
+                width: 100%;
+                height: auto;
+            }
+
+            input[type="text"] {
+                font-size: 12px;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #be123c;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn" onclick="window.print()">인쇄하기 / PDF 저장</button>
+
+    <div class="page">
+
+        <div class="header-wrap">
+            <h1>캐나다 전자여행허가(eTA) 신청서</h1>
+            <h2>Canada Electronic Travel Authorization Application Form</h2>
+        </div>
+
+        <div class="notice-box">
+            <div class="notice-title">[ 주 의 사 항 ]</div>
+            <div>캐나다 비자 신청서 작성시 반드시 필요한 인적사항입니다. 올바른 정보를 빠짐없이 기입하여 주시기 바랍니다. 이 정보는 신청서 작성 후 즉시 폐기처리 하오니 안심하셔도 됩니다.</div>
+            <ol style="margin: 5px 0 0 0; padding-left: 15px;">
+                <li><strong>캐나다 전자비자(관광)는 관광, 지인 방문 목적으로 입국 시 신청 가능합니다.</strong><br>
+                    관광·지인방문 목적 외에 상업, 업무 등 기타 체류를 목적으로 입국 및 체류 하실 경우 캐나다로부터 추방 당할 수 있으며, 차후 입국이 영구 거절될 수 있습니다.</li>
+                <li style="margin-top: 4px;"><strong>전자비자 발급 후 캐나다 입국 및 관광 중에 발생되는 모든 문제 발생 시 당사 [뉴투어리더스]에 이의 제기를 안 하신다는
+                        전제 하에 당사는 전자비자(관광) 승인서 발급을 진행합니다.</strong></li>
+            </ol>
+        </div>
+
+        <div class="section-title">1. 신청자 기본 인적사항</div>
+        <table>
+            <colgroup>
+                <col style="width: 15%;">
+                <col style="width: 35%;">
+                <col style="width: 15%;">
+                <col style="width: 35%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>성명 (한/영)</th>
+                    <td><input type="text" placeholder="예: 홍길동 (HONG GILDONG)"></td>
+                    <th>출국 예정일</th>
+                    <td><input type="text" placeholder="예: 2024년 10월 15일"></td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>
+                        <label class="check-label"><input type="radio" name="gender"> 남성</label>
+                        <label class="check-label"><input type="radio" name="gender"> 여성</label>
+                    </td>
+                    <th>결혼 상태</th>
+                    <td>
+                        <label class="check-label"><input type="radio" name="marital"> 기혼</label>
+                        <label class="check-label"><input type="radio" name="marital"> 미혼</label>
+                        <label class="check-label"><input type="radio" name="marital"> 이혼</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>출생 도시</th>
+                    <td><input type="text" placeholder="예: 서울 (SEOUL)"></td>
+                    <th>핸드폰 번호</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>현 주소</th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">2. 직장 및 학교 정보</div>
+        <table>
+            <colgroup>
+                <col style="width: 15%;">
+                <col style="width: 85%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>직업 구분</th>
+                    <td>
+                        <label class="check-label"><input type="radio" name="job_type"> 회사원</label>
+                        <label class="check-label"><input type="radio" name="job_type"> 주부</label>
+                        <label class="check-label"><input type="radio" name="job_type"> 학생</label>
+                        <label class="check-label"><input type="radio" name="job_type"> 퇴직</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>직장 / 학교<br><span style="font-size:10px; font-weight:normal; color:#555;">(회사원/학생일 경우)</span>
+                    </th>
+                    <td style="line-height: 2.2;">
+                        고용주 또는 학교이름 : <input type="text" class="input-line" style="width: 250px;"><br>
+                        소재지(도시)명 : <input type="text" class="input-line" style="width: 150px; margin-right: 20px;">
+                        입사(입학)년도 : <input type="text" class="input-line" style="width: 100px;"> 년
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">3. 과거 캐나다 비자 및 eTA 이력</div>
+        <table>
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 80%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>과거 발급 이력</th>
+                    <td>
+                        <div style="margin-bottom: 5px;">캐나다에서 방문, 거주, 일, 공부하기 위해 비자 또는 ETA 허가를 신청하거나 취득한 적이 있나요?</div>
+                        <label class="check-label"><input type="radio" name="history"> 예</label>
+                        <label class="check-label"><input type="radio" name="history"> 아니오</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>이전 발급 번호<br><span style="font-size:10px; font-weight:normal; color:#555;">(해당자만 기재)</span></th>
+                    <td style="line-height: 2.2;">
+                        비자 - Unique Client Identifier (UCI) 번호 : <input type="text" class="input-line"
+                            style="width: 200px;"><br>
+                        ETA – 허가 번호 : <input type="text" class="input-line" style="width: 200px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">4. 자격 요건 질문 (필수 체크)</div>
+        <div style="border: 1px solid #475569; padding: 10px 15px; background-color: #fff;" class="question-list">
+            <div class="question-item">
+                <div class="question-text">1. 비자 또는 허가가 거부되거나, 캐나다 또는 다른 국가 입국이 거부되거나 출국 명령을 받은 적이 있습니까?</div>
+                <div class="question-answer">
+                    <label><input type="radio" name="q1"> 예</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="q1"> 아니오</label>
+                </div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">2. 범죄를 저지르거나, 체포되거나, 기소되거나, 유죄 판결을 받은 적이 있습니까?</div>
+                <div class="question-answer">
+                    <label><input type="radio" name="q2"> 예</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="q2"> 아니오</label>
+                </div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">3. 지난 2년동안 결핵 진단을 받았거나 결핵 환자와 밀접하게 접촉한 적이 있습니까?</div>
+                <div class="question-answer">
+                    <label><input type="radio" name="q3"> 예</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="q3"> 아니오</label>
+                </div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">4. 다음과 같은 질환이 있습니까? (치료되지 않은 매독, 약물 또는 알코올중독, 정신병을 포함한 치료되지 않은 정신건강 상태)</div>
+                <div class="question-answer">
+                    <label><input type="radio" name="q4"> 예</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="q4"> 아니오</label>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="background-color: #fff1f2; padding: 15px; border-radius: 8px; margin-top: 25px; color: #4c0519; border: 1px solid #fecdd3;">
+            <div style="font-weight: 800; color: #be123c; margin-bottom: 5px;">[ 비자 심사 및 발급 관련 중요 고지 ]</div>
+            비자 발급 여부는 전적으로 주한 캐나다 대사관(영사과)의 독자적인 권한이며 주관적인 판단에 따릅니다. 서류의 완벽한 준비가 비자 발급을 100% 보장하는 것은 아니며, 심사 결과에 따라 추가
+            서류 요청이나 발급 거절이 발생할 수 있습니다. 비자 미발급으로 인한 여행 일정 차질 및 위약금 발생에 대해 당사는 책임을 지지 않으므로 반드시 비자 승인 완료 후 항공권 및 숙박 결제를
+            진행하시기 바랍니다.<br><br>
+            본인은 위 기재 내용이 사실임을 확인하며, 허위 기재 시 비자 발급이 거부되거나 향후 입국이 제한될 수 있음을 충분히 숙지하였습니다.
+        </div>
+
+        <div style="margin-top: 25px; text-align: right; font-size: 13px; font-weight: bold; color: #111;">
+            신청자 성명 : <input type="text" class="input-line" style="width: 150px; border-bottom: 1px solid #111;"> (서명 또는
+            인)
+        </div>
+
+    </div>
+
+</body>
+
+</html>

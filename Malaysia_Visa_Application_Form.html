@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaysia Visa Application Information Form</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #111;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* A4 사이즈 설정 */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px auto;
+            padding: 15mm;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .header-wrap {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #003580;
+            /* Malaysia Blue */
+        }
+
+        h1 {
+            color: #003580;
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            margin-top: 20px;
+            color: #111;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span {
+            font-size: 10px;
+            font-weight: normal;
+            color: #64748b;
+            margin-left: 8px;
+        }
+
+        .section-title::before {
+            content: '■';
+            color: #003580;
+            margin-right: 6px;
+            font-size: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            border: 1px solid #94a3b8;
+            padding: 8px 10px;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            text-align: left;
+            color: #334155;
+            font-size: 11px;
+        }
+
+        .label-ko {
+            display: block;
+            font-size: 9px;
+            color: #64748b;
+            font-weight: normal;
+            margin-top: 1px;
+        }
+
+        td {
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 98%;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 12px;
+            background: transparent;
+        }
+
+        .chk-label {
+            cursor: pointer;
+            margin-right: 12px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 11px;
+        }
+
+        .input-line {
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 1px;
+            display: inline-block;
+        }
+
+        .notice-footer {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 10px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .notice-footer strong {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 11px;
+            color: #003580;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+
+            .page {
+                margin: 0;
+                padding: 10mm;
+                box-shadow: none;
+                width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #003580;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn no-print" onclick="window.print()">Print / Save as PDF</button>
+
+    <div class="page">
+        <div class="header-wrap">
+            <h1>Malaysia Visa Application Information</h1>
+            <h2>말레이시아 비자 신청서 기재사항 안내</h2>
+        </div>
+
+        <div style="text-align: right; font-size: 11px; color: #dc2626; margin-bottom: 5px; font-weight: bold;">
+            * Must be written in English. (반드시 영문으로 작성해 주세요.)
+        </div>
+
+        <!-- Part 1: Applicant Information -->
+        <div class="section-title">1. Personal Identity <span>신청자 인적 사항</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Full Name <span class="label-ko">성명 (영문)</span></th>
+                    <td><input type="text" placeholder="As shown in Passport"></td>
+                    <th>Marital Status <span class="label-ko">결혼 여부</span></th>
+                    <td>
+                        <label class="chk-label"><input type="radio" name="marital"> Single (미혼)</label>
+                        <label class="chk-label"><input type="radio" name="marital"> Married (결혼)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Contact <span class="label-ko">연락처</span></th>
+                    <td><input type="text" placeholder="Mobile / Landline"></td>
+                    <th>E-mail <span class="label-ko">이메일</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>City of Birth <span class="label-ko">출생 도시</span></th>
+                    <td><input type="text"></td>
+                    <th>Country of Birth <span class="label-ko">출생 국가</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Residential Address <span class="label-ko">현재 자택 주소</span></th>
+                    <td colspan="3"><input type="text" placeholder="Full address in Korea"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Part 2: Occupation Information -->
+        <div class="section-title">2. Professional Information <span>직업 및 재직 정보</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Work/School Name <span class="label-ko">직장(학교)명</span></th>
+                    <td><input type="text"></td>
+                    <th>Position <span class="label-ko">직책</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Work Address <span class="label-ko">직장(학교) 주소</span></th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>Telephone <span class="label-ko">직장 전화번호</span></th>
+                    <td><input type="text"></td>
+                    <th>Fax <span class="label-ko">팩스 번호</span></th>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Part 3: Travel Plans -->
+        <div class="section-title">3. Travel Information <span>여행 및 체류 계획</span></div>
+        <table>
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 80%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Purpose of Visit <span class="label-ko">방문 목적</span></th>
+                    <td>
+                        <label class="chk-label"><input type="checkbox"> Tourism (관광)</label>
+                        <label class="chk-label"><input type="checkbox"> Visiting (방문)</label>
+                        <label class="chk-label"><input type="checkbox"> Transit (경유)</label>
+                        <label class="chk-label"><input type="checkbox"> Business (출장)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Travel Period <span class="label-ko">체류 기간</span></th>
+                    <td>
+                        Entry (출국일): <input type="text" class="input-line" style="width: 150px; margin-right: 20px;"
+                            placeholder="YYYY-MM-DD">
+                        Return (귀국일): <input type="text" class="input-line" style="width: 150px;"
+                            placeholder="YYYY-MM-DD">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Terms & Declaration (Updated with Delay Notice) -->
+        <div class="notice-footer">
+            <strong>Terms & Declaration (비자 신청 및 면책 동의)</strong>
+            <ul style="margin: 0; padding-left: 15px; list-style-type: none;">
+                <li>
+                    • The Embassy/Immigration makes the final decision. Visa issuance is not guaranteed. <br>
+                    <span class="label-ko" style="display:inline;">[안내] 비자 발급의 최종 결정은 말레이시아 당국에 있으며, 발급을 100% 보장하지
+                        않습니다.</span>
+                </li>
+
+                <li style="margin-top: 5px;">
+                    • <strong>Visa processing may be delayed</strong> depending on the circumstances of the Embassy or
+                    Consulate. <br>
+                    <span class="label-ko" style="display:inline;">[지연] 영사관 사정에 따라 비자 발급이 지연될 수 있습니다.</span>
+                </li>
+
+                <li style="margin-top: 5px;">
+                    • <strong>Any refusal is deemed to be due to the applicant's personal background or status</strong>
+                    (e.g., criminal records, entry history, insufficient financial proof), and the agency is not liable
+                    for such outcomes. <br>
+                    <span class="label-ko" style="color: #b91c1c; font-weight: bold; display:inline;">[동의] 비자 거절 시, 이는
+                        신청인 본인의 개인 신상이나 결격 사유(과거 기록, 출입국 이력, 재정 증빙 미비 등)에 따른 결과임을 인정하며, 이에 대해 대행사에 책임을 묻지 않습니다.</span>
+                </li>
+
+                <li style="margin-top: 5px;">
+                    • Fees are non-refundable regardless of the result. <br>
+                    <span class="label-ko" style="display:inline;">[비용] 심사 결과와 상관없이 접수 및 발생한 비용은 일체 환불되지 않습니다.</span>
+                </li>
+            </ul>
+
+            <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-end;">
+                <div style="font-size: 11px;">
+                    Date (날짜): <span class="input-line" style="min-width: 100px; display: inline-block;"></span>
+                </div>
+                <div style="text-align: right; font-size: 11px; font-weight: bold;">
+                    Signature (서명): <span class="input-line"
+                        style="min-width: 150px; border-bottom: 1px solid #94a3b8; display: inline-block;"></span>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 10px; color: #94a3b8; text-align: center;" class="no-print">
+            All personal data will be securely destroyed immediately after processing. (개인정보는 업무 처리 후 즉시 폐기됩니다.)
+        </div>
+    </div>
+
+</body>
+
+</html>

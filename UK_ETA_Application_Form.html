@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK ETA Application Information Form</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #1e293b;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 40px 0;
+        }
+
+        /* A4 Size Setting */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .header-wrap {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #00247d;
+        }
+
+        h1 {
+            color: #00247d;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+        }
+
+        h2 {
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 25px 0 15px 0;
+            padding: 8px 12px;
+            background-color: #f8fafc;
+            border-left: 5px solid #00247d;
+            color: #1e293b;
+            font-weight: 700;
+        }
+
+        .section-header.security {
+            border-left-color: #cf142b;
+            background-color: #fff1f2;
+        }
+
+        .section-header.minor {
+            border-left-color: #10b981;
+            background-color: #ecfdf5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #e2e8f0;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8fafc;
+            width: 30%;
+            font-weight: 600;
+            color: #475569;
+            font-size: 12px;
+        }
+
+        .label-ko {
+            display: block;
+            font-size: 11px;
+            color: #94a3b8;
+            font-weight: normal;
+            margin-top: 2px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 5px 0;
+            font-size: 14px;
+            outline: none;
+            background: transparent;
+            color: #1e293b;
+        }
+
+        input[type="text"]:focus {
+            border-bottom-color: #00247d;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .notice-box {
+            background-color: #fffbeb;
+            border: 1px solid #fef3c7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: #92400e;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 11px;
+            color: #94a3b8;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 20px;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #00247d;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 36, 125, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(0, 36, 125, 0.4);
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                border-radius: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn no-print" onclick="window.print()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        PDF 저장 / 출력하기
+    </button>
+
+    <div class="page">
+        <div class="header-wrap">
+            <h1>영국 e-비자 신청서 기재사항</h1>
+            <h2>England e-Visa Application Information Form</h2>
+        </div>
+
+        <div class="notice-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="color: #d97706;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>본 기재사항은 비자 신청서 작성에 필요한 정보이며 사실대로 기재되어야 합니다. (Please provide accurate information.)</span>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section-header">
+            1. 신청자 정보 (Applicant Details)
+        </div>
+        <table>
+            <tr>
+                <th>성명 <span class="label-ko">Full Name (as in Passport)</span></th>
+                <td><input type="text" placeholder="여권상 영문 성함"></td>
+            </tr>
+            <tr>
+                <th>휴대폰 번호 <span class="label-ko">Phone Number</span></th>
+                <td><input type="text" placeholder="010-0000-0000"></td>
+            </tr>
+            <tr>
+                <th>이중국적 여부 <span class="label-ko">Dual Nationality</span></th>
+                <td>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="dual"> No (아니오)</label>
+                        <label class="radio-item"><input type="radio" name="dual"> Yes (예: <input type="text"
+                                style="width: 150px; border-bottom: 1px solid #ccc;"> )</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>자택주소 <span class="label-ko">Home Address</span></th>
+                <td><input type="text" placeholder="도로명 주소 또는 지번 주소"></td>
+            </tr>
+            <tr>
+                <th>우편번호 <span class="label-ko">Postcode</span></th>
+                <td><input type="text" style="width: 100px;" placeholder="우편번호"></td>
+            </tr>
+            <tr>
+                <th>직업 <span class="label-ko">Occupation</span></th>
+                <td><input type="text" placeholder="직장인, 자영업, 학생 등"></td>
+            </tr>
+        </table>
+
+        <!-- Section 2 -->
+        <div class="section-header security">
+            2. 보안 및 배경 확인 (Security & Background)
+        </div>
+        <table>
+            <tr>
+                <th style="font-size: 11px;">Q1. 범죄 및 전과 이력 여부<br><span
+                        style="font-weight: normal; font-size: 10px; color: #64748b;">(모든 국가의 유죄판결 포함)</span></th>
+                <td>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="q1"> No (해당 없음)</label>
+                        <label class="radio-item"><input type="radio" name="q1"> Yes (해당 있음)</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th style="font-size: 11px;">Q2. 테러, 반인도적 행위 이력<br><span
+                        style="font-weight: normal; font-size: 10px; color: #64748b;">(가담 또는 지원 이력 포함)</span></th>
+                <td>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="q2"> No (해당 없음)</label>
+                        <label class="radio-item"><input type="radio" name="q2"> Yes (해당 있음)</label>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Section 3 -->
+        <div class="section-header minor">
+            3. 만 14세 미만 신청 시 기재 (For Minors)
+        </div>
+        <table>
+            <tr>
+                <th>보호자 성명 <span class="label-ko">Guardian Name (Traveling together)</span></th>
+                <td><input type="text" placeholder="보호자 성함"></td>
+            </tr>
+            <tr>
+                <th>신청인과의 관계 <span class="label-ko">Relationship to Applicant</span></th>
+                <td><input type="text" placeholder="예: 부, 모, 조부모 등"></td>
+            </tr>
+        </table>
+
+        <div style="margin-top: 50px; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>작성일 (Date): ____년 ____월 ____일</div>
+                <div style="text-align: right;">서명 (Signature): ____________________</div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>작성된 모든 정보는 실제 비자 신청 절차에 사용됩니다.<br>마이비자 | MyVisa UK ETA Form</p>
+        </div>
+    </div>
+</body>
+
+</html>

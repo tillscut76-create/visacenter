@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>몽골 비자 발급 가이드 (K1/K2) | New Tour Leaders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="common.js" defer></script>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 300px;
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .transition-all-300 {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .check-item.checked {
+            background-color: #ecfdf5;
+            border-color: #10b981;
+        }
+
+        .check-item.checked .check-icon {
+            color: #10b981;
+        }
+
+        .hidden-section {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Pricing Table Styling */
+        .pricing-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .pricing-table th {
+            background: #f8fafc;
+            color: #64748b;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .pricing-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-table .type-col {
+            font-weight: 700;
+            color: #1e293b;
+            background: #f8fafc;
+            text-align: left;
+            width: 35%;
+        }
+
+        .price-val {
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .price-val.express {
+            color: #d97706;
+        }
+
+        /* Custom Header Styling to match site */
+        header {
+            background: #1a1a1a;
+        }
+
+        .logo-img {
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body class="text-slate-800">
+
+    <!-- Top Bar -->
+    <div style="background: #f8f9fa; border-bottom: 1px solid #eee; padding: 10px 0; font-size: 0.85rem;">
+        <div
+            style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: #666;"><i class="fa-solid fa-certificate" style="color: #0066B3;"></i> Trusted Visa
+                Agency (비자 대행 전문)</span>
+            <div style="display: flex; gap: 20px;">
+                <div class="top-contact">
+                    <!-- Injected via common.js -->
+                    <a href="tel:051-818-0801" style="text-decoration: none; color: #333;"><i
+                            class="fa-solid fa-phone"></i>
+                        051-818-0801</a>
+                    <a href="contact.html" style="text-decoration: none; color: #333;"><i
+                            class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="http://newpassport.co.kr/visa/index/images/logo.jpg"
+                        alt="New Tour Leaders"></a>
+            </div>
+            <nav>
+                <ul>
+                    <!-- Injected via common.js -->
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Apply (신청하기)</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto min-h-screen bg-white shadow-xl overflow-hidden flex flex-col mt-8 mb-8 rounded-xl">
+
+        <!-- Header -->
+        <header class="bg-slate-900 text-white p-10 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-3">🇲🇳 몽골 비자 발급 가이드</h1>
+            <p class="text-slate-400 text-base md:text-lg">K1(상용/비즈니스) & K2(관광) 맞춤형 안내</p>
+        </header>
+
+        <!-- Navigation / Visa Type Selector -->
+        <div class="flex justify-center bg-slate-100 p-6 sticky top-0 z-10 shadow-sm border-b border-slate-200">
+            <div class="inline-flex bg-white rounded-xl p-1.5 shadow-md border border-slate-200">
+                <button id="btn-k1" onclick="switchTab('k1')"
+                    class="px-8 py-3 rounded-lg text-sm font-bold transition-all-300 bg-blue-600 text-white shadow-sm">
+                    K1 상용/비즈니스
+                </button>
+                <button id="btn-k2" onclick="switchTab('k2')"
+                    class="px-8 py-3 rounded-lg text-sm font-bold text-slate-500 hover:bg-slate-50 transition-all-300">
+                    K2 관광
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="flex-grow p-6 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <!-- Left Column: Info & Checklist (Span 2) -->
+            <div class="md:col-span-2 space-y-8 fade-in" id="content-area">
+
+                <!-- Intro Section -->
+                <div id="intro-section" class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl shadow-sm">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-3" id="visa-title">K1 비자 (상용/비즈니스)</h2>
+                    <p class="text-slate-700 leading-relaxed text-sm md:text-base" id="visa-desc">
+                        몽골 현지 기업/기관 방문, 업무 협의, 계약 등을 위한 비자입니다.<br>
+                        <strong>가장 중요한 점:</strong> 한국에서 신청하기 전, 몽골 현지 파트너가 몽골 이민청에서 <strong>'초청장(비자승인서)'</strong>를 먼저
+                        받아야 합니다.
+                    </p>
+                </div>
+
+                <!-- Warning Block (Dynamic) -->
+                <div id="warning-block" class="bg-amber-50 border border-amber-200 rounded-xl p-6 shadow-sm">
+                    <h3 class="font-bold text-amber-800 text-base flex items-center mb-3">
+                        <span class="mr-2 text-xl">⚠️</span> 중요 체크포인트
+                    </h3>
+                    <ul class="text-sm md:text-base text-amber-900 list-disc list-inside space-y-2" id="warning-list">
+                        <li>여권 유효기간 6개월 이상 필수</li>
+                        <li>몽골 현지 이민청 승인 번호 필수</li>
+                    </ul>
+                </div>
+
+                <!-- Interactive Checklist -->
+                <div>
+                    <div class="flex justify-between items-end mb-6">
+                        <h3 class="text-xl font-bold text-slate-800 border-b-4 border-blue-600 pb-1">준비 서류 체크리스트</h3>
+                        <span class="text-sm text-slate-500 font-medium">항목을 클릭하여 체크하세요</span>
+                    </div>
+
+                    <div id="checklist-container" class="space-y-4">
+                        <!-- Checklist items injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div class="mt-12">
+                    <div class="flex items-center mb-6">
+                        <h3 class="text-xl font-bold text-slate-800 border-b-4 border-blue-600 pb-1">비자 요금 및 소요기간</h3>
+                        <span class="ml-3 text-xs bg-slate-100 text-slate-500 px-2 py-1 rounded">관광/상용 공통</span>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                        <div class="space-y-1 mb-4">
+                            <p class="text-blue-600 text-[13px] font-medium flex items-center">
+                                <i class="fa-solid fa-circle-info mr-2"></i> 안전한 우체국등기로 받기를 원하시는 고객께서는 위 금액에 5,000원을 서비스
+                                비용으로 추가 지불하셔야 합니다.
+                            </p>
+                            <p class="text-red-500 text-[13px] font-bold flex items-center">
+                                <i class="fa-solid fa-circle-exclamation mr-2"></i> 2026년 1월 5일부터 대사관 비용이 소폭 인상되었습니다.
+                            </p>
+                        </div>
+
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th class="type-col">종류 / 소요기간</th>
+                                    <th>일반<br><span class="font-medium text-[11px]">(업무일 기준 7일)</span></th>
+                                    <th>급행<br><span class="font-medium text-[11px]">(업무일 기준 5일)</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="type-col">단수 (90일 이내)</td>
+                                    <td class="price-val">140,000</td>
+                                    <td class="price-val express">215,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="type-col">더블 (관광/상용)</td>
+                                    <td class="price-val">165,000</td>
+                                    <td class="price-val express">265,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="type-col">상용 6개월</td>
+                                    <td class="price-val">235,000</td>
+                                    <td class="price-val express">385,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="type-col">상용 6개월이상~1년</td>
+                                    <td class="price-val">385,000</td>
+                                    <td class="price-val express">681,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-[11px] text-slate-400 mt-4 italic text-right">* 위 요금은 관광과 상용(비즈니스) 비자 모두 동일하게
+                            적용됩니다.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Visuals & Downloads (Span 1) -->
+            <div class="md:col-span-1 space-y-8 flex flex-col fade-in">
+
+                <!-- Readiness Chart -->
+                <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 text-center">
+                    <h4 class="text-xs font-bold text-slate-400 mb-6 tracking-widest uppercase">서류 준비 진행률</h4>
+                    <div class="chart-container">
+                        <canvas id="readinessChart"></canvas>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span id="progress-text" class="text-4xl font-black text-blue-600">0%</span>
+                        <span
+                            class="text-slate-400 text-xs font-bold block mt-1 uppercase tracking-tighter">Completed</span>
+                    </div>
+                </div>
+
+                <!-- Download Hub -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex-grow shadow-inner">
+                    <h4 class="text-sm font-bold text-slate-700 mb-6 border-b border-slate-200 pb-3 flex items-center">
+                        <i class="fa-solid fa-folder-open mr-2 text-blue-600"></i> 신청 양식 다운로드
+                    </h4>
+
+                    <div class="space-y-6">
+                        <div class="group">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-sm text-slate-800">FORM 1</span>
+                                <span
+                                    class="text-[11px] font-bold bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full uppercase">Short-term</span>
+                            </div>
+                            <p class="text-[13px] font-bold text-slate-700 mb-1">Visa application form No.1</p>
+                            <p class="text-[11px] text-slate-500 mb-3">(Short-term visitor/up to 90 days)</p>
+                            <a href="forms/몽골 form1.pdf" download
+                                class="block w-full py-2.5 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 text-blue-600 text-sm font-bold transition-all text-center shadow-sm">
+                                <i class="fa-solid fa-download mr-1"></i> 다운로드 (Download)
+                            </a>
+                        </div>
+
+                        <div class="group">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-sm text-slate-800">FORM 2</span>
+                                <span
+                                    class="text-[11px] font-bold bg-green-100 text-green-800 px-2.5 py-1 rounded-full uppercase">Residency</span>
+                            </div>
+                            <p class="text-[13px] font-bold text-slate-700 mb-1">Visa application form No.2</p>
+                            <p class="text-[11px] text-slate-500 mb-3">(Purpose of residency/more than 90 days)</p>
+                            <a href="forms/몽골 form 2.pdf" download
+                                class="block w-full py-2.5 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 text-green-600 text-sm font-bold transition-all text-center shadow-sm">
+                                <i class="fa-solid fa-download mr-1"></i> 다운로드 (Download)
+                            </a>
+                        </div>
+
+                        <div class="group">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-sm text-slate-800">FORM 3</span>
+                                <span
+                                    class="text-[11px] font-bold bg-orange-100 text-orange-800 px-2.5 py-1 rounded-full uppercase">Family</span>
+                            </div>
+                            <p class="text-[13px] font-bold text-slate-700 mb-1">Visa application form No.3</p>
+                            <p class="text-[11px] text-slate-500 mb-3">(Related party/family member)</p>
+                            <a href="forms/몽골 form3.pdf" download
+                                class="block w-full py-2.5 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 text-orange-600 text-sm font-bold transition-all text-center shadow-sm">
+                                <i class="fa-solid fa-download mr-1"></i> 다운로드 (Download)
+                            </a>
+                        </div>
+
+                        <div class="group">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-sm text-slate-800">SAMPLE</span>
+                                <span
+                                    class="text-[10px] font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded-full uppercase">몽골비자</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mb-3">사증발급 허가서 (견본)</p>
+                            <a href="images/몽골 사증 발급허가서.jpg" target="_blank"
+                                class="block w-full py-2.5 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 text-slate-600 text-sm font-bold transition-all shadow-sm text-center">
+                                <i class="fa-solid fa-eye mr-1"></i> 견본 보기
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 text-[11px] text-slate-400 leading-relaxed border-t border-slate-200 pt-4 italic">
+                        * FORM 2는 몽골 현지 초청 회사가 작성하여 이민청에 제출하는 서류입니다. (K1 상용 비자 필수)
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- Bottom CTA -->
+        <div class="p-8 bg-slate-50 border-t border-slate-200 text-center">
+            <a href="contact.html"
+                class="inline-block px-10 py-4 bg-blue-600 text-white rounded-full font-bold shadow-lg hover:bg-blue-700 transition-all">
+                Apply / Inquiry (신청 및 문의)
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <!-- Injected via common.js -->
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Data Store
+        const visaData = {
+            k1: {
+                title: "K1 비자 (상용/비즈니스)",
+                themeColor: "blue",
+                desc: "몽골 현지 기업이나 기관을 방문하여 비즈니스 미팅, 업무 협의, 계약 등의 목적으로 입국하실 때 필요한 비자입니다.<br><br><span class='text-red-600 font-bold'>필수:</span> 한국에서 신청 전, 반드시 몽골 현지 파트너가 몽골 이민청에서 <strong>'사증 발급 허가서'</strong>를 발급받아야 합니다.",
+                warnings: [
+                    "여권 유효기간 6개월 이상 필수",
+                    "몽골 이민청 승인 번호(초청장) 필수",
+                    "여권 훼손(낙서, 찢김, 속지 벌어짐) 시 접수 불가"
+                ],
+                checklist: [
+                    { id: "c1", text: "여권 원본 (유효기간 6개월 이상)", note: "서명란에 반드시 수기 서명 필수" },
+                    { id: "c3", text: "사증 발급 허가서 (초청장)", note: "몽골 이민청 발행 승인번호가 포함된 문서 (견본참조)" },
+                    { id: "c4", text: "비자 신청서 (FORM 1)", note: "공통 신청서 양식 다운로드 후 작성" },
+                    { id: "c5", text: "여권용 사진 1매", note: "3.5x4.5cm, 6개월 이내, 흰색 배경" },
+                    { id: "c6", text: "신분증 사본 (앞/뒤)", note: "주민등록증 또는 운전면허증" }
+                ]
+            },
+            k2: {
+                title: "K2 비자 (관광)",
+                themeColor: "green",
+                desc: "순수 관광 목적으로 몽골을 방문할 때 신청하는 비자입니다.<br><br><strong>[중요 무비자 안내]</strong> 대한민국 여권 소지자는 관광 목적으로 방문 시 <strong>최대 90일간 무비자</strong> 입국이 가능합니다. 장기 체류 비자가 필요한 경우에만 아래 항목을 준비해 주세요.",
+                warnings: [
+                    "여권 유효기간 6개월 이상 필수",
+                    "실물 여권 접수 필요 (전자비자 아님)",
+                    "단순 관광은 무비자 90일 가능 (일반적으로 신청 불필요)",
+                    "최근 짧은 기간 내 잦은 출입국 시 비자가 권장될 수 있음"
+                ],
+                checklist: [
+                    { id: "t1", text: "여권 원본 (유효기간 6개월 이상)", note: "무비자 입국 시에도 공통으로 적용" },
+                    { id: "t2", text: "사증 발급 허가서 (관광용)", note: "몽골 이민청 발행 승인번호가 포함된 문서 (견본참조)" },
+                    { id: "t3", text: "비자 신청서 (FORM 1)", note: "공통 신청서 양식 다운로드 후 작성" },
+                    { id: "t4", text: "여권용 사진 1매", note: "3.5x4.5cm, 6개월 이내, 흰색 배경" },
+                    { id: "t5", text: "신분증 사본 (앞/뒤)", note: "주민등록증 또는 운전면허증" }
+                ]
+            }
+        };
+
+        let currentTab = 'k1';
+        let checkedItems = new Set();
+        let chartInstance = null;
+
+        // Init Chart
+        function initChart() {
+            const ctx = document.getElementById('readinessChart').getContext('2d');
+            chartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['준비 완료', '준비 중'],
+                    datasets: [{
+                        data: [0, 100],
+                        backgroundColor: ['#2563eb', '#f1f5f9'],
+                        borderWidth: 0,
+                        hoverOffset: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '82%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+        }
+
+        // Render Checklist
+        function renderChecklist(type) {
+            const container = document.getElementById('checklist-container');
+            container.innerHTML = '';
+            checkedItems.clear();
+
+            visaData[type].checklist.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = `check-item group border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-all-300 flex items-start select-none shadow-sm`;
+                div.onclick = () => toggleCheck(index, div);
+
+                div.innerHTML = `
+                    <div class="check-icon flex-shrink-0 w-7 h-7 rounded-lg border-2 border-slate-300 mr-4 flex items-center justify-center text-white bg-white group-hover:border-blue-400 transition-colors shadow-sm">
+                        <i class="fa-solid fa-check text-sm"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="font-bold text-slate-800 text-sm md:text-base">${item.text}</div>
+                        <div class="text-xs text-slate-500 mt-1 font-medium">${item.note}</div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+            updateChart(type);
+        }
+
+        // Toggle Check Logic
+        function toggleCheck(index, element) {
+            const themeColor = visaData[currentTab].themeColor === 'blue' ? 'bg-blue-600' : 'bg-green-600';
+            const borderTheme = visaData[currentTab].themeColor === 'blue' ? 'border-blue-600' : 'border-green-600';
+
+            if (checkedItems.has(index)) {
+                checkedItems.delete(index);
+                element.classList.remove('checked');
+                element.querySelector('.check-icon').classList.remove(themeColor, borderTheme);
+                element.querySelector('.check-icon').classList.add('bg-white', 'text-white', 'border-slate-300');
+            } else {
+                checkedItems.add(index);
+                element.classList.add('checked');
+                element.querySelector('.check-icon').classList.remove('bg-white', 'text-white', 'border-slate-300');
+                element.querySelector('.check-icon').classList.add(themeColor, borderTheme, 'text-white');
+            }
+            updateChart(currentTab);
+        }
+
+        // Update Chart & Progress Text
+        function updateChart(type) {
+            const total = visaData[type].checklist.length;
+            const current = checkedItems.size;
+            const percentage = Math.round((current / total) * 100);
+            const mainColor = visaData[type].themeColor === 'blue' ? '#2563eb' : '#16a34a';
+
+            // Update Chart Data
+            chartInstance.data.datasets[0].data = [current, total - current];
+            chartInstance.data.datasets[0].backgroundColor = [
+                percentage === 100 ? '#10b981' : mainColor,
+                '#f1f5f9'
+            ];
+            chartInstance.update();
+
+            // Update Text
+            const textEl = document.getElementById('progress-text');
+            textEl.innerText = `${percentage}%`;
+            textEl.className = percentage === 100 ? 'text-4xl font-black text-green-500' : `text-4xl font-black ${type === 'k1' ? 'text-blue-600' : 'text-green-600'}`;
+        }
+
+        // Switch Tab Logic
+        function switchTab(type) {
+            currentTab = type;
+            const data = visaData[type];
+            const contentArea = document.getElementById('content-area');
+
+            // Animate refresh
+            contentArea.classList.remove('fade-in');
+            void contentArea.offsetWidth;
+            contentArea.classList.add('fade-in');
+
+            // Update Buttons
+            const btnK1 = document.getElementById('btn-k1');
+            const btnK2 = document.getElementById('btn-k2');
+
+            if (type === 'k1') {
+                btnK1.className = "px-8 py-3 rounded-lg text-sm font-bold transition-all-300 bg-blue-600 text-white shadow-md";
+                btnK2.className = "px-8 py-3 rounded-lg text-sm font-bold text-slate-500 hover:bg-slate-50 transition-all-300";
+                document.getElementById('intro-section').className = "bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl shadow-sm";
+            } else {
+                btnK1.className = "px-8 py-3 rounded-lg text-sm font-bold text-slate-500 hover:bg-slate-50 transition-all-300";
+                btnK2.className = "px-8 py-3 rounded-lg text-sm font-bold transition-all-300 bg-green-600 text-white shadow-md";
+                document.getElementById('intro-section').className = "bg-green-50 border-l-4 border-green-600 p-6 rounded-r-xl shadow-sm";
+            }
+
+            // Update Text Content
+            document.getElementById('visa-title').innerText = data.title;
+            document.getElementById('visa-desc').innerHTML = data.desc;
+
+            // Update Warnings
+            const warningList = document.getElementById('warning-list');
+            warningList.innerHTML = '';
+            data.warnings.forEach(w => {
+                const li = document.createElement('li');
+                li.innerText = w;
+                warningList.appendChild(li);
+            });
+
+            // Re-render Checklist
+            renderChecklist(type);
+        }
+
+        // Initial Load
+        window.onload = function () {
+            initChart();
+            renderChecklist('k1');
+        };
+
+    </script>
+</body>
+
+</html>

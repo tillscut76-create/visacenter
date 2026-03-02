@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐나다 전자여행허가(eTA) 안내 | New Tour Leaders</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="common.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 600px;
+        }
+
+        th,
+        td {
+            border: 1px solid #e2e8f0;
+            padding: 16px 14px;
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 700;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            color: #be123c;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #be123c;
+            padding-bottom: 10px;
+        }
+
+        .doc-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .doc-card:hover {
+            border-color: #fda4af;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        }
+
+        .highlight-text {
+            color: #be123c;
+            font-weight: bold;
+        }
+
+        .badge-eta {
+            display: inline-block;
+            background-color: #fff1f2;
+            color: #be123c;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="trust-badge"><i class="fa-solid fa-certificate"></i> Trusted Visa Agency</span>
+            <div class="top-contact">
+                <a href="contact.html"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="container header-container">
+            <div class="logo"><a href="index.html"><img src="http://newpassport.co.kr/visa/index/images/logo.jpg"
+                        alt="New Tour Leaders"></a></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="global-visa.html">Global Visa</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Apply (신청하기)</a>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h2 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 15px;">🇨🇦 캐나다 전자여행허가 (eTA)</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Canada Electronic Travel Authorization Guide</p>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto py-16 px-4 space-y-20">
+
+        <!-- Intro Text -->
+        <div class="text-center max-w-3xl mx-auto">
+            <p class="text-slate-600 text-lg leading-relaxed">
+                관광, 비즈니스, 경유 목적으로 캐나다에 항공 입국하실 때 반드시 필요한 전자 여행 허가입니다.
+                대한민국 여권 소지자는 캐나다 입국 시 비자 대신 eTA 승인을 받아야 합니다.
+            </p>
+        </div>
+
+        <!-- 1. 비자 종류 및 대행 요금 -->
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-circle-info"></i> 비자 종류 및 대행 요금</h2>
+            <div class="overflow-x-auto shadow-md rounded-xl border border-slate-200">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="w-[20%]">종류</th>
+                            <th class="w-[20%]">대행 요금</th>
+                            <th class="w-[20%]">체류 기간</th>
+                            <th class="w-[20%]">유효 기간</th>
+                            <th class="w-[20%]">소요 기간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <span class="font-bold text-slate-800 text-lg">전자 여행 허가</span><br>
+                                <span class="badge-eta">Canada eTA</span>
+                            </td>
+                            <td class="text-center">
+                                <span class="font-extrabold text-rose-600 text-xl">50,000원</span><br>
+                                <span class="text-[11px] text-slate-400 font-bold">(VAT 별도)</span>
+                            </td>
+                            <td class="text-center text-slate-700">
+                                <span class="font-bold">최대 6개월</span><br>
+                                <span class="text-xs text-slate-500">(입국 시마다 변동 가능)</span>
+                            </td>
+                            <td class="text-center text-slate-700">
+                                <span class="font-bold">5년 복수</span><br>
+                                <span class="text-[11px] text-slate-500 leading-tight block mt-1">
+                                    (단, 여권 만료일이 5년 미만인<br>경우 여권 만료일까지)
+                                </span>
+                            </td>
+                            <td class="text-center text-slate-700">
+                                <span class="font-bold">통상 72시간</span><br>
+                                <span class="text-xs text-slate-500">(심사 지연 가능성 있음)</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 text-sm text-slate-500 bg-slate-50 p-4 rounded-lg border border-slate-200 leading-relaxed">
+                <i class="fa-solid fa-circle-exclamation mr-1 text-rose-500"></i> eTA는 정식 비자가 아닌 '전자 여행 허가'입니다. 여권을 새로
+                발급받으신 경우, 기존 eTA 유효기간이 남아있더라도 <strong>새로운 eTA를 신청</strong>해야 합니다.
+            </div>
+        </section>
+
+        <!-- 2. 필수 구비 서류 -->
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-file-invoice"></i> 필수 구비 서류</h2>
+            <p class="mb-6 text-sm text-slate-600 font-medium">
+                스마트폰으로 깨끗하게 촬영하거나 스캔하여 <span class="text-rose-600 font-bold underline">JPG 이미지 파일</span>로
+                이메일(<strong>kim83077@nate.com</strong>)로 보내주시면 됩니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="doc-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">📘</span>
+                        <h3 class="font-bold text-slate-800 text-lg">1. 여권 스캔본 (또는 사진)</h3>
+                    </div>
+                    <ul class="text-sm text-slate-600 space-y-3">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-rose-500 mt-0.5"></i>
+                            <span>입국일 기준 <span class="highlight-text">유효기간 6개월 이상</span> 남은 여권</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-rose-500 mt-0.5"></i>
+                            <span>빛 번짐이나 그림자가 없이 정보면이 선명해야 합니다.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-rose-500 mt-0.5"></i>
+                            <span>여권 하단의 두 줄 정보(영문+숫자)가 잘리지 않아야 합니다.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="doc-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">📝</span>
+                        <h3 class="font-bold text-slate-800 text-lg">2. 인적사항 양식</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                        eTA 신청 시 필요한 기본 인적사항 정보를 기재해 주세요. 아래 버튼을 눌러 양식을 확인하실 수 있습니다.
+                    </p>
+                    <a href="Canada_eTA_Application_Form.html" target="_blank"
+                        class="block w-full bg-slate-800 hover:bg-slate-700 text-white text-center font-bold py-3 px-4 rounded-lg transition-all shadow-sm">
+                        <i class="fa-solid fa-file-signature mr-2"></i> 인적사항 양식 다운로드
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. eTA 발급 대상 및 면제 대상 -->
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-plane-departure"></i> eTA 필요한 경우 vs 필요 없는 경우</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                <!-- 필요한 경우 -->
+                <div class="bg-blue-50 border border-blue-100 rounded-2xl p-8">
+                    <h3 class="font-bold text-blue-900 mb-5 flex items-center gap-3 border-b border-blue-200 pb-3">
+                        <i class="fa-solid fa-circle-check text-xl text-blue-600"></i> eTA 발급 필수 대상
+                    </h3>
+                    <ul class="text-[13px] text-slate-700 space-y-4">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600">•</span>
+                            <span><strong>항공편</strong>으로 캐나다에 입국하거나 공항에서 환승(경유)하는 분</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600">•</span>
+                            <span>대한민국 국적을 포함한 비자 면제 국가의 국민</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600">•</span>
+                            <span>미국 영주권자가 항공으로 캐나다 입국 시 <br><span class="text-xs text-slate-500 font-medium">(eTA 및 미국
+                                    영주권 카드 소지 필수)</span></span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600">•</span>
+                            <span>2015년 8월 1일 이전에 비자 취득자가 항공편으로 재입국하는 경우</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 필요 없는 경우 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8">
+                    <h3 class="font-bold text-slate-800 mb-5 flex items-center gap-3 border-b border-slate-300 pb-3">
+                        <i class="fa-solid fa-circle-xmark text-xl text-slate-400"></i> eTA 발급 면제 대상
+                    </h3>
+                    <ul class="text-[13px] text-slate-700 space-y-4">
+                        <li class="flex items-start gap-2">
+                            <span class="text-slate-400">•</span>
+                            <span><strong>육로(자동차 등) 또는 해로(배)</strong>를 통해 입국하는 여행자</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-slate-400">•</span>
+                            <span>미국 시민권자 <span class="text-xs font-bold text-rose-500">(※ 미국 영주권자는 eTA
+                                    필수)</span></span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-slate-400">•</span>
+                            <span>캐나다 시민권자 및 캐나다 영주권자 소지자</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 중요 공지사항 -->
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> 신청 전 필수 확인 및 유의사항</h2>
+            <div class="bg-red-50 border-l-8 border-rose-600 p-8 rounded-r-2xl space-y-6 shadow-sm">
+                <div class="flex items-start gap-4">
+                    <div
+                        class="bg-rose-600 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                        1</div>
+                    <div class="text-sm">
+                        <h4 class="font-bold text-rose-900 mb-1">체류 중 신청 불가</h4>
+                        <p class="text-rose-800 leading-relaxed">모든 eTA 신청자는 <strong>이미 캐나다에 체류하고 있는 상태에서 신청하시면 안
+                                됩니다.</strong> 반드시 캐나다 외부(한국 등)에서 신청 완료 후 입국해야 합니다.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div
+                        class="bg-rose-600 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                        2</div>
+                    <div class="text-sm">
+                        <h4 class="font-bold text-rose-900 mb-1">심사 지연 및 항공권 발권</h4>
+                        <p class="text-rose-800 leading-relaxed">eTA 특성상 심사가 지연 발급될 수 있습니다. 피해를 막기 위해 가급적 <strong>비자 발급이
+                                완료된 후 항공권을 발권하시기를 강력히 권장합니다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div
+                        class="bg-rose-600 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                        3</div>
+                    <div class="text-sm">
+                        <h4 class="font-bold text-rose-900 mb-1">거절 및 환불 불가</h4>
+                        <p class="text-rose-800 leading-relaxed">현지 심사 과정에서 추가 서류 요청이 있거나 거절될 수 있습니다. <strong>거절 시 진행된
+                                비용은 전액 환불되지 않음</strong>을 숙지하시고 진행하시기 바랍니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <div class="text-center pt-8">
+            <a href="contact.html"
+                class="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold py-4 px-12 rounded-full text-lg transition-all shadow-lg hover:shadow-xl">
+                <i class="fa-solid fa-comments"></i> Apply / Inquiry (신청 및 문의)
+            </a>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <div class="container footer-inner">
+                <div class="footer-logo">New Tour Leaders</div>
+                <div class="footer-info">
+                    <!-- Injected via common.js -->
+                    <span>Tel: 051-818-0801 / 1588-8903</span>
+                    <span>Email: kim83077@nate.com</span>
+                    <span>Address: B124, 1F, Beomyang Reus Central Bay 104-dong, 114 Choryangjung-ro, Dong-gu,
+                        Busan</span>
+                </div>
+                <div class="footer-copy">
+                    &copy; 2026 New Tour Leaders. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>

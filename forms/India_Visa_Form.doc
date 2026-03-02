@@ -1,0 +1,144 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>India Visa Application Personal Info</title>
+<style>
+body { font-family: 'Arial', sans-serif; font-size: 11pt; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+td { padding: 5px; vertical-align: bottom; }
+.label { font-weight: bold; width: 140px; }
+.input { border-bottom: 1px solid #000; color: #333; }
+.section-header { background-color: #f0f0f0; font-weight: bold; border: 1px solid #000; padding: 5px; margin-top: 20px; margin-bottom: 10px; }
+h1 { text-align: center; color: #138808; border-bottom: 2px solid #FF9933; padding-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<h1>India Visa Personal Information Form</h1>
+<p style="color: #666; font-size: 0.9em;">Please type your information directly into this document and save it.</p>
+
+<div class="section-header">1. Personal Information (인적사항)</div>
+<table>
+    <tr>
+        <td class="label">Surname (성):</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Given Name (이름):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Email:</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Mobile (휴대폰):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Education (학력):</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Marital Status:</td>
+        <td class="input">Single / Married</td>
+    </tr>
+    <tr>
+        <td class="label">Religion (종교):</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Visible Mark (흉터):</td>
+        <td class="input"></td>
+    </tr>
+</table>
+
+<div class="section-header">2. Passport Details (여권 정보)</div>
+<table>
+    <tr>
+        <td class="label">Passport No:</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Place of Issue:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Date of Issue:</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Date of Expiry:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td colspan="4">Any other valid Passport (이중국적)? [   ] No  /  [   ] Yes (Country: _________________)</td>
+    </tr>
+</table>
+
+<div class="section-header">3. Family Details (가족 사항)</div>
+<table>
+    <tr>
+        <td class="label">Father's Name:</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Birth Place (City/Country):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Mother's Name:</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Birth Place (City/Country):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Spouse Name:</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Birth Place (City/Country):</td>
+        <td class="input"></td>
+    </tr>
+</table>
+
+<div class="section-header">4. Employment Details (직업 정보)</div>
+<table>
+    <tr>
+        <td class="label">Occupation (직업):</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Company Name:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Designation (직위):</td>
+        <td class="input"></td>
+        <td class="label" style="padding-left: 20px;">Phone:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Address (주소):</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+</table>
+
+<div class="section-header">5. Visa & Travel Details (여행 정보)</div>
+<table>
+    <tr>
+        <td class="label" style="width: 200px;">Places to Visit (방문도시):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Arrival Date (입국일):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Countries Visited (10Yrs):</td>
+        <td class="input">(최근 10년 방문국) </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="padding-top: 10px;">
+            Have you visited SAARC countries (Afghanistan, Bhutan, Pakistan, Maldives, Bangladesh, Sri Lanka, Nepal) in last 3 years?
+            <br>[   ] No  /  [   ] Yes (Details: _______________________)
+        </td>
+    </tr>
+</table>
+
+<div style="margin-top: 40px; page-break-inside: avoid;">
+    <p>I hereby certify that the above information is true and correct.</p>
+    <table style="margin-top: 30px;">
+        <tr>
+            <td style="width: 50%;">Date: _______________________</td>
+            <td style="width: 50%;">Signature: _______________________</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>ESTA Application Personal Info</title>
+<style>
+body { font-family: 'Arial', sans-serif; font-size: 11pt; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+td { padding: 5px; vertical-align: bottom; border-bottom: 1px solid #cce5ff; }
+.label { font-weight: bold; width: 160px; background-color: #e6f2ff; border-right: 1px solid #cce5ff; color: #0056b3; }
+.input { color: #000; padding-left: 10px; }
+.section-header { background-color: #0056b3; color: white; font-weight: bold; padding: 8px; margin-top: 25px; margin-bottom: 10px; font-size: 1.1em; border-radius: 4px; }
+h1 { text-align: center; color: #0056b3; border-bottom: 3px solid #0056b3; padding-bottom: 15px; margin-bottom: 30px; }
+p.intro { color: #666; text-align: center; font-style: italic; margin-bottom: 30px; }
+</style>
+</head>
+<body>
+
+<h1>ESTA (USA) Application Questionnaire (미국 전자여행허가 신청서)</h1>
+<p class="intro">Please complete all fields carefully. (모든 항목을 영문으로 정확히 기재해주세요.)</p>
+
+<div class="section-header">1. Applicant Information (신청인 정보)</div>
+<table>
+    <tr>
+        <td class="label">Family Name (성):</td>
+        <td class="input"></td>
+        <td class="label">Given Name (이름):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Other Names (별명):</td>
+        <td class="input">No / Yes (_____________)</td>
+        <td class="label">Gender (성별):</td>
+        <td class="input">M / F</td>
+    </tr>
+    <tr>
+        <td class="label">Date of Birth (생년월일):</td>
+        <td class="input">YYYY-MM-DD</td>
+        <td class="label">City of Birth (출생도시):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Country of Birth (출생국):</td>
+        <td class="input">South Korea</td>
+        <td class="label">Country of Citizenship:</td>
+        <td class="input">South Korea</td>
+    </tr>
+    <tr>
+        <td class="label">Parents' Names:</td>
+        <td class="input" colspan="3">Father: ____________________Mother: ____________________</td>
+    </tr>
+</table>
+
+<div class="section-header">2. Passport Information (여권 정보)</div>
+<table>
+    <tr>
+        <td class="label">Passport Number:</td>
+        <td class="input"></td>
+        <td class="label">Citizenship ID No:</td>
+        <td class="input">(주민번호 뒷자리): ______________</td>
+    </tr>
+    <tr>
+        <td class="label">Issuing Country:</td>
+        <td class="input">South Korea</td>
+        <td class="label">Issuing Date:</td>
+        <td class="input">YYYY-MM-DD</td>
+    </tr>
+    <tr>
+        <td class="label">Expiry Date:</td>
+        <td class="input">YYYY-MM-DD</td>
+        <td class="label">Other Citizenship:</td>
+        <td class="input">No / Yes (Country: _________)</td>
+    </tr>
+</table>
+
+<div class="section-header">3. Contact Information (연락처 정보)</div>
+<table>
+    <tr>
+        <td class="label">Home Address (주소):</td>
+        <td class="input" colspan="3">(In English, including Zip Code)</td>
+    </tr>
+    <tr>
+        <td class="label">Phone Number:</td>
+        <td class="input" colspan="3">Mobile: ____________________ Home: ____________________</td>
+    </tr>
+    <tr>
+        <td class="label">Email Address:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Social Media (SNS):</td>
+        <td class="input" colspan="3">Type (Facebook/Insta/Twitter etc.): ________________ ID: ________________</td>
+    </tr>
+</table>
+<div class="section-header">4. Employment Information (직장 정보)</div>
+<table>
+    <tr>
+        <td class="label">Employer Name:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Job Title (직위):</td>
+        <td class="input"></td>
+        <td class="label">Phone Number:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Address (직장 주소):</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+</table>
+
+<div class="section-header">5. Travel Information (미국 체류 정보)</div>
+<table>
+    <tr>
+        <td class="label">Is your travel to the US occurring in transit to another country?</td>
+        <td class="input" colspan="3">No / Yes</td>
+    </tr>
+    <tr>
+        <td class="label">US Point of Contact:</td>
+        <td class="input" colspan="3">Name: ____________________ Phone: ____________________</td>
+    </tr>
+    <tr>
+        <td class="label">Address in the US:</td>
+        <td class="input" colspan="3">(Hotel Name & Address)</td>
+    </tr>
+    <tr>
+        <td class="label">Emergency Contact:</td>
+        <td class="input" colspan="3">Name: ____________________ Phone: ____________________ Email: ____________________</td>
+    </tr>
+</table>
+
+<div class="section-header">6. Eligibility Questions (자격 요건 질문)</div>
+<table>
+    <tr>
+        <td colspan="4" style="padding: 10px;">
+        1. physical or mental disorder? (신체/정신 질환?) [ ] No [ ] Yes<br>
+        2. Arrested/convicted of a crime? (범죄 경력?) [ ] No [ ] Yes<br>
+        3. Violated any law related to illegal drugs? (약물 관련?) [ ] No [ ] Yes<br>
+        4. Seek to engage in terrorist activities/espionage? (테러/간첩?) [ ] No [ ] Yes<br>
+        5. Ever committed fraud to obtain a visa? (비자 사기?) [ ] No [ ] Yes<br>
+        6. Currently seeking employment in the US without authorization? (불법 취업?) [ ] No [ ] Yes<br>
+        7. Ever been denied a US visa? (비자 거절 경험?) [ ] No [ ] Yes<br>
+        8. Ever stayed in the US longer than admission period? (불법 체류?) [ ] No [ ] Yes<br>
+        9. Traveled to Iran, Iraq, Libya, Sudan, Syria, North Korea, etc. after 2011? (위험국가 방문?) [ ] No [ ] Yes
+        </td>
+    </tr>
+</table>
+
+<div style="margin-top: 40px; text-align: center; page-break-inside: avoid;">
+    <p>I confirm that the information provided above is true and accurate.</p>
+    <br>
+    <p><strong>Date (신청일):</strong> _______________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Signature (서명):</strong> _______________________</p>
+</div>
+
+</body>
+</html>

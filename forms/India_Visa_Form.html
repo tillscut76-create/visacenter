@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Visa Application Form (인도비자 신청서)</title>
+    <style>
+        body {
+            font-family: "Noto Sans KR", Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #138808;
+            /* India Green */
+            border-bottom: 2px solid #FF9933;
+            /* India Orange */
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 10px;
+            background: #eefec3;
+            padding: 5px 10px;
+            display: inline-block;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .field {
+            flex: 1;
+            min-width: 300px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .label {
+            font-weight: bold;
+            width: 140px;
+            color: #555;
+        }
+
+        .input-line {
+            border-bottom: 1px solid #000;
+            flex-grow: 1;
+            min-height: 20px;
+        }
+
+        .notice {
+            background: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            border-left: 5px solid #ffc107;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Print Button -->
+        <div class="no-print" style="text-align: right; margin-bottom: 20px;">
+            <button onclick="window.print()"
+                style="background: #333; color: #fff; border: none; padding: 10px 20px; cursor: pointer; font-size: 14px;">
+                🖨️ Print Form (인쇄하기)
+            </button>
+        </div>
+
+        <h1>India Visa Personal Info Form</h1>
+
+        <div class="notice">
+            <strong>※ Please fill out this form accurately. (정확하게 기재해 주세요.)</strong><br>
+            작성하신 정보는 인도 비자 신청에만 사용됩니다.
+        </div>
+
+        <!-- 1. Personal Details -->
+        <div class="section">
+            <div class="section-title">1. Personal Information (인적사항)</div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Surname (성):</span>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field">
+                    <span class="label">Given Name (이름):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Email:</span>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field">
+                    <span class="label">Mobile (휴대폰):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Education (최종학력):</span>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field">
+                    <span class="label">Marital Status (혼인):</span>
+                    <div class="checkbox-group">
+                        <span>□ Single (미혼)</span>
+                        <span>□ Married (기혼)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Religion (종교):</span>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field">
+                    <span class="label">Visible ID Mark (흉터/점):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Passport Details -->
+        <div class="section">
+            <div class="section-title">2. Passport Details (여권 정보)</div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Passport No (여권번호):</span>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field">
+                    <span class="label">Place of Issue (발급지):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Date of Issue (발급일):</span>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field">
+                    <span class="label">Date of Expiry (만료일):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Any other valid Passport? (이중국적 여권):</span>
+                    <div class="checkbox-group">
+                        <span>□ No</span>
+                        <span>□ Yes (Country: ___________)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Family Details -->
+        <div class="section">
+            <div class="section-title">3. Family Details (가족 사항)</div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Father's Name (부 성함):</span>
+                    <div class="input-line"></div>
+                </div>
+                <!-- Nationality moved to next line if needed, but fitting here -->
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Father's Place of Birth (부 출생지-도시/국가):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="field">
+                    <span class="label">Mother's Name (모 성함):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Mother's Place of Birth (모 출생지-도시/국가):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="field">
+                    <span class="label">Spouse Name (배우자 성함 - 기혼시):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Spouse Place of Birth (배우자 출생지):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Employment Details -->
+        <div class="section">
+            <div class="section-title">4. Occupation (직업 정보)</div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Occupation (직업):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Company Name (회사명):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Designation (직위):</span>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field">
+                    <span class="label">Phone (회사전화):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Company Address (회사 주소):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Visa Details -->
+        <div class="section">
+            <div class="section-title">5. Visa & Travel (비자 및 여행 정보)</div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Places to Visit (방문 예정 도시):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label">Expected Date of Arrival (입국 예정일):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <span class="label" style="width: 250px;">Countries Visited in Last 10 Years (최근 10년 방문국):</span>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field" style="display: block;">
+                    <span class="label" style="width: 100%;">Have you visited SAARC countries (Afghanistan, Bhutan,
+                        Pakistan, Maldives, Bangladesh, Sri Lanka, Nepal) in last 3 years?</span>
+                    <div class="checkbox-group" style="margin-top: 5px;">
+                        <span>□ No</span>
+                        <span>□ Yes (Detail: _____________________)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signature -->
+        <div style="margin-top: 40px; text-align: right;">
+            <p>I hereby certify that the above information is true and correct.</p>
+            <div style="margin-top: 30px;">
+                <span>Date: _________________</span>
+                <span style="margin-left: 30px;">Signature: _________________</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

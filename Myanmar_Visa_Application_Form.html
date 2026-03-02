@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미얀마 전자비자 신청서 (Myanmar e-Visa Application Form)</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f2f5;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 60px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #000;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0 0;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-left: 5px solid #b91c1c;
+            margin: 30px 0 15px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .info-box {
+            background-color: #fef2f2;
+            border: 1px solid #fca5a5;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #b91c1c;
+        }
+
+        .info-box ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+        }
+
+        .print-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto 0;
+            padding: 12px;
+            background: #b91c1c;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: #fff;
+            }
+
+            .form-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 0;
+            }
+
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <div class="header">
+            <h1>미얀마 비자 신청서 기재사항</h1>
+            <p>Myanmar e-Visa Application Details Form</p>
+        </div>
+
+        <form>
+            <div class="section-title">1. 신청자 정보 (Applicant Information)</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>성명 (Full Name)</label>
+                    <input type="text" placeholder="여권상 영문 성명">
+                </div>
+                <div class="form-group">
+                    <label>연락처 [무선] (Contact Number)</label>
+                    <input type="text" placeholder="010-0000-0000">
+                </div>
+                <div class="form-group">
+                    <label>우편번호 (Zip Code)</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>자택주소 (Home Address)</label>
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="section-title">2. 직장/학교 정보 (Employment/School Information)</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>직장(학교)명 (Employer/School Name)</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>직급 (Position/Title)</label>
+                    <input type="text">
+                </div>
+                <div class="form-group full-width">
+                    <label>주소 (Employer/School Address)</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>전화 (Work Phone)</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>팩스 (Work Fax)</label>
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="section-title">3. 여행 정보 (Travel Details)</div>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>여행(출장)기간 (Trip Period)</label>
+                    <input type="text" placeholder="예: 2026-03-01 ~ 2026-03-10">
+                </div>
+                <div class="form-group">
+                    <label>입국 공항 (Arrival Airport)</label>
+                    <input type="text" placeholder="YANGON / MANDALAY / NAY PYI TAW 중 택 1">
+                </div>
+                <div class="form-group">
+                    <label>호텔명 (Hotel Name)</label>
+                    <input type="text" placeholder="정식 등록된 숙박업소명">
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>※ 중요 안내사항 (Important Notes)</strong>
+                <ul>
+                    <li>모든 기재사항은 비자 발급 심사에 사용되므로 정확하게 기입해 주시기 바랍니다.</li>
+                    <li>전자비자는 반드시 지정된 국제공항(Yangon, Mandalay, Nay Pyi Taw)을 통해서만 입국 가능합니다.</li>
+                    <li>호텔은 미얀마 정부에 공식 등록된 업소여야 합니다. (개인 가정집 불가)</li>
+                </ul>
+            </div>
+
+            <button type="button" class="print-btn" onclick="window.print()">인쇄하기 / PDF 저장</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

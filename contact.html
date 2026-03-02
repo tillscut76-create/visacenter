@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tour Leaders - Contact & Inquiry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .contact-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .qr-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.9);
+            z-index: 50;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .qr-overlay.active {
+            display: flex;
+        }
+
+        /* Toast message style */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 50px;
+            padding: 16px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Go Back Button -->
+    <div class="fixed top-6 left-6 z-50">
+        <a href="index.html"
+            class="bg-white/80 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg border border-slate-200 text-slate-700 font-bold flex items-center gap-2 hover:bg-white transition-all">
+            <i class="fa-solid fa-arrow-left"></i> Home (홈으로)
+        </a>
+    </div>
+
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+        <!-- 헤더 섹션 / Header Section -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">상담 및 문의 <span
+                    class="text-blue-600 block md:inline-block md:ml-2">Contact & Inquiry</span></h2>
+            <div class="w-24 h-1.5 bg-blue-600 mx-auto mb-8 rounded-full"></div>
+
+            <!-- 중요 안내 사항 / Important Notice -->
+            <div
+                class="inline-block bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl text-left max-w-2xl shadow-md">
+                <p class="text-blue-900 font-bold text-xl mb-2">
+                    <i class="fa-solid fa-circle-info mr-2"></i>상담 전 확인해 주세요! (Notice)
+                </p>
+                <p class="text-blue-800 leading-relaxed font-medium">
+                    상담 시작 시 <span class="underline decoration-2 font-bold text-blue-600 text-lg">국적, 방문 국가와 목적</span>을
+                    먼저 알려주세요.<br>
+                    <span class="text-base opacity-90 mt-1 block text-left font-semibold">Please provide your <span
+                            class="font-bold underline">Nationality, Destination, and Purpose of Visit</span> for a
+                        faster process.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 상담 채널 그리드 / Contact Channel Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+
+            <!-- 카카오톡 / KakaoTalk -->
+            <div
+                class="contact-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100 items-center text-center">
+                <div
+                    class="w-16 h-16 bg-[#FEE500] rounded-2xl flex items-center justify-center mb-5 text-slate-900 text-3xl shadow-inner">
+                    <i class="fa-comment fa-solid"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-1 text-slate-900">카카오톡 <span
+                        class="block text-sm font-medium text-slate-400">KakaoTalk</span></h3>
+                <p class="text-xs text-slate-400 mb-6 font-medium tracking-wide">Official Chat Support</p>
+
+                <div class="mt-auto w-full space-y-2">
+                    <a href="https://open.kakao.com/o/gA7uV0ii" target="_blank"
+                        class="w-full py-3 bg-[#FEE500] text-slate-900 rounded-xl font-bold hover:bg-[#F7D600] transition-colors flex items-center justify-center">
+                        <i class="fa-solid fa-paper-plane mr-2 text-sm"></i>채팅 시작 / Start Chat
+                    </a>
+                    <button onclick="showQR('kakao-qr')"
+                        class="w-full py-2 border border-slate-200 text-slate-500 rounded-xl font-medium hover:bg-slate-50 transition-colors text-sm">QR
+                        코드 / View QR</button>
+                </div>
+            </div>
+
+            <!-- 왓츠앱 / WhatsApp -->
+            <div
+                class="contact-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100 items-center text-center">
+                <div
+                    class="w-16 h-16 bg-[#25D366] rounded-2xl flex items-center justify-center mb-5 text-white text-3xl shadow-inner">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-1 text-slate-900">WhatsApp <span
+                        class="block text-sm font-medium text-slate-400">왓츠앱</span></h3>
+                <p class="text-xs text-slate-400 mb-6 font-medium">+82 10-9238-5418</p>
+
+                <div class="mt-auto w-full space-y-2">
+                    <a href="https://wa.me/821092385418" target="_blank"
+                        class="w-full py-3 bg-[#25D366] text-white rounded-xl font-bold hover:bg-[#1da851] transition-colors flex items-center justify-center">
+                        <i class="fa-solid fa-comment-dots mr-2 text-sm"></i>채팅 시작 / Start Chat
+                    </a>
+                    <button onclick="showQR('whatsapp-qr')"
+                        class="w-full py-2 border border-slate-200 text-slate-500 rounded-xl font-medium hover:bg-slate-50 transition-colors text-sm">QR
+                        코드 / View QR</button>
+                </div>
+            </div>
+
+            <!-- 위챗 / WeChat -->
+            <div
+                class="contact-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100 items-center text-center">
+                <div
+                    class="w-16 h-16 bg-[#07C160] rounded-2xl flex items-center justify-center mb-5 text-white text-3xl shadow-inner">
+                    <i class="fa-brands fa-weixin"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-1 text-slate-900">WeChat <span
+                        class="block text-sm font-medium text-slate-400">위챗</span></h3>
+                <p class="text-xs text-slate-400 mb-6 font-medium">ID: newtour0801</p>
+
+                <div class="mt-auto w-full space-y-2">
+                    <button onclick="copyToClipboard('newtour0801')"
+                        class="w-full py-3 bg-[#07C160] text-white rounded-xl font-bold hover:bg-[#06a04f] transition-colors flex items-center justify-center">
+                        <i class="fa-solid fa-copy mr-2 text-sm"></i>ID 복사 / Copy ID
+                    </button>
+                    <button onclick="showQR('wechat-qr')"
+                        class="w-full py-2 border border-slate-200 text-slate-500 rounded-xl font-medium hover:bg-slate-50 transition-colors text-sm">QR
+                        코드 / View QR</button>
+                </div>
+            </div>
+
+            <!-- 이메일 / Email -->
+            <div
+                class="contact-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100 items-center text-center">
+                <div
+                    class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-5 text-white text-3xl shadow-inner">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-1 text-slate-900">이메일 <span
+                        class="block text-sm font-medium text-slate-400">Email Inquiry</span></h3>
+                <p class="text-xs text-slate-400 mb-6 font-medium italic">kim83077@nate.com</p>
+
+                <div class="mt-auto w-full">
+                    <a href="mailto:kim83077@nate.com"
+                        class="w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors text-center flex items-center justify-center">
+                        <i class="fa-solid fa-envelope-open-text mr-2 text-sm"></i>메일 보내기 / Send Email
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 하단 부가 정보 / Additional Support Info -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div
+                        class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shrink-0">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-slate-800 text-lg text-left">Global Visa Specialist</p>
+                        <p class="text-slate-500 text-sm text-left leading-snug">We provide visa services for both
+                            Korean nationals and foreign residents.<br><span class="italic text-xs">내국인 및 한국 거주 외국인의 해외
+                                국가 비자 발급을 전문적으로 대행합니다.</span></p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div
+                        class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 shrink-0">
+                        <i class="fa-solid fa-file-shield"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-slate-800 text-lg text-left">Trusted Expertise</p>
+                        <p class="text-slate-500 text-sm text-left leading-snug">Reliable guidance for your global
+                            travel, business, and study visas.<br><span class="italic text-xs">해외 여행, 비즈니스, 유학 비자 등을 위한
+                                믿을 수 있는 전문 가이드를 제공합니다.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR 코드 팝업 오버레이 / QR Modal -->
+    <div id="qr-overlay" class="qr-overlay" onclick="closeQR()">
+        <div class="bg-white p-8 rounded-[2.5rem] max-w-sm w-full relative shadow-2xl"
+            onclick="event.stopPropagation()">
+            <button onclick="closeQR()"
+                class="absolute top-6 right-6 text-slate-300 hover:text-slate-900 text-2xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="qr-container" class="text-center pt-2">
+                <h4 id="qr-title" class="text-2xl font-bold text-slate-900 mb-1">QR 코드</h4>
+                <p id="qr-id" class="text-blue-600 font-bold mb-6"></p>
+
+                <div class="bg-slate-50 p-6 rounded-3xl mb-6 shadow-inner">
+                    <img id="qr-image" src="" alt="QR Code"
+                        class="mx-auto rounded-xl w-full border border-white shadow-sm">
+                </div>
+
+                <p class="text-slate-600 font-medium mb-1">카메라로 스캔해 주세요.</p>
+                <p class="text-slate-400 text-sm font-light">Scan the QR code with your camera.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copy Success Toast -->
+    <div id="toast">ID copied to clipboard!</div>
+
+    <script>
+        const qrData = {
+            'kakao-qr': {
+                title: '카카오톡 / KakaoTalk',
+                id: 'ID: newtour0801',
+                img: 'kakao_qr.jpg'
+            },
+            'whatsapp-qr': {
+                title: 'WhatsApp / 왓츠앱',
+                id: 'Number: +82 10-9238-5418',
+                img: 'whatsapp_qr.jpg'
+            },
+            'wechat-qr': {
+                title: 'WeChat / 위챗',
+                id: 'ID: newtour0801',
+                img: 'wechat_qr.jpg'
+            }
+        };
+
+        function showQR(type) {
+            const overlay = document.getElementById('qr-overlay');
+            const title = document.getElementById('qr-title');
+            const img = document.getElementById('qr-image');
+            const idDisplay = document.getElementById('qr-id');
+
+            title.innerText = qrData[type].title;
+            img.src = qrData[type].img;
+            idDisplay.innerText = qrData[type].id;
+
+            img.onerror = function () {
+                this.src = 'https://via.placeholder.com/300?text=' + encodeURIComponent(qrData[type].title);
+            };
+
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeQR() {
+            const overlay = document.getElementById('qr-overlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function copyToClipboard(text) {
+            // 복사 로직
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            // 토스트 알림 표시
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미국 / 괌 전자비자(ESTA) 신청서</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background: #e2e8f0;
+            padding: 40px 10px;
+            margin: 0;
+            color: #334155;
+        }
+
+        .a4-sheet {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 2.5cm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #64748b;
+            margin: 5px 0 0;
+        }
+
+        .warning-note {
+            text-align: right;
+            color: #ef4444;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin: 25px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #1e3a8a;
+            display: inline-block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: #475569;
+            font-weight: 600;
+            width: 18%;
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            color: #334155;
+        }
+
+        .placeholder {
+            color: #94a3b8;
+        }
+
+        .q-section {
+            margin-top: 30px;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            background: #f8fafc;
+        }
+
+        .q-section h4 {
+            margin: 0 0 15px;
+            font-size: 13px;
+            font-weight: 800;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 10px;
+        }
+
+        .q-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .q-item:last-child {
+            border-bottom: none;
+        }
+
+        .q-text {
+            font-size: 11px;
+            padding-right: 20px;
+            line-height: 1.4;
+        }
+
+        .q-check {
+            white-space: nowrap;
+            font-weight: 700;
+        }
+
+        .footer-declaration {
+            margin-top: 40px;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .signature-area {
+            margin-top: 30px;
+            text-align: right;
+            font-weight: 800;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1e3a8a;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .a4-sheet {
+                box-shadow: none;
+                width: 100%;
+                margin: 0;
+                padding: 1cm;
+                border: none;
+            }
+
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn" onclick="window.print()">인쇄하기 / PDF 저장</button>
+
+    <div class="a4-sheet">
+        <div class="header">
+            <h1>미국 / 괌 전자비자(ESTA) 신청서</h1>
+            <p>U.S. Electronic System for Travel Authorization Application Form</p>
+        </div>
+
+        <div class="warning-note">* 모든 영문 스펠링은 반드시 여권과 동일해야 합니다.</div>
+
+        <!-- Section 1 -->
+        <div class="section-title">1. 신청자 기본 정보 (Passport & Personal Info)</div>
+        <table>
+            <tr>
+                <th>한글 성명</th>
+                <td></td>
+                <th>주민등록번호</th>
+                <td class="placeholder">예: 900101-1234567</td>
+            </tr>
+            <tr>
+                <th>영문 성<br>(Surname)</th>
+                <td></td>
+                <th>영문 이름<br>(Given)</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>가명/다른 이름</th>
+                <td colspan="3">◯ 아니오 &nbsp;&nbsp; ◯ 예 (영문명: ____________________ )</td>
+            </tr>
+            <tr>
+                <th>출생 도시(영문)</th>
+                <td class="placeholder">예: SEOUL</td>
+                <th>이중 국적 여부</th>
+                <td>◯ 아니오 &nbsp;&nbsp; ◯ 예 (국가명: ____________ )</td>
+            </tr>
+            <tr>
+                <th>부(아버지) 영문 명</th>
+                <td class="placeholder">모를 경우 UNKNOWN 기재</td>
+                <th>모(어머니) 영문 명</th>
+                <td class="placeholder">모를 경우 UNKNOWN 기재</td>
+            </tr>
+        </table>
+
+        <!-- Section 2 -->
+        <div class="section-title">2. 연락처 및 직장 정보 (Contact & Employment Info)</div>
+        <table>
+            <tr>
+                <th>휴대폰 번호</th>
+                <td></td>
+                <th>이메일 주소</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>한국 자택 주소<br>(영문 기재 요망)</th>
+                <td colspan="3">우편번호: __________ &nbsp; 주소: __________________________________________________</td>
+            </tr>
+            <tr>
+                <th>현재 직업 유무</th>
+                <td colspan="3">◯ 예 (아래 정보 기재) &nbsp;&nbsp; ◯ 아니오 (학생, 주부, 무직 등)</td>
+            </tr>
+            <tr>
+                <th>직장(학교)명 (영문)</th>
+                <td></td>
+                <th>직책 (영문)</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>직장(학교) 주소</th>
+                <td></td>
+                <th>직장 전화번호</th>
+                <td></td>
+            </tr>
+        </table>
+
+        <!-- Section 3 -->
+        <div class="section-title">3. 미국 내 체류 정보 및 비상연락처 (US Stay & Emergency)</div>
+        <table>
+            <tr>
+                <th rowspan="2">미국 체류지 정보<br>(호텔 또는 지인 집)</th>
+                <td colspan="3">호텔명(지인명): _________________________________________________</td>
+            </tr>
+            <tr>
+                <td colspan="2">주소: _________________________________________________</td>
+                <td>전화번호: ___________</td>
+            </tr>
+            <tr>
+                <th>비상 연락처<br>(국내외 가족/지인)</th>
+                <td colspan="3">영문성명: _________________ &nbsp; 이메일: _________________ &nbsp; 전화: _________________</td>
+            </tr>
+        </table>
+
+        <!-- Eligibility Questions (Simplified for form layout) -->
+        <div class="q-section">
+            <h4>■ 자격 요건 질문 (필독)</h4>
+            <div class="q-item">
+                <span class="q-text">1. 신체적/정신적 장애, 마항 중독, 전염병 등을 앓고 있습니까?</span>
+                <span class="q-check">[ &nbsp; ] 예 [ &nbsp; ] 아니오</span>
+            </div>
+            <div class="q-item">
+                <span class="q-text">2. 타인이나 정부에 심각한 피해를 입힌 범죄로 체포되거나 유죄 판결을 받았습니까?</span>
+                <span class="q-check">[ &nbsp; ] 예 [ &nbsp; ] 아니오</span>
+            </div>
+            <div class="q-item">
+                <span class="q-text">3. 테러 활동, 스파이 활동, 집단학살 등에 관여했거나 관여할 의도가 있습니까?</span>
+                <span class="q-check">[ &nbsp; ] 예 [ &nbsp; ] 아니오</span>
+            </div>
+            <div class="q-item">
+                <span class="q-text">4. 미국 비자나 입국을 위해 사기 또는 허위 진술을 한 적이 있습니까?</span>
+                <span class="q-check">[ &nbsp; ] 예 [ &nbsp; ] 아니오</span>
+            </div>
+            <div class="q-item">
+                <span class="q-text">5. 2011년 3월 1일 이후 이란, 이라크, 리비아, 북한 등을 방문한 적이 있습니까?</span>
+                <span class="q-check">[ &nbsp; ] 예 [ &nbsp; ] 아니오</span>
+            </div>
+        </div>
+
+        <div class="footer-declaration">
+            <strong>본인은 상기 정보가 사실임을 확인하며, 허위 진술 시 비자 발급 거부 및 향후 미국 입국이 제한될 수 있음을 이해합니다.</strong>
+            <div class="signature-area">
+                신청인 성명: _____________________ (서명) &nbsp;&nbsp; 날짜: 202__년 ___월 ___일
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Schengen Visa Application Personal Info</title>
+<style>
+body { font-family: 'Arial', sans-serif; font-size: 11pt; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+td { padding: 5px; vertical-align: bottom; border-bottom: 1px solid #ccc; }
+.label { font-weight: bold; width: 160px; background-color: #f7f7f7; border-right: 1px solid #ccc; color: #003366; }
+.input { color: #000; padding-left: 10px; }
+.section-header { background-color: #003366; color: white; font-weight: bold; padding: 8px; margin-top: 25px; margin-bottom: 10px; font-size: 1.1em; border-radius: 4px; }
+h1 { text-align: center; color: #003366; border-bottom: 3px solid #003366; padding-bottom: 15px; margin-bottom: 30px; }
+p.intro { color: #666; text-align: center; font-style: italic; margin-bottom: 30px; }
+</style>
+</head>
+<body>
+
+<h1>Schengen Visa (Europe) Application Form (쉥겐 비자 신청서)</h1>
+<p class="intro">For Short Stay Visa (C-Type). Please fill in English. (단기 체류 비자 신청용)</p>
+
+<div class="section-header">1. Personal Details (인적사항)</div>
+<table>
+    <tr>
+        <td class="label">Surname (성):</td>
+        <td class="input"></td>
+        <td class="label">First Name (이름):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Date of Birth (생년월일):</td>
+        <td class="input">YYYY-MM-DD</td>
+        <td class="label">Place of Birth:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Country of Birth:</td>
+        <td class="input"></td>
+        <td class="label">Current Nationality:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Marital Status (결혼):</td>
+        <td class="input" colspan="3">Single / Married / Separated / Divorced / Widow(er)</td>
+    </tr>
+    <tr>
+        <td class="label">Home Address (주소):</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Email Address:</td>
+        <td class="input"></td>
+        <td class="label">Mobile Number:</td>
+        <td class="input"></td>
+    </tr>
+</table>
+
+<div class="section-header">2. Passport Information (여권 정보)</div>
+<table>
+    <tr>
+        <td class="label">Passport Number:</td>
+        <td class="input"></td>
+        <td class="label">Type of Document:</td>
+        <td class="input">Ordinary Passport</td>
+    </tr>
+    <tr>
+        <td class="label">Date of Issue (발급일):</td>
+        <td class="input"></td>
+        <td class="label">Valid Until (만료일):</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Issued By (발급기관):</td>
+        <td class="input" colspan="3">Ministry of Foreign Affairs</td>
+    </tr>
+    <tr>
+        <td class="label">Alien Registration No:</td>
+        <td class="input" colspan="3">(If residing in a country other than your origin - foreigner in Korea)</td>
+    </tr>
+</table>
+
+<div class="section-header">3. Occupation (직업)</div>
+<table>
+    <tr>
+        <td class="label">Current Occupation:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Employer/School Name:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Employer Address:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Employer Phone:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+</table>
+
+<div class="section-header">4. Travel Information (여행 정보)</div>
+<table>
+    <tr>
+        <td class="label">Main Destination(s):</td>
+        <td class="input" colspan="3">(Member State of main destination and other Member States)</td>
+    </tr>
+    <tr>
+        <td class="label">Purpose of Journey:</td>
+        <td class="input" colspan="3">Tourism / Business / Family Visit / Cultural / Sports / Study</td>
+    </tr>
+    <tr>
+        <td class="label">Date of Arrival (Schengen):</td>
+        <td class="input"></td>
+        <td class="label">Date of Departure:</td>
+        <td class="input"></td>
+    </tr>
+    <tr>
+        <td class="label">Number of Entries:</td>
+        <td class="input" colspan="3">Single Entry / Two Entries / Multiple Entries</td>
+    </tr>
+    <tr>
+        <td class="label">Fingerprints collected previously?</td>
+        <td class="input" colspan="3">No / Yes (Date: ___________ Visa Sticker No: ___________)</td>
+    </tr>
+</table>
+
+<div class="section-header">5. Accommodation & Funding (숙소 및 경비)</div>
+<table>
+    <tr>
+        <td class="label">Host/Hotel Name:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Host/Hotel Address:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Host/Hotel Email/Phone:</td>
+        <td class="input" colspan="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Cost of Covered By:</td>
+        <td class="input" colspan="3">Applicant himself / Sponsor (Host, Company, Organization)</td>
+    </tr>
+    <tr>
+        <td class="label">Means of Support:</td>
+        <td class="input" colspan="3">Cash / Credit Card / Pre-paid Accommodation / Pre-paid Transport</td>
+    </tr>
+</table>
+
+<div style="margin-top: 50px; text-align: center; page-break-inside: avoid;">
+    <p>I am aware that the visa fee is not refunded if the visa is refused.</p>
+    <br>
+    <p><strong>Place and Date (장소 및 날짜):</strong> _______________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Signature (서명):</strong> _______________________</p>
+</div>
+
+</body>
+</html>

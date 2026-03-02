@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Visa Services | Professional Visa Agency - New Tour Leaders</title>
+    <meta name="description"
+        content="Professional visa services for China, India, UK, Europe (Schengen), Thailand and more. Specialized support for both Koreans and foreign residents in Korea. Fast and reliable processing.">
+    <meta name="keywords"
+        content="visa agency korea, china visa for foreigners, india evisa korea, schengen visa foreigners korea, uk visa application korea, 비자 대행, 중국비자, 인도비자, 유럽비자">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="common.js" defer></script>
+    <script src="script.js" defer></script>
+    <style>
+        /* Reusing Page Styles */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .country-section {
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .country-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .country-header img {
+            width: 40px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .country-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .req-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .req-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .target-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: auto;
+        }
+
+        .badge-foreigner {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .badge-korean {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 12px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+        }
+
+        .modal-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #d30000;
+        }
+
+        .modal-body {
+            padding: 30px;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        .modal-body h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .modal-body ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-body ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .modal-body ul li::before {
+            content: "\f054";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #ccc;
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+            top: 4px;
+        }
+
+        .view-details-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #f1f8e9;
+            color: #33691e;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: 1px solid #dcedc8;
+            width: 100%;
+            text-align: center;
+        }
+
+        .view-details-btn:hover {
+            background: #dcedc8;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="trust-badge"><i class="fa-solid fa-certificate"></i> Trusted Visa Agency <span
+                    class="kr-inline">(비자 대행 전문)</span></span>
+            <div class="top-contact">
+                <!-- Injected via common.js -->
+                <a href="tel:051-818-0801"><i class="fa-solid fa-phone"></i> 051-818-0801 / 1588-8903</a>
+                <a href="contact.html"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="http://newpassport.co.kr/visa/index/images/logo.jpg"
+                        alt="New Tour Leaders"></a>
+            </div>
+            <nav>
+                <ul>
+                    <!-- Injected via common.js -->
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Apply (신청하기)</a>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h2 style="font-size: 2.8rem; margin-bottom: 15px;">Global Visa Services</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">
+                Professional visa support for travelers and foreigners in Korea.<br>
+                <span class="kr-text">중국, 유럽, 인도, 동남아 등 전세계 비자 수속 대행 전문</span>
+            </p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                <a href="#korean-visas" class="cta-button" style="background: #fff; color: #c62828;">For Koreans <span
+                        class="kr-inline">(한국인 대상)</span></a>
+                <a href="#foreigner-visas" class="cta-button"
+                    style="background: transparent; border: 2px solid #fff;">For Foreigners <span class="kr-inline">(외국인
+                        대상)</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="content-section">
+        <div class="container">
+
+            <div style="margin-bottom: 40px; text-align: center;">
+                <p style="font-size: 1.1rem; color: #555;">
+                    We provide professional visa services for various countries.<br>
+                    <span class="kr-text">뉴투어리더스는 일본 비자 외에도 다양한 국가의 비자 수속을 도와드립니다.</span>
+                </p>
+            </div>
+
+            <!-- Section 1: For Koreans -->
+            <div id="korean-visas"
+                style="margin-top: 50px; margin-bottom: 20px; border-bottom: 3px solid #ffebee; padding-bottom: 10px;">
+                <h3 style="color: #c62828; font-family: 'Poppins', sans-serif;"><i class="fa-solid fa-passport"></i>
+                    Visas for Koreans <span class="kr-inline">(한국인 대상 비자)</span></h3>
+                <p style="color: #666; font-size: 0.9rem;">Expert support for Korean citizens traveling abroad. <span
+                        class="kr-inline">(한국인의 해외 방문을 위한 비자 수속 지원)</span></p>
+            </div>
+
+            <div class="grid-container" style="margin-bottom: 60px;">
+                <!-- 1. INDIA (For Koreans) -->
+                <div class="country-section fade-in-section" style="border-left-color: #FF9933;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-om"
+                            style="font-size: 2rem; color: #FF9933; width:40px; text-align:center;"></i>
+                        <h3>India <span class="kr-inline" style="font-size: 0.8em;">(인도)</span></h3>
+                        <span class="target-badge badge-korean">For Koreans</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> e-Visa (Tourist/Business)<br>
+                        <span class="kr-text">전자비자 (관광/상용) - 온라인 발급</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport Copy (Valid for 6+ months) <span class="kr-inline">(여권 사본 - 6개월 이상)</span></li>
+                        <li>5x5cm Photo File (White BG) <span class="kr-inline">(5x5cm 사진 파일 - 흰색 배경)</span></li>
+                        <li>Personal & Parents Info <span class="kr-inline">(신상정보 및 부모님 영문성함)</span></li>
+                        <li>Business Card (For Business) <span class="kr-inline">(명함 - 상용비자 시)</span></li>
+                    </ul>
+                    <a href="india-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 2. Pakistan (For Koreans) -->
+                <div class="country-section fade-in-section" style="border-left-color: #115740;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-moon"
+                            style="font-size: 2rem; color: #115740; width:40px; text-align:center;"></i>
+                        <h3>Pakistan <span class="kr-inline" style="font-size: 0.8em;">(파키스탄)</span></h3>
+                        <span class="target-badge badge-korean">For Koreans</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> e-Visa (Tourist/Business)<br>
+                        <span class="kr-text">전자비자 - 온라인 신청</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport Scan & Photo File <span class="kr-inline">(여권 스캔본 및 사진 파일)</span></li>
+                        <li>Invitation or Itinerary <span class="kr-inline">(초청장 또는 여행일정표)</span></li>
+                        <li>Personal Information <span class="kr-inline">(신상정보)</span></li>
+                        <li>Payment Card Info <span class="kr-inline">(결제용 카드 정보)</span></li>
+                    </ul>
+                    <a href="pakistan-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 3. Mongolia (For Koreans) -->
+                <div class="country-section fade-in-section" style="border-left-color: #0066B3;">
+                    <div class="country-header" style="flex-wrap: wrap;">
+                        <i class="fa-solid fa-horse"
+                            style="font-size: 2rem; color: #DA291C; width:40px; text-align:center;"></i>
+                        <h3>Mongolia <span class="kr-inline" style="font-size: 0.8em;">(몽골)</span></h3>
+                        <span class="target-badge badge-korean">For Koreans</span>
+                    </div>
+                    <div
+                        style="background: #e3f2fd; padding: 10px; border-radius: 5px; margin-bottom: 15px; border-left: 3px solid #2196f3;">
+                        <p style="margin: 0; font-size: 0.85rem; color: #0d47a1;"><strong>※ 무비자 입국 안내:</strong><br>한국인
+                            관광객은 <strong>90일 무비자</strong> 입국이 가능합니다.</p>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> e-Visa / Sticker Visa (Long-term)<br>
+                        <span class="kr-text">관광 외 장기 체류 및 특정 목적 비자 수속</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport Original <span class="kr-inline">(여권 원본)</span></li>
+                        <li>One Photo (3.5x4.5cm) <span class="kr-inline">(사진 1매)</span></li>
+                        <li>CoE or Invitation <span class="kr-inline">(재류증명서 또는 초청장)</span></li>
+                        <li>Business Card <span class="kr-inline">(명함 - 해당 시)</span></li>
+                    </ul>
+                    <a href="mongolia-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 4. Myanmar (For Koreans) -->
+                <div class="country-section fade-in-section" style="border-left-color: #FECB00;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-place-of-worship"
+                            style="font-size: 2rem; color: #34B233; width:40px; text-align:center;"></i>
+                        <h3>Myanmar <span class="kr-inline" style="font-size: 0.8em;">(미얀마)</span></h3>
+                        <span class="target-badge badge-korean">For Koreans</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> e-Visa (Tourist/Business)<br>
+                        <span class="kr-text">전자비자 신청 - 당사 대행 서비스</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport Scan <span class="kr-inline">(여권 스캔본)</span></li>
+                        <li>Photo File <span class="kr-inline">(여권용 사진 파일)</span></li>
+                        <li>Flight & Hotel <span class="kr-inline">(항공/호텔 정보)</span></li>
+                    </ul>
+                    <a href="myanmar-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 5. China (For Koreans) -->
+                <div class="country-section fade-in-section" style="border-left-color: #DE2910;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-star"
+                            style="font-size: 2rem; color: #DE2910; width:40px; text-align:center;"></i>
+                        <h3>China <span class="kr-inline" style="font-size: 0.8em;">(중국)</span></h3>
+                        <span class="target-badge badge-korean">For Koreans</span>
+                    </div>
+                    <div
+                        style="background: #fff8e1; padding: 10px; border-radius: 5px; margin-bottom: 15px; border-left: 3px solid #ffc107; font-size: 0.85rem; color: #5d4037;">
+                        <strong>※ 무비자 입국 안내:</strong><br>한국인은 관광/상용 목적 방문 시 <strong>30일 무비자</strong> 입국이 가능합니다.
+                        (~25년말까지)
+                    </div>
+                    <p style="margin-bottom: 5px; font-size: 0.95rem;">
+                        <strong>Type:</strong> Long-term / Employment / Family<br>
+                        <span class="kr-text">30일 초과 장기 체류 및 특정 목적 비자 수속</span>
+                    </p>
+                    <div
+                        style="background: #f1f8e9; padding: 8px; border-radius: 5px; margin-bottom: 15px; border-left: 3px solid #8bc34a; font-size: 0.8rem; color: #33691e;">
+                        <i class="fa-solid fa-check-circle"></i> 항공권/호텔 예약이 어려운 경우 당사에서 지원해 드립니다.
+                    </div>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport & Photo (3.3x4.8cm) <span class="kr-inline">(여권 및 사진 1매)</span></li>
+                        <li>JW202 / CoE <span class="kr-inline">(입학통지서/재류증명 등 목적별 서류)</span></li>
+                        <li>Flight & Hotel <span class="kr-inline">(항공/호텔 - 준비 지원 가능)</span></li>
+                    </ul>
+                    <a href="china-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 6. USA (For Koreans) -->
+                <div class="country-section fade-in-section" style="border-left-color: #3C3B6E;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-flag-usa"
+                            style="font-size: 2rem; color: #B22234; width:40px; text-align:center;"></i>
+                        <h3>USA <span class="kr-inline" style="font-size: 0.8em;">(미국)</span></h3>
+                        <span class="target-badge badge-korean">For Koreans</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> USA ESTA Approval<br>
+                        <span class="kr-text">미국 무비자 입국 승인 (ESTA) 대행</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport Info <span class="kr-inline">(여권 정보 - ESTA 시)</span></li>
+                        <li>Home Address & Work Info <span class="kr-inline">(자택주소 및 직장 정보)</span></li>
+                        <li>US Contact Info <span class="kr-inline">(미국 내 연락처 및 주소)</span></li>
+                    </ul>
+                    <a href="usa-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 7. Canada (For Koreans) -->
+                <div class="country-section fade-in-section" style="border-left-color: #FF0000;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-leaf"
+                            style="font-size: 2rem; color: #FF0000; width:40px; text-align:center;"></i>
+                        <h3>Canada <span class="kr-inline" style="font-size: 0.8em;">(캐나다)</span></h3>
+                        <span class="target-badge badge-korean">For Koreans</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> Canada eTA Approval<br>
+                        <span class="kr-text">캐나다 전자 여행 허가 (eTA) 대행</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport Copy <span class="kr-inline">(여권 사본)</span></li>
+                        <li>Email Address <span class="kr-inline">(이메일 주소)</span></li>
+                        <li>Credit Card for Fee <span class="kr-inline">(결제용 카드 정보)</span></li>
+                    </ul>
+                    <a href="canada-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 8. Russia (For Koreans) -->
+                <div class="country-section fade-in-section" style="border-left-color: #1d4ed8;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-star-of-life"
+                            style="font-size: 2rem; color: #dc2626; width:40px; text-align:center;"></i>
+                        <h3>Russia <span class="kr-inline" style="font-size: 0.8em;">(러시아)</span></h3>
+                        <span class="target-badge badge-korean">For Koreans</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> Tourist / Business / Multi<br>
+                        <span class="kr-text">관광, 상용, 복수 비자 및 초청장 맞춤 소속</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport Original <span class="kr-inline">(여권 원본)</span></li>
+                        <li>Photo (3.5x4.5cm) <span class="kr-inline">(사진 1매)</span></li>
+                        <li>Invitation Letter <span class="kr-inline">(초청장 - 종류별 안내)</span></li>
+                        <li>HIV Cert (for Multi) <span class="kr-inline">(에이즈검사증 - 복수비자 시)</span></li>
+                    </ul>
+                    <a href="russia-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 9. UK ETA (For Koreans) -->
+                <div class="country-section fade-in-section" style="border-left-color: #00247d;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-plane-departure"
+                            style="font-size: 2rem; color: #00247d; width:40px; text-align:center;"></i>
+                        <h3>UK ETA <span class="kr-inline" style="font-size: 0.8em;">(영국 전자여행허가)</span></h3>
+                        <span class="target-badge badge-korean">For Koreans</span>
+                    </div>
+                    <p style="margin-bottom: 5px; font-size: 0.95rem;">
+                        <strong>Type:</strong> Electronic Travel Authorisation<br>
+                        <span class="kr-text">2025년 1월 8일 시행 - 한국인 필수 승인</span>
+                    </p>
+                    <div
+                        style="background: #eef2ff; padding: 10px; border-radius: 5px; margin-bottom: 15px; border-left: 3px solid #00247d; font-size: 0.85rem; color: #1e3a8a;">
+                        <i class="fa-solid fa-info-circle"></i> <strong>최대 180일 체류 가능:</strong><br>
+                        대한민국 전자여권 소지자라면 출국 전 반드시 신청해야 합니다.
+                    </div>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Items (준비사항)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Valid e-Passport <span class="kr-inline">(유효한 전자여권 사본)</span></li>
+                        <li>Email Address <span class="kr-inline">(결과 수신용 이메일)</span></li>
+                        <li>Travel Dates <span class="kr-inline">(대략적인 여행 일정)</span></li>
+                    </ul>
+                    <a href="uk-eta.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+            </div>
+
+            <!-- Section 2: For Foreigners -->
+            <div id="foreigner-visas"
+                style="margin-top: 50px; margin-bottom: 20px; border-bottom: 3px solid #e3f2fd; padding-bottom: 10px;">
+                <h3 style="color: #1976d2; font-family: 'Poppins', sans-serif;"><i
+                        class="fa-solid fa-earth-americas"></i> Visas for Foreigners <span class="kr-inline">(외국인 대상
+                        비자)</span></h3>
+                <p style="color: #666; font-size: 0.9rem;">Specialized services for foreign residents in Korea. <span
+                        class="kr-inline">(국내 거주 외국인을 위한 맞춤형 비자 대행 서비스)</span></p>
+            </div>
+
+            <div class="grid-container">
+
+                <!-- 1. CHINA (For Foreigners) -->
+                <div class="country-section fade-in-section" style="border-left-color: #DE2910;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-star"
+                            style="font-size: 2rem; color: #DE2910; width:40px; text-align:center;"></i>
+                        <h3>China <span class="kr-inline" style="font-size: 0.8em;">(중국)</span></h3>
+                        <span class="target-badge badge-foreigner">For Foreigners</span>
+                    </div>
+                    <p style="margin-bottom: 5px; font-size: 0.95rem;">
+                        <strong>Type:</strong> Tourist (L) / Business (M)<br>
+                        <span class="kr-text">관광 및 상용 비자 전문</span>
+                    </p>
+                    <div
+                        style="background: #fff8e1; padding: 10px; border-radius: 5px; margin-bottom: 15px; border-left: 3px solid #ffc107; font-size: 0.85rem; color: #5d4037;">
+                        <i class="fa-solid fa-circle-info"></i> <strong>항공권/호텔 예약 지원:</strong><br>
+                        증빙 서류 준비가 어려운 경우 당사에서 예약을 도와드립니다.
+                    </div>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport Original & ARC Card <span class="kr-inline">(여권 원본 + 외국인등록증)</span></li>
+                        <li>One Photo (3.3x4.8cm) <span class="kr-inline">(여권용 사진 1매)</span></li>
+                        <li>Proof of Stay (Hotel/Flight) <span class="kr-inline">(호텔/항공 예약확인서)</span></li>
+                        <li>Application Form <span class="kr-inline">(신청서 작성 - 당사 지원)</span></li>
+                    </ul>
+                    <a href="china-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 2. UK (For Foreign residents in Korea) -->
+                <div class="country-section fade-in-section" style="border-left-color: #012169;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-crown"
+                            style="font-size: 2rem; color: #012169; width:40px; text-align:center;"></i>
+                        <h3>UK <span class="kr-inline" style="font-size: 0.8em;">(영국 방문비자)</span></h3>
+                        <span class="target-badge badge-foreigner">For Foreigners</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> Standard Visitor Visa (Sticker)<br>
+                        <span class="kr-text">국내 거주 외국인용 스티커 방문 비자</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport Original & ARC Card <span class="kr-inline">(여권 원본 + 외국인등록증)</span></li>
+                        <li>Bank Statement (6 months) <span class="kr-inline">(6개월 은행 거래내역)</span></li>
+                        <li>Employment Certificate <span class="kr-inline">(재직/재학 증명서)</span></li>
+                        <li>Invitation Letter (if applicable) <span class="kr-inline">(초청장 - 해당 시)</span></li>
+                    </ul>
+                    <a href="uk-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 3. Schengen / Europe (For Foreigners) -->
+                <div class="country-section fade-in-section" style="border-left-color: #003399;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-flag-checkered"
+                            style="font-size: 2rem; color: #003399; width:40px; text-align:center;"></i>
+                        <h3>Europe (Schengen) <span class="kr-inline" style="font-size: 0.8em;">(유럽/쉥겐)</span></h3>
+                        <span class="target-badge badge-foreigner">For Foreigners</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> Short Stay (C-Type)<br>
+                        <span class="kr-text">단기 방문 비자 (프랑스, 독일, 이탈리아 등)</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport & ARC (Valid 3+ months) <span class="kr-inline">(여권/등록증 - 유효기간 3개월 이상)</span></li>
+                        <li>Travel Insurance (30,000 EUR+) <span class="kr-inline">(여행자보험 - 3만유로 이상 보장)</span></li>
+                        <li>Proof of Funds & Employment <span class="kr-inline">(재정 입증 및 재직 서류)</span></li>
+                        <li>Flight & Hotel Reservation <span class="kr-inline">(항공/호텔 예약확인서)</span></li>
+                    </ul>
+                    <a href="europe-visa.html" class="view-details-btn">View Details <span class="kr-inline">(상세보기 -
+                            필독)</span></a>
+                </div>
+
+                <!-- 4. Taiwan (For Foreigners) -->
+                <div class="country-section fade-in-section" style="border-left-color: #000095;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-star-of-life"
+                            style="font-size: 2rem; color: #FE0000; width:40px; text-align:center;"></i>
+                        <h3>Taiwan <span class="kr-inline" style="font-size: 0.8em;">(대만)</span></h3>
+                        <span class="target-badge badge-foreigner">For Foreigners</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> Visitor Visa / eVisa<br>
+                        <span class="kr-text">방문 비자 (국적에 따라 전자비자 가능)</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport & ARC Copy <span class="kr-inline">(여권 및 등록증 사본)</span></li>
+                        <li>Two Photos (Color, 3.5x4.5cm) <span class="kr-inline">(사진 2매)</span></li>
+                        <li>Bank Balance Certificate <span class="kr-inline">(은행 잔고증명서)</span></li>
+                        <li>Travel Itinerary <span class="kr-inline">(여행 일정표)</span></li>
+                    </ul>
+                    <a href="taiwan-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 5. Malaysia (For Foreigners) -->
+                <div class="country-section fade-in-section" style="border-left-color: #010066;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-sun"
+                            style="font-size: 2rem; color: #FCD116; width:40px; text-align:center;"></i>
+                        <h3>Malaysia <span class="kr-inline" style="font-size: 0.8em;">(말레이시아)</span></h3>
+                        <span class="target-badge badge-foreigner">For Foreigners</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> eVisa / Sticker Visa<br>
+                        <span class="kr-text">전자비자 또는 스티커 비자</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport & ARC <span class="kr-inline">(여권 및 외국인등록증)</span></li>
+                        <li>Return Flight Ticket <span class="kr-inline">(왕복 항공권)</span></li>
+                        <li>Hotel Reservation <span class="kr-inline">(호텔 예약확인서)</span></li>
+                        <li>Yellow Fever Cert (if applicable) <span class="kr-inline">(황열병 예방접종 - 해당 시)</span></li>
+                    </ul>
+                    <a href="malaysia-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+                <!-- 6. Thailand (For Foreigners) -->
+                <div class="country-section fade-in-section" style="border-left-color: #2D2A4A;">
+                    <div class="country-header">
+                        <i class="fa-solid fa-hotel"
+                            style="font-size: 2rem; color: #DA291C; width:40px; text-align:center;"></i>
+                        <h3>Thailand <span class="kr-inline" style="font-size: 0.8em;">(태국)</span></h3>
+                        <span class="target-badge badge-foreigner">For Foreigners</span>
+                    </div>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                        <strong>Type:</strong> e-Visa (Tourist)<br>
+                        <span class="kr-text">전자비자 (관광)</span>
+                    </p>
+                    <h5 style="font-weight: 700; margin-bottom: 10px; color: #444;">Required Documents (구비서류)</h5>
+                    <ul class="req-list" style="margin-bottom: 0;">
+                        <li>Passport & Photo File <span class="kr-inline">(여권 및 사진 파일)</span></li>
+                        <li>Bank Statement <span class="kr-inline">(은행 잔고증명서)</span></li>
+                        <li>Flight & Hotel Booking <span class="kr-inline">(항공/호텔 예약확인서)</span></li>
+                        <li>ARC Front/Back <span class="kr-inline">(외국인등록증 앞뒤)</span></li>
+                    </ul>
+                    <a href="thailand-visa.html" class="view-details-btn">View Details <span
+                            class="kr-inline">(상세보기)</span></a>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <!-- Contact CTA -->
+        <div style="margin-top: 50px; text-align: center;">
+            <p style="margin-bottom: 20px;">Documents may vary by nationality. Please contact us for
+                consultation.<br>
+                <span class="kr-text">국적에 따라 구비서류가 달라질 수 있습니다. 정확한 상담을 위해 문의해주세요.</span>
+            </p>
+            <a href="contact.html" class="cta-button" style="padding: 15px 40px; font-size: 1.1rem;">
+                Apply / Inquiry (신청 및 문의)
+            </a>
+        </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- Injected via common.js -->
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

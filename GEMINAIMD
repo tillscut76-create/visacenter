@@ -1,0 +1,52 @@
+# Project Status: JEC Korea / New Tour Leaders Website Redesign
+**Last Updated:** 2026-02-15
+
+## 1. Project Overview
+Redesigning the New Tour Leaders (JEC Korea) website to appeal to both Korean and foreign residents in Korea. The focus is on a premium, trustworthy look with clear guidance for visa services.
+
+## 2. Completed Work
+### Core Pages
+- **`index.html` (Main Page)**: 
+  - Implemented a modern "Hero" section with a dark overlay and premium typography.
+  - Added "Quick Access" cards for e-Visa, Sticker Visa, Korean's Japan Visa, and Working Holiday.
+  - Highlighted "Japan Consulate Designated Agency" status for trust.
+  - Responsive layout for mobile and desktop.
+
+### Visa Information Pages
+- **`evisa.html` (Japan e-Visa)**:
+  - Detailed guide for foreign residents eligible for e-Visa.
+  - Includes required documents list, stylized "Checkpoints", and sample images.
+  - Download link for the new HTML application form.
+- **`sticker-visa.html` (Japan Sticker Visa)**:
+  - Comprehensive guide for those who need a sticker visa (e.g., specific purposes, long-term).
+  - Structure similar to e-Visa page for consistency but with specific document requirements.
+- **`working-holiday.html`**:
+  - Information for the Working Holiday visa program.
+  - *Status*: Basic structure implemented.
+
+### Resources & Assets
+- **`Japan_Evisa_Application_Form.html`**: 
+  - Converted the text-based application form into a clean, printable HTML format.
+  - Bilingual (Korean/English) labels.
+- **`style.css`**:
+  - Global styles, variables for colors (Green branding), and utility classes.
+  - "Hover to Zoom" effects for document samples.
+- **`script.js`**:
+  - Basic interaction scripts (smooth scrolling, fade-in animations).
+
+## 3. Next Steps (To-Do List)
+- **Review & Refine**:
+  - [ ] Check `korean-visa.html` content and design to match the new theme.
+  - [ ] Verify all links in `footer` and navigation work correctly.
+  - [ ] Test form printing for `Japan_Evisa_Application_Form.html`.
+- **Content Accuracy**:
+  - [ ] Confirm visa fees and specific document requirements with latest consulate rules.
+  - [ ] Replace placeholder document images (grey boxes) with realistic samples or instructions if needed.
+- **Optimization**:
+  - [ ] Optimize loading speed (compress images).
+  - [ ] SEO audit (meta tags, descriptions).
+
+## 4. Notes for Continuation
+- The project is currently saved in `c:\Users\USER\Desktop\테스트\홈페이지 만들기`.
+- Open `index.html` in a browser to view the current live state.
+- `Japan_Evisa_Application_Form.txt` is the raw text source for the HTML form and can be archived if no longer needed.

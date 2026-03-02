@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>러시아 비자 신청서 기재사항</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #111;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* A4 Page Setup */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 15mm 15mm 20mm 15mm;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .header-wrap {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #1d4ed8;
+            /* Russian Blue */
+        }
+
+        h1 {
+            color: #1d4ed8;
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin: 15px 0 8px 0;
+            color: #1e293b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            border: 1px solid #1e293b;
+            padding: 8px 10px;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        .label-en {
+            display: block;
+            font-size: 9px;
+            color: #64748b;
+            font-weight: normal;
+            margin-top: 1px;
+        }
+
+        /* Input Styles */
+        input[type="text"] {
+            width: 98%;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 12px;
+            background: transparent;
+        }
+
+        .input-line {
+            border-bottom: 1px solid #94a3b8;
+            padding-bottom: 1px;
+            display: inline-block;
+        }
+
+        .chk-label {
+            cursor: pointer;
+            margin-right: 12px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 11px;
+        }
+
+        .warning-red {
+            color: #dc2626;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 3px;
+            display: block;
+        }
+
+        /* 면책 조항 */
+        .notice-footer {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #fef2f2;
+            border: 1px solid #fecdd3;
+            border-radius: 6px;
+            font-size: 10px;
+            color: #450a0a;
+            line-height: 1.5;
+        }
+
+        .notice-footer strong {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 11px;
+            color: #b91c1c;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1d4ed8;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+
+            .page {
+                margin: 0;
+                padding: 10mm;
+                box-shadow: none;
+                width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn no-print" onclick="window.print()">Print / Save as PDF</button>
+
+    <div class="page">
+        <div class="header-wrap">
+            <h1>러시아비자 신청서 기재사항</h1>
+            <h2>Russia Visa application Form</h2>
+        </div>
+
+        <div class="section-title">1. 신청자 정보 <span style="font-weight:normal; font-size:11px; color:#64748b;">(Applicant
+                Information)</span></div>
+
+        <table>
+            <colgroup>
+                <col style="width: 8%;">
+                <col style="width: 12%;">
+                <col style="width: 18%;">
+                <col style="width: 32%;">
+                <col style="width: 12%;">
+                <col style="width: 18%;">
+            </colgroup>
+            <tbody>
+                <!-- 기본정보 -->
+                <tr>
+                    <th rowspan="3">신<br>청<br>자</th>
+                    <th rowspan="3">기본정보</th>
+                    <th>성명 <span class="label-en">Name</span></th>
+                    <td><input type="text"></td>
+                    <th>연락처 <span class="label-en">Contact</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>자택주소 <span class="label-en">Home Address</span></th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>결혼상황 <span class="label-en">Marital Status</span></th>
+                    <td colspan="3">
+                        <label class="chk-label"><input type="radio" name="marital"> 미혼 (Single)</label>
+                        <label class="chk-label"><input type="radio" name="marital"> 결혼 (Married)</label>
+                        <label class="chk-label"><input type="radio" name="marital"> 기타 (Other: <input type="text"
+                                class="input-line" style="width:80px;">)</label>
+                    </td>
+                </tr>
+                <!-- 직장정보 -->
+                <tr>
+                    <th rowspan="3" colspan="2">직장(학교) <br> <span class="label-en">Work/School</span></th>
+                    <th>직장(학교)명 <span class="label-en">Employer/School</span></th>
+                    <td><input type="text"></td>
+                    <th>직급 <span class="label-en">Position</span></th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>주소 <span class="label-en">Address</span></th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>전화 <span class="label-en">Tel</span></th>
+                    <td><input type="text"></td>
+                    <th>팩스 <span class="label-en">Fax</span></th>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 입국 및 일정 정보 -->
+        <table>
+            <colgroup>
+                <col style="width: 60%;">
+                <col style="width: 40%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="ko-main" style="font-weight: bold; font-size: 1.1rem;">러시아 입국일</span> <span
+                            class="label-en" style="display:inline;">(Expected Date of Entry)</span>
+                        <span class="warning-red">[주의 : 비자상에 표기 되므로 정확히 기재 하셔야 함]</span>
+                    </td>
+                    <td>러시아 입국일 : <input type="text" class="input-line" style="width:120px;" placeholder="YYYY-MM-DD">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="ko-main" style="font-weight: bold; font-size: 1.1rem;">러시아 방문도시</span> <span
+                            class="label-en" style="display:inline;">(Cities to Visit)</span>
+                        <span class="warning-red">[초청장 발급에 필요한 정보로 러시아 가는 도시 모두 기재요망]</span>
+                    </td>
+                    <td><input type="text" placeholder="예: 모스크바, 상트페테르부르크"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 과거 방문 경험 -->
+        <table>
+            <colgroup>
+                <col style="width: 60%;">
+                <col style="width: 40%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td rowspan="3">
+                        <span class="ko-main" style="font-weight: bold; font-size: 1.1rem;">과거 러시아 방문 경험</span> <span
+                            class="label-en" style="display:inline;">(Previous Visits to Russia)</span><br>
+                        <label class="chk-label"><input type="radio" name="visit"> NO</label>
+                        <label class="chk-label"><input type="radio" name="visit"> YES -> 우측 정보 기재요망</label><br>
+                        <span class="warning-red" style="margin-top:5px;">[있을 경우 횟수와 가장 최근 러시아 입&출국 일자 기재요망]</span>
+                    </td>
+                    <td style="text-align: right;">총 횟수 : <input type="text" class="input-line" style="width:100px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>러시아 입국일 : <input type="text" class="input-line" style="width:120px;"></td>
+                </tr>
+                <tr>
+                    <td>러시아 출국일 : <input type="text" class="input-line" style="width:120px;"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 면책 조항 및 약관 -->
+        <div class="notice-footer">
+            <strong>비자 신청 및 면책 동의 (Terms & Declaration)</strong>
+            <ul style="margin: 0; padding-left: 15px; list-style-type: none;">
+                <li>• 비자 발급의 최종 결정권은 러시아 대사관(영사관)에 있으며, 신청서 접수가 발급을 100% 보장하지 않습니다.</li>
+                <li style="margin-top: 3px;">• <strong>비자 거절 시, 이는 신청인 본인의 과거 기록, 서류 미비, 또는 개인 결격 사유</strong>에 의한 결과임을
+                    인정하며, 이에 대해 대행사에 책임을 묻지 않습니다.</li>
+                <li style="margin-top: 3px;">• 영사관 사정에 따라 심사가 지연될 수 있으며, 지불된 비용은 결과와 상관없이 환불되지 않습니다.</li>
+            </ul>
+
+            <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-end;">
+                <div style="font-size: 11px;">
+                    날짜 (Date): <span class="input-line" style="min-width: 120px; display: inline-block;"></span>
+                </div>
+                <div style="text-align: right; font-size: 11px; font-weight: bold;">
+                    신청인 서명 (Signature): <span class="input-line"
+                        style="min-width: 160px; border-bottom: 1px solid #111; display: inline-block;"></span>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 10px; color: #94a3b8; text-align: center;" class="no-print">
+            본 기재사항은 비자 신청서 작성에 필요한 정보이며 사실로 기재되어야 합니다.
+        </div>
+    </div>
+
+</body>
+
+</html>

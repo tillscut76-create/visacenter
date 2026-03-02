@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visa Application Form to Enter Japan</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', 'Noto Sans KR', 'Arial', sans-serif;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+
+        .row {
+            display: flex;
+            border: 1px solid #000;
+            border-bottom: none;
+        }
+
+        .row:last-child {
+            border-bottom: 1px solid #000;
+        }
+
+        .cell {
+            padding: 8px;
+            border-right: 1px solid #000;
+            flex: 1;
+        }
+
+        .cell:last-child {
+            border-right: none;
+        }
+
+        .label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            border: none;
+            background: #f9f9f9;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .section-header {
+            background: #f0f0f0;
+            padding: 5px 10px;
+            border: 1px solid #000;
+            border-bottom: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .notice-box {
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #fcfcfc;
+            border-radius: 4px;
+        }
+
+        .notice-text {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .notice-text i {
+            color: #d32f2f;
+            margin-right: 5px;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            input {
+                background: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="no-print" style="text-align: right; margin-bottom: 20px;">
+        <button onclick="window.print()"
+            style="padding: 10px 20px; cursor: pointer; background: #000; color: #fff; border: none;">Print / Save as
+            PDF
+            (인쇄 / PDF 저장)</button>
+    </div>
+
+    <h2>Visa Application Form to Enter Japan</h2>
+
+    <div class="section-header">1. Applicant Information (신청인 정보)</div>
+    <div class="row">
+        <div class="cell">
+            <span class="label">Full Name (성명)</span>
+            <input type="text" id="full_name" placeholder="As shown in passport">
+        </div>
+        <div class="cell">
+            <span class="label">Nationality (국적)</span>
+            <input type="text" id="nationality">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <span class="label">Date of Birth (생년월일)</span>
+            <input type="date" id="dob">
+        </div>
+        <div class="cell">
+            <span class="label">Mobile Phone Number (핸드폰 번호)</span>
+            <input type="text" id="phone">
+        </div>
+    </div>
+
+    <div class="section-header">2. Travel Information (여행 정보)</div>
+    <div class="row">
+        <div class="cell">
+            <span class="label">Purpose of Visit (방문 목적)</span>
+            <input type="text" id="purpose" placeholder="e.g. Tourism, Business, Visiting Friends">
+        </div>
+        <div class="cell">
+            <span class="label">Intended Length of Stay (체류 기간)</span>
+            <input type="text" id="stay_length" placeholder="e.g. 15 Days">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <span class="label">Date of Arrival in Japan (입국 예정일)</span>
+            <input type="date" id="arrival_date">
+        </div>
+        <div class="cell">
+            <span class="label">Port of Entry (입국 공항/항구)</span>
+            <input type="text" id="port_of_entry">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <span class="label">Names and Addresses of Hotels/Persons to Stay with (숙소/체류지)</span>
+            <input type="text" id="accommodation" placeholder="Name, Address, Tel">
+        </div>
+    </div>
+
+    <div class="section-header">3. Employment / School (직장/학교 정보)</div>
+    <div class="row">
+        <div class="cell">
+            <span class="label">Name of Employer/School (직장/학교명)</span>
+            <input type="text" id="org_name">
+        </div>
+        <div class="cell">
+            <span class="label">Tel (전화번호)</span>
+            <input type="text" id="org_tel">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell">
+            <span class="label">Address (주소)</span>
+            <input type="text" id="org_address" placeholder="Employer or School Address">
+        </div>
+    </div>
+
+    <script>
+        // Auto-save functionality
+        const formInputs = document.querySelectorAll('input');
+        const storageKey = 'japan_visa_application_data';
+
+        // Load saved data
+        window.addEventListener('load', () => {
+            const savedData = localStorage.getItem(storageKey);
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                formInputs.forEach(input => {
+                    if (data[input.id]) {
+                        input.value = data[input.id];
+                    }
+                });
+            }
+        });
+
+        // Save data on input
+        formInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const data = {};
+                formInputs.forEach(input => {
+                    data[input.id] = input.value;
+                });
+                localStorage.setItem(storageKey, JSON.stringify(data));
+            });
+        });
+    </script>
+
+    <div class="notice-box">
+        <div class="notice-text">
+            ※ 비자 발급 여부는 일본 영사관의 고유 권한으로, 심사 과정에서 추가 서류 제출이 요청될 수 있습니다.<br>
+            <span style="font-size: 0.9em; color: #777;">(The issuance of a visa is at the sole discretion of the
+                Japanese Consulate, and additional documents may be requested during the screening process.)</span>
+        </div>
+        <div class="notice-text">
+            ※ 만일 비자 발급이 거절될 경우, 영사관 방침에 따라 구체적인 거절 사유는 안내되지 않는 점 고객님의 깊은 양해 부탁드립니다.<br>
+            <span style="font-size: 0.9em; color: #777;">(Please understand that if a visa is refused, the specific
+                reasons will not be disclosed in accordance with the Consulate's policy.)</span>
+        </div>
+        <div class="notice-text">
+            ※ 비자 발급 후 방문 일정이나 방문 도시가 변경되더라도, 발급된 비자의 유효기간 및 체류 기간을 준수한다면 자유롭게 일정을 조정하실 수 있습니다.<br>
+            <span style="font-size: 0.9em; color: #777;">(Once the visa is issued, you may change your travel schedule
+                or visiting cities at your discretion, provided that you comply with the validity and period of stay
+                specified on the visa.)</span>
+        </div>
+        <div style="margin-top: 20px; font-size: 12px; color: #333; border-top: 1px solid #eee; padding-top: 15px;">
+            I hereby declare that the statement given above is true and correct. (위 기재 내용은 사실과 다름없음을 확인합니다.)
+        </div>
+        <div style="margin-top: 30px; display: flex; justify-content: space-between;">
+            <span>Date of Application (신청일): __________________</span>
+            <span>Signature of Applicant (서명): __________________</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

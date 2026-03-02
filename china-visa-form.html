@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중국비자 신청서 - 뉴투어리더스</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #000;
+            background-color: #e5e7eb;
+            /* 화면 배경 */
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* A4 사이즈 페이지 설정 */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px auto;
+            padding: 12mm 15mm 20mm 15mm;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* 페이지 번호 스타일 */
+        .page-number {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #555;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin: 15px 0 5px 0;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #333;
+            color: #111;
+        }
+
+        .instruction {
+            font-size: 11px;
+            color: #d32f2f;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            border: 1px solid #555;
+            padding: 6px 8px;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        td {
+            text-align: left;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            border: 1px solid transparent;
+            outline: none;
+            font-family: inherit;
+            font-size: 12px;
+            background: transparent;
+            padding: 2px;
+        }
+
+        input[type="text"]:focus {
+            border-bottom-color: #0044cc;
+            background-color: #f0f7ff;
+        }
+
+        /* 체크박스 스타일 텍스트 (워드 복사 시 가로 유지) */
+        .chk-group {
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .print-btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #0044cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #0033aa;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+
+            .print-btn-container {
+                display: none;
+            }
+
+            .page {
+                margin: 0;
+                padding: 10mm 15mm;
+                box-shadow: none;
+                page-break-after: always;
+                /* 페이지 넘김 */
+            }
+
+            .page:last-child {
+                page-break-after: auto;
+            }
+
+            input[type="text"] {
+                border: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="print-btn-container">
+        <button onclick="window.print()" class="cta-button">프린트하기 / PDF로 저장</button>
+        <a href="china-visa.html" class="cta-button" style="background: #666;">뒤로 가기</a>
+    </div>
+
+    <!-- ================= PAGE 1 ================= -->
+    <div class="page">
+        <h1>중국비자 발급 신청서</h1>
+
+        <!-- 1. 신청자 기본 정보 -->
+        <div class="section-title">1. 신청자 기본 정보</div>
+        <table>
+            <colgroup>
+                <col style="width: 15%;">
+                <col style="width: 35%;">
+                <col style="width: 15%;">
+                <col style="width: 35%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>성명 (한글)</th>
+                    <td><input type="text"></td>
+                    <th>성명 (영문)</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>주민등록번호</th>
+                    <td><input type="text"></td>
+                    <th>출생도시</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>휴대폰 번호</th>
+                    <td><input type="text"></td>
+                    <th>결혼 여부</th>
+                    <td>□ 미혼 &nbsp; □ 기혼 &nbsp; □ 이혼 &nbsp; □ 사별</td>
+                </tr>
+                <tr>
+                    <th>이중국적 여부</th>
+                    <td>□ 없음 &nbsp; □ 있음 (국적: <input type="text" style="width:100px; display:inline-block;">)</td>
+                    <th>이메일 주소</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>거주지 주소</th>
+                    <td colspan="3" class="text-left"><input type="text" placeholder="(우편번호 기재 필수)"> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 2. 신청자 학력 및 가족 정보 -->
+        <div class="section-title">2. 신청자 가족 및 학력 정보</div>
+        <table>
+            <colgroup>
+                <col style="width: 15%;">
+                <col style="width: 15%;">
+                <col style="width: 20%;">
+                <col style="width: 15%;">
+                <col style="width: 15%;">
+                <col style="width: 20%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>최종 학력</th>
+                    <td colspan="5" class="chk-group">
+                        □ 대학원 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; □ 대학교 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; □ 고등학교
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; □ 기타 ( <input type="text"
+                            style="width:80px; display:inline-block;"> )
+                    </td>
+                </tr>
+                <tr>
+                    <th>학교명</th>
+                    <td colspan="2"><input type="text"></td>
+                    <th>전공</th>
+                    <td colspan="2"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th colspan="6" style="background-color: #e5e7eb;">가족 사항 (국문, 영문 모두 가능하나 가능하면 영문으로 기재 요망)</th>
+                </tr>
+                <tr>
+                    <th>관계</th>
+                    <th>영문 성명</th>
+                    <th>생년월일</th>
+                    <th>직업</th>
+                    <th>국적</th>
+                    <th>체류국가/출생도시</th>
+                </tr>
+                <tr>
+                    <th class="text-center">부 (Father)</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th class="text-center">모 (Mother)</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th class="text-center">배우자 (Spouse)</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th class="text-center">자녀 1 (Child)</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th class="text-center">자녀 2 (Child)</th>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 3. 비상 연락처 및 부가정보 -->
+        <div class="section-title">3. 비상 연락처 및 기타 부가정보</div>
+        <div class="instruction">※ 비상연락처는 본인 외에 한국에서 신원을 확인해 줄 수 있는 분을 적어주세요.</div>
+        <table>
+            <colgroup>
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>국내 비상연락처 성명</th>
+                    <td><input type="text"></td>
+                    <th>본인과의 관계</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>비상연락처 휴대폰</th>
+                    <td><input type="text"></td>
+                    <th>비상연락처 체류지(도시)</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>과거 중국 방문 여부</th>
+                    <td colspan="3">□ 예 &nbsp;&nbsp; □ 아니오</td>
+                </tr>
+                <tr>
+                    <th>과거 중국비자 발급 여부</th>
+                    <td colspan="3">□ 예 (최근 발급년도: <input type="text" style="width:50px; display:inline-block;"> 년)
+                        &nbsp;&nbsp; □ 아니오</td>
+                </tr>
+                <tr>
+                    <th>중국비자 지문등록 이력</th>
+                    <td colspan="3">□ 예 &nbsp;&nbsp; □ 아니오</td>
+                </tr>
+                <tr>
+                    <th>타국가의 유효한 비자 소지</th>
+                    <td colspan="3">□ 예 (국가명: <input type="text" style="width:150px; display:inline-block;">)
+                        &nbsp;&nbsp; □ 아니오</td>
+                </tr>
+                <tr>
+                    <th>지난 1년간 방문한 국가</th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>군 복무 여부</th>
+                    <td colspan="3">
+                        □ 필 &nbsp;(복무기간: <input type="text" style="width:40px; display:inline-block;">년 <input
+                            type="text" style="width:30px; display:inline-block;">월 ~ <input type="text"
+                            style="width:40px; display:inline-block;">년 <input type="text"
+                            style="width:30px; display:inline-block;">월, 제대계급: <input type="text"
+                            style="width:60px; display:inline-block;">) <br>
+                        □ 미필 &nbsp;&nbsp; □ 면제 &nbsp;&nbsp; □ 해당없음(여성)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 1페이지 번호 -->
+        <div class="page-number">- 1 / 2 -</div>
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
+    <div class="page">
+
+        <!-- 4. 신청자 직업 및 재직 정보 (핵심 수정 부분) -->
+        <div class="section-title">4. 신청자 직업 및 재직 정보 (최근 5년 이력)</div>
+        <div class="instruction">※ 신청일 기준 최근 5년 이내의 모든 재직/학업 이력을 작성해야 합니다.<br>※ 현 직장 근무기간이 5년 미만일 경우, 이전 직장(또는 무직/학생 기간)
+            정보를 5년이 채워지도록 모두 작성해주세요.</div>
+
+        <table>
+            <colgroup>
+                <col style="width: 15%;">
+                <col style="width: 35%;">
+                <col style="width: 15%;">
+                <col style="width: 35%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>현재 직업구분</th>
+                    <td colspan="3" class="chk-group">
+                        □ 회사원 &nbsp;&nbsp;&nbsp;&nbsp; □ 교사/공무원 &nbsp;&nbsp;&nbsp;&nbsp; □ 자영업 &nbsp;&nbsp;&nbsp;&nbsp;
+                        □ 학생 &nbsp;&nbsp;&nbsp;&nbsp; □ 무직 &nbsp;&nbsp;&nbsp;&nbsp; □ 은퇴
+                    </td>
+                </tr>
+
+                <!-- 현재 직장 -->
+                <tr>
+                    <th colspan="4" style="background-color: #e2e8f0; text-align: left; padding-left: 10px;">[1] 현재 직장 /
+                        학교 정보</th>
+                </tr>
+                <tr>
+                    <th>직장(학교)명</th>
+                    <td><input type="text"></td>
+                    <th>재직 기간</th>
+                    <td><input type="text" style="width:50px; display:inline-block;"> 년 <input type="text"
+                            style="width:30px; display:inline-block;"> 월 ~ 현재</td>
+                </tr>
+                <tr>
+                    <th>직책 및 부서</th>
+                    <td><input type="text"></td>
+                    <th>직장 전화번호</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>상사 성명</th>
+                    <td><input type="text"></td>
+                    <th>상사 연락처</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>직장(학교) 주소</th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+
+                <!-- 이전 직장 1 -->
+                <tr>
+                    <th colspan="4" style="background-color: #f8fafc; text-align: left; padding-left: 10px;">[2] 이전 직장 /
+                        학교 정보 (5년 미만 근무 시 필수기재)</th>
+                </tr>
+                <tr>
+                    <th>직장(학교)명</th>
+                    <td><input type="text"></td>
+                    <th>재직 기간</th>
+                    <td><input type="text" style="width:50px; display:inline-block;"> 년 <input type="text"
+                            style="width:30px; display:inline-block;"> 월 ~ <input type="text"
+                            style="width:50px; display:inline-block;"> 년 <input type="text"
+                            style="width:30px; display:inline-block;"> 월</td>
+                </tr>
+                <tr>
+                    <th>직책 및 부서</th>
+                    <td><input type="text"></td>
+                    <th>직장 전화번호</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>상사 성명</th>
+                    <td><input type="text"></td>
+                    <th>상사 연락처</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>직장(학교) 주소</th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+
+                <!-- 이전 직장 2 -->
+                <tr>
+                    <th colspan="4" style="background-color: #f8fafc; text-align: left; padding-left: 10px;">[3] 이전 직장 /
+                        학교 정보 (필요 시 기재)</th>
+                </tr>
+                <tr>
+                    <th>직장(학교)명</th>
+                    <td><input type="text"></td>
+                    <th>재직 기간</th>
+                    <td><input type="text" style="width:50px; display:inline-block;"> 년 <input type="text"
+                            style="width:30px; display:inline-block;"> 월 ~ <input type="text"
+                            style="width:50px; display:inline-block;"> 년 <input type="text"
+                            style="width:30px; display:inline-block;"> 월</td>
+                </tr>
+                <tr>
+                    <th>직책 및 부서</th>
+                    <td><input type="text"></td>
+                    <th>직장 전화번호</th>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 5. 출국 및 초청자 정보 -->
+        <div class="section-title">5. 중국 출국 정보 및 초청자 정보</div>
+        <div class="instruction">※ 관광 비자의 경우 초청자 정보는 공란으로 두셔도 됩니다.</div>
+        <table>
+            <colgroup>
+                <col style="width: 15%;">
+                <col style="width: 35%;">
+                <col style="width: 15%;">
+                <col style="width: 35%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>입국 예정일</th>
+                    <td><input type="text" style="width:40px; display:inline-block;"> 년 <input type="text"
+                            style="width:30px; display:inline-block;"> 월 <input type="text"
+                            style="width:30px; display:inline-block;"> 일</td>
+                    <th>귀국 예정일</th>
+                    <td><input type="text" style="width:40px; display:inline-block;"> 년 <input type="text"
+                            style="width:30px; display:inline-block;"> 월 <input type="text"
+                            style="width:30px; display:inline-block;"> 일</td>
+                </tr>
+                <tr>
+                    <th>입국 도시</th>
+                    <td><input type="text"></td>
+                    <th>항공편명</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>체류 예정 주소</th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th colspan="4" style="background-color: #e5e7eb;">초청인(또는 초청회사) 정보</th>
+                </tr>
+                <tr>
+                    <th>초청인 영문명</th>
+                    <td><input type="text"></td>
+                    <th>본인과의 관계</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>초청인 연락처</th>
+                    <td><input type="text"></td>
+                    <th>이메일</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>초청인 주소</th>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>경비 부담자</th>
+                    <td colspan="3">□ 본인 &nbsp;&nbsp; □ 초청인/초청회사 &nbsp;&nbsp; □ 기타 ( <input type="text"
+                            style="width:100px; display:inline-block;"> )</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 30px; text-align: center; font-size: 14px; line-height: 1.8;">
+            본인은 위 기재된 내용이 모두 사실임을 확인하며, 허위 기재로 인한 불이익은 본인이 감수할 것을 서약합니다.<br><br>
+            <strong>신청일:</strong> 202&nbsp;&nbsp;년 &nbsp;&nbsp;&nbsp;&nbsp;월 &nbsp;&nbsp;&nbsp;&nbsp;일<br><br>
+            <strong>신청인 성명:</strong>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            (서명 또는 인)
+        </div>
+
+        <!-- 2페이지 번호 -->
+        <div class="page-number">- 2 / 2 -</div>
+    </div>
+
+</body>
+
+</html>
