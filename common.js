@@ -51,6 +51,9 @@ function injectMarquee(notices) {
     });
     if (activeNotices.length === 0) return;
 
+    // Prevent duplicate marquee injection
+    if (document.querySelector('.marquee-container')) return;
+
     const marqueeText = activeNotices.map(n => n.text).join(' &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; ');
 
     const marqueeDiv = document.createElement('div');
