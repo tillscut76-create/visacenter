@@ -99,8 +99,14 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative bg-gray-900 py-24 md:py-32 px-4 text-center"
-        style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1558235284-adfb969b8b0e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; background-attachment: fixed;">
+    <header class="relative bg-gray-900 py-24 md:py-32 px-4 text-center overflow-hidden">
+        <!-- Background Image Element instead of CSS bg to avoid parser bugs -->
+        <div class="absolute inset-0 z-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1558235284-adfb969b8b0e?auto=format&fit=crop&w=1920&q=80"
+                alt="Taiwan Background" loading="lazy" class="w-full h-full object-cover object-center opacity-40">
+            <div class="absolute inset-0 bg-gray-900/60"></div>
+        </div>
+
         <div class="max-w-6xl mx-auto text-center relative z-10">
             <div
                 class="inline-block bg-white/30 backdrop-blur-md text-white border border-white/40 px-5 py-1.5 rounded-full text-sm font-bold mb-4 uppercase tracking-wider shadow-lg">
