@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnam e-Visa Application Form (Simplified)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* 프린트 전용 설정 */
+        @media print {
+            body {
+                background-color: white !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .print-container {
+                box-shadow: none !important;
+                border: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+            }
+
+            .section-box {
+                border: 1px solid #e2e8f0 !important;
+                padding: 1.5rem !important;
+                margin-bottom: 1.5rem !important;
+                border-radius: 0.75rem !important;
+            }
+
+            input[type="text"],
+            input[type="tel"],
+            input[type="date"],
+            textarea {
+                border: none !important;
+                border-bottom: 1px solid #ccc !important;
+                background: transparent !important;
+                padding: 2px 0 !important;
+                color: black !important;
+                appearance: none !important;
+            }
+
+            .signature-area {
+                display: block !important;
+            }
+
+            .crucial-alert {
+                border: 2px solid #ef4444 !important;
+                background-color: #fef2f2 !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+
+        .input-field {
+            @apply w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:ring-2 focus:ring-emerald-500 outline-none transition text-sm;
+        }
+
+        .signature-area {
+            display: none;
+        }
+
+        .crucial-label {
+            @apply text-[11px] font-black text-red-600 mb-1 flex items-center gap-1;
+        }
+
+        .highlight-important {
+            @apply border-2 border-red-500 bg-red-50;
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8">
+
+    <!-- Header / Actions (No Print) -->
+    <div class="max-w-3xl mx-auto mb-6 no-print">
+        <div
+            class="flex flex-col sm:flex-row justify-between items-center bg-white p-5 rounded-2xl shadow-sm border border-slate-200 gap-4">
+            <div>
+                <h1 class="text-lg font-black text-slate-800 uppercase tracking-tight">Vietnam <span
+                        class="text-emerald-600">Digital Form</span></h1>
+                <p class="text-xs text-slate-400 font-medium">여권 사본 외 추가 정보만 간편하게 입력하세요.</p>
+            </div>
+            <button onclick="window.print()"
+                class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm transition shadow-md flex items-center justify-center gap-2">
+                <i class="fas fa-print"></i> 신청서 작성 완료 / PDF 저장
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div
+        class="max-w-3xl mx-auto bg-white rounded-[2rem] shadow-xl overflow-hidden border border-slate-100 print-container">
+
+        <!-- Doc Title -->
+        <div class="p-8 border-b border-slate-50 text-center bg-slate-50/50">
+            <h2 class="text-xl font-black text-slate-800 tracking-tight">베트남 전자비자 신청서 기재사항</h2>
+            <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Required Information for Vietnam e-Visa
+            </p>
+        </div>
+
+        <form id="visaForm" class="p-8 md:p-12 space-y-10">
+
+            <!-- Section 01: Personal Info -->
+            <div class="section-box">
+                <h3 class="text-sm font-black text-emerald-700 mb-6 flex items-center uppercase tracking-wider">
+                    <i class="fas fa-user-plus mr-2 text-xs"></i> 01. 개인 추가 정보
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="space-y-1.5">
+                        <label class="text-[11px] font-bold text-slate-500 ml-1">연락처 (Phone Number)</label>
+                        <input type="tel" placeholder="010-0000-0000" class="input-field">
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-[11px] font-bold text-slate-500 ml-1">주민등록번호 / ID번호</label>
+                        <input type="text" placeholder="시스템 등록용 전체 번호" class="input-field">
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-[11px] font-bold text-slate-500 ml-1">직업 (Occupation)</label>
+                        <input type="text" placeholder="예: 회사원, 주부, 학생 등" class="input-field">
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-[11px] font-bold text-slate-500 ml-1">종교 (Religion)</label>
+                        <input type="text" placeholder="없을 시 '없음' 기재" class="input-field">
+                    </div>
+                    <div class="md:col-span-2 space-y-1.5">
+                        <label class="text-[11px] font-bold text-slate-500 ml-1">현재 거주지 주소 (Current Home
+                            Address)</label>
+                        <input type="text" placeholder="현재 거주 중인 도로명 주소" class="input-field">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 02: Purpose & Travel Info -->
+            <div class="section-box">
+                <h3 class="text-sm font-black text-emerald-700 mb-6 flex items-center uppercase tracking-wider">
+                    <i class="fas fa-plane mr-2 text-xs"></i> 02. 입국 목적 및 체류지 정보
+                </h3>
+                <div class="space-y-6">
+                    <!-- Purpose Checkboxes -->
+                    <div class="space-y-2.5">
+                        <label class="text-[11px] font-bold text-slate-500 ml-1">입국 목적 (Purpose of Entry)</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <label
+                                class="flex items-center gap-2 p-3 bg-slate-50 rounded-xl border border-slate-100 cursor-pointer hover:bg-emerald-50 transition">
+                                <input type="checkbox" name="purpose" class="w-4 h-4 accent-emerald-600">
+                                <span class="text-sm font-medium">관광</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 bg-slate-50 rounded-xl border border-slate-100 cursor-pointer hover:bg-emerald-50 transition">
+                                <input type="checkbox" name="purpose" class="w-4 h-4 accent-emerald-600">
+                                <span class="text-sm font-medium">상용(출장)</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 bg-slate-50 rounded-xl border border-slate-100 cursor-pointer hover:bg-emerald-50 transition">
+                                <input type="checkbox" name="purpose" class="w-4 h-4 accent-emerald-600">
+                                <span class="text-sm font-medium">학회</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 p-3 bg-slate-50 rounded-xl border border-slate-100 cursor-pointer hover:bg-emerald-50 transition">
+                                <input type="checkbox" name="purpose" class="w-4 h-4 accent-emerald-600">
+                                <span class="text-sm font-medium">기타</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Address (Simplified for just writing) -->
+                    <div class="space-y-1.5">
+                        <label class="text-[11px] font-bold text-slate-500 ml-1 uppercase tracking-tighter">현지 체류지 주소
+                            (호텔명 또는 거소지 상세주소)</label>
+                        <textarea rows="3" placeholder="베트남 내 머무실 곳의 주소를 자유롭게 적어주세요."
+                            class="input-field min-h-[80px]"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CRUCIAL DATA SECTION (HIGHLIGHTED) -->
+            <div
+                class="bg-red-50 rounded-[2rem] p-8 border-2 border-red-500 space-y-6 crucial-alert shadow-lg shadow-red-100">
+                <div class="flex items-center gap-3 text-red-600">
+                    <div
+                        class="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center animate-pulse">
+                        <i class="fas fa-exclamation"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-black uppercase tracking-tight">발급 시 가장 중요한 정보 (필독)</h4>
+                        <p class="text-[10px] text-red-400">오기재 시 비자 사용이 불가하며, 수정이 되지 않으므로 매우 정확히 입력해 주세요.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-1.5">
+                        <label class="crucial-label"><i class="fas fa-map-marker-alt"></i> 베트남 입국 공항 (Entry
+                            Airport)</label>
+                        <input type="text" placeholder="예: 다낭, 하노이, 호치민 등"
+                            class="input-field border-red-200 bg-white font-black text-red-700">
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="crucial-label"><i class="fas fa-calendar-check"></i> 출국 예정일 (베트남 도착날짜)</label>
+                        <input type="date" class="input-field border-red-200 bg-white font-black text-red-700">
+                    </div>
+                    <div class="md:col-span-2 space-y-1.5">
+                        <label class="crucial-label"><i class="fas fa-plane-arrival"></i> 리턴일 (한국 입국날짜)</label>
+                        <input type="date" class="input-field border-red-200 bg-white font-black text-red-700">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 03: History & Emergency -->
+            <div class="section-box">
+                <h3 class="text-sm font-black text-emerald-700 mb-6 flex items-center uppercase tracking-wider">
+                    <i class="fas fa-history mr-2 text-xs"></i> 03. 기타 이력 및 비상 연락처
+                </h3>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="space-y-1.5">
+                        <label class="text-[11px] font-bold text-slate-500 ml-1">최근 1년 이내 베트남 방문 기록 (Just Write)</label>
+                        <textarea rows="3" placeholder="방문 기록이 있다면 입출국일과 목적을 자유롭게 적어주세요. (없을 시 생략)"
+                            class="input-field"></textarea>
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-[11px] font-bold text-slate-500 ml-1">국내 비상 연락처 (성함 / 연락처 / 관계)</label>
+                        <input type="text" placeholder="예: 홍길동 / 010-1234-5678 / 본인 부친" class="input-field">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signature Line (Visible only in print) -->
+            <div class="signature-area mt-12 text-center border-t border-slate-100 pt-10 pb-6">
+                <p class="text-sm font-medium text-slate-600 mb-12 italic">본인은 위의 모든 정보가 사실과 다름없음을 확인하며, 비자 발급을 신청합니다.
+                </p>
+                <div class="flex justify-center">
+                    <div class="w-72 border-b border-slate-300 pb-2 flex justify-between items-end">
+                        <span class="text-xs font-bold text-slate-800 uppercase">Applicant Signature : </span>
+                        <span class="text-[10px] text-slate-300">(인/서명)</span>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <!-- Footer Notice (No Print) -->
+        <div class="bg-slate-900 p-8 text-center no-print">
+            <p class="text-slate-500 text-[10px] font-medium leading-relaxed">
+                입력하신 정보는 비자 발급을 위한 데이터 작성용으로만 활용되며,<br>개인정보보호 규정에 따라 안전하게 처리됩니다.
+            </p>
+        </div>
+    </div>
+
+    <!-- Help Info (No Print) -->
+    <div class="max-w-3xl mx-auto mt-8 text-center no-print pb-16">
+        <p class="text-slate-400 text-xs">문제가 발생하거나 작성이 어려운 경우 <strong>고객센터 카카오톡</strong>으로 문의하세요.</p>
+    </div>
+
+</body>
+
+</html>

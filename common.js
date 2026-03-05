@@ -104,6 +104,8 @@ function injectMarquee(notices) {
 }
 
 function unifyBranding() {
+    if (document.body.getAttribute('data-skip-unify') === 'true') return;
+
     // Unify logic for Header/Footer content transparency
     // This function will ensure consistent address/contact across all pages
     const addressStr = "B124, 1F, Beomyang Reus Central Bay 104-dong, 114 Choryangjung-ro, Dong-gu, Busan (부산광역시 동구 초량중로 114, 범양레우스센트럴베이 104동 1층 B124호)";
