@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 
 <head>
@@ -77,6 +77,42 @@
             @apply text-[11px] font-black text-slate-900 mb-1 flex items-center gap-1;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function saveAsImage() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                const btn = document.querySelector('.print-btn') || document.querySelector('button[onclick*="saveAsImage"]');
+                if(btn) btn.style.display = 'none';
+                
+                document.querySelectorAll('input[type="text"], input[type="date"], input[type="tel"]').forEach(el => el.setAttribute('value', el.value));
+                document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => {
+                    if(el.checked) el.setAttribute('checked', 'checked');
+                    else el.removeAttribute('checked');
+                });
+                document.querySelectorAll('textarea').forEach(el => el.innerHTML = el.value);
+
+                const target = document.querySelector('.page') || document.querySelector('.form-container') || document.body;
+                
+                setTimeout(() => {
+                    html2canvas(target, {scale: 2, useCORS: true}).then(canvas => {
+                        const link = document.createElement('a');
+                        link.download = 'application_form.png';
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                        alert("저장되었습니다! 스마트폰의 갤러리나 파일 앱에서 확인해주세요.");
+                        if(btn) btn.style.display = '';
+                    }).catch(e => {
+                        console.error(e);
+                        alert("저장에 실패했습니다. 화면을 캡쳐해주세요.");
+                        if(btn) btn.style.display = '';
+                    });
+                }, 100);
+            } else {
+                window.print();
+            }
+        }
+    </script>
 </head>
 
 <body class="p-4 md:p-8">
@@ -90,7 +126,7 @@
                         class="text-blue-600">Digital Form</span></h1>
                 <p class="text-xs text-slate-400 font-medium italic">초청장 소지자 전용 신청서입니다.</p>
             </div>
-            <button onclick="window.print()"
+            <button onclick="saveAsImage()"
                 class="w-full sm:w-auto bg-slate-800 hover:bg-black text-white px-6 py-2.5 rounded-xl font-bold text-sm transition shadow-md flex items-center justify-center gap-2">
                 <i class="fas fa-print"></i> 신청서 작성 완료 / PDF 저장
             </button>

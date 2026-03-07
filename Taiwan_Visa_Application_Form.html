@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 
 <head>
@@ -96,13 +96,49 @@
             padding: 4px;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function saveAsImage() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                const btn = document.querySelector('.print-btn') || document.querySelector('button[onclick*="saveAsImage"]');
+                if(btn) btn.style.display = 'none';
+                
+                document.querySelectorAll('input[type="text"], input[type="date"], input[type="tel"]').forEach(el => el.setAttribute('value', el.value));
+                document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => {
+                    if(el.checked) el.setAttribute('checked', 'checked');
+                    else el.removeAttribute('checked');
+                });
+                document.querySelectorAll('textarea').forEach(el => el.innerHTML = el.value);
+
+                const target = document.querySelector('.page') || document.querySelector('.form-container') || document.body;
+                
+                setTimeout(() => {
+                    html2canvas(target, {scale: 2, useCORS: true}).then(canvas => {
+                        const link = document.createElement('a');
+                        link.download = 'application_form.png';
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                        alert("저장되었습니다! 스마트폰의 갤러리나 파일 앱에서 확인해주세요.");
+                        if(btn) btn.style.display = '';
+                    }).catch(e => {
+                        console.error(e);
+                        alert("저장에 실패했습니다. 화면을 캡쳐해주세요.");
+                        if(btn) btn.style.display = '';
+                    });
+                }, 100);
+            } else {
+                window.print();
+            }
+        }
+    </script>
 </head>
 
 <body class="p-4">
 
     <!-- 컨트롤 바 (인쇄 안됨) -->
     <div class="max-w-4xl mx-auto mb-6 flex flex-wrap gap-3 justify-center no-print">
-        <button onclick="window.print()"
+        <button onclick="saveAsImage()"
             class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-blue-700 flex items-center gap-2">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

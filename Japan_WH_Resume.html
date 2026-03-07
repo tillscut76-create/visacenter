@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>履歴書 RESUME Editor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&display=swap');
+
+        :root {
+            --page-width: 210mm;
+            --page-height: 297mm;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: black;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .toolbar {
+            width: var(--page-width);
+            background: #ffffff;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-print {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+
+        .page {
+            width: var(--page-width);
+            height: var(--page-height);
+            background: white;
+            /* 기존 22mm의 약 80% 수준인 18mm로 좌우 여백 조정 */
+            padding: 15mm 18mm;
+            box-sizing: border-box;
+            position: relative;
+            font-size: 10pt;
+            /* 원본 비율 유지를 위해 전체 폰트 미세 조정 */
+            line-height: 1.25;
+        }
+
+        input[type="text"] {
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 10pt;
+            padding: 0;
+            outline: none;
+            width: 100%;
+            height: 16px;
+        }
+
+        input[type="text"]:hover,
+        input[type="text"]:focus {
+            background: rgba(230, 240, 255, 0.4);
+        }
+
+        .short-input {
+            width: 25px !important;
+            text-align: center;
+        }
+
+        .top-date {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 14pt;
+            margin: 10px 0 20px 0;
+            letter-spacing: 1px;
+        }
+
+        .title-text {
+            border-bottom: 1px solid black;
+            padding-bottom: 2px;
+        }
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .underline-row {
+            display: flex;
+            border-bottom: 1px solid black;
+            align-items: flex-end;
+            padding-bottom: 1px;
+            margin-top: 6px;
+        }
+
+        .status-container {
+            font-size: 9pt;
+            text-align: center;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .status-item {
+            cursor: pointer;
+            position: relative;
+            padding: 1px 3px;
+            display: inline-block;
+        }
+
+        .status-item.selected::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 130%;
+            border: 1.5px solid red;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .btn-add {
+            background: #f8f9fa;
+            border: 1px solid #ced4da;
+            color: #495057;
+            padding: 2px 8px;
+            font-size: 8pt;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .btn-add:hover {
+            background: #e2e6ea;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .toolbar {
+                display: none;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm 18mm;
+                /* 화면과 동일하게 양옆 18mm 고정 */
+                transform: none;
+                /* 좌측 쏠림 현상의 주범이었던 축소(scale) 제거 */
+                width: 210mm;
+                height: 297mm;
+            }
+
+            input {
+                background: transparent !important;
+            }
+
+            .status-item.selected::after {
+                border-color: red !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            @page {
+                size: A4;
+                margin: 0;
+                /* 브라우저 여백을 완전히 없애어 page 내부 패딩(18mm)이 완벽한 대칭을 이루게 함 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="toolbar">
+        <div style="font-size: 14px;">履歴書 RESUME Editor</div>
+        <button class="btn-print" onclick="window.print()">Print / PDF Save</button>
+    </div>
+
+    <div class="page">
+        <!-- Date Header -->
+        <div class="top-date">
+            <div
+                style="display: flex; align-items: baseline; border-bottom: 1px solid black; padding-bottom: 1px; padding-right: 5px;">
+                　<input type="text" style="width: 45px; text-align: center;">年
+                　<input type="text" style="width: 25px; text-align: center;">月
+                　<input type="text" style="width: 25px; text-align: center;">日
+            </div>
+        </div>
+
+        <!-- Title -->
+        <div class="title"><span class="title-text">履歴書 RESUME</span></div>
+
+        <!-- Personal Info -->
+        <div class="section">
+            <div style="display: flex; justify-content: flex-start; font-size: 9.5pt;">
+                <div style="width: 280px;">○&nbsp;&nbsp;申請者氏名 Name of visa applicant:</div>
+                <div style="width: 100px; text-align: center;">性別 Sex:</div>
+                <div style="width: 100px; text-align: left; padding-left: 10px;">年齢 Age: </div>
+            </div>
+
+            <div class="underline-row">
+                <div style="width: 120px;"><input type="text" style="text-align: center;"></div>
+                <div style="width: 200px;"><input type="text" style="text-align: center;"></div>
+                <div style="width: 100px;"><input type="text" style="text-align: center;"></div>
+                <div style="width: 100px;"><input type="text" style="text-align: center;"></div>
+                <div style="flex: 1;"></div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-start; font-size: 8.5pt; margin-top: 2px;">
+                <div style="width: 120px; text-align: center;">姓 Surname</div>
+                <div style="width: 200px; text-align: center;">名 Given and middle name</div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-start; margin-top: 12px; font-size: 9.5pt;">
+                <div style="width: 280px;">&nbsp;生年月日 Date of birth:</div>
+                <div style="flex: 1;">出生地 Place of birth: </div>
+            </div>
+
+            <div class="underline-row">
+                <div style="width: 280px;"><input type="text"></div>
+                <div style="flex: 1;"><input type="text"></div>
+            </div>
+        </div>
+
+        <!-- Educational Background -->
+        <div class="section">
+            <div>○&nbsp;&nbsp;学歴（高校以上を記入） Educational Background from High School:</div>
+            <div style="display: flex; font-size: 9pt; margin-top: 6px;">
+                <div style="width: 22%;">期間<br>Period</div>
+                <div style="width: 35%; text-align: center;">現在の状況<br>Present Situation</div>
+                <div style="width: 43%;">学校名・学部・学科・課程年数（注）<br>Name of School, Department, Subject, Duration of study
+                </div>
+            </div>
+
+            <!-- Edu Row 1 -->
+            <div class="underline-row" style="margin-top: 8px;">
+                <div style="width: 22%;"><input type="text"></div>
+                <div style="width: 35%;" class="status-container">
+                    ( <span class="status-item" onclick="toggleStatus(this)">卒業</span> ・
+                    <span class="status-item" onclick="toggleStatus(this)">在学中</span> ・
+                    <span class="status-item" onclick="toggleStatus(this)">休学</span> ・
+                    <span class="status-item" onclick="toggleStatus(this)">退学</span> )
+                </div>
+                <div style="width: 43%;"><input type="text"></div>
+            </div>
+
+            <!-- Edu Row 2 -->
+            <div class="underline-row" style="margin-top: 8px;">
+                <div style="width: 22%;"><input type="text"></div>
+                <div style="width: 35%;" class="status-container">
+                    ( <span class="status-item" onclick="toggleStatus(this)">卒業</span> ・
+                    <span class="status-item" onclick="toggleStatus(this)">在学中</span> ・
+                    <span class="status-item" onclick="toggleStatus(this)">休学</span> ・
+                    <span class="status-item" onclick="toggleStatus(this)">退学</span> )
+                </div>
+                <div style="width: 43%;"><input type="text"></div>
+            </div>
+
+            <!-- Edu Row 3 -->
+            <div class="underline-row" style="margin-top: 8px;">
+                <div style="width: 22%;"><input type="text"></div>
+                <div style="width: 35%;" class="status-container">
+                    ( <span class="status-item" onclick="toggleStatus(this)">卒業</span> ・
+                    <span class="status-item" onclick="toggleStatus(this)">在学中</span> ・
+                    <span class="status-item" onclick="toggleStatus(this)">休学</span> ・
+                    <span class="status-item" onclick="toggleStatus(this)">退学</span> )
+                </div>
+                <div style="width: 43%;"><input type="text"></div>
+            </div>
+
+            <div style="font-size: 8pt; margin-top: 4px;">
+                （注）在籍年数ではなく、必ず課程年数を記載願います（例：２年課程の専門大学に４年間在籍の場合→「２年制」と記載）。
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="section">
+            <div>○&nbsp;&nbsp;職歴 Work Experience:</div>
+            <div style="display: flex; font-size: 9pt; margin-top: 6px;">
+                <div style="width: 30%;">期間&nbsp;&nbsp;Period</div>
+                <div style="width: 70%;">職場名 Name of Organization</div>
+            </div>
+
+            <div class="underline-row" style="margin-top: 8px;">
+                <div style="width: 30%;"><input type="text"></div>
+                <div style="width: 70%;"><input type="text"></div>
+            </div>
+            <div class="underline-row" style="margin-top: 8px;">
+                <div style="width: 30%;"><input type="text"></div>
+                <div style="width: 70%;"><input type="text"></div>
+            </div>
+            <div class="underline-row" style="margin-top: 8px;">
+                <div style="width: 30%;"><input type="text"></div>
+                <div style="width: 70%;"><input type="text"></div>
+            </div>
+        </div>
+
+        <!-- Stay in Japan -->
+        <div class="section">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>○&nbsp;&nbsp;日本滞在歴 Experience of stay in Japan: </div>
+                <button type="button" class="btn-add no-print" onclick="addStayRow()">+ 行を追加 (줄 추가)</button>
+            </div>
+            <div style="font-size: 8.5pt;">(該当する場合には、滞在期間、訪日目的、滞在場所 If any, please write the period, purpose, and place
+                of each visit)</div>
+
+            <div id="stay-japan-rows">
+                <div class="underline-row" style="margin-top: 10px;">
+                    <div style="flex: 1; padding-right: 5px;"><input type="text"></div>
+                    <div style="flex: 1; padding-left: 5px;"><input type="text"></div>
+                </div>
+                <div class="underline-row" style="margin-top: 8px;">
+                    <div style="flex: 1; padding-right: 5px;"><input type="text"></div>
+                    <div style="flex: 1; padding-left: 5px;"><input type="text"></div>
+                </div>
+                <div class="underline-row" style="margin-top: 8px;">
+                    <div style="flex: 1; padding-right: 5px;"><input type="text"></div>
+                    <div style="flex: 1; padding-left: 5px;"><input type="text"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Previous WH Application -->
+        <div class="section" style="line-height: 1.35;">
+            <div>○&nbsp;&nbsp;過去のワーキング・ホリデー査証申請 Previous application for the Working Holiday visa: </div>
+            <div style="margin-left: 15px; margin-top: 2px;">
+                ある Yes(&nbsp;<input type="text" class="short-input">&nbsp;),&nbsp;&nbsp;ない No(&nbsp;<input type="text"
+                    class="short-input">&nbsp;)
+            </div>
+            <div style="margin-left: 15px; margin-top: 2px; font-size: 9pt;">
+                「ある」と答えた場合には、何回か記入してください。 If yes, please indicate how many times:
+            </div>
+            <div style="margin-left: 20px; margin-top: 2px;">
+                1回(&nbsp;<input type="text" class="short-input">&nbsp;),&nbsp;&nbsp;2回(&nbsp;<input type="text"
+                    class="short-input">&nbsp;),&nbsp;&nbsp;3回(&nbsp;<input type="text"
+                    class="short-input">&nbsp;),&nbsp;&nbsp;4回以上(&nbsp;<input type="text" class="short-input">&nbsp;)
+            </div>
+            <div style="margin-left: 15px; margin-top: 2px;">
+                「ある」と答えた場合には、いつですか。（年/月/日）　When? (year / month / day)
+            </div>
+            <div class="underline-row" style="margin-top: 4px;"><input type="text"></div>
+        </div>
+
+        <!-- Previous WH Issuance -->
+        <div class="section" style="line-height: 1.35;">
+            <div>○&nbsp;&nbsp;過去のワーキング・ホリデー査証交付歴 Previous issuance for the Working Holiday visa: </div>
+            <div style="margin-left: 15px; margin-top: 2px;">
+                ある Yes(&nbsp;<input type="text" class="short-input">&nbsp;),&nbsp;&nbsp;ない No(&nbsp;<input type="text"
+                    class="short-input">&nbsp;)
+            </div>
+            <div style="margin-left: 15px; margin-top: 2px; font-size: 9pt;">
+                「ある」と答えた場合には、何回か記入してください。 If yes, please indicate how many times:
+            </div>
+            <div style="margin-left: 20px; margin-top: 2px;">
+                1回(&nbsp;<input type="text" class="short-input">&nbsp;),&nbsp;&nbsp;2回(&nbsp;<input type="text"
+                    class="short-input">&nbsp;)
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <div>○&nbsp;&nbsp;特技（日本語能力：JLPT・JPT、剣道、華道、茶道など）　Skills(Japanese ability：JLPT・JPT, Kendo, Ikebana, Tea
+                ceremony etc.) </div>
+
+            <div class="underline-row" style="margin-top: 10px;"><input type="text"></div>
+            <div class="underline-row" style="margin-top: 8px;"><input type="text"></div>
+            <div class="underline-row" style="margin-top: 8px;"><input type="text"></div>
+        </div>
+
+    </div>
+
+    <script>
+        // 학력상태 빨간 동그라미 토글 함수
+        function toggleStatus(element) {
+            const container = element.parentElement;
+            const items = container.querySelectorAll('.status-item');
+            const isSelected = element.classList.contains('selected');
+            items.forEach(item => item.classList.remove('selected'));
+            if (!isSelected) {
+                element.classList.add('selected');
+            }
+        }
+
+        // 체재력 행 추가 함수
+        function addStayRow() {
+            const container = document.getElementById('stay-japan-rows');
+            const newRow = document.createElement('div');
+            newRow.className = 'underline-row';
+            newRow.style.marginTop = '8px';
+            newRow.innerHTML = `
+                <div style="flex: 1; padding-right: 5px;"><input type="text"></div>
+                <div style="flex: 1; padding-left: 5px;"><input type="text"></div>
+            `;
+            container.appendChild(newRow);
+
+            // 새 인풋에도 자동 리사이징 이벤트 부여
+            const newInputs = newRow.querySelectorAll('input[type="text"]');
+            newInputs.forEach(input => {
+                input.addEventListener('input', autoResizeFontSize);
+            });
+        }
+
+        // 텍스트 내용 길이에 따라 자동으로 폰트 사이즈 조절해주는 함수
+        function autoResizeFontSize() {
+            this.style.fontSize = '10pt';
+            let currentSize = 10;
+
+            while (this.scrollWidth > this.clientWidth + 2 && currentSize > 5) {
+                currentSize -= 0.5;
+                this.style.fontSize = currentSize + 'pt';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const textInputs = document.querySelectorAll('input[type="text"]');
+            textInputs.forEach(input => {
+                input.addEventListener('input', autoResizeFontSize);
+                if (input.value) {
+                    autoResizeFontSize.call(input);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
