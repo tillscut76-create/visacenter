@@ -149,7 +149,7 @@
                 <p class="text-xs text-slate-400 mb-6 font-medium tracking-wide">Official Chat Support</p>
 
                 <div class="mt-auto w-full space-y-2">
-                    <a href="https://open.kakao.com/o/gA7uV0ii" target="_blank"
+                    <a href="https://open.kakao.com/o/swFLraki" target="_blank"
                         class="w-full py-3 bg-[#FEE500] text-slate-900 rounded-xl font-bold hover:bg-[#F7D600] transition-colors flex items-center justify-center">
                         <i class="fa-solid fa-paper-plane mr-2 text-sm"></i>채팅 시작 / Start Chat
                     </a>
@@ -282,21 +282,31 @@
     <div id="toast">ID copied to clipboard!</div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('type') === 'wh') {
+                const kakaoLink = document.querySelector('a[href="https://open.kakao.com/o/swFLraki"]');
+                if (kakaoLink) {
+                    kakaoLink.href = 'https://open.kakao.com/o/sduPCaki';
+                }
+            }
+        });
+
         const qrData = {
             'kakao-qr': {
                 title: '카카오톡 / KakaoTalk',
                 id: 'ID: newtour0801',
-                img: 'kakao_qr.jpg'
+                img: 'images/kakao_qr.png'
             },
             'whatsapp-qr': {
                 title: 'WhatsApp / 왓츠앱',
                 id: 'Number: +82 10-9238-5418',
-                img: 'whatsapp_qr.jpg'
+                img: 'images/whatsapp_qr.png'
             },
             'wechat-qr': {
                 title: 'WeChat / 위챗',
                 id: 'ID: newtour0801',
-                img: 'wechat_qr.jpg'
+                img: 'images/wechat_qr.png'
             }
         };
 

@@ -113,11 +113,15 @@ function unifyBranding() {
     const emailStr = "kim83077@nate.com";
 
     // 1. Unify Header (Phone, Kakao, and FULL NAVIGATION)
+    let topContactLink = 'contact.html';
+    if (document.body.getAttribute('data-country-target') === 'japan-working') {
+        topContactLink = 'contact.html?type=wh';
+    }
     const topContact = document.querySelector('.top-contact');
     if (topContact) {
         topContact.innerHTML = `
             <a href="tel:051-818-0801"><i class="fa-solid fa-phone"></i> 051-818-0801 / 1588-8903</a>
-            <a href="contact.html"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
+            <a href="${topContactLink}"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
         `;
     }
 
@@ -125,6 +129,11 @@ function unifyBranding() {
     let navContainer = document.querySelector('nav ul');
     if (!navContainer) {
         navContainer = document.querySelector('nav > div:last-child'); // Fallback for div-based nav
+    }
+
+    let contactLink = 'contact.html';
+    if (document.body.getAttribute('data-country-target') === 'japan-working') {
+        contactLink = 'contact.html?type=wh';
     }
 
     if (navContainer) {
@@ -149,7 +158,7 @@ function unifyBranding() {
                 <span class="nav-en">Location</span>
                 <span class="nav-kr">오시는길</span>
             </a></li>
-            <li><a href="contact.html">
+            <li><a href="${contactLink}">
                 <span class="nav-en">Contact</span>
                 <span class="nav-kr">상담/문의</span>
             </a></li>
@@ -164,7 +173,7 @@ function unifyBranding() {
                 <a href="index.html" style="text-decoration:none; color:inherit;">Japan Visa (일본비자)</a>
                 <a href="global-visa.html" style="text-decoration:none; color:inherit;">Global Visa (전세계비자)</a>
                 <a href="index.html#location" style="text-decoration:none; color:inherit;">Location (오시는길)</a>
-                <a href="contact.html" style="text-decoration:none; color:inherit;">Contact (상담/문의)</a>
+                <a href="${contactLink}" style="text-decoration:none; color:inherit;">Contact (상담/문의)</a>
              `;
         }
     }
@@ -214,7 +223,11 @@ function unifyBranding() {
             // Exceptions: Don't redirect download links
             if (el.hasAttribute('download') || href.includes('forms/')) return;
 
-            el.setAttribute('href', 'contact.html');
+            let finalContactLink = 'contact.html';
+            if (document.body.getAttribute('data-country-target') === 'japan-working') {
+                finalContactLink = 'contact.html?type=wh';
+            }
+            el.setAttribute('href', finalContactLink);
             el.removeAttribute('target');
 
             // Standardize text if it was just a Kakao link or generic Inquiry
@@ -314,6 +327,11 @@ function showPopups(popups) {
 function injectFloatingButtons() {
     if (document.querySelector('.floating-contact-buttons')) return;
 
+    let floatContactLink = 'contact.html';
+    if (document.body.getAttribute('data-country-target') === 'japan-working') {
+        floatContactLink = 'contact.html?type=wh';
+    }
+
     const floatingDiv = document.createElement('div');
     floatingDiv.className = 'floating-contact-buttons';
     floatingDiv.innerHTML = `
@@ -321,7 +339,7 @@ function injectFloatingButtons() {
             <i class="fa-solid fa-phone"></i>
             <span class="float-tooltip">전화 상담</span>
         </a>
-        <a href="contact.html" class="float-btn float-kakao" title="카카오톡/1:1 문의">
+        <a href="${floatContactLink}" class="float-btn float-kakao" title="카카오톡/1:1 문의">
             <i class="fa-solid fa-comment-dots"></i>
             <span class="float-tooltip">카톡/문의</span>
         </a>

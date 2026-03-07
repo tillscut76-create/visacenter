@@ -24,14 +24,6 @@
             word-break: keep-all;
         }
 
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -126,8 +118,15 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-section text-white py-32 md:py-48 px-4 relative">
-        <div class="max-w-6xl mx-auto text-center">
+    <header class="relative bg-emerald-900 text-white py-32 md:py-48 px-4 overflow-hidden">
+        <!-- Background Image Element -->
+        <div class="absolute inset-0 z-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1920&q=80&v=2"
+                alt="Vietnam Background" loading="lazy" class="w-full h-full object-cover object-center opacity-50">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto text-center relative z-10">
             <div class="mb-6 opacity-80 tracking-[0.3em] font-light text-sm md:text-base">
                 OFFICIAL PARTNER FOR VIETNAM IMMIGRATION
             </div>
