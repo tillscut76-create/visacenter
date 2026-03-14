@@ -156,8 +156,8 @@ function unifyBranding() {
                     <li><a href="index.html">한국인 일본상용/관광 비자</a></li>
                     <li><a href="working-holiday.html">일본 워킹홀리데이</a></li>
                     <div class="dropdown-category" style="margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 12px;">For Foreigners (외국인 대상)</div>
-                    <li><a href="evisa.html">일본 전자비자 (e-Visa)</a></li>
-                    <li><a href="sticker-visa.html">일본 스티커비자</a></li>
+                    <li><a href="evisa.html">Japan e-Visa</a></li>
+                    <li><a href="sticker-visa.html">Japan Sticker Visa</a></li>
                 </ul>
             </li>
             <li>
