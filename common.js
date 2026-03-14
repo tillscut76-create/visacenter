@@ -146,14 +146,41 @@ function unifyBranding() {
                 <span class="nav-en">About Us</span>
                 <span class="nav-kr">회사소개</span>
             </a></li>
-            <li><a href="index.html">
-                <span class="nav-en">Japan Visa</span>
-                <span class="nav-kr">일본비자</span>
-            </a></li>
-            <li><a href="global-visa.html">
-                <span class="nav-en">Global Visa</span>
-                <span class="nav-kr">전세계비자</span>
-            </a></li>
+            <li>
+                <a href="index.html">
+                    <span class="nav-en">Japan Visa</span>
+                    <span class="nav-kr">일본비자</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="evisa.html">일본 전자비자 (e-Visa)</a></li>
+                    <li><a href="sticker-visa.html">일본 스티커비자</a></li>
+                    <li><a href="working-holiday.html">일본 워킹홀리데이</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="global-visa.html">
+                    <span class="nav-en">Global Visa</span>
+                    <span class="nav-kr">전세계비자</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <div class="dropdown-category">For Koreans (한국인 대상)</div>
+                    <li><a href="china-visa.html">중국 비자</a></li>
+                    <li><a href="vietnam-visa.html">베트남 비자</a></li>
+                    <li><a href="india-visa.html">인도 비자</a></li>
+                    <li><a href="thailand-visa.html">태국 비자</a></li>
+                    <li><a href="mongolia-visa.html">몽골 비자</a></li>
+                    <li><a href="taiwan-visa-kr.html">대만 비자</a></li>
+                    <li><a href="russia-visa.html">러시아 비자</a></li>
+                    <li><a href="europe-visa.html">유럽 (쉥겐) 비자</a></li>
+                    <li><a href="uk-visa.html">영국 비자</a></li>
+                    <li><a href="usa-visa.html">미국 ESTA / 비자</a></li>
+                    <li><a href="canada-visa.html">캐나다 eTA / 비자</a></li>
+                    <li><a href="global-visa.html" style="color: #D30000; font-weight: 700;">기타 전세계 비자 전체보기</a></li>
+                    <div class="dropdown-category" style="margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 12px;">For Foreigners (외국인 대상)</div>
+                    <li><a href="korean-visa.html">Korea Visa (F-4, C-3, etc)</a></li>
+                    <li><a href="taiwan-visa.html">Taiwan Visa Guide</a></li>
+                </ul>
+            </li>
             <li><a href="index.html#location">
                 <span class="nav-en">Location</span>
                 <span class="nav-kr">오시는길</span>
