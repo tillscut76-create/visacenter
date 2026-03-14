@@ -180,7 +180,7 @@ function unifyBranding() {
                     <li><a href="canada-visa.html">캐나다 eTA / 비자</a></li>
                     <li><a href="global-visa.html" style="color: #D30000; font-weight: 700;">기타 전세계 비자 전체보기</a></li>
                     <div class="dropdown-category" style="margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 12px;">For Foreigners (외국인 대상)</div>
-                    <li><a href="china-visa.html">China Visa Guide</a></li>
+                    <li><a href="china-visa.html#for-foreigners">China Visa Guide</a></li>
                     <li><a href="taiwan-visa.html">Taiwan Visa Guide</a></li>
                     <li><a href="uk-visa.html">UK Visa Guide</a></li>
                     <li><a href="europe-visa.html">Europe (Schengen) Visa Guide</a></li>
