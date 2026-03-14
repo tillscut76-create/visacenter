@@ -152,9 +152,12 @@ function unifyBranding() {
                     <span class="nav-kr">일본비자</span>
                 </a>
                 <ul class="dropdown-menu">
+                    <div class="dropdown-category">For Koreans (한국인 대상)</div>
+                    <li><a href="index.html">한국인 일본상용/관광 비자</a></li>
+                    <li><a href="working-holiday.html">일본 워킹홀리데이</a></li>
+                    <div class="dropdown-category" style="margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 12px;">For Foreigners (외국인 대상)</div>
                     <li><a href="evisa.html">일본 전자비자 (e-Visa)</a></li>
                     <li><a href="sticker-visa.html">일본 스티커비자</a></li>
-                    <li><a href="working-holiday.html">일본 워킹홀리데이</a></li>
                 </ul>
             </li>
             <li>
