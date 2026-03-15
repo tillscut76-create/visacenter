@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Inject Floating Contact Buttons
     injectFloatingButtons();
+
+    // 6. Inject Google Tag (gtag.js) for advertising
+    injectGoogleTag('AW-18016804856');
 });
 
 function injectMarquee(notices) {
@@ -153,7 +156,7 @@ function unifyBranding() {
                 </a>
                 <ul class="dropdown-menu">
                     <div class="dropdown-category">For Koreans (한국인 대상)</div>
-                    <li><a href="index.html">한국인 일본상용/관광 비자</a></li>
+                    <li><a href="korean-visa.html" style="color: #D30000; font-weight: 700;">한국인 일본상용/관광 비자</a></li>
                     <li><a href="working-holiday.html">일본 워킹홀리데이</a></li>
                     <div class="dropdown-category" style="margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 12px;">For Foreigners (외국인 대상)</div>
                     <li><a href="evisa.html">Japan e-Visa</a></li>
@@ -171,11 +174,12 @@ function unifyBranding() {
                     <li><a href="vietnam-visa.html">베트남 비자</a></li>
                     <li><a href="india-visa.html">인도 비자</a></li>
                     <li><a href="thailand-visa.html">태국 비자</a></li>
+                    <li><a href="myanmar-visa.html">미얀마 비자</a></li>
                     <li><a href="mongolia-visa.html">몽골 비자</a></li>
                     <li><a href="taiwan-visa-kr.html">대만 비자</a></li>
                     <li><a href="russia-visa.html">러시아 비자</a></li>
                     <li><a href="europe-visa.html">유럽 (쉥겐) 비자</a></li>
-                    <li><a href="uk-visa.html">영국 비자</a></li>
+                    <li><a href="uk-eta.html">영국비자 ETA</a></li>
                     <li><a href="usa-visa.html">미국 ESTA / 비자</a></li>
                     <li><a href="canada-visa.html">캐나다 eTA / 비자</a></li>
                     <li><a href="global-visa.html" style="color: #D30000; font-weight: 700;">기타 전세계 비자 전체보기</a></li>
@@ -458,4 +462,22 @@ function injectFloatingButtons() {
 
     document.head.appendChild(style);
     document.body.appendChild(floatingDiv);
+}
+
+function injectGoogleTag(tagId) {
+    // Prevent duplicate injection if manually added to HTML
+    if (window.dataLayer && window.dataLayer.some(e => e[0] === 'config' && e[1] === tagId)) return;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${tagId}`;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    // Avoid overwriting if already defined
+    if (!window.gtag) window.gtag = gtag;
+    
+    gtag('js', new Date());
+    gtag('config', tagId);
 }

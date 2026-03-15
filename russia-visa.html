@@ -21,6 +21,13 @@
             color: #334155;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: auto;
         }
 
         .ko-main {
@@ -89,8 +96,6 @@
             font-weight: 700;
         }
 
-        
-
         .russia-hero {
             background: linear-gradient(rgba(1, 33, 105, 0.8), rgba(1, 33, 105, 0.8)), url('https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -101,244 +106,231 @@
             margin-bottom: 40px;
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18016804856"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-18016804856');
+    </script>
 </head>
 
-<!-- Top Bar -->
-<div class="top-bar">
-    <div class="container top-bar-content">
-        <span class="trust-badge"><i class="fa-solid fa-certificate"></i> Trusted Visa Agency</span>
-        <div class="top-contact">
-            <!-- Injected via common.js -->
-        </div>
-    </div>
-</div>
+<body>
 
-<!-- Site Header -->
-<header>
-    <div class="container header-container">
-        <div class="logo">
-            <a href="index.html"><img src="http://newpassport.co.kr/visa/index/images/logo.jpg" alt="New Tour Leaders"
-                    style="height: 50px;"></a>
-        </div>
-        <nav>
-            <ul>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="trust-badge"><i class="fa-solid fa-certificate"></i> Trusted Visa Agency</span>
+            <div class="top-contact">
                 <!-- Injected via common.js -->
-            </ul>
-        </nav>
-        <a href="contact.html" class="cta-button">Apply (신청하기)</a>
-    </div>
-</header>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <!-- Injected via common.js -->
-    </div>
-</footer>
-
-<main class="max-w-5xl mx-auto py-16 px-4 space-y-16">
-
-    <!-- 1. Header Area -->
-    <div class="russia-hero text-center space-y-4">
-        <div class="inline-block mb-2">
-            <span class="text-6xl">🇷🇺</span>
-        </div>
-        <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight">러시아 연방 비자 발급 안내</h1>
-        <p class="text-blue-100 font-bold text-lg">Russia Visa Guide - Updated Fees & Processing</p>
-        <div class="flex justify-center gap-3 mt-6 text-center">
-            <span class="bg-blue-600 text-white text-xs font-bold px-5 py-2 rounded-full shadow-lg">관광/상용 비자
-                전문</span>
-            <span class="bg-slate-800 text-white text-xs font-bold px-5 py-2 rounded-full shadow-lg">초청장 종류별 맞춤
-                수속</span>
+            </div>
         </div>
     </div>
 
-    <!-- 2. Updated Processing & Fees -->
-    <section>
-        <h2 class="section-title">비자 종류 및 수속 기간 <span class="text-sm font-normal text-slate-400 ml-2">Processing &
-                Fees</span></h2>
-        <div class="section-divider"></div>
+    <!-- Site Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="http://newpassport.co.kr/visa/index/images/logo.jpg" alt="New Tour Leaders"
+                        style="height: 50px;"></a>
+            </div>
+            <nav>
+                <ul>
+                    <!-- Injected via common.js -->
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Apply (신청하기)</a>
+        </div>
+    </header>
 
-        <div class="overflow-x-auto shadow-sm rounded-xl border border-slate-200">
-            <table>
-                <thead>
-                    <tr>
-                        <th>비자 종류 (Type)</th>
-                        <th>구분</th>
-                        <th>소요 기간 (업무일)</th>
-                        <th>비자 요금 (대행 포함)</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white">
-                    <!-- 3개월 단수 -->
-                    <tr>
-                        <td rowspan="2" class="font-bold bg-slate-50">3개월 단수비자<br><span class="en-sub">Single Entry
-                                (3M)</span></td>
-                        <td>보통 (Standard)</td>
-                        <td>7일</td>
-                        <td class="price-text">200,000원</td>
-                    </tr>
-                    <tr>
-                        <td class="bg-blue-50/30">긴급 (Urgent)</td>
-                        <td class="bg-blue-50/30 text-blue-600 font-bold">2일</td>
-                        <td class="bg-blue-50/30 price-text">340,000원</td>
-                    </tr>
-                    <!-- 3개월 더블 -->
-                    <tr>
-                        <td rowspan="2" class="font-bold bg-slate-50">3개월 더블비자<br><span class="en-sub">Double Entry
-                                (3M)</span></td>
-                        <td>보통 (Standard)</td>
-                        <td>7일</td>
-                        <td class="price-text">292,000원</td>
-                    </tr>
-                    <tr>
-                        <td class="bg-blue-50/30">긴급 (Urgent)</td>
-                        <td class="bg-blue-50/30 text-blue-600 font-bold">2일</td>
-                        <td class="bg-blue-50/30 price-text">484,000원</td>
-                    </tr>
-                    <!-- 6개월/1년 상용복수 -->
-                    <tr>
-                        <td rowspan="2" class="font-bold bg-slate-50">6개월·1년 상용복수<br><span class="en-sub">Business
-                                Multi (6M/1Y)</span></td>
-                        <td>보통 (Standard)</td>
-                        <td>7일</td>
-                        <td class="price-text">460,000원</td>
-                    </tr>
-                    <tr>
-                        <td class="bg-blue-50/30">긴급 (Urgent)</td>
-                        <td class="bg-blue-50/30 text-blue-600 font-bold">2일</td>
-                        <td class="bg-blue-50/30 price-text">850,000원</td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- Main Content Area -->
+    <main class="max-w-5xl mx-auto py-16 px-4 space-y-16">
+
+        <!-- 1. Russia Hero -->
+        <div class="russia-hero text-center space-y-4">
+            <div class="inline-block mb-2">
+                <span class="text-6xl">🇷🇺</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight">러시아 연방 비자 발급 안내</h1>
+            <p class="text-blue-100 font-bold text-lg">Russia Visa Guide - Updated Fees & Processing</p>
+            <div class="flex justify-center gap-3 mt-6 text-center">
+                <span class="bg-blue-600 text-white text-xs font-bold px-5 py-2 rounded-full shadow-lg">관광/상용 비자 전문</span>
+                <span class="bg-slate-800 text-white text-xs font-bold px-5 py-2 rounded-full shadow-lg">초청장 종류별 맞춤 수속</span>
+            </div>
         </div>
 
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                <p class="text-xs text-amber-800 leading-relaxed">
-                    <strong>💡 초청장별 수속 안내:</strong><br>
-                    • 러시아 내무부 발행(공식) 초청장: <span class="font-bold text-blue-700">급행(2일) 가능</span> / 사본 접수 가능<br>
-                    • 러시아 기업 발행 초청장: <span class="font-bold text-red-600">급행 불가능</span> / 반드시 <strong>원본</strong> 필요
-                    (단수/더블 1주, 복수 2주 소요)
-                </p>
-            </div>
-            <div class="bg-slate-100 border-l-4 border-slate-400 p-4 rounded-r-lg">
-                <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong>⚠️ 유효기간 안내:</strong><br>
-                    비자의 체류 기간 및 유효 기간은 제출된 <span class="underline">초청장에 기재된 내용</span>에 의해 최종 결정됩니다.
-                </p>
-            </div>
-        </div>
-    </section>
+        <!-- 2. Processing & Fees -->
+        <section>
+            <h2 class="section-title">비자 종류 및 수속 기간 <span class="text-sm font-normal text-slate-400 ml-2">Processing & Fees</span></h2>
+            <div class="section-divider"></div>
 
-    <!-- 3. Required Documents -->
-    <section>
-        <h2 class="section-title">필수 구비 서류 <span class="text-sm font-normal text-slate-400 ml-2">Required
-                Documents</span></h2>
-        <div class="section-divider"></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="info-card p-6 border-2 border-blue-100">
-                <div class="ko-main">1. 인적사항</div>
-                <div class="en-sub mb-3">Personal Information Form</div>
-                <p class="text-[11px] text-slate-500">당사 제공 비자기재신청서 양식 작성</p>
+            <div class="overflow-x-auto shadow-sm rounded-xl border border-slate-200">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>비자 종류 (Type)</th>
+                            <th>구분</th>
+                            <th>소요 기간 (업무일)</th>
+                            <th>비자 요금 (대행 포함)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        <tr>
+                            <td rowspan="2" class="font-bold bg-slate-50">3개월 단수비자<br><span class="en-sub">Single Entry (3M)</span></td>
+                            <td>보통 (Standard)</td>
+                            <td>7일</td>
+                            <td class="price-text">200,000원</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-blue-50/30">긴급 (Urgent)</td>
+                            <td class="bg-blue-50/30 text-blue-600 font-bold">2일</td>
+                            <td class="bg-blue-50/30 price-text">340,000원</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="font-bold bg-slate-50">3개월 더블비자<br><span class="en-sub">Double Entry (3M)</span></td>
+                            <td>보통 (Standard)</td>
+                            <td>7일</td>
+                            <td class="price-text">292,000원</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-blue-50/30">긴급 (Urgent)</td>
+                            <td class="bg-blue-50/30 text-blue-600 font-bold">2일</td>
+                            <td class="bg-blue-50/30 price-text">484,000원</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="font-bold bg-slate-50">6개월·1년 상용복수<br><span class="en-sub">Business Multi (6M/1Y)</span></td>
+                            <td>보통 (Standard)</td>
+                            <td>7일</td>
+                            <td class="price-text">460,000원</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-blue-50/30">긴급 (Urgent)</td>
+                            <td class="bg-blue-50/30 text-blue-600 font-bold">2일</td>
+                            <td class="bg-blue-50/30 price-text">850,000원</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="info-card p-6">
-                <div class="ko-main">2. 여권 원본</div>
-                <div class="en-sub mb-3">Original Passport</div>
-                <p class="text-[11px] text-slate-500">신청일 기준 유효기간 6개월 이상 필수</p>
-            </div>
-            <div class="info-card p-6">
-                <div class="ko-main">3. 사진 1매</div>
-                <div class="en-sub mb-3">Visa Photo (3.5x4.5cm)</div>
-                <p class="text-[11px] text-slate-500">최근 3개월 이내 촬영, 흰색 배경, 얼굴 가려짐 불가</p>
-            </div>
-            <div class="info-card p-6 bg-rose-50 border-rose-100">
-                <div class="ko-main text-rose-700">4. 에이즈검사증</div>
-                <div class="en-sub text-rose-400 mb-3">HIV Certificate</div>
-                <p class="text-[11px] text-rose-600 font-medium">1년 복수, 취업, 유학 비자 신청 시 필수 (영문 원본, 검사일로부터 3개월 이내만 유효)
-                </p>
-            </div>
-            <div class="info-card p-6 bg-blue-50 border-blue-100">
-                <div class="ko-main text-blue-700">5. 초청장 (핵심)</div>
-                <div class="en-sub text-blue-400 mb-3">Invitation Letter</div>
-                <p class="text-[11px] text-blue-600 font-medium">내무부 발행(사본 가능) 또는 기업 발행(원본 필수)</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- 4. Application Forms -->
-    <section class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-        <h2 class="section-title"><i class="fa-solid fa-file-pdf mr-2"></i> 4. Application Forms / 신청서 양식</h2>
-        <div class="section-divider"></div>
-        <div class="flex flex-col md:flex-row items-center gap-8">
-            <div class="flex-1">
-                <p class="ko-main">러시아 비자 신청서 기재사항 양식</p>
-                <p class="en-sub mb-6">Russia Visa Application Information Form</p>
-                <p class="text-sm text-slate-500 mb-6 font-medium">당사에 제출하실 비자 신청용 개인정보 기재사항 양식입니다. 아래 버튼을 클릭하여 내용을
-                    기재하고 인쇄/저장해 주세요.</p>
-                <a href="Russia_Visa_Application_Form.html" target="_blank"
-                    class="inline-flex items-center gap-2 bg-blue-700 text-white font-bold py-3 px-8 rounded-xl hover:bg-blue-800 transition-all shadow-lg text-sm">
-                    <i class="fa-solid fa-file-pen"></i> 신청서 작성 및 다운로드 (Open & Fill)
-                </a>
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                        <strong>💡 초청장별 수속 안내:</strong><br>
+                        • 러시아 내무부 발행(공식) 초청장: <span class="font-bold text-blue-700">급행(2일) 가능</span> / 사본 접수 가능<br>
+                        • 러시아 기업 발행 초청장: <span class="font-bold text-red-600">급행 불가능</span> / 반드시 <strong>원본</strong> 필요 (단수/더블 1주, 복수 2주 소요)
+                    </p>
+                </div>
+                <div class="bg-slate-100 border-l-4 border-slate-400 p-4 rounded-r-lg">
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        <strong>⚠️ 유효기간 안내:</strong><br>
+                        비자의 체류 기간 및 유효 기간은 제출된 <span class="underline">초청장에 기재된 내용</span>에 의해 최종 결정됩니다.
+                    </p>
+                </div>
             </div>
-            <div class="hidden md:block w-px h-24 bg-slate-100"></div>
-            <div class="flex-1">
-                <p class="ko-main">Sample Documents</p>
-                <p class="en-sub mb-4">구비 서류 견본</p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div
-                        class="group relative overflow-hidden rounded-lg border border-slate-200 hover:border-blue-400 transition-colors">
-                        <a href="images/러시아_정부초청장_견본.jpg" target="_blank" class="block">
-                            <div class="bg-slate-50 p-3 text-center">
-                                <i class="fa-solid fa-building-columns text-blue-600 mb-1"></i>
-                                <div class="text-[10px] font-bold text-slate-700">정부 초청장 견본</div>
-                                <div class="text-[9px] text-slate-400">Government Invitation</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div
-                        class="group relative overflow-hidden rounded-lg border border-slate-200 hover:border-blue-400 transition-colors">
-                        <a href="images/러시아 기업_초청장_견본.jpg" target="_blank" class="block">
-                            <div class="bg-slate-50 p-3 text-center">
-                                <i class="fa-solid fa-building text-slate-600 mb-1"></i>
-                                <div class="text-[10px] font-bold text-slate-700">회사 초청장 견본</div>
-                                <div class="text-[9px] text-slate-400">Company Invitation</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div
-                        class="group relative overflow-hidden rounded-lg border border-slate-200 hover:border-blue-400 transition-colors">
-                        <a href="images/여권견본1.jpg" target="_blank" class="block">
-                            <div class="bg-slate-50 p-3 text-center">
-                                <i class="fa-solid fa-passport text-slate-600 mb-1"></i>
-                                <div class="text-[10px] font-bold text-slate-700">여권 샘플</div>
-                                <div class="text-[9px] text-slate-400">Passport Sample</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div
-                        class="group relative overflow-hidden rounded-lg border border-slate-200 hover:border-blue-400 transition-colors">
-                        <a href="images/사진.jpg" target="_blank" class="block">
-                            <div class="bg-slate-50 p-3 text-center">
-                                <i class="fa-solid fa-image text-slate-600 mb-1"></i>
-                                <div class="text-[10px] font-bold text-slate-700">비자 사진</div>
-                                <div class="text-[9px] text-slate-400">Visa Photo</div>
-                            </div>
-                        </a>
+        </section>
+
+        <!-- 3. Required Documents -->
+        <section>
+            <h2 class="section-title">필수 구비 서류 <span class="text-sm font-normal text-slate-400 ml-2">Required Documents</span></h2>
+            <div class="section-divider"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="info-card p-6 border-2 border-blue-100">
+                    <div class="ko-main">1. 인적사항</div>
+                    <div class="en-sub mb-3">Personal Information Form</div>
+                    <p class="text-[11px] text-slate-500">당사 제공 비자기재신청서 양식 작성</p>
+                </div>
+                <div class="info-card p-6">
+                    <div class="ko-main">2. 여권 원본</div>
+                    <div class="en-sub mb-3">Original Passport</div>
+                    <p class="text-[11px] text-slate-500">신청일 기준 유효기간 6개월 이상 필수</p>
+                </div>
+                <div class="info-card p-6">
+                    <div class="ko-main">3. 사진 1매</div>
+                    <div class="en-sub mb-3">Visa Photo (3.5x4.5cm)</div>
+                    <p class="text-[11px] text-slate-500">최근 3개월 이내 촬영, 흰색 배경, 얼굴 가려짐 불가</p>
+                </div>
+                <div class="info-card p-6 bg-rose-50 border-rose-100">
+                    <div class="ko-main text-rose-700">4. 에이즈검사증</div>
+                    <div class="en-sub text-rose-400 mb-3">HIV Certificate</div>
+                    <p class="text-[11px] text-rose-600 font-medium">1년 복수, 취업, 유학 비자 신청 시 필수 (영문 원본, 검사일로부터 3개월 이내만 유효)</p>
+                </div>
+                <div class="info-card p-6 bg-blue-50 border-blue-100">
+                    <div class="ko-main text-blue-700">5. 초청장 (핵심)</div>
+                    <div class="en-sub text-blue-400 mb-3">Invitation Letter</div>
+                    <p class="text-[11px] text-blue-600 font-medium">내무부 발행(사본 가능) 또는 기업 발행(원본 필수)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Application Forms -->
+        <section class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <h2 class="section-title"><i class="fa-solid fa-file-pdf mr-2"></i> 4. Application Forms / 신청서 양식</h2>
+            <div class="section-divider"></div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-1">
+                    <p class="ko-main">러시아 비자 신청서 기재사항 양식</p>
+                    <p class="en-sub mb-6">Russia Visa Application Information Form</p>
+                    <p class="text-sm text-slate-500 mb-6 font-medium">당사에 제출하실 비자 신청용 개인정보 기재사항 양식입니다. 아래 버튼을 클릭하여 내용을 기재하고 인쇄/저장해 주세요.</p>
+                    <a href="Russia_Visa_Application_Form.html" target="_blank" class="inline-flex items-center gap-2 bg-blue-700 text-white font-bold py-3 px-8 rounded-xl hover:bg-blue-800 transition-all shadow-lg text-sm">
+                        <i class="fa-solid fa-file-pen"></i> 신청서 작성 및 다운로드 (Open & Fill)
+                    </a>
+                </div>
+                <div class="hidden md:block w-px h-24 bg-slate-100"></div>
+                <div class="flex-1">
+                    <p class="ko-main">Sample Documents</p>
+                    <p class="en-sub mb-4">구비 서류 견본</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="group relative overflow-hidden rounded-lg border border-slate-200 hover:border-blue-400 transition-colors">
+                            <a href="images/러시아_정부초청장_견본.jpg" target="_blank" class="block">
+                                <div class="bg-slate-50 p-3 text-center">
+                                    <i class="fa-solid fa-building-columns text-blue-600 mb-1"></i>
+                                    <div class="text-[10px] font-bold text-slate-700">정부 초청장 견본</div>
+                                    <div class="text-[9px] text-slate-400">Government Invitation</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group relative overflow-hidden rounded-lg border border-slate-200 hover:border-blue-400 transition-colors">
+                            <a href="images/러시아 기업_초청장_견본.jpg" target="_blank" class="block">
+                                <div class="bg-slate-50 p-3 text-center">
+                                    <i class="fa-solid fa-building text-slate-600 mb-1"></i>
+                                    <div class="text-[10px] font-bold text-slate-700">회사 초청장 견본</div>
+                                    <div class="text-[9px] text-slate-400">Company Invitation</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group relative overflow-hidden rounded-lg border border-slate-200 hover:border-blue-400 transition-colors">
+                            <a href="images/여권견본1.jpg" target="_blank" class="block">
+                                <div class="bg-slate-50 p-3 text-center">
+                                    <i class="fa-solid fa-passport text-slate-600 mb-1"></i>
+                                    <div class="text-[10px] font-bold text-slate-700">여권 샘플</div>
+                                    <div class="text-[9px] text-slate-400">Passport Sample</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group relative overflow-hidden rounded-lg border border-slate-200 hover:border-blue-400 transition-colors">
+                            <a href="images/사진.jpg" target="_blank" class="block">
+                                <div class="bg-slate-50 p-3 text-center">
+                                    <i class="fa-solid fa-image text-slate-600 mb-1"></i>
+                                    <div class="text-[10px] font-bold text-slate-700">비자 사진</div>
+                                    <div class="text-[9px] text-slate-400">Visa Photo</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer Contact Area -->
-    <section class="bg-slate-900 text-white rounded-3xl p-12 text-center shadow-2xl">
-        <h3 class="text-2xl font-black mb-10 tracking-widest uppercase text-blue-400">Professional Russia Visa
-            Agency</h3>
+    </main>
+
+    <!-- 5. Footer Contact Area (Decorative) -->
+    <section class="bg-slate-900 text-white rounded-3xl p-12 text-center shadow-2xl mx-auto max-w-5xl mb-16">
+        <h3 class="text-2xl font-black mb-10 tracking-widest uppercase text-blue-400">Professional Russia Visa Agency</h3>
         <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 max-w-4xl mx-auto">
             <div class="flex-1 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10">
-                <div class="text-[10px] text-blue-400 uppercase tracking-[0.3em] mb-2 font-bold">Document Email
-                </div>
+                <div class="text-[10px] text-blue-400 uppercase tracking-[0.3em] mb-2 font-bold">Document Email</div>
                 <div class="text-xl font-bold">kim83077@nate.com</div>
             </div>
             <div class="flex-1 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10">
@@ -348,11 +340,16 @@
         </div>
     </section>
 
-</main>
+    </main>
 
+    <!-- 6. Real Global Footer (Targeted by common.js) -->
+    <footer>
+        <div class="container">
+            <!-- Footer content injected here by common.js -->
+        </div>
+    </footer>
 
-
-<!-- ver.2026.03.15.1633 -->
+    <!-- ver.2026.03.15.1818 -->
 </body>
 
 </html>
