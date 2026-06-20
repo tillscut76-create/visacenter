@@ -163,7 +163,7 @@ function unifyBranding() {
                     <li><a href="japan_evisa.html" style="position: relative;">Japan e-Visa (COE) <span style="position: absolute; top: -1px; right: -5px; width: 5px; height: 5px; background-color: #D30000; border-radius: 50%;"></span></a></li>
                     <li><a href="sticker-visa.html">Japan Sticker Visa</a></li>
                 </ul>
-            </li>
+            </li>`r`n            <li><a href="japan_evisa.html" style="position: relative;">`r`n                <span class="nav-en">e-Visa (COE)<span style="position: absolute; top: -3px; right: -8px; width: 6px; height: 6px; background-color: var(--secondary-color); border-radius: 50%;"></span></span>`r`n                <span class="nav-kr">?쇰낯 ?꾩옄鍮꾩옄(?щ쪟?먭꺽)</span>`r`n            </a></li>
             <li>
                 <a href="global-visa.html">
                     <span class="nav-en">Global Visa</span>
