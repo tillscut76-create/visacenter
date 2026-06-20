@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 
 <head>
@@ -187,13 +187,282 @@
         .download-btn:hover {
             background: #218838;
         }
+
+        /* COE Form Styles */
+        .form-page-header {
+            background: linear-gradient(rgba(0, 34, 68, 0.75), rgba(0, 34, 68, 0.75)), url('https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 80px 0 50px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .form-page-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .form-container-card {
+            background: #fff;
+            max-width: 800px;
+            margin: -40px auto 60px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #edf2f7;
+            position: relative;
+            z-index: 10;
+        }
+
+        .intro-box {
+            background: #f7fafc;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #4a5568;
+        }
+
+        .form-group-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-field.full-width {
+            grid-column: span 2;
+        }
+
+        .form-field label {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #2d3748;
+        }
+
+        .form-field label span.required {
+            color: #e53e3e;
+            margin-left: 3px;
+        }
+
+        .form-input-text {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-input-text:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        /* Canvas signature styling */
+        .signature-area {
+            border: 2px dashed #cbd5e0;
+            background-color: #fafbfd;
+            border-radius: 8px;
+            position: relative;
+            margin-top: 10px;
+            height: 150px;
+        }
+
+        #signature-canvas {
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+            touch-action: none;
+        }
+
+        .signature-controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 8px;
+        }
+
+        .signature-clear-btn {
+            background: #e2e8f0;
+            color: #4a5568;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .signature-clear-btn:hover {
+            background: #cbd5e0;
+        }
+
+        /* Submit Button */
+        .form-submit-btn {
+            display: block;
+            width: 100%;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 40px;
+            box-shadow: 0 4px 12px rgba(0, 34, 68, 0.15);
+            transition: all 0.2s;
+        }
+
+        .form-submit-btn:hover {
+            background: #001a33;
+            transform: translateY(-2px);
+        }
+
+        /* Dialog Modal styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 650px;
+            padding: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            animation: modalIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 10px;
+        }
+
+        .formatted-text-area {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            margin-bottom: 25px;
+            max-height: 250px;
+            overflow-y: auto;
+            color: #2d3748;
+        }
+
+        .modal-btns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .modal-btn {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-copy { background: #3182ce; color: #fff; }
+        .btn-copy:hover { background: #2b6cb0; }
+        .btn-email { background: #38a169; color: #fff; }
+        .btn-email:hover { background: #2f855a; }
+        .btn-print { background: #4a5568; color: #fff; grid-column: span 2; }
+        .btn-print:hover { background: #2d3748; }
+        .btn-close { background: #e2e8f0; color: #4a5568; grid-column: span 2; margin-top: 10px; }
+        .btn-close:hover { background: #cbd5e0; }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-field.full-width {
+                grid-column: span 1;
+            }
+
+            .form-container-card {
+                padding: 20px;
+                margin-top: -20px;
+            }
+        }
     </style>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://visacenter.me.kr">
     <meta property="og:title" content="New Tour Leaders - Global Visa Center">
     <meta property="og:description" content="국경을 넘는 가장 쉬운 방법. 1:1 전담 매니저가 빠르고 정확하게 비자 업무를 대행해 드립니다.">
-    <meta property="og:image"
-        content="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="New Tour Leaders - Global Visa Center">
     <meta name="twitter:description" content="전 세계 어디든 빠르고 정확한 비자 솔루션. 1:1 전담 매니저가 함께합니다.">
@@ -257,6 +526,8 @@
         </div>
     </header>
 
+    <!-- Tourism Content Container -->
+    <div id='tourism-content'>
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
@@ -545,6 +816,676 @@
 
         </div>
     </section>
+    </div>
+
+    <!-- COE Guide Container -->
+    <div id="coe-guide-content" style="display: none;">
+        <!-- Page Header -->
+        <section class="page-header" style="background: linear-gradient(rgba(0, 34, 68, 0.75), rgba(0, 34, 68, 0.75)), url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <div class="container">
+                <h2>Japan e-Visa (COE) Guide<br><span class="kr-text" style="color: #ccc; font-size: 0.5em;">?쇰낯 ?꾩옄鍮꾩옄 (?щ쪟?먭꺽) ?좎껌 ?덈궡</span></h2>
+                <p>For Foreigners with Certificate of Eligibility <span class="kr-inline" style="color: #ccc;">(?щ쪟?먭꺽?몄젙利앸챸???뚯??????</span></p>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section class="content-section">
+            <div class="container">
+                <!-- Important Notice -->
+                <div class="fade-in-section" style="margin-bottom: 40px;">
+                    <div style="background: #eef2ff; color: #1e3a8a; padding: 25px; border-left: 5px solid #3b82f6; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <h4 style="margin-bottom: 15px; font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; color: #1e3a8a;">
+                            <i class="fa-solid fa-circle-info"></i> What is Japan e-Visa (COE)? <span class="kr-inline" style="color: #4b5563;">(?щ쪟?먭꺽?몄젙利앸챸???뚯????꾩옄鍮꾩옄??)</span>
+                        </h4>
+                        <p style="line-height: 1.7; font-size: 0.95rem; margin-bottom: 10px; color: #4b5563;">
+                            Foreign residents in Korea who have received a <strong>Certificate of Eligibility (COE)</strong> for purposes such as <strong>Work, Study, Spouse, etc.</strong> can apply for a single-entry visa online using the e-Visa system.
+                            <br>
+                            <span class="kr-text" style="color: #4b5563; display: block; margin-top: 10px;">?쇰낯 異쒖엯援?옱瑜섍?由ъ껌?쇰줈遺??<strong>?щ쪟?먭꺽?몄젙利앸챸??COE)</strong>瑜?諛쒓툒諛쏆? 援?궡 嫄곗＜ ?멸뎅???좏븰, 痍⑥뾽, 媛議깆껜?? 諛곗슦????? ?⑤씪???꾩옄鍮꾩옄(e-Visa) ?쒖뒪?쒖쓣 ?듯빐 ?⑥닔 鍮꾩옄瑜??좎껌?????덉뒿?덈떎.</span>
+                        </p>
+                        <!-- Visual Highlight: Passport Submission NOT required -->
+                        <div style="margin-top: 15px; background: #fee2e2; border: 2px dashed #ef4444; border-radius: 6px; padding: 15px; text-align: center;">
+                            <strong style="color: #b91c1c; font-size: 1.1rem; display: block; margin-bottom: 5px;">
+                                <i class="fa-solid fa-passport"></i> ?ш텒 ?ㅻЪ ?쒖텧 遺덊븘?? (?щ낯 諛??⑤씪???묒닔濡??좎냽 吏꾪뻾)
+                            </strong>
+                            <span style="color: #7f1d1d; font-size: 0.9rem;">
+                                湲곗〈 鍮꾩옄 ?좎껌 ???꾩슂?덈뜕 ?ш텒 ?먮낯 ?쒖텧 ?덉감媛 ?앸왂?섏뼱, 紐⑤뱺 ?덉감媛 ?щ낯 諛??⑤씪???쒖텧濡??몃━?섍퀬 鍮좊Ⅴ寃??묒닔?⑸땲??
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Required Documents -->
+                <div class="fade-in-section">
+                    <h3 style="font-size: 1.8rem; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 30px;">
+                        <i class="fa-solid fa-file-circle-check"></i> Required Documents <span class="kr-inline">(援щ퉬?쒕쪟)</span>
+                    </h3>
+                    <ul class="requirements-list">
+                        <li class="req-item" style="border-left-color: #002244;">
+                            <h4>1. Passport Scan <span class="kr-inline">(?ш텒 ?щ낯)</span></h4>
+                            <p>Clear color scan of the PHOTO/INFO page. Valid for 3+ months.<span class="kr-text">?ш텒 ?몄쟻?ы빆硫??꾩껜媛 ?섏삤?꾨줉 源⑤걮?섍쾶 ?ㅼ틪 ?먮뒗 珥ъ쁺??二쇱꽭?? (?좏슚湲곌컙 3媛쒖썡 ?댁긽)</span></p>
+                        </li>
+                        <li class="req-item" style="border-left-color: #002244;">
+                            <h4>2. Photo File <span class="kr-inline">(?ш텒??利앸챸?ъ쭊)</span></h4>
+                            <p>3.5x4.5cm, White background, Taken within 6 months.<span class="kr-text">?곗깋 諛곌꼍, 6媛쒖썡 ?대궡??珥ъ쁺???ш텒 洹쒓꺽 ?ъ쭊 ?뚯씪.</span></p>
+                        </li>
+                        <li class="req-item" style="border-left-color: #002244;">
+                            <h4>3. COE Copy <span class="kr-inline">(?щ쪟?먭꺽?몄젙利앸챸???щ낯)</span></h4>
+                            <p>Clear copy or digital PDF of your Certificate of Eligibility.<span class="kr-text">諛쒓툒諛쏆쑝???щ쪟?먭꺽?몄젙利앸챸??COE) ?щ낯 ?먮뒗 PDF ?뚯씪.</span></p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Process & Buttons -->
+                <div class="form-container fade-in-section" style="margin-top: 50px;">
+                    <h3 class="form-title" style="color: #002244;"><i class="fa-solid fa-pen-to-square"></i> Application Process <span class="kr-inline">(?좎껌 諛??묒닔 ?덈궡)</span></h3>
+                    
+                    <div class="process-info-box" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 30px; margin-bottom: 40px;">
+                        <h4 style="color: #002244; font-weight: 700; margin-bottom: 20px; font-size: 1.2rem;">
+                            <i class="fa-solid fa-circle-info"></i> Process & Fees <span class="kr-inline">(?묒닔 ?덉감 諛?鍮꾩슜 ?덈궡)</span>
+                        </h4>
+
+                        <!-- Process Steps -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; text-align: center;">
+                            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                <div style="color: #002244; font-size: 2rem; margin-bottom: 10px;"><i class="fa-solid fa-file-signature"></i></div>
+                                <strong style="display: block; margin-bottom: 5px;">1. Online Form <span class="kr-inline">(?좎껌???묒꽦)</span></strong>
+                                <p style="font-size: 0.9rem; color: #555; margin: 0;">Fill and Sign Online<span class="kr-text">?⑤씪???좎껌???묒꽦 諛??먰븘 ?쒕챸</span></p>
+                            </div>
+                            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                <div style="color: #002244; font-size: 2rem; margin-bottom: 10px;"><i class="fa-solid fa-won-sign"></i></div>
+                                <strong style="display: block; margin-bottom: 5px;">2. Payment <span class="kr-inline">(鍮꾩슜 寃곗젣)</span></strong>
+                                <p style="font-size: 0.9rem; color: #555; margin: 0;">Bank Transfer<span class="kr-text">?좎껌 ?꾨즺 ??怨꾩쥖 ?↔툑</span></p>
+                            </div>
+                            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                <div style="color: #002244; font-size: 2rem; margin-bottom: 10px;"><i class="fa-solid fa-calendar-days"></i></div>
+                                <strong style="display: block; margin-bottom: 5px;">3. Processing <span class="kr-inline">(?ъ궗)</span></strong>
+                                <p style="font-size: 0.9rem; color: #555; margin: 0;">6 Business Days<span class="kr-text">?낅Т??湲곗? ??6???뚯슂</span></p>
+                            </div>
+                            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                <div style="color: #002244; font-size: 2rem; margin-bottom: 10px;"><i class="fa-solid fa-envelope-open-text"></i></div>
+                                <strong style="display: block; margin-bottom: 5px;">4. Issuance <span class="kr-inline">(鍮꾩옄 諛쒓툒)</span></strong>
+                                <p style="font-size: 0.9rem; color: #555; margin: 0;">PDF e-Visa Receipt<span class="kr-text">?대찓?쇰줈 ?꾩옄鍮꾩옄 諛쒓툒???꾩넚</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Fees -->
+                        <div style="background: #f0f4f8; padding: 20px; border-radius: 8px; border-left: 5px solid #002244;">
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 10px; display: flex; align-items: start;">
+                                    <i class="fa-solid fa-check" style="color: #002244; margin-top: 5px; margin-right: 10px;"></i>
+                                    <span><strong>Agency Fee:</strong> <span style="color: #d30000; font-weight: bold;">50,000 KRW</span> (Seoul: 80,000 KRW)<br>
+                                    <span class="kr-text"><strong>????섏닔猷?</strong> 50,000??(?쒖슱 ??ш? ?묒닔 ??80,000??</span></span>
+                                </li>
+                                <li style="margin-bottom: 0px; display: flex; align-items: start;">
+                                    <i class="fa-solid fa-check" style="color: #002244; margin-top: 5px; margin-right: 10px;"></i>
+                                    <span><strong>Visa Fee:</strong> Varies by Nationality (Frequently: 0 KRW to 27,000 KRW)<br>
+                                    <span class="kr-text"><strong>鍮꾩옄 諛쒓툒 ?섏닔猷?</strong> 援?쟻蹂꾨줈 ?곸씠 (?遺遺?0???먮뒗 8,000??~ 27,000??</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-instructions" style="text-align: center; margin-bottom: 30px;">
+                        <p style="color: #555; font-size: 1.1rem; line-height: 1.6;">
+                            Please complete the online signature application sheet below to start your e-Visa process.<br>
+                            <span class="kr-text">鍮꾩옄 ????묒닔瑜?吏꾪뻾?섍린 ?꾪빐 ?꾨옒??<strong>?⑤씪???먰븘?쒕챸 ?좎껌??/strong>瑜??묒꽦??二쇱꽭??</span>
+                        </p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button onclick="navigateToCOEForm()" class="download-btn" style="background: #002244; border: none; cursor: pointer; font-size: 1.1rem; padding: 15px 40px; border-radius: 8px;">
+                            <i class="fa-solid fa-file-signature"></i> Go to Online Application Form <span class="kr-inline" style="color:white;">(?⑤씪???좎껌???묒꽦?섍린)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- COE Form Container -->
+    <div id="coe-form-content" style="display: none;">
+        <!-- Header Banner -->
+        <section class="form-page-header">
+            <div class="container">
+                <h2>?쇰낯 ?꾩옄鍮꾩옄(e-Visa) ?⑤씪???좎껌 ?묒떇</h2>
+                <p>JAPAN e-Visa Application Information Sheet (COE)</p>
+            </div>
+        </section>
+
+        <!-- Main Form -->
+        <section class="content-section" style="padding-top: 30px;">
+            <div class="container">
+                <div class="form-container-card">
+                    <div class="intro-box">
+                        <strong>?덈뀞?섏꽭?? 二쇰??곗씪蹂멸뎅珥앹쁺?ш? 吏??鍮꾩옄 ?由ъ닔??湲곌???二쇱떇?뚯궗 ?댄닾?대━?붿뒪(New Tour Leaders)?낅땲??</strong><br>
+                        ?쇰낯 ?꾩옄鍮꾩옄(COE) ?좎껌 ?깅줉 諛??쒕쪟 ?묒꽦???꾪븯???꾨옒 ?몄쟻?ы빆??鍮좎쭚?놁씠 湲곗옱??二쇱떆湲?諛붾엻?덈떎.<br>
+                        臾몄쓽?ы빆???덈뒗 寃쎌슦 <strong>051-818-0801 / 1588-8903</strong> ?먮뒗 <strong>kim83077@nate.com</strong>?쇰줈 ?곕씫二쇱떆湲?諛붾엻?덈떎.
+                    </div>
+
+                    <form id="visa-form" onsubmit="handleFormSubmit(event)">
+                        <!-- 1. Applicant Info -->
+                        <div class="form-group-title">
+                            <i class="fa-solid fa-user"></i> 1. ?좎껌???몄쟻?ы빆 (Applicant Details)
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="name_ko">?깅챸 (援?Ц)<span class="required">*</span></label>
+                                <input type="text" id="name_ko" class="form-input-text" required placeholder="?? ?띻만??>
+                            </div>
+                            <div class="form-field">
+                                <label for="name_en">?깅챸 (?곷Ц, ?ш텒?숈씪)<span class="required">*</span></label>
+                                <input type="text" id="name_en" class="form-input-text" required placeholder="?? HONG GILDONG">
+                            </div>
+                            <div class="form-field">
+                                <label for="name_cn">?쒖옄 ?깅챸</label>
+                                <input type="text" id="name_cn" class="form-input-text" placeholder="?쒖옄媛 ?녿뒗 援?쟻??寃쎌슦 ?곷Ц ?묒꽦">
+                            </div>
+                            <div class="form-field">
+                                <label for="gender">?깅퀎 (Gender)<span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="?⑥꽦" required checked> ?⑥꽦 (Male)
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="?ъ꽦"> ?ъ꽦 (Female)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="birth_date">?앸뀈?붿씪 (Date of Birth)<span class="required">*</span></label>
+                                <input type="date" id="birth_date" class="form-input-text" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="nationality">援?쟻 (Nationality)<span class="required">*</span></label>
+                                <input type="text" id="nationality" class="form-input-text" required value="??쒕?援?>
+                            </div>
+                            <div class="form-field">
+                                <label for="marital">寃고샎 ?щ? (Marital Status)<span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="marital" value="誘명샎" required checked onclick="toggleSpouse(false)"> 誘명샎 (Single)
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="marital" value="湲고샎" onclick="toggleSpouse(true)"> 湲고샎 (Married)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-field" id="spouse-field" style="display: none;">
+                                <label for="spouse_name">諛곗슦???깅챸 (Spouse Name)</label>
+                                <input type="text" id="spouse_name" class="form-input-text" placeholder="湲고샎??寃쎌슦 諛곗슦???깅챸 湲곗옱">
+                            </div>
+                            <div class="form-field">
+                                <label for="phone">?대???踰덊샇<span class="required">*</span></label>
+                                <input type="text" id="phone" class="form-input-text" required placeholder="?? 010-1234-5678">
+                            </div>
+                            <div class="form-field">
+                                <label for="email">?대찓??二쇱냼<span class="required">*</span></label>
+                                <input type="email" id="email" class="form-input-text" required placeholder="?? user@example.com">
+                            </div>
+                            <div class="form-field full-width">
+                                <label for="address">??嫄곗＜吏 二쇱냼 (二쇰??깅줉?깅낯??二쇱냼)<span class="required">*</span></label>
+                                <input type="text" id="address" class="form-input-text" required placeholder="?꾨줈紐?二쇱냼瑜??뺥솗??湲곗옱??二쇱꽭??">
+                            </div>
+                        </div>
+
+                        <!-- 2. Job / School Info -->
+                        <div class="form-group-title">
+                            <i class="fa-solid fa-briefcase"></i> 2. 吏곸뾽 諛??뚯냽 ?뺣낫 (Occupation & Organization)
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="occupation">吏곸뾽 (Occupation)<span class="required">*</span></label>
+                                <input type="text" id="occupation" class="form-input-text" required placeholder="?? ?뚯궗?? ?숈깮, 二쇰?, 臾댁쭅 ??>
+                            </div>
+                            <div class="form-field">
+                                <label for="company_name">?뚯궗紐??먮뒗 ?숆탳紐?/label>
+                                <input type="text" id="company_name" class="form-input-text" placeholder="?뚯냽???녿뒗 寃쎌슦 '?놁쓬' 湲곗옱">
+                            </div>
+                            <div class="form-field">
+                                <label for="company_pos">吏곸쐞 / ?숇뀈</label>
+                                <input type="text" id="company_pos" class="form-input-text" placeholder="?? 怨쇱옣, 3?숇뀈 ??>
+                            </div>
+                            <div class="form-field">
+                                <label for="company_tel">?뚯궗 / ?숆탳 ?꾪솕踰덊샇</label>
+                                <input type="text" id="company_tel" class="form-input-text" placeholder="?뚯냽湲곌????곕씫泥?湲곗옱">
+                            </div>
+                            <div class="form-field full-width">
+                                <label for="company_address">?뚯궗 / ?숆탳 二쇱냼</label>
+                                <input type="text" id="company_address" class="form-input-text" placeholder="?뚯냽湲곌????꾨줈紐?二쇱냼 湲곗옱">
+                            </div>
+                        </div>
+
+                        <!-- 3. Passport Info -->
+                        <div class="form-group-title">
+                            <i class="fa-solid fa-passport"></i> 3. ?ш텒 ?뺣낫 (Passport Details)
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="passport_num">?ш텒 踰덊샇 (Passport No.)<span class="required">*</span></label>
+                                <input type="text" id="passport_num" class="form-input-text" required placeholder="?? M12345678">
+                            </div>
+                            <div class="form-field">
+                                <label for="passport_issue_place">?ш텒 諛쒗뻾 愿泥?(Authority)<span class="required">*</span></label>
+                                <input type="text" id="passport_issue_place" class="form-input-text" required value="?멸탳遺 (MOFA)">
+                            </div>
+                            <div class="form-field">
+                                <label for="passport_issue_date">?ш텒 諛쒗뻾??(Date of Issue)<span class="required">*</span></label>
+                                <input type="date" id="passport_issue_date" class="form-input-text" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="passport_expiry_date">?ш텒 留뚮즺??(Date of Expiry)<span class="required">*</span></label>
+                                <input type="date" id="passport_expiry_date" class="form-input-text" required>
+                            </div>
+                        </div>
+
+                        <!-- 4. Travel Schedule -->
+                        <div class="form-group-title">
+                            <i class="fa-solid fa-plane"></i> 4. ?쇰낯 ?ы뻾 ?쇱젙 (Travel Plan)
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="travel_start">?쇰낯 ?낃뎅 ?덉젙??(Date of Arrival)<span class="required">*</span></label>
+                                <input type="date" id="travel_start" class="form-input-text" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="travel_duration">?덉긽 泥대쪟 湲곌컙 (Duration of Stay)<span class="required">*</span></label>
+                                <input type="text" id="travel_duration" class="form-input-text" required placeholder="?? 5?? 15?? 30????>
+                            </div>
+                            <div class="form-field">
+                                <label for="port_of_entry">?낃뎅 ?덉젙 怨듯빆 ?먮뒗 ??뎄<span class="required">*</span></label>
+                                <input type="text" id="port_of_entry" class="form-input-text" required placeholder="?? ?섎━? 怨듯빆, 媛꾩궗??怨듯빆 ??>
+                            </div>
+                            <div class="form-field">
+                                <label for="visit_cities">諛⑸Ц ?덉젙 ?꾩떆 (Cities)<span class="required">*</span></label>
+                                <input type="text" id="visit_cities" class="form-input-text" required placeholder="?? ?꾩퓙, ?ㅼ궗移? ?꾩퓼?ㅼ뭅 ??>
+                            </div>
+                            <div class="form-field full-width">
+                                <label for="hotel_details">?숇컯 ?덉젙 ?명뀛 ?뺣낫 (?명뀛紐? 二쇱냼, ?꾪솕踰덊샇)<span class="required">*</span></label>
+                                <input type="text" id="hotel_details" class="form-input-text" required placeholder="?명뀛紐?/ 二쇱냼 / ?곕씫泥섎? ?곸꽭???낅젰??二쇱꽭??">
+                            </div>
+                        </div>
+
+                        <!-- 5. Travel History & Criminal Record -->
+                        <div class="form-group-title">
+                            <i class="fa-solid fa-clock-rotate-left"></i> 5. ?쇰낯 諛⑸Ц ?대젰 諛?踰붿즲 寃쎈젰 (History & Record)
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="visit_count">怨쇨굅 ?쇰낯 諛⑸Ц ?잛닔 (Number of Visits)<span class="required">*</span></label>
+                                <input type="text" id="visit_count" class="form-input-text" required placeholder="?? ?놁쓬, 1?? 5???댁긽 ??>
+                            </div>
+                            <div class="form-field">
+                                <label for="last_visit">理쒓렐 ?쇰낯 諛⑸Ц 湲곌컙 (Recent Visit Period)</label>
+                                <input type="text" id="last_visit" class="form-input-text" placeholder="?? 2023??5??(1二쇱씪媛? / ?놁쑝硫??앸왂">
+                            </div>
+                            <div class="form-field full-width">
+                                <label>怨쇨굅 ?쇰낯?대굹 ?援?뿉??踰붿즲濡??좎즲 ?먭껐??諛쏆? ?곸씠 ?덉뒿?덇퉴?<span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="criminal" value="?놁쓬" required checked> ?놁쓬 (No)
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="criminal" value="?덉쓬"> ?덉쓬 (Yes)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Required Documents Upload Guidance -->
+                        <div class="form-group-title">
+                            <i class="fa-solid fa-file-circle-check"></i> 6. 援щ퉬 ?쒕쪟 ?뚯씪 ?쒖텧 ?덈궡
+                        </div>
+                        <p style="font-size: 0.9rem; color: #4a5568; line-height: 1.6; margin-bottom: 20px;">
+                            蹂??좎껌???쒖텧 ?꾨즺 ???꾨옒 ?꾩닔 援щ퉬 ?쒕쪟 ?뚯씪(源⑤걮?섍쾶 珥ъ쁺 ?먮뒗 ?ㅼ틪蹂????댄닾?대━?붿뒪 移댁뭅?ㅽ넚 梨꾨꼸 ?먮뒗 ?대찓??<strong>kim83077@nate.com</strong>)濡?利됱떆 ?꾩넚??二쇱떆湲?諛붾엻?덈떎.
+                            <br>
+                            1. <strong>?ш텒 ?몄쟻?ы빆硫??ㅼ틪蹂?/strong> (?ъ쭊???좊챸?섍퀬 湲?먭? ?먮룆 媛?ν븳 ?곹깭)<br>
+                            2. <strong>?ш텒??洹쒓꺽 ?ъ쭊 ?뚯씪</strong> (理쒓렐 6媛쒖썡 ?대궡 珥ъ쁺????諛곌꼍 利앸챸?ъ쭊)<br>
+                            3. <strong>?щ쪟?먭꺽?몄젙利앸챸??COE) ?щ낯</strong> (PDF ?먮뒗 ?대?吏)
+                        </p>
+
+                        <!-- 7. Signature -->
+                        <div class="form-group-title">
+                            <i class="fa-solid fa-signature"></i> 7. 媛쒖씤?뺣낫 ?숈쓽 諛??좎껌???먰븘 ?쒕챸 (Signature)
+                        </div>
+                        <div class="form-field full-width">
+                            <label style="cursor: pointer; display: flex; align-items: flex-start; gap: 8px;">
+                                <input type="checkbox" required style="margin-top: 4px;"> 
+                                <span>?쇰낯 ??ш? ?ъ쬆 ?좎껌???꾪빐 ??湲곗옱???뺣낫媛 紐⑤몢 ?ъ떎怨??ㅻ쫫?놁쓬???쒕챸?섎ŉ, ????섏냽???꾪븳 媛쒖씤?뺣낫 ?섏쭛 諛??댁슜???숈쓽?⑸땲?? (I agree to the collection/use of my personal data for visa application.)<span class="required">*</span></span>
+                            </label>
+                        </div>
+
+                        <div class="form-field full-width" style="margin-top: 15px;">
+                            <label>?꾨옒 ?낅젰李쎌뿉 留덉슦???먮뒗 ?곗튂濡??ш텒怨??숈씪?섍쾶 ?먰븘 ?쒕챸??二쇱꽭??<span class="required">*</span></label>
+                            <div class="signature-area">
+                                <canvas id="signature-canvas"></canvas>
+                            </div>
+                            <div class="signature-controls">
+                                <button type="button" class="signature-clear-btn" onclick="clearSignature()">?쒕챸 吏?곌린 (Clear)</button>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" class="form-submit-btn">?⑤씪???좎껌???묒꽦 ?꾨즺 諛??쒖텧?섍린</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Dialog Popup -->
+    <div class="modal-overlay" id="submit-modal">
+        <div class="modal-content">
+            <h3 class="modal-title">?뱷 ?쇰낯 ?꾩옄鍮꾩옄 ?좎껌???묒닔 ?깃났</h3>
+            <p style="font-size: 0.95rem; color: #4a5568; line-height: 1.6; margin-bottom: 20px; text-align: center;">
+                ?좎껌???묒꽦???깃났?곸쑝濡??꾨즺?섏뿀?듬땲?? ?꾨옒???묒꽦???띿뒪???뺣낫瑜?蹂듭궗?섍굅???대찓???꾩넚??吏꾪뻾??二쇱떊 ?? 以鍮꾪븯???ш텒 ?щ낯, ?ъ쭊, COE ?뚯씪怨??④퍡 ?꾩넚??二쇱뀛??理쒖쥌 ?묒닔 泥섎━媛 ?꾨즺?⑸땲??
+            </p>
+            <div class="formatted-text-area" id="formatted-result"></div>
+            
+            <div class="modal-btns">
+                <button class="modal-btn btn-copy" onclick="copyResultText()">
+                    <i class="fa-solid fa-copy"></i> ?좎껌 ?뺣낫 蹂듭궗?섍린
+                </button>
+                <button class="modal-btn btn-email" onclick="sendResultEmail()">
+                    <i class="fa-solid fa-envelope"></i> ?대찓???묒닔 硫붿씪 蹂대궡湲?                </button>
+                <button class="modal-btn btn-print" onclick="printApplication()">
+                    <i class="fa-solid fa-print"></i> ?좎껌???몄뇙 / PDF ??ν븯湲?                </button>
+                <button class="modal-btn btn-close" onclick="closeModal()">
+                    ?リ린 (Close)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Routing, Canvas Drawing, and Submission Logic -->
+    <script>
+        // Toggle spouse name field based on marital status
+        function toggleSpouse(isMarried) {
+            const field = document.getElementById('spouse-field');
+            if (field) {
+                field.style.display = isMarried ? 'flex' : 'none';
+            }
+        }
+
+        // Canvas Drawing Logic
+        const canvas = document.getElementById('signature-canvas');
+        const ctx = canvas ? canvas.getContext('2d') : null;
+        let drawing = false;
+
+        // Resize canvas to match the CSS container size
+        function resizeCanvas() {
+            if (!canvas) return;
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            ctx.strokeStyle = '#002244';
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        // Drawing events
+        function getMousePos(canvasDom, touchOrMouseEvent) {
+            const rect = canvasDom.getBoundingClientRect();
+            const clientX = touchOrMouseEvent.touches ? touchOrMouseEvent.touches[0].clientX : touchOrMouseEvent.clientX;
+            const clientY = touchOrMouseEvent.touches ? touchOrMouseEvent.touches[0].clientY : touchOrMouseEvent.clientY;
+            return {
+                x: clientX - rect.left,
+                y: clientY - rect.top
+            };
+        }
+
+        if (canvas) {
+            canvas.addEventListener('mousedown', (e) => {
+                drawing = true;
+                const pos = getMousePos(canvas, e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+            });
+
+            canvas.addEventListener('mousemove', (e) => {
+                if (!drawing) return;
+                const pos = getMousePos(canvas, e);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+            });
+
+            window.addEventListener('mouseup', () => {
+                drawing = false;
+            });
+
+            // Touch events for mobile devices
+            canvas.addEventListener('touchstart', (e) => {
+                drawing = true;
+                const pos = getMousePos(canvas, e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+                e.preventDefault();
+            });
+
+            canvas.addEventListener('touchmove', (e) => {
+                if (!drawing) return;
+                const pos = getMousePos(canvas, e);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+                e.preventDefault();
+            });
+
+            canvas.addEventListener('touchend', () => {
+                drawing = false;
+            });
+        }
+
+        function clearSignature() {
+            if (canvas && ctx) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        // Form Submit & Text Compilation
+        let compiledResultText = '';
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            // Check if signature has drawing (rough estimate)
+            if (canvas) {
+                const blank = document.createElement('canvas');
+                blank.width = canvas.width;
+                blank.height = canvas.height;
+                if (canvas.toDataURL() === blank.toDataURL()) {
+                    alert('?먰븘 ?쒕챸 ?곸뿭???쒕챸??洹몃젮二쇱떆湲?諛붾엻?덈떎.');
+                    return;
+                }
+            }
+
+            const nameKo = document.getElementById('name_ko').value;
+            const nameEn = document.getElementById('name_en').value;
+            const nameCn = document.getElementById('name_cn').value || '?놁쓬';
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const dob = document.getElementById('birth_date').value;
+            const nationality = document.getElementById('nationality').value;
+            const marital = document.querySelector('input[name="marital"]:checked').value;
+            const spouseName = marital === '湲고샎' ? document.getElementById('spouse_name').value : 'N/A';
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            
+            const occupation = document.getElementById('occupation').value;
+            const companyName = document.getElementById('company_name').value || '?놁쓬';
+            const companyPos = document.getElementById('company_pos').value || '?놁쓬';
+            const companyTel = document.getElementById('company_tel').value || '?놁쓬';
+            const companyAddress = document.getElementById('company_address').value || '?놁쓬';
+            
+            const passportNum = document.getElementById('passport_num').value;
+            const passportIssuePlace = document.getElementById('passport_issue_place').value;
+            const passportIssueDate = document.getElementById('passport_issue_date').value;
+            const passportExpiryDate = document.getElementById('passport_expiry_date').value;
+            
+            const travelStart = document.getElementById('travel_start').value;
+            const travelDuration = document.getElementById('travel_duration').value;
+            const portOfEntry = document.getElementById('port_of_entry').value;
+            const visitCities = document.getElementById('visit_cities').value;
+            const hotelDetails = document.getElementById('hotel_details').value;
+            
+            const visitCount = document.getElementById('visit_count').value;
+            const lastVisit = document.getElementById('last_visit').value || '?놁쓬';
+            const criminal = document.querySelector('input[name="criminal"]:checked').value;
+
+            compiledResultText = [?쇰낯 ?꾩옄鍮꾩옄 ?⑤씪???좎껌 ?묒닔 ?뺣낫 (COE)]
+-------------------------------------------------------
+1. ?좎껌??湲곕낯 ?뺣낫
+  - 援?Ц ?깅챸: 
+  - ?곷Ц ?깅챸(?ш텒?숈씪): 
+  - ?쒖옄 ?깅챸: 
+  - ?깅퀎: 
+  - ?앸뀈?붿씪: 
+  - 援?쟻: 
+  - 寃고샎?щ?:  (諛곗슦???깅챸: )
+  - ?곕씫泥? 
+  - ?대찓?? 
+  - 嫄곗＜吏 二쇱냼: 
+
+2. 吏곸뾽 諛??뚯냽 ?뺣낫
+  - 吏곸뾽: 
+  - ?뚯냽湲곌?紐? 
+  - 吏곸쐞/?숇뀈: 
+  - ?뚯냽湲곌? ?곕씫泥? 
+  - ?뚯냽湲곌? 二쇱냼: 
+
+3. ?ш텒 ?뺣낫
+  - ?ш텒 踰덊샇: 
+  - ?ш텒 諛쒗뻾愿泥? 
+  - ?ш텒 諛쒗뻾?? 
+  - ?ш텒 留뚮즺?? 
+
+4. ?ы뻾 ?쇱젙 ?뺣낫
+  - ?쇰낯 ?낃뎅 ?덉젙?? 
+  - ?덉긽 泥대쪟 ?쇱닔: 
+  - ?낃뎅 ?덉젙 怨듯빆/??뎄: 
+  - 諛⑸Ц ?덉젙 ?꾩떆: 
+  - ?숇컯 ?덉젙 ?명뀛 ?뺣낫: 
+
+5. 怨쇨굅 ?대젰 諛?踰붿즲 寃쎈젰
+  - 怨쇨굅 ?쇰낯 諛⑸Ц ?잛닔: 
+  - 理쒓렐 ?쇰낯 諛⑸Ц 湲곌컙: 
+  - 踰붿즲 寃쎈젰 ?좊Т: 
+-------------------------------------------------------
+?묒꽦 ?좎껌?? 
+?좎껌???먰븘 ?쒕챸 ?꾨즺 (?⑤씪??罹붾쾭???쒕챸 ?꾨즺);
+
+            document.getElementById('formatted-result').textContent = compiledResultText;
+            document.getElementById('submit-modal').style.display = 'flex';
+
+            // Auto-save form inputs
+            const formData = {
+                nameKo, nameEn, nameCn, dob, nationality, phone, email, address,
+                occupation, companyName, companyPos, companyTel, companyAddress,
+                passportNum, passportIssueDate, passportExpiryDate,
+                travelStart, travelDuration, portOfEntry, visitCities, hotelDetails,
+                visitCount, lastVisit
+            };
+            localStorage.setItem('japan_evisa_form_saved', JSON.stringify(formData));
+        }
+
+        function closeModal() {
+            document.getElementById('submit-modal').style.display = 'none';
+        }
+
+        function copyResultText() {
+            navigator.clipboard.writeText(compiledResultText).then(() => {
+                alert('?좎껌 ?뺣낫媛 ?대┰蹂대뱶??蹂듭궗?섏뿀?듬땲?? 移댁뭅?ㅽ넚 ??붿갹??遺숈뿬?ｊ린(Ctrl+V)?섏뿬 ?꾩넚??二쇱꽭??');
+            }).catch(err => {
+                alert('蹂듭궗 ?ㅽ뙣: ' + err);
+            });
+        }
+
+        function sendResultEmail() {
+            const subject = encodeURIComponent([?쇰낯 ?꾩옄鍮꾩옄 ?좎껌]  - COE ?쒕쪟 ?묒닔);
+            const body = encodeURIComponent(compiledResultText);
+            window.location.href = mailto:kim83077@nate.com?subject=&body=;
+        }
+
+        function printApplication() {
+            window.print();
+        }
+
+        // Dynamic Routing
+        function routeVisaPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type');
+
+            const tourismContent = document.getElementById('tourism-content');
+            const coeGuideContent = document.getElementById('coe-guide-content');
+            const coeFormContent = document.getElementById('coe-form-content');
+
+            if (!tourismContent || !coeGuideContent || !coeFormContent) return;
+
+            if (type === 'coe') {
+                tourismContent.style.display = 'none';
+                coeGuideContent.style.display = 'block';
+                coeFormContent.style.display = 'none';
+                document.title = "?쇰낯 ?꾩옄鍮꾩옄(e-Visa) COE ?좎껌 ?덈궡 - ?댄닾?대━?붿뒪";
+                window.scrollTo(0, 0);
+            } else if (type === 'coe_form') {
+                tourismContent.style.display = 'none';
+                coeGuideContent.style.display = 'none';
+                coeFormContent.style.display = 'block';
+                document.title = "?쇰낯 ?꾩옄鍮꾩옄(e-Visa) ?⑤씪???좎껌 ?묒떇 - ?댄닾?대━?붿뒪";
+                window.scrollTo(0, 0);
+                
+                // Trigger canvas resize
+                setTimeout(resizeCanvas, 300);
+            } else {
+                tourismContent.style.display = 'block';
+                coeGuideContent.style.display = 'none';
+                coeFormContent.style.display = 'none';
+                document.title = "遺???쇰낯鍮꾩옄 | ?쇰낯 ?꾩옄鍮꾩옄(e-Visa) ?좎냽 ???| ?댄닾?대━?붿뒪";
+            }
+        }
+
+        function navigateToCOEForm() {
+            history.pushState(null, '', '?type=coe_form');
+            routeVisaPage();
+        }
+
+        window.addEventListener('popstate', routeVisaPage);
+        window.addEventListener('load', () => {
+            routeVisaPage();
+            
+            // Auto-load saved form data
+            const saved = localStorage.getItem('japan_evisa_form_saved');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    if (data.nameKo) document.getElementById('name_ko').value = data.nameKo;
+                    if (data.nameEn) document.getElementById('name_en').value = data.nameEn;
+                    if (data.nameCn) document.getElementById('name_cn').value = data.nameCn;
+                    if (data.dob) document.getElementById('birth_date').value = data.dob;
+                    if (data.nationality) document.getElementById('nationality').value = data.nationality;
+                    if (data.phone) document.getElementById('phone').value = data.phone;
+                    if (data.email) document.getElementById('email').value = data.email;
+                    if (data.address) document.getElementById('address').value = data.address;
+                    if (data.occupation) document.getElementById('occupation').value = data.occupation;
+                    if (data.companyName) document.getElementById('company_name').value = data.companyName;
+                    if (data.companyPos) document.getElementById('company_pos').value = data.companyPos;
+                    if (data.companyTel) document.getElementById('company_tel').value = data.companyTel;
+                    if (data.companyAddress) document.getElementById('company_address').value = data.companyAddress;
+                    if (data.passportNum) document.getElementById('passport_num').value = data.passportNum;
+                    if (data.passportIssueDate) document.getElementById('passport_issue_date').value = data.passportIssueDate;
+                    if (data.passportExpiryDate) document.getElementById('passport_expiry_date').value = data.passportExpiryDate;
+                    if (data.travelStart) document.getElementById('travel_start').value = data.travelStart;
+                    if (data.travelDuration) document.getElementById('travel_duration').value = data.travelDuration;
+                    if (data.portOfEntry) document.getElementById('port_of_entry').value = data.portOfEntry;
+                    if (data.visitCities) document.getElementById('visit_cities').value = data.visitCities;
+                    if (data.hotelDetails) document.getElementById('hotel_details').value = data.hotelDetails;
+                    if (data.visitCount) document.getElementById('visit_count').value = data.visitCount;
+                    if (data.lastVisit) document.getElementById('last_visit').value = data.lastVisit;
+                } catch(e) {}
+            }
+        });
+    </script>
+
 
     <!-- Footer -->
     <footer>
