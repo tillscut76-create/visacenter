@@ -21,9 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Inject Floating Contact Buttons
     injectFloatingButtons();
-
-    // 6. Inject Google Tag (gtag.js) for advertising
-    injectGoogleTag('AW-18016804856');
 });
 
 function injectMarquee(notices) {
@@ -53,9 +50,6 @@ function injectMarquee(notices) {
         return false;
     });
     if (activeNotices.length === 0) return;
-
-    // Prevent duplicate marquee injection
-    if (document.querySelector('.marquee-container')) return;
 
     const marqueeText = activeNotices.map(n => n.text).join(' &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; ');
 
@@ -107,8 +101,6 @@ function injectMarquee(notices) {
 }
 
 function unifyBranding() {
-    if (document.body.getAttribute('data-skip-unify') === 'true') return;
-
     // Unify logic for Header/Footer content transparency
     // This function will ensure consistent address/contact across all pages
     const addressStr = "B124, 1F, Beomyang Reus Central Bay 104-dong, 114 Choryangjung-ro, Dong-gu, Busan (부산광역시 동구 초량중로 114, 범양레우스센트럴베이 104동 1층 B124호)";
@@ -116,15 +108,11 @@ function unifyBranding() {
     const emailStr = "kim83077@nate.com";
 
     // 1. Unify Header (Phone, Kakao, and FULL NAVIGATION)
-    let topContactLink = 'contact.html';
-    if (document.body.getAttribute('data-country-target') === 'japan-working') {
-        topContactLink = 'contact.html?type=wh';
-    }
     const topContact = document.querySelector('.top-contact');
     if (topContact) {
         topContact.innerHTML = `
             <a href="tel:051-818-0801"><i class="fa-solid fa-phone"></i> 051-818-0801 / 1588-8903</a>
-            <a href="${topContactLink}"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
+            <a href="contact.html"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
         `;
     }
 
@@ -132,11 +120,6 @@ function unifyBranding() {
     let navContainer = document.querySelector('nav ul');
     if (!navContainer) {
         navContainer = document.querySelector('nav > div:last-child'); // Fallback for div-based nav
-    }
-
-    let contactLink = 'contact.html';
-    if (document.body.getAttribute('data-country-target') === 'japan-working') {
-        contactLink = 'contact.html?type=wh';
     }
 
     if (navContainer) {
@@ -149,54 +132,23 @@ function unifyBranding() {
                 <span class="nav-en">About Us</span>
                 <span class="nav-kr">회사소개</span>
             </a></li>
-            <li>
-                <a href="index.html">
-                    <span class="nav-en">Japan Visa</span>
-                    <span class="nav-kr">일본비자</span>
-                </a>
-                <ul class="dropdown-menu">
-                    <div class="dropdown-category">For Koreans (한국인 대상)</div>
-                    <li><a href="korean-visa.html" style="color: #D30000; font-weight: 700;">한국인 일본상용/관광 비자</a></li>
-                    <li><a href="working-holiday.html">일본 워킹홀리데이</a></li>
-                    <div class="dropdown-category" style="margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 12px;">For Foreigners (외국인 대상)</div>
-                    <li><a href="evisa.html">Japan e-Visa</a></li>
-                    <li><a href="sticker-visa.html">Japan Sticker Visa</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="global-visa.html">
-                    <span class="nav-en">Global Visa</span>
-                    <span class="nav-kr">전세계비자</span>
-                </a>
-                <ul class="dropdown-menu">
-                    <div class="dropdown-category">For Koreans (한국인 대상)</div>
-                    <li><a href="china-visa.html">중국 비자</a></li>
-                    <li><a href="vietnam-visa.html">베트남 비자</a></li>
-                    <li><a href="india-visa.html">인도 비자</a></li>
-                    <li><a href="thailand-visa.html">태국 비자</a></li>
-                    <li><a href="myanmar-visa.html">미얀마 비자</a></li>
-                    <li><a href="mongolia-visa.html">몽골 비자</a></li>
-                    <li><a href="taiwan-visa-kr.html">대만 비자</a></li>
-                    <li><a href="russia-visa.html">러시아 비자</a></li>
-                    <li><a href="europe-visa.html">유럽 (쉥겐) 비자</a></li>
-                    <li><a href="uk-eta.html">영국비자 ETA</a></li>
-                    <li><a href="usa-visa.html">미국 ESTA / 비자</a></li>
-                    <li><a href="canada-visa.html">캐나다 eTA / 비자</a></li>
-                    <li><a href="global-visa.html" style="color: #D30000; font-weight: 700;">기타 전세계 비자 전체보기</a></li>
-                    <div class="dropdown-category" style="margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 12px;">For Foreigners (외국인 대상)</div>
-                    <li><a href="china-visa.html#for-foreigners">China Visa Guide</a></li>
-                    <li><a href="taiwan-visa.html">Taiwan Visa Guide</a></li>
-                    <li><a href="uk-visa.html">UK Visa Guide</a></li>
-                    <li><a href="europe-visa.html">Europe (Schengen) Visa Guide</a></li>
-                    <li><a href="malaysia-visa.html">Malaysia Visa Guide</a></li>
-                    <li><a href="thailand-visa.html">Thailand Visa Guide</a></li>
-                </ul>
-            </li>
+            <li><a href="index.html">
+                <span class="nav-en">Japan Visa</span>
+                <span class="nav-kr">일본비자</span>
+            </a></li>
+            <li><a href="japan_evisa.html" style="position: relative;">
+                <span class="nav-en">e-Visa (COE)<span style="position: absolute; top: -3px; right: -8px; width: 6px; height: 6px; background-color: var(--secondary-color); border-radius: 50%;"></span></span>
+                <span class="nav-kr">일본 전자비자(재류자격)</span>
+            </a></li>
+            <li><a href="global-visa.html">
+                <span class="nav-en">Global Visa</span>
+                <span class="nav-kr">전세계비자</span>
+            </a></li>
             <li><a href="index.html#location">
                 <span class="nav-en">Location</span>
                 <span class="nav-kr">오시는길</span>
             </a></li>
-            <li><a href="${contactLink}">
+            <li><a href="contact.html">
                 <span class="nav-en">Contact</span>
                 <span class="nav-kr">상담/문의</span>
             </a></li>
@@ -204,14 +156,15 @@ function unifyBranding() {
         // Ensure it's a UL if we found a div but want a UL list
         if (navContainer.tagName !== 'UL' && !navContainer.querySelector('li')) {
             navContainer.style.display = 'flex';
-            navContainer.style.gap = '30px';
+            navContainer.style.gap = '20px';
             navContainer.innerHTML = `
                 <a href="index.html" style="text-decoration:none; color:inherit;">Home (홈)</a>
                 <a href="index.html#about" style="text-decoration:none; color:inherit;">About Us (회사소개)</a>
                 <a href="index.html" style="text-decoration:none; color:inherit;">Japan Visa (일본비자)</a>
+                <a href="japan_evisa.html" style="text-decoration:none; color:inherit; font-weight:600;">e-Visa (COE) <span style="color:var(--secondary-color);">●</span></a>
                 <a href="global-visa.html" style="text-decoration:none; color:inherit;">Global Visa (전세계비자)</a>
                 <a href="index.html#location" style="text-decoration:none; color:inherit;">Location (오시는길)</a>
-                <a href="${contactLink}" style="text-decoration:none; color:inherit;">Contact (상담/문의)</a>
+                <a href="contact.html" style="text-decoration:none; color:inherit;">Contact (상담/문의)</a>
              `;
         }
     }
@@ -258,14 +211,8 @@ function unifyBranding() {
         if (matchesHref || matchesClass || matchesText) {
             // Exceptions: Don't redirect internal HTML links (like visa details) unless they are Kakao links
             if (href.endsWith('.html') && !href.includes('pf.kakao.com') && !href.includes('Consultation')) return;
-            // Exceptions: Don't redirect download links
-            if (el.hasAttribute('download') || href.includes('forms/')) return;
 
-            let finalContactLink = 'contact.html';
-            if (document.body.getAttribute('data-country-target') === 'japan-working') {
-                finalContactLink = 'contact.html?type=wh';
-            }
-            el.setAttribute('href', finalContactLink);
+            el.setAttribute('href', 'contact.html');
             el.removeAttribute('target');
 
             // Standardize text if it was just a Kakao link or generic Inquiry
@@ -365,11 +312,6 @@ function showPopups(popups) {
 function injectFloatingButtons() {
     if (document.querySelector('.floating-contact-buttons')) return;
 
-    let floatContactLink = 'contact.html';
-    if (document.body.getAttribute('data-country-target') === 'japan-working') {
-        floatContactLink = 'contact.html?type=wh';
-    }
-
     const floatingDiv = document.createElement('div');
     floatingDiv.className = 'floating-contact-buttons';
     floatingDiv.innerHTML = `
@@ -377,7 +319,7 @@ function injectFloatingButtons() {
             <i class="fa-solid fa-phone"></i>
             <span class="float-tooltip">전화 상담</span>
         </a>
-        <a href="${floatContactLink}" class="float-btn float-kakao" title="카카오톡/1:1 문의">
+        <a href="contact.html" class="float-btn float-kakao" title="카카오톡/1:1 문의">
             <i class="fa-solid fa-comment-dots"></i>
             <span class="float-tooltip">카톡/문의</span>
         </a>
@@ -462,22 +404,4 @@ function injectFloatingButtons() {
 
     document.head.appendChild(style);
     document.body.appendChild(floatingDiv);
-}
-
-function injectGoogleTag(tagId) {
-    // Prevent duplicate injection if manually added to HTML
-    if (window.dataLayer && window.dataLayer.some(e => e[0] === 'config' && e[1] === tagId)) return;
-
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${tagId}`;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    // Avoid overwriting if already defined
-    if (!window.gtag) window.gtag = gtag;
-    
-    gtag('js', new Date());
-    gtag('config', tagId);
 }
