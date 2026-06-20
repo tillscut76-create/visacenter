@@ -1,4 +1,4 @@
-/**
+﻿/**
  * common.js - Handles uniform Header, Footer, and Marquee injection
  */
 
