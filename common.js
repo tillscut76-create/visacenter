@@ -162,11 +162,15 @@ function unifyBranding() {
                     <li><a href="evisa.html">Japan e-Visa</a></li>
                     <li><a href="sticker-visa.html">Japan Sticker Visa</a></li>
                 </ul>
+<<<<<<< HEAD
             </li>
             <li><a href="japan_evisa.html" style="position: relative;">
                 <span class="nav-en">e-Visa (COE)<span style="position: absolute; top: -3px; right: -8px; width: 6px; height: 6px; background-color: var(--secondary-color); border-radius: 50%;"></span></span>
                 <span class="nav-kr">?쇰낯 ?꾩옄鍮꾩옄(?щ쪟?먭꺽)</span>
             </a></li>`r`n            <li><a href="japan_evisa.html" style="position: relative;">`r`n                <span class="nav-en">e-Visa (COE)<span style="position: absolute; top: -3px; right: -8px; width: 6px; height: 6px; background-color: var(--secondary-color); border-radius: 50%;"></span></span>`r`n                <span class="nav-kr">?쇰낯 ?꾩옄鍮꾩옄(?щ쪟?먭꺽)</span>`r`n            </a></li>`r`n            <li><a href="japan_evisa.html" style="position: relative;">`r`n                <span class="nav-en">e-Visa (COE)<span style="position: absolute; top: -3px; right: -8px; width: 6px; height: 6px; background-color: var(--secondary-color); border-radius: 50%;"></span></span>`r`n                <span class="nav-kr">?쇰낯 ?꾩옄鍮꾩옄(?щ쪟?먭꺽)</span>`r`n            </a></li>
+=======
+            </li>
+>>>>>>> parent of 297d420 (coe evisa japan)
             <li>
                 <a href="global-visa.html">
                     <span class="nav-en">Global Visa</span>
@@ -196,6 +200,10 @@ function unifyBranding() {
                     <li><a href="thailand-visa.html">Thailand Visa Guide</a></li>
                 </ul>
             </li>
+            <li><a href="japan_evisa.html" style="position: relative;">
+                <span class="nav-en">e-Visa (COE)<span style="position: absolute; top: -3px; right: -8px; width: 6px; height: 6px; background-color: var(--secondary-color); border-radius: 50%;"></span></span>
+                <span class="nav-kr">?쇰낯 ?꾩옄鍮꾩옄(?щ쪟?먭꺽)</span>
+            </a></li>
             <li><a href="index.html#location">
                 <span class="nav-en">Location</span>
                 <span class="nav-kr">오시는길</span>
