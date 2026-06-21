@@ -1,280 +1,911 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naver-site-verification" content="1fc05eb1bb7074ecb045dec74b5f55edb2ba8e4c" />
-    <title>부산 일본비자 | 중국비자 대행 | 뉴투어리더스</title>
-    <meta name="description"
-        content="부산역 인근 비자 대행 전문. 주부산일본국총영사관 비자 업무 지원, 중국·대만 비자 신속 대행 및 외국인 영어 상담 지원.">
-    <meta name="keywords"
-        content="부산 일본비자, 부산 중국비자, 일본비자 대행, 중국비자 대행, 뉴투어리더스, 주부산일본국총영사관, 부산역 비자">
-    <!-- Favicon -->
+    <title>일본 COE 전자비자(e-Visa) 신청 안내 - 뉴투어리더스</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Scripts -->
     <script src="config.js"></script>
     <script src="common.js" defer></script>
     <script src="script.js" defer></script>
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://visacenter.me.kr">
-    <meta property="og:title" content="New Tour Leaders - Global Visa Center">
-    <meta property="og:description" content="국경을 넘는 가장 쉬운 방법. 1:1 전담 매니저가 빠르고 정확하게 비자 업무를 대행해 드립니다.">
-    <meta property="og:image"
-        content="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="New Tour Leaders - Global Visa Center">
-    <meta name="twitter:description" content="전 세계 어디든 빠르고 정확한 비자 솔루션. 1:1 전담 매니저가 함께합니다.">
-    <meta name="twitter:image"
-        content="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18016804856"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', 'AW-18016804856');
-    </script>
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0, 34, 68, 0.75), rgba(0, 34, 68, 0.75)), url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+
+        /* Highlight Alert Box */
+        .alert-box {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-left: 6px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .alert-title {
+            color: var(--primary-color);
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-title i {
+            color: var(--secondary-color);
+        }
+
+        .alert-content p {
+            font-size: 1.05rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .alert-highlight {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            border: 1px solid #bee3f8;
+        }
+
+        .special-note-box {
+            background: #f7fafc;
+            border: 1px solid #edf2f7;
+            border-left: 4px solid var(--secondary-color);
+            padding: 18px 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            color: #2d3748;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .special-note-box strong {
+            color: var(--secondary-color);
+        }
+
+        /* Step Timeline Grid */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .step-card {
+            background: #fff;
+            padding: 25px 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            border-top: 4px solid var(--primary-color);
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            border-top-color: var(--secondary-color);
+        }
+
+        .step-num {
+            display: inline-block;
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .step-card:hover .step-num {
+            background: var(--secondary-color);
+            color: #fff;
+        }
+
+        .step-icon-wrap {
+            width: 60px;
+            height: 60px;
+            background: #f7fafc;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid #edf2f7;
+        }
+
+        .step-card:hover .step-icon-wrap {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .step-card h4 {
+            font-size: 1.05rem;
+            color: #1a202c;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .step-card p {
+            font-size: 0.85rem;
+            color: #718096;
+            line-height: 1.5;
+        }
+
+        /* Smart Interactive Tabbed System */
+        .tab-section-header {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+
+        .tab-container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            border: 1px solid #edf2f7;
+            margin-bottom: 50px;
+        }
+
+        .tab-menu {
+            display: flex;
+            background: #f7fafc;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 20px 15px;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #718096;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary-color);
+            background: rgba(0, 34, 68, 0.02);
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            background: #fff;
+            border-bottom-color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 35px;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .smart-guide-box {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 25px;
+            border: 1px dashed #cbd5e0;
+        }
+
+        .smart-guide-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+        }
+
+        .smart-guide-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .smart-guide-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 5px;
+            top: -1px;
+        }
+
+        /* Document Table Styles */
+        .table-responsive table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-responsive th {
+            background-color: #f7fafc;
+            color: #2d3748;
+            font-weight: 700;
+            text-align: left;
+            padding: 15px 20px;
+            border-bottom: 2px solid #edf2f7;
+            font-size: 0.95rem;
+        }
+
+        .table-responsive td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #edf2f7;
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            vertical-align: middle;
+        }
+
+        .table-responsive tr:hover {
+            background-color: #fafbfd;
+        }
+
+        .badge-req {
+            background: #ffebeb;
+            color: #e53e3e;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            border: 1px solid #ffd1d1;
+        }
+
+        .badge-opt {
+            background: #e6fffa;
+            color: #319795;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            border: 1px solid #b2f5ea;
+        }
+
+        /* Call To Action Button Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #00152b 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 16px;
+            margin-top: 60px;
+            color: #fff;
+            box-shadow: 0 20px 40px rgba(0, 34, 68, 0.25);
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            color: #cbd5e0;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .cta-btn-large {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(211, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .cta-btn-large:hover {
+            background: #a00000;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(211, 0, 0, 0.45);
+        }
+
+        @media (max-width: 1024px) {
+            .timeline-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .step-card {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .step-num {
+                margin-bottom: 0;
+                order: 3;
+                margin-left: auto;
+            }
+
+            .step-icon-wrap {
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            .step-content {
+                flex-grow: 1;
+            }
+
+            .step-card h4 {
+                margin-bottom: 5px;
+            }
+
+            .tab-menu {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                border-bottom: none;
+                border-left: 3px solid transparent;
+            }
+
+            .tab-btn.active {
+                border-left-color: var(--primary-color);
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body data-country-target="japan-evisa">
 
+    <!-- Top Bar (Dynamically Handled via common.js) -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="trust-badge"><i class="fa-solid fa-certificate"></i> Japan Consulate Designated Agency <span class="kr-inline">(일본영사관 지정 대리 수속업체)</span></span>
+            <div class="top-contact">
+                <a href="tel:051-818-0801"><i class="fa-solid fa-phone"></i> 051-818-0801 / 1588-8903</a>
+                <a href="contact.html"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
+            </div>
+        </div>
+    </div>
 
+    <!-- Header (Navigation injected via common.js) -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <a href="index.html"><img src="https://newpassport.co.kr/visa/index/images/logo.jpg"
-                        alt="New Tour Leaders"></a>
+                <a href="index.html"><img src="https://newpassport.co.kr/visa/index/images/logo.jpg" alt="New Tour Leaders"></a>
             </div>
             <nav>
                 <ul>
-                    <!-- Injected via common.js -->
+                    <!-- Injected by common.js -->
                 </ul>
             </nav>
             <a href="contact.html" class="cta-button">Apply (신청하기)</a>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section: Focused on Foreign Residents & Trust -->
-        <section class="hero"
-            style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <span class="hero-subtitle"
-                    style="font-family: 'Poppins', sans-serif; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; font-size: 0.85rem; opacity: 0.9;">Official
-                    Japan Visa Agency in Busan</span>
-                <h2
-                    style="font-family: 'Poppins', sans-serif; font-weight: 600; line-height: 1.4; letter-spacing: -0.5px; margin-bottom: 25px;">
-                    Trusted Visa Service<br>for Foreign Residents<br>
-                    <span
-                        style="font-size:0.45em; font-weight:300; display:block; margin-top:20px; font-family: 'Noto Sans KR', sans-serif; opacity: 0.85; letter-spacing: 0.5px;">
-                        부산 일본영사관 지정 대행사 | 외국인 비자 전문
-                    </span>
-                </h2>
-                <p
-                    style="font-family: 'Poppins', sans-serif; font-size: 1.05rem; max-width: 700px; margin: 0 auto 50px; color: #f8f9fa; line-height: 1.8; font-weight: 300;">
-                    Applying for a Japanese visa in Korea? We provide the most accurate and reliable service.<br>
-                    <span style="font-size: 0.9em; color: rgba(255,255,255,0.7); display:block; margin-top:8px;">(한국 거주
-                        외국인을 위한 가장 정확하고 신뢰할 수 있는 일본 비자 서비스)</span>
-                </p>
-
-                <!-- Direct Access Cards (UX Improvement: Reduced Click Depth) -->
-                <div class="quick-access-grid">
-                    <a href="evisa.html" class="access-card">
-                        <div class="icon-circle"><i class="fa-solid fa-laptop-code"></i></div>
-                        <h3>Japan e-Visa<br><span style="font-size:0.7em; font-weight:normal;">일본전자비자 (관광)</span></h3>
-                        <span>Apply (신청하기) <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-                    <a href="japan_evisa.html" class="access-card" style="border-top: 5px solid #002244;">
-                        <div class="icon-circle" style="background: #e6f0fa; color: #002244;"><i class="fa-solid fa-id-card"></i></div>
-                        <h3>Japan e-Visa (COE)<br><span style="font-size:0.7em; font-weight:normal;">일본전자비자 (재류자격)</span></h3>
-                        <span>Apply (신청하기) <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-                    <a href="sticker-visa.html" class="access-card">
-                        <div class="icon-circle"><i class="fa-solid fa-passport"></i></div>
-                        <h3>Japan Sticker Visa<br><span style="font-size:0.7em; font-weight:normal;">일본스티커비자</span></h3>
-                        <span>Apply (신청하기) <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-                    <a href="working-holiday.html" class="access-card" style="border-top: 5px solid #009688;">
-                        <div class="icon-circle" style="background: #e0f2f1; color: #009688;"><i
-                                class="fa-solid fa-suitcase-rolling"></i></div>
-                        <h3>Working Holiday<br><span style="font-size:0.7em; font-weight:normal;">일본워킹홀리데이</span></h3>
-                        <span>Apply (신청하기) <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-                    <a href="korean-visa.html" class="access-card">
-                        <div class="icon-circle"><i class="fa-solid fa-earth-asia"></i></div>
-                        <h3>Korean's Japan Visa<br><span style="font-size:0.7em; font-weight:normal;">한국인 일본비자</span>
-                        </h3>
-                        <span>Guide (안내보기) <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-                    <a href="global-visa.html" class="access-card" style="border-top: 5px solid #FF9800;">
-                        <div class="icon-circle" style="background: #FFF3E0; color: #FF9800;"><i
-                                class="fa-solid fa-globe"></i></div>
-                        <h3>Global Visas<br><span style="font-size:0.7em; font-weight:normal;">기타 국가 비자</span></h3>
-                        <span>View All (전체보기) <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service Highlights -->
-        <section id="about" class="features">
-            <div class="container">
-                <div class="section-header fade-in-section">
-                    <h2>Why New Tour Leaders?<br><span style="font-size:0.6em">왜 뉴투어리더스인가?</span></h2>
-                    <p>No.1 in Accurate & Meticulous Service (정확하고 꼼꼼한 서류 수속 No.1)</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-item fade-in-section">
-                        <i class="fa-solid fa-check-double"></i>
-                        <h3>High Acceptance Rate<br><span style="font-size:0.7em">높은 합격률</span></h3>
-                        <p>We leverage years of data and know-how to maximize your visa approval chances.<br>다년간의 데이터와
-                            노하우로 비자 발급 확률을 최대로 높여드립니다.</p>
-                    </div>
-                    <div class="feature-item fade-in-section">
-                        <i class="fa-solid fa-file-signature"></i>
-                        <h3>Meticulous Preparation<br><span style="font-size:0.7em">꼼꼼한 서류작성</span></h3>
-                        <p>As an agency designated by the Embassy of Japan, we conduct thorough document
-                            reviews.<br>일본대사관 지정 업체로서 빈틈없는 서류 검토를 진행합니다.</p>
-                    </div>
-                    <div class="feature-item fade-in-section">
-                        <i class="fa-solid fa-user-shield"></i>
-                        <h3>Trustworthy Partner<br><span style="font-size:0.7em">신뢰할 수 있는 파트너</span></h3>
-                        <p>From study abroad to settling down, we support your life in Japan.<br>유학부터 정착까지, 여러분의 일본 생활을
-                            든든하게 지원합니다.</p>
-                    </div>
-                    <div class="feature-item blog-feature fade-in-section">
-                        <div style="font-size: 3rem; color: #03C75A; margin-bottom: 20px;"><i class="fa-solid fa-n"></i>
-                        </div>
-                        <h3>Official Blog<br><span style="font-size:0.7em">공식 블로그</span></h3>
-                        <p>Check the latest news (최신 일본 소식 확인하기)</p>
-                        <a href="https://blog.naver.com/newtour0801" target="_blank">Visit Blog (블로그 바로가기) &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq fade-in-section" style="padding: 60px 0; background: #f9f9f9;">
-            <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                    <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 15px;">Frequently Asked Questions<br><span
-                            style="font-size:0.6em; color: #777;">자주하는 질문 (FAQ)</span></h2>
-                    <p style="color: #666;">Get quick answers to common questions about Japanese visa applications.</p>
-                </div>
-
-                <div class="faq-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
-                    <!-- FAQ 1 -->
-                    <div class="faq-card"
-                        style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--primary-color);">
-                        <h4 style="font-size: 1.1rem; color: #333; margin-bottom: 15px; font-weight: 700;">
-                            <i class="fa-solid fa-circle-question" style="color: var(--primary-color);"></i>
-                            How much bank balance is required?<br>
-                            <span class="kr-inline" style="font-size: 0.85em; font-weight: 400; color: #777;">(은행 잔고는
-                                얼마나 있어야 하나요?)</span>
-                        </h4>
-                        <p style="color: #555; line-height: 1.6;">
-                            There is no fixed regulation on the amount, but based on our experience, <strong>over 3
-                                million KRW for students</strong> and <strong>over 5 million KRW for others</strong> is
-                            favorable for visa issuance.<br>
-                            <span class="kr-text"
-                                style="color: #888; display: block; margin-top: 10px; font-size: 0.9em;">정해진 금액에 대한 규정은
-                                없으나 저희 경험상 학생은 300만원, 그 외는 500만원 이상이 유리합니다.</span>
-                        </p>
-                    </div>
-
-                    <!-- FAQ 2 -->
-                    <div class="faq-card"
-                        style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--primary-color);">
-                        <h4 style="font-size: 1.1rem; color: #333; margin-bottom: 15px; font-weight: 700;">
-                            <i class="fa-solid fa-circle-question" style="color: var(--primary-color);"></i>
-                            Are flight & hotel bookings mandatory?<br>
-                            <span class="kr-inline" style="font-size: 0.85em; font-weight: 400; color: #777;">(항공권/호텔
-                                예약은 필수인가요?)</span>
-                        </h4>
-                        <p style="color: #555; line-height: 1.6;">
-                            <strong>Yes, flight and hotel reservations are mandatory</strong> for visa application. If
-                            you have difficulty preparing them, <strong>we can assist with the reservations.</strong>
-                            Please contact us.<br>
-                            <span class="kr-text"
-                                style="color: #888; display: block; margin-top: 10px; font-size: 0.9em;">항공권과 호텔 예약은 비자
-                                접수 필수 서류입니다. 준비가 어려우신 경우, 당사에서 예약을 도와드리니 문의주세요.</span>
-                        </p>
-                    </div>
-
-                    <!-- FAQ 3 -->
-                    <div class="faq-card"
-                        style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--primary-color);">
-                        <h4 style="font-size: 1.1rem; color: #333; margin-bottom: 15px; font-weight: 700;">
-                            <i class="fa-solid fa-circle-question" style="color: var(--primary-color);"></i>
-                            Can I change my schedule/cities later?<br>
-                            <span class="kr-inline" style="font-size: 0.85em; font-weight: 400; color: #777;">(발급 후
-                                일정/도시 변경 가능한가요?)</span>
-                        </h4>
-                        <p style="color: #555; line-height: 1.6;">
-                            <strong>Yes.</strong> Once the visa is issued, as long as you adhere to the entry validity
-                            and maximum stay period regulations, <strong>you can freely decide when, where, and how long
-                                to stay.</strong><br>
-                            <span class="kr-text"
-                                style="color: #888; display: block; margin-top: 10px; font-size: 0.9em;">유효기간 내 입국 및 최대
-                                체류기간 규정만 준수한다면, 세부 일정과 체류지는 고객님이 자유롭게 결정하셔도 됩니다.</span>
-                        </p>
-                    </div>
-
-                    <!-- FAQ 4 -->
-                    <div class="faq-card"
-                        style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--primary-color);">
-                        <h4 style="font-size: 1.1rem; color: #333; margin-bottom: 15px; font-weight: 700;">
-                            <i class="fa-solid fa-circle-question" style="color: var(--primary-color);"></i>
-                            Is ARC validity under 1 month an issue?<br>
-                            <span class="kr-inline" style="font-size: 0.85em; font-weight: 400; color: #777;">(외국인등록증
-                                유효기간 1개월 미만?)</span>
-                        </h4>
-                        <p style="color: #555; line-height: 1.6;">
-                            There is no specific rule, but if it's less than 1 month, <strong>you might need to extend
-                                it before applying</strong> or provide proof of an extension appointment.<br>
-                            <span class="kr-text"
-                                style="color: #888; display: block; margin-top: 10px; font-size: 0.9em;">별도 규정은 없으나, 1개월
-                                미만인 경우 연장 후 접수하거나 연장 예약 증명 서류가 요구될 수 있습니다.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Location Section -->
-        <section id="location" class="location-banner user-animate">
-            <div class="container location-content fade-in-section">
-                <div class="text-box">
-                    <h3><i class="fa-solid fa-map-location-dot"></i> Location (오시는 길)</h3>
-                    <p style="font-size: 1.2rem; margin-bottom: 10px;">B124, 1F, Beomyang Reus Central Bay 104-dong, 114
-                        Choryangjung-ro, Dong-gu, Busan<br>(부산광역시 동구 초량중로 114, 범양레우스센트럴베이 104동 1층 B124호)</p>
-                    <p class="sub-text">Near Busan Station (부산역 인근)</p>
-                    <a href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%20%EB%89%B4%ED%88%AC%EC%96%B4%EB%A6%AC%EB%8D%94%EC%8A%A4/place/1376997425?c=15.00,0,0,0,dh"
-                        target="_blank" class="btn-map">View Map (지도 보기)</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
+    <!-- Page Header -->
+    <section class="page-header">
         <div class="container">
-            <!-- Injected via common.js -->
+            <h2>일본 COE 전자비자 (e-Visa) 신청 안내</h2>
+            <p>Japan Certificate of Eligibility (COE) Holder e-Visa Guide</p>
         </div>
-    </footer>
-<!-- ver.2026.03.15.1633 -->
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+
+            <!-- Alert Notice (Highlights Key Changes) -->
+            <div class="alert-box fade-in-section">
+                <div class="alert-title">
+                    <i class="fa-solid fa-circle-exclamation fa-lg"></i>
+                    일본 비자 신청 방식 중요 변경 안내 (COE 소지자 대상)
+                </div>
+                <div class="alert-content">
+                    <p>
+                        일본 출입국재류관리청에서 발급하는 **재류자격인정증명서(COE)** 소지자의 일본 대사관/영사관 비자 발급 절차가 간소화되었습니다.
+                        기존의 번거롭던 실물 사증(스티커 비자) 스티커 첩부 방식 대신, 온라인을 활용한 <span class="alert-highlight">전자비자(e-Visa) 발급 방식</span>이 본격 적용됩니다.
+                        <strong>이제 비자가 심사되는 기간 동안 여권 실물을 비자 대행사나 영사관에 위탁하실 필요가 없습니다.</strong>
+                    </p>
+
+                    <!-- Special 7-day Warning -->
+                    <div class="special-note-box" style="border-left-color: var(--secondary-color); background: #fff5f5; color: #c53030; margin-bottom: 15px;">
+                        <i class="fa-solid fa-triangle-exclamation"></i> &nbsp;
+                        <strong>[일본 입국(출국) 예정일이 7일 이하로 남으신 분 필독]</strong><br>
+                        일본 입국(출국) 예정일이 <strong>7일 이하</strong>로 남아 비자 심사 및 발급 기간이 매우 촉박하신 고객님은 전자비자(e-Visa) 진행이 불가할 수 있습니다. 이 경우 기존 방식대로 여권 실물 원본을 영사관에 접수하는 '스티커 비자'로 접수하셔야 합니다. 세부 접수 정보는 당사 홈페이지의 <a href="sticker-visa.html" style="color: var(--secondary-color); font-weight: bold; text-decoration: underline;">일본 스티커 비자 안내 페이지</a>로 이동하셔서 절차를 확인해 주시기 바랍니다.
+                    </div>
+
+                    <!-- Special Exception Note for Busan -->
+                    <div class="special-note-box">
+                        <i class="fa-solid fa-circle-info"></i> &nbsp;
+                        <strong>[부산영사관 관할 신청자 선택 가능 안내]</strong><br>
+                        서울 대사관 관할 신청자는 전자비자 발급으로 전면 전환되었으나, <strong>주부산일본국총영사관 관할 신청자의 경우 신청자의 기호와 편의에 따라 기존 방식인 '여권 원본 제출형 스티커 비자'로 발급받는 것도 여전히 병행하여 신청 가능</strong>합니다. 여권 실물 접수를 원하실 경우 신청 접수 시 담당자에게 미리 말씀해 주시기 바랍니다.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Steps (timeline) -->
+            <h3 style="font-size: 1.8rem; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 30px;">
+                <i class="fa-solid fa-route"></i> 신청 절차 (Step-by-Step)
+            </h3>
+
+            <div class="timeline-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <span class="step-num">Step 01</span>
+                    <div class="step-icon-wrap">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </div>
+                    <div class="step-content">
+                        <h4>구비서류 준비</h4>
+                        <p>재류자격인증서(COE) 사본, 여권 사본, 여권용 사진 파일 및 주민등록등본을 준비합니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <span class="step-num">Step 02</span>
+                    <div class="step-icon-wrap">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <div class="step-content">
+                        <h4>비자 신청 대행 접수</h4>
+                        <p>대행사(뉴투어리더스)의 카카오톡 또는 이메일로 서류 스캔본을 편리하게 전송합니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <span class="step-num">Step 03</span>
+                    <div class="step-icon-wrap">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="step-content">
+                        <h4>영사관 심사 (여권 보관)</h4>
+                        <p>온라인으로 서류가 접수되어 심사가 진행됩니다. 심사 기간 동안 여권 실물은 신청자가 직접 보관합니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card">
+                    <span class="step-num">Step 04</span>
+                    <div class="step-icon-wrap">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <div class="step-content">
+                        <h4>전자비자 발급 & 전달</h4>
+                        <p>비자 발급이 완료되면 PDF 형식의 '비자발급사실통지서(Visa Issuance Notice)'를 전송해 드립니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step-card">
+                    <span class="step-num">Step 05</span>
+                    <div class="step-icon-wrap">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <div class="step-content">
+                        <h4>일본 출국 & 입국</h4>
+                        <p>여권 실물과 비자발급사실통지서(출력본)를 함께 소지하여 일본 공항에 입국합니다.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Smart Interactive Tabbed System -->
+            <div class="tab-section-header">
+                <h3 style="font-size: 1.8rem; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 20px;">
+                    <i class="fa-solid fa-sliders"></i> 재류자격별 맞춤 구비 서류 가이드
+                </h3>
+                <p style="color: #666; font-size: 0.95rem; margin-bottom: 25px;">본인의 재류자격인정증명서(COE) 종류를 선택하시면 제출해야 할 맞춤형 필요 서류와 핵심 팁을 확인하실 수 있습니다.</p>
+            </div>
+
+            <div class="tab-container">
+                <div class="tab-menu">
+                    <button class="tab-btn active" onclick="switchTab('work')">
+                        <i class="fa-solid fa-briefcase"></i> 취업·경영·전문직
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('study')">
+                        <i class="fa-solid fa-graduation-cap"></i> 유학·어학연수·교환학생
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('family')">
+                        <i class="fa-solid fa-users"></i> 가족체재 (부양가족)
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('show')">
+                        <i class="fa-solid fa-guitar"></i> 흥행 (예술/연예/체육)
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('other')">
+                        <i class="fa-solid fa-passport"></i> 기타 활동 (워홀/연수 등)
+                    </button>
+                </div>
+
+                <!-- 1. Work / Business Tab -->
+                <div id="tab-work" class="tab-content active">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">구비서류</th>
+                                    <th style="width: 15%;">구분</th>
+                                    <th>상세 사양 및 스마트 작성법</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>여권 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>여권 인적사항 페이지(사진이 있는 면) 전체가 흔들림 없이 선명하게 잘 보이도록 스캔하거나 사진 촬영하여 제출해 주세요. (입국 예정일 기준 유효기간이 3개월 이상 확보되어야 합니다.)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>여권용 사진 파일</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>최근 6개월 이내에 촬영한 흰색 배경의 증명사진(3.5cm x 4.5cm) 디지털 이미지 파일이어야 합니다. 그림자나 조명 반사가 없어야 영사관 시스템 등록이 정상적으로 완료됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>재류자격인증서(COE) 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>일본 대행사나 회사를 통해 발급받은 재류자격인정증명서(COE)의 사본 파일. 전자(Email) COE의 경우, 받은 PDF 통지 메일을 그대로 제출하시면 됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>주민등록증 사본 또는 등본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>주민등록증 앞/뒷면 사본 또는 주민등록등본 1부. (주민등록상 주소지가 부산/울산/경남/대구/경북인 경우에 한해 주부산일본국총영사관에서 심사가 가능하므로 관할지 구분을 위해 반드시 필요합니다.)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="smart-guide-box">
+                        <div class="smart-guide-title"><i class="fa-solid fa-lightbulb"></i> 취업·경영 COE 소지자 스마트 팁</div>
+                        <ul class="smart-guide-list">
+                            <li>재류자격인증서 상에 기재된 일본 현지 회사명, 계약 기간 및 연봉 내역을 비자 대행 신청 시 정확히 공유해주시면 신청서 보완 과정 없이 더 빠른 접수가 가능합니다.</li>
+                            <li>취업 비자의 경우 영사관 추가 심사 시 드물게 고용계약서 사본을 추가 요청할 수 있으므로, 해당 파일을 미리 스캔하여 보관해 두시는 것을 권장합니다.</li>
+                            <li>여권 실물을 소지하고 있기 때문에 비자 심사 중에도 긴급한 해외 출국(예: 타국 출장 등)이 자유롭습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. Student Tab -->
+                <div id="tab-study" class="tab-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">구비서류</th>
+                                    <th style="width: 15%;">구분</th>
+                                    <th>상세 사양 및 스마트 작성법</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>여권 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>인적사항 페이지의 정보가 선명하게 노출된 디지털 이미지. (종이 여권 하단의 바코드/문자 판독이 원활해야 합니다.)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>여권용 사진 파일</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>흰색 배경, 6개월 이내 촬영된 3.5x4.5cm 증명사진 파일. (교복 착용 사진도 가능하지만, 현재 모습과 너무 큰 차이가 없어야 합니다.)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>재류자격인증서(COE) 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>유학원 또는 일본 학교로부터 전달받은 COE 사본 또는 전자 PDF 파일.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>주민등록증 사본 또는 등본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>주민등록등본 1부 또는 주민등록증 앞뒷면 사본 (부모님과 주소지가 다른 유학생의 경우 관할 구역 입증을 위해 등본 제출을 추천합니다.)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>입학허가서 사본</strong></td>
+                                    <td><span class="badge-opt">권장</span></td>
+                                    <td>일본 해당 대학/전문학교/일본어학교에서 발행한 공식 입학허가서(Admission Letter) 사본. 영사관 제출 서류로 필수 요구될 수 있습니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="smart-guide-box">
+                        <div class="smart-guide-title"><i class="fa-solid fa-lightbulb"></i> 유학·어학연수 COE 소지자 스마트 팁</div>
+                        <ul class="smart-guide-list">
+                            <li>학기 개시 직전(2~3월, 8~9월)에는 유학생 비자 신청 건수가 급증하여 영사관 심사 소요 기간이 평소보다 2~3일 이상 지연될 수 있습니다. COE를 발급받는 즉시 신속하게 대행 신청을 완료하시는 것이 출국 일정에 안전합니다.</li>
+                            <li>학비 납부 증명서 등 일본 학교 측에 최종 제출한 서류 사본을 사전에 준비해 두시면 접수가 원활해집니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. Family Tab -->
+                <div id="tab-family" class="tab-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">구비서류</th>
+                                    <th style="width: 15%;">구분</th>
+                                    <th>상세 사양 및 스마트 작성법</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>여권 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>인적사항 페이지의 선명한 컬러 스캔 또는 고화질 사진 파일.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>여권용 사진 파일</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>최근 6개월 이내 촬영한 흰색 배경 규격 이미지 파일.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>재류자격인증서(COE) 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>발급받은 가족체재 목적의 COE 사본 파일.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>주민등록증 사본 또는 등본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>주소지 및 관할 영사관 구분을 위한 주민등록등본 또는 주민등록증 앞뒷면 사본.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>부양자의 재류카드 및 여권 사본</strong></td>
+                                    <td><span class="badge-opt">권장</span></td>
+                                    <td>일본 현지에서 이미 재류하며 부양하고 있는 가족(배우자 또는 부모 등)의 **여권 신원면 사본** 및 **재류카드 앞/뒷면 사본**.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="smart-guide-box">
+                        <div class="smart-guide-title"><i class="fa-solid fa-lightbulb"></i> 가족체재 COE 소지자 스마트 팁</div>
+                        <ul class="smart-guide-list">
+                            <li>재류자격인정증명서(COE)가 이미 발급된 시점에서는 가족관계 확인서류가 영사관 접수 단계에서 추가로 필요하지 않으므로 사증 신청 제출 시 생략 가능합니다.</li>
+                            <li>가족체재 비자로 일본에 동반 체류하는 경우, 원칙적으로 현지 취업 활동은 불가능합니다. 단, 주 28시간 이내의 아르바이트 등 파트타임 근무를 원하시는 경우에는 일본 입국 공항 심사대 또는 관할 입국관리국에서 **'자격외활동허가'**를 별도로 신청하셔야 합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4. Entertainment (흥행) Tab -->
+                <div id="tab-show" class="tab-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">구비서류</th>
+                                    <th style="width: 15%;">구분</th>
+                                    <th>상세 사양 및 스마트 작성법</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>여권 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>여권의 인적사항 페이지가 선명하게 나오도록 촬영하거나 스캔한 이미지 파일. (출국 예정일 기준 최소 3개월 이상의 잔여 유효기간이 있어야 합니다.)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>여권용 사진 파일</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>최근 6개월 이내 흰색 배경에서 촬영된 3.5cm x 4.5cm 크기의 컬러 증명사진 파일.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>재류자격인증서(COE) 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>흥행(Entertainment) 자격으로 발급된 COE 사본. (전자 COE인 경우 전달받은 원본 메일 PDF 제출)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>주민등록증 사본 또는 등본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>대사관/영사관 관할 구역 확인을 위한 신분증 사본 또는 주민등록등본.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>계약서 사본 또는 출연계획서</strong></td>
+                                    <td><span class="badge-opt">권장</span></td>
+                                    <td>일본 현지 에이전시 또는 공연장 측과의 고용/출연 계약서 사본 또는 상세 공연 활동 계획서. (보완 요청을 방지하기 위해 함께 접수해 주시는 것을 권장합니다.)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="smart-guide-box">
+                        <div class="smart-guide-title"><i class="fa-solid fa-lightbulb"></i> 흥행(연예인·예술가·운동선수) COE 소지자 스마트 팁</div>
+                        <ul class="smart-guide-list">
+                            <li>공연, 콘서트, 스포츠 대회, 전시 등 일정이 엄격하고 출국이 임박한 케이스가 많으므로, 일정을 고려해 비자센터와 사전에 신속한 협조를 진행하시는 것이 좋습니다.</li>
+                            <li>촬영/공연단 등 단체 입국의 경우, 여러 인원의 서류(여권 사본, 사진, COE 사본)를 일괄적으로 취합하여 비자센터에 한 번에 대행 신청해 주시면 훨씬 빠르고 투명하게 공동 접수 관리가 가능합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5. Others Tab -->
+                <div id="tab-other" class="tab-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">구비서류</th>
+                                    <th style="width: 15%;">구분</th>
+                                    <th>상세 사양 및 스마트 작성법</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>여권 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>여권의 인적사항 면 컬러 이미지 파일.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>여권용 사진 파일</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>최근 6개월 이내 흰 배경 촬영본 (3.5cm x 4.5cm).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>재류자격인증서(COE) 사본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>문화활동, 연수, 워킹홀리데이 목적 등으로 교부받은 COE 사본. (※ 특정활동은 전자비자 진행 불가)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>주민등록증 사본 또는 등본</strong></td>
+                                    <td><span class="badge-req">필수</span></td>
+                                    <td>관할 확인용 주민등록등본 또는 주민등록증 앞뒷면 사본.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Special Activities Warning -->
+                    <div class="special-note-box" style="border-left-color: var(--secondary-color); background: #fff5f5; color: #c53030; margin-top: 20px;">
+                        <i class="fa-solid fa-ban"></i> &nbsp;
+                        <strong>[주의] 특정활동(Designated Activities) COE 소지자 전자비자 불가 안내</strong><br>
+                        재류자격명이 **'특정활동(Designated Activities)'**인 경우에는 전자비자(e-Visa) 발급 대상에서 제외되어 진행이 절대 불가합니다. 특정활동 COE 소지자분은 반드시 여권 실물 원본을 대사관/영사관에 직접 접수하는 방식으로 진행하셔야 합니다. 세부 신청 및 서류 준비 정보는 당사 홈페이지의 <a href="sticker-visa.html" style="color: var(--secondary-color); font-weight: bold; text-decoration: underline;">일본 스티커 비자 안내 페이지</a>를 참고하여 여권 실물을 보내주시기 바랍니다.
+                    </div>
+
+                    <div class="smart-guide-box">
+                        <div class="smart-guide-title"><i class="fa-solid fa-lightbulb"></i> 워킹홀리데이/기타 자격 COE 소지자 스마트 팁</div>
+                        <ul class="smart-guide-list">
+                            <li>기존 워킹홀리데이 합격 후 일본에 출국하여 체류하는 과정에서 현지 COE(재류자격인정증명서)를 교부받아 국내에서 정식 취업/유학 비자로 전환 신청하는 경우에도 전자비자로 안전하고 깔끔하게 대행 신청이 가능합니다.</li>
+                            <li>개별 자격(문화활동, 연수 등)의 세부 사항에 따라 영사관에서 서약서나 초청장 사본을 별도로 요구할 수도 있습니다. 대행 의뢰 시 당사 직원과 1:1 사전 정밀 체크를 진행해 드립니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Forms Link Section -->
+            <div class="forms-section" style="margin-top: 50px;">
+                <h3 style="font-size: 1.8rem; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 30px;">
+                    <i class="fa-solid fa-file-pen"></i> 신청서 작성 및 필수 서명 파일 양식
+                </h3>
+                <p style="color: #666; font-size: 0.95rem; margin-bottom: 25px;">
+                    전자비자(e-Visa) 신청 접수를 위해 아래 2가지 양식 작성을 모두 진행해 주셔야 접수가 완료됩니다.
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 30px;">
+                    <!-- Card 1: Online Form -->
+                    <div style="background: #fff; border-radius: 12px; border: 1px solid #edf2f7; box-shadow: 0 5px 15px rgba(0,0,0,0.03); padding: 30px; display: flex; flex-direction: column; transition: all 0.3s; justify-content: space-between;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.03)';">
+                        <div>
+                            <div style="width: 50px; height: 50px; background: #ebf8ff; color: #3182ce; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px;">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <h4 style="font-size: 1.25rem; font-weight: 700; color: #1a202c; margin-bottom: 12px;">1. 온라인 비자 신청서 작성 (홈페이지 직접 작성)</h4>
+                            <p style="font-size: 0.95rem; color: #718096; line-height: 1.6; margin-bottom: 20px;">
+                                비자 접수 및 심사 등록을 위해 신청인의 연락처, 학력/직장 정보, 일본 현지 보증인/초청인 정보 등 기본 인적사항을 외부 사이트 이동 없이 홈페이지에서 직접 편리하게 기재해 주시는 전용 온라인 신청서 양식입니다.
+                            </p>
+                        </div>
+                        <a href="japan_evisa_form.html" style="display: block; text-align: center; background: var(--primary-color); color: #fff; padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; transition: background 0.2s;" onmouseover="this.style.background='#001a33';" onmouseout="this.style.background='var(--primary-color)';">
+                            온라인 신청서 작성하기 <i class="fa-solid fa-pen-to-square" style="font-size: 0.8rem; margin-left: 5px;"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 2: Signature Page Sample -->
+                    <div style="background: #fff; border-radius: 12px; border: 1px solid #edf2f7; box-shadow: 0 5px 15px rgba(0,0,0,0.03); padding: 30px; display: flex; flex-direction: column; transition: all 0.3s; justify-content: space-between;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.03)';">
+                        <div>
+                            <div style="width: 50px; height: 50px; background: #fff5f5; color: #e53e3e; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px;">
+                                <i class="fa-solid fa-signature"></i>
+                            </div>
+                            <h4 style="font-size: 1.25rem; font-weight: 700; color: #1a202c; margin-bottom: 12px;">2. 사증신청서 서명면 샘플 확인 및 업로드</h4>
+                            <p style="font-size: 0.95rem; color: #718096; line-height: 1.6; margin-bottom: 20px;">
+                                온라인 접수 시에도 일본 대사관 사증신청서(신청인 본인 서명이 포함된 서류) 제출이 필수입니다. 양식을 출력하여 **여권 서명과 동일하게** 자필 서명하신 후, 해당 면을 선명하게 촬영하여 함께 제출해 주시기 바랍니다.
+                            </p>
+                        </div>
+                        <a href="https://jectour.co.kr/xe/zimg/Online_Sign_KR.pdf" target="_blank" style="display: block; text-align: center; background: #e53e3e; color: #fff; padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; transition: background 0.2s;" onmouseover="this.style.background='#c53030';" onmouseout="this.style.background='#e53e3e';">
+                            서명 양식 & 샘플(PDF) 보기 <i class="fa-solid fa-file-pdf" style="margin-left: 5px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h3>일본 재류자격(COE) 전자비자 신청 지금 시작하세요!</h3>
+                <p>영사관 지정 공식 수속 대행 기관의 꼼꼼한 서류 사전 체크로 안전하게 전자비자를 발급해 드립니다.</p>
+                <a href="contact.html" class="cta-btn-large">
+                    <i class="fa-solid fa-comments"></i> 전자비자 신청 및 실시간 상담 문의
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tab Interactive Switch Script -->
+    <script>
+        function switchTab(tabId) {
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Remove active class from all contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
+
+            // Add active class to corresponding content
+            const targetContent = document.getElementById('tab-' + tabId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        }
+    </script>
+
 </body>
 
 </html>
