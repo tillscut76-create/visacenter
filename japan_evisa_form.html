@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본 전자비자(e-Visa) 온라인 신청서 - 뉴투어리더스</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="common.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <style>
+        .form-page-header {
+            background: linear-gradient(rgba(0, 34, 68, 0.75), rgba(0, 34, 68, 0.75)), url('https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 80px 0 50px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .form-page-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .form-container-card {
+            background: #fff;
+            max-width: 800px;
+            margin: -40px auto 60px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #edf2f7;
+            position: relative;
+            z-index: 10;
+        }
+
+        .intro-box {
+            background: #f7fafc;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #4a5568;
+        }
+
+        .form-group-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-field.full-width {
+            grid-column: span 2;
+        }
+
+        .form-field label {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #2d3748;
+        }
+
+        .form-field label span.required {
+            color: #e53e3e;
+            margin-left: 3px;
+        }
+
+        .form-input-text {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-input-text:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        /* Canvas signature styling */
+        .signature-area {
+            border: 2px dashed #cbd5e0;
+            background-color: #fafbfd;
+            border-radius: 8px;
+            position: relative;
+            margin-top: 10px;
+            height: 150px;
+        }
+
+        #signature-canvas {
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+            touch-action: none;
+        }
+
+        .signature-controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 8px;
+        }
+
+        .signature-clear-btn {
+            background: #e2e8f0;
+            color: #4a5568;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .signature-clear-btn:hover {
+            background: #cbd5e0;
+        }
+
+        /* Submit Button */
+        .form-submit-btn {
+            display: block;
+            width: 100%;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 40px;
+            box-shadow: 0 4px 12px rgba(0, 34, 68, 0.15);
+            transition: all 0.2s;
+        }
+
+        .form-submit-btn:hover {
+            background: #001a33;
+            transform: translateY(-2px);
+        }
+
+        /* Dialog Modal styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 650px;
+            padding: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            animation: modalIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 10px;
+        }
+
+        .formatted-text-area {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            margin-bottom: 25px;
+            max-height: 250px;
+            overflow-y: auto;
+            color: #2d3748;
+        }
+
+        .modal-btns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .modal-btn {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-copy { background: #3182ce; color: #fff; }
+        .btn-copy:hover { background: #2b6cb0; }
+        .btn-email { background: #38a169; color: #fff; }
+        .btn-email:hover { background: #2f855a; }
+        .btn-print { background: #4a5568; color: #fff; grid-column: span 2; }
+        .btn-print:hover { background: #2d3748; }
+        .btn-close { background: #e2e8f0; color: #4a5568; grid-column: span 2; margin-top: 10px; }
+        .btn-close:hover { background: #cbd5e0; }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-field.full-width {
+                grid-column: span 1;
+            }
+
+            .form-container-card {
+                padding: 20px;
+                margin-top: -20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="trust-badge"><i class="fa-solid fa-certificate"></i> Japan Consulate Designated Agency <span class="kr-inline">(일본영사관 지정 대리 수속업체)</span></span>
+            <div class="top-contact">
+                <a href="tel:051-818-0801"><i class="fa-solid fa-phone"></i> 051-818-0801 / 1588-8903</a>
+                <a href="contact.html"><i class="fa-solid fa-comments"></i> 1:1 Inquiry (문의하기)</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://newpassport.co.kr/visa/index/images/logo.jpg" alt="New Tour Leaders"></a>
+            </div>
+            <nav>
+                <ul>
+                    <!-- Injected by common.js -->
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Apply (신청하기)</a>
+        </div>
+    </header>
+
+    <!-- Header Banner -->
+    <section class="form-page-header">
+        <div class="container">
+            <h2>일본 전자비자(e-Visa) 온라인 신청 양식</h2>
+            <p>JAPAN e-Visa Application Information Sheet</p>
+        </div>
+    </section>
+
+    <!-- Main Form Section -->
+    <main class="container">
+        <div class="form-container-card">
+
+            <div class="intro-box">
+                <strong>안녕하세요. 주부산일본국총영사관 지정 비자 대리수속 기관인 주식회사 뉴투어리더스(New Tour Leaders)입니다.</strong><br>
+                일본 전자비자 신청 등록 및 서류 작성을 위하여 아래 인적사항을 빠짐없이 기재해 주시기 바랍니다.<br>
+                문의사항이 있는 경우 <strong>051-818-0801 / 1588-8903</strong> 또는 <strong>kim83077@nate.com</strong>으로 연락주시기 바랍니다.
+            </div>
+
+            <form id="visa-form" onsubmit="handleFormSubmit(event)">
+
+                <!-- 1. Applicant Info -->
+                <div class="form-group-title">
+                    <i class="fa-solid fa-user"></i> 1. 신청자 인적사항 (Applicant Details)
+                </div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="name_ko">성명 (국문)<span class="required">*</span></label>
+                        <input type="text" id="name_ko" class="form-input-text" required placeholder="예: 홍길동">
+                    </div>
+                    <div class="form-field">
+                        <label for="name_en">성명 (영문, 여권동일)<span class="required">*</span></label>
+                        <input type="text" id="name_en" class="form-input-text" required placeholder="예: HONG GILDONG">
+                    </div>
+                    <div class="form-field">
+                        <label for="name_cn">한자 성명</label>
+                        <input type="text" id="name_cn" class="form-input-text" placeholder="한자가 없는 국적인 경우 영문 작성">
+                    </div>
+                    <div class="form-field">
+                        <label for="gender">성별 (Gender)<span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="남성" required checked> 남성 (Male)
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="여성"> 여성 (Female)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="birth_date">생년월일 (Date of Birth)<span class="required">*</span></label>
+                        <input type="date" id="birth_date" class="form-input-text" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="nationality">국적 (Nationality)<span class="required">*</span></label>
+                        <input type="text" id="nationality" class="form-input-text" required value="대한민국">
+                    </div>
+                    <div class="form-field">
+                        <label for="marital">결혼 여부 (Marital Status)<span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="marital" value="미혼" required checked onclick="toggleSpouse(false)"> 미혼 (Single)
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="marital" value="기혼" onclick="toggleSpouse(true)"> 기혼 (Married)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-field" id="spouse-field" style="display: none;">
+                        <label for="spouse_name">배우자 성명 (Spouse Name)</label>
+                        <input type="text" id="spouse_name" class="form-input-text" placeholder="기혼인 경우 배우자 성명 기재">
+                    </div>
+                    <div class="form-field">
+                        <label for="phone">휴대폰 번호<span class="required">*</span></label>
+                        <input type="text" id="phone" class="form-input-text" required placeholder="예: 010-1234-5678">
+                    </div>
+                    <div class="form-field">
+                        <label for="email">이메일 주소<span class="required">*</span></label>
+                        <input type="email" id="email" class="form-input-text" required placeholder="예: user@example.com">
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="address">현 거주지 주소 (주민등록등본상 주소)<span class="required">*</span></label>
+                        <input type="text" id="address" class="form-input-text" required placeholder="도로명 주소를 정확히 기재해 주세요.">
+                    </div>
+                </div>
+
+                <!-- 2. Job / School Info -->
+                <div class="form-group-title">
+                    <i class="fa-solid fa-briefcase"></i> 2. 직업 및 소속 정보 (Occupation & Organization)
+                </div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="occupation">직업 (Occupation)<span class="required">*</span></label>
+                        <input type="text" id="occupation" class="form-input-text" required placeholder="예: 회사원, 학생, 주부, 무직 등">
+                    </div>
+                    <div class="form-field">
+                        <label for="company_name">회사명 또는 학교명</label>
+                        <input type="text" id="company_name" class="form-input-text" placeholder="소속이 없는 경우 '없음' 기재">
+                    </div>
+                    <div class="form-field">
+                        <label for="company_pos">직위 / 학년</label>
+                        <input type="text" id="company_pos" class="form-input-text" placeholder="예: 과장, 3학년 등">
+                    </div>
+                    <div class="form-field">
+                        <label for="company_tel">회사 / 학교 전화번호</label>
+                        <input type="text" id="company_tel" class="form-input-text" placeholder="소속기관의 연락처 기재">
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="company_address">회사 / 학교 주소</label>
+                        <input type="text" id="company_address" class="form-input-text" placeholder="소속기관의 도로명 주소 기재">
+                    </div>
+                </div>
+
+                <!-- 3. Passport Info -->
+                <div class="form-group-title">
+                    <i class="fa-solid fa-passport"></i> 3. 여권 정보 (Passport Details)
+                </div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="passport_num">여권 번호 (Passport No.)<span class="required">*</span></label>
+                        <input type="text" id="passport_num" class="form-input-text" required placeholder="예: M12345678">
+                    </div>
+                    <div class="form-field">
+                        <label for="passport_issue_place">여권 발행 관청 (Authority)<span class="required">*</span></label>
+                        <input type="text" id="passport_issue_place" class="form-input-text" required value="외교부 (MOFA)">
+                    </div>
+                    <div class="form-field">
+                        <label for="passport_issue_date">여권 발행일 (Date of Issue)<span class="required">*</span></label>
+                        <input type="date" id="passport_issue_date" class="form-input-text" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="passport_expiry_date">여권 만료일 (Date of Expiry)<span class="required">*</span></label>
+                        <input type="date" id="passport_expiry_date" class="form-input-text" required>
+                    </div>
+                </div>
+
+                <!-- 4. Travel Schedule -->
+                <div class="form-group-title">
+                    <i class="fa-solid fa-plane"></i> 4. 일본 여행 일정 (Travel Plan)
+                </div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="travel_start">일본 입국 예정일 (Date of Arrival)<span class="required">*</span></label>
+                        <input type="date" id="travel_start" class="form-input-text" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="travel_duration">예상 체류 기간 (Duration of Stay)<span class="required">*</span></label>
+                        <input type="text" id="travel_duration" class="form-input-text" required placeholder="예: 5일, 15일, 30일 등">
+                    </div>
+                    <div class="form-field">
+                        <label for="port_of_entry">입국 예정 공항 또는 항구<span class="required">*</span></label>
+                        <input type="text" id="port_of_entry" class="form-input-text" required placeholder="예: 나리타 공항, 간사이 공항 등">
+                    </div>
+                    <div class="form-field">
+                        <label for="visit_cities">방문 예정 도시 (Cities)<span class="required">*</span></label>
+                        <input type="text" id="visit_cities" class="form-input-text" required placeholder="예: 도쿄, 오사카, 후쿠오카 등">
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="hotel_details">숙박 예정 호텔 정보 (호텔명, 주소, 전화번호)<span class="required">*</span></label>
+                        <input type="text" id="hotel_details" class="form-input-text" required placeholder="호텔명 / 주소 / 연락처를 상세히 입력해 주세요.">
+                    </div>
+                </div>
+
+                <!-- 5. Travel History & Criminal Record -->
+                <div class="form-group-title">
+                    <i class="fa-solid fa-clock-rotate-left"></i> 5. 일본 방문 이력 및 범죄 경력 (History & Record)
+                </div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="visit_count">과거 일본 방문 횟수 (Number of Visits)<span class="required">*</span></label>
+                        <input type="text" id="visit_count" class="form-input-text" required placeholder="예: 없음, 1회, 5회 이상 등">
+                    </div>
+                    <div class="form-field">
+                        <label for="last_visit">최근 일본 방문 기간 (Recent Visit Period)</label>
+                        <input type="text" id="last_visit" class="form-input-text" placeholder="예: 2023년 5월 (1주일간) / 없으면 생략">
+                    </div>
+                    <div class="form-field full-width">
+                        <label>과거 일본이나 타국에서 범죄로 유죄 판결을 받은 적이 있습니까?<span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="criminal" value="없음" required checked> 없음 (No)
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="criminal" value="있음"> 있음 (Yes)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Required Documents Upload Guidance -->
+                <div class="form-group-title">
+                    <i class="fa-solid fa-file-circle-check"></i> 6. 구비 서류 파일 제출 안내
+                </div>
+                <p style="font-size: 0.9rem; color: #4a5568; line-height: 1.6; margin-bottom: 20px;">
+                    본 신청서 제출 완료 후 아래 필수 구비 서류 파일(깨끗하게 촬영 또는 스캔본)을 뉴투어리더스 카카오톡 채널 또는 이메일(<strong>kim83077@nate.com</strong>)로 즉시 전송해 주시기 바랍니다.
+                    <br>
+                    1. <strong>여권 인적사항면 스캔본</strong> (사진이 선명하고 글자가 판독 가능한 상태)<br>
+                    2. <strong>여권용 규격 사진 파일</strong> (최근 6개월 이내 촬영된 흰 배경 증명사진)<br>
+                    3. <strong>재류자격인정증명서(COE) 사본</strong> (PDF 또는 이미지)
+                </p>
+
+                <!-- 7. Signature -->
+                <div class="form-group-title">
+                    <i class="fa-solid fa-signature"></i> 7. 개인정보 동의 및 신청인 자필 서명 (Signature)
+                </div>
+                <div class="form-field full-width">
+                    <label style="cursor: pointer; display: flex; align-items: flex-start; gap: 8px;">
+                        <input type="checkbox" required style="margin-top: 4px;"> 
+                        <span>일본 대사관 사증 신청을 위해 위 기재한 정보가 모두 사실과 다름없음을 서명하며, 대행 수속을 위한 개인정보 수집 및 이용에 동의합니다. (I agree to the collection/use of my personal data for visa application.)<span class="required">*</span></span>
+                    </label>
+                </div>
+
+                <div class="form-field full-width" style="margin-top: 15px;">
+                    <label>아래 입력창에 마우스 또는 터치로 여권과 동일하게 자필 서명해 주세요.<span class="required">*</span></label>
+                    <div class="signature-area">
+                        <canvas id="signature-canvas"></canvas>
+                    </div>
+                    <div class="signature-controls">
+                        <button type="button" class="signature-clear-btn" onclick="clearSignature()">서명 지우기 (Clear)</button>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="form-submit-btn">온라인 신청서 작성 완료 및 제출하기</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Dialog Popup -->
+    <div class="modal-overlay" id="submit-modal">
+        <div class="modal-content">
+            <h3 class="modal-title">📝 일본 전자비자 신청서 접수 성공</h3>
+            <p style="font-size: 0.95rem; color: #4a5568; line-height: 1.6; margin-bottom: 20px; text-align: center;">
+                신청서 작성이 성공적으로 완료되었습니다! 아래의 작성된 텍스트 정보를 복사하거나 이메일 전송을 진행해 주신 후, 준비하신 여권 사본, 사진, COE 파일과 함께 전송해 주셔야 최종 접수 처리가 완료됩니다.
+            </p>
+            <div class="formatted-text-area" id="formatted-result"></div>
+            
+            <div class="modal-btns">
+                <button class="modal-btn btn-copy" onclick="copyResultText()">
+                    <i class="fa-solid fa-copy"></i> 신청 정보 복사하기
+                </button>
+                <button class="modal-btn btn-email" onclick="sendResultEmail()">
+                    <i class="fa-solid fa-envelope"></i> 이메일 접수 메일 보내기
+                </button>
+                <button class="modal-btn btn-print" onclick="printApplication()">
+                    <i class="fa-solid fa-print"></i> 신청서 인쇄 / PDF 저장하기
+                </button>
+                <button class="modal-btn btn-close" onclick="closeModal()">
+                    닫기 (Close)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Canvas Drawing Script & Auto-save -->
+    <script>
+        // Toggle spouse name field based on marital status
+        function toggleSpouse(isMarried) {
+            const field = document.getElementById('spouse-field');
+            if (field) {
+                field.style.display = isMarried ? 'flex' : 'none';
+            }
+        }
+
+        // Canvas Drawing Logic
+        const canvas = document.getElementById('signature-canvas');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+
+        // Resize canvas to match the CSS container size
+        function resizeCanvas() {
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            ctx.strokeStyle = '#002244';
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        // Delay slight run to wait for render
+        setTimeout(resizeCanvas, 300);
+
+        // Drawing events
+        function getMousePos(canvasDom, touchOrMouseEvent) {
+            const rect = canvasDom.getBoundingClientRect();
+            const clientX = touchOrMouseEvent.touches ? touchOrMouseEvent.touches[0].clientX : touchOrMouseEvent.clientX;
+            const clientY = touchOrMouseEvent.touches ? touchOrMouseEvent.touches[0].clientY : touchOrMouseEvent.clientY;
+            return {
+                x: clientX - rect.left,
+                y: clientY - rect.top
+            };
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            drawing = true;
+            const pos = getMousePos(canvas, e);
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (!drawing) return;
+            const pos = getMousePos(canvas, e);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+        });
+
+        window.addEventListener('mouseup', () => {
+            drawing = false;
+        });
+
+        // Touch events for mobile devices
+        canvas.addEventListener('touchstart', (e) => {
+            drawing = true;
+            const pos = getMousePos(canvas, e);
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+            e.preventDefault();
+        });
+
+        canvas.addEventListener('touchmove', (e) => {
+            if (!drawing) return;
+            const pos = getMousePos(canvas, e);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+            e.preventDefault();
+        });
+
+        canvas.addEventListener('touchend', () => {
+            drawing = false;
+        });
+
+        function clearSignature() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Form Submit & Text Compilation
+        let compiledResultText = '';
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            // Check if signature has drawing (rough estimate)
+            const blank = document.createElement('canvas');
+            blank.width = canvas.width;
+            blank.height = canvas.height;
+            if (canvas.toDataURL() === blank.toDataURL()) {
+                alert('자필 서명 영역에 서명을 그려주시기 바랍니다.');
+                return;
+            }
+
+            const nameKo = document.getElementById('name_ko').value;
+            const nameEn = document.getElementById('name_en').value;
+            const nameCn = document.getElementById('name_cn').value || '없음';
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const dob = document.getElementById('birth_date').value;
+            const nationality = document.getElementById('nationality').value;
+            const marital = document.querySelector('input[name="marital"]:checked').value;
+            const spouseName = marital === '기혼' ? document.getElementById('spouse_name').value : 'N/A';
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            
+            const occupation = document.getElementById('occupation').value;
+            const companyName = document.getElementById('company_name').value || '없음';
+            const companyPos = document.getElementById('company_pos').value || '없음';
+            const companyTel = document.getElementById('company_tel').value || '없음';
+            const companyAddress = document.getElementById('company_address').value || '없음';
+            
+            const passportNum = document.getElementById('passport_num').value;
+            const passportIssuePlace = document.getElementById('passport_issue_place').value;
+            const passportIssueDate = document.getElementById('passport_issue_date').value;
+            const passportExpiryDate = document.getElementById('passport_expiry_date').value;
+            
+            const travelStart = document.getElementById('travel_start').value;
+            const travelDuration = document.getElementById('travel_duration').value;
+            const portOfEntry = document.getElementById('port_of_entry').value;
+            const visitCities = document.getElementById('visit_cities').value;
+            const hotelDetails = document.getElementById('hotel_details').value;
+            
+            const visitCount = document.getElementById('visit_count').value;
+            const lastVisit = document.getElementById('last_visit').value || '없음';
+            const criminal = document.querySelector('input[name="criminal"]:checked').value;
+
+            compiledResultText = `[일본 전자비자 온라인 신청 접수 정보]
+-------------------------------------------------------
+1. 신청인 기본 정보
+  - 국문 성명: ${nameKo}
+  - 영문 성명(여권동일): ${nameEn}
+  - 한자 성명: ${nameCn}
+  - 성별: ${gender}
+  - 생년월일: ${dob}
+  - 국적: ${nationality}
+  - 결혼여부: ${marital} (배우자 성명: ${spouseName})
+  - 연락처: ${phone}
+  - 이메일: ${email}
+  - 거주지 주소: ${address}
+
+2. 직업 및 소속 정보
+  - 직업: ${occupation}
+  - 소속기관명: ${companyName}
+  - 직위/학년: ${companyPos}
+  - 소속기관 연락처: ${companyTel}
+  - 소속기관 주소: ${companyAddress}
+
+3. 여권 정보
+  - 여권 번호: ${passportNum}
+  - 여권 발행관청: ${passportIssuePlace}
+  - 여권 발행일: ${passportIssueDate}
+  - 여권 만료일: ${passportExpiryDate}
+
+4. 여행 일정 정보
+  - 일본 입국 예정일: ${travelStart}
+  - 예상 체류 일수: ${travelDuration}
+  - 입국 예정 공항/항구: ${portOfEntry}
+  - 방문 예정 도시: ${visitCities}
+  - 숙박 예정 호텔 정보: ${hotelDetails}
+
+5. 과거 이력 및 범죄 경력
+  - 과거 일본 방문 횟수: ${visitCount}
+  - 최근 일본 방문 기간: ${lastVisit}
+  - 범죄 경력 유무: ${criminal}
+-------------------------------------------------------
+작성 신청일: ${new Date().toLocaleDateString('ko-KR')}
+신청인 자필 서명 완료 (온라인 캔버스 서명 완료)`;
+
+            document.getElementById('formatted-result').textContent = compiledResultText;
+            document.getElementById('submit-modal').style.display = 'flex';
+
+            // Auto-save form inputs
+            const formData = {
+                nameKo, nameEn, nameCn, dob, nationality, phone, email, address,
+                occupation, companyName, companyPos, companyTel, companyAddress,
+                passportNum, passportIssueDate, passportExpiryDate,
+                travelStart, travelDuration, portOfEntry, visitCities, hotelDetails,
+                visitCount, lastVisit
+            };
+            localStorage.setItem('japan_evisa_form_saved', JSON.stringify(formData));
+        }
+
+        function closeModal() {
+            document.getElementById('submit-modal').style.display = 'none';
+        }
+
+        function copyResultText() {
+            navigator.clipboard.writeText(compiledResultText).then(() => {
+                alert('신청 정보가 클립보드에 복사되었습니다! 카카오톡 대화창에 붙여넣기(Ctrl+V)하여 전송해 주세요.');
+            }).catch(err => {
+                alert('복사 실패: ' + err);
+            });
+        }
+
+        function sendResultEmail() {
+            const subject = encodeURIComponent(`[일본 전자비자 신청] ${document.getElementById('name_ko').value} - COE 서류 접수`);
+            const body = encodeURIComponent(compiledResultText);
+            window.location.href = `mailto:kim83077@nate.com?subject=${subject}&body=${body}`;
+        }
+
+        function printApplication() {
+            window.print();
+        }
+
+        // Auto-load saved form data
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('japan_evisa_form_saved');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    if (data.nameKo) document.getElementById('name_ko').value = data.nameKo;
+                    if (data.nameEn) document.getElementById('name_en').value = data.nameEn;
+                    if (data.nameCn) document.getElementById('name_cn').value = data.nameCn;
+                    if (data.dob) document.getElementById('birth_date').value = data.dob;
+                    if (data.nationality) document.getElementById('nationality').value = data.nationality;
+                    if (data.phone) document.getElementById('phone').value = data.phone;
+                    if (data.email) document.getElementById('email').value = data.email;
+                    if (data.address) document.getElementById('address').value = data.address;
+                    if (data.occupation) document.getElementById('occupation').value = data.occupation;
+                    if (data.companyName) document.getElementById('company_name').value = data.companyName;
+                    if (data.companyPos) document.getElementById('company_pos').value = data.companyPos;
+                    if (data.companyTel) document.getElementById('company_tel').value = data.companyTel;
+                    if (data.companyAddress) document.getElementById('company_address').value = data.companyAddress;
+                    if (data.passportNum) document.getElementById('passport_num').value = data.passportNum;
+                    if (data.passportIssueDate) document.getElementById('passport_issue_date').value = data.passportIssueDate;
+                    if (data.passportExpiryDate) document.getElementById('passport_expiry_date').value = data.passportExpiryDate;
+                    if (data.travelStart) document.getElementById('travel_start').value = data.travelStart;
+                    if (data.travelDuration) document.getElementById('travel_duration').value = data.travelDuration;
+                    if (data.portOfEntry) document.getElementById('port_of_entry').value = data.portOfEntry;
+                    if (data.visitCities) document.getElementById('visit_cities').value = data.visitCities;
+                    if (data.hotelDetails) document.getElementById('hotel_details').value = data.hotelDetails;
+                    if (data.visitCount) document.getElementById('visit_count').value = data.visitCount;
+                    if (data.lastVisit) document.getElementById('last_visit').value = data.lastVisit;
+                } catch(e) {}
+            }
+        });
+    </script>
+</body>
+
+</html>

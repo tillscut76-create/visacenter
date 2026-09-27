@@ -157,6 +157,7 @@ function unifyBranding() {
                 <ul class="dropdown-menu">
                     <div class="dropdown-category">For Koreans (한국인 대상)</div>
                     <li><a href="korean-visa.html" style="color: #D30000; font-weight: 700;">한국인 일본상용/관광 비자</a></li>
+                    <li><a href="japan_evisa.html" style="position: relative;">Japan e-Visa (COE) <span style="position: absolute; top: -1px; right: -5px; width: 5px; height: 5px; background-color: #D30000; border-radius: 50%;"></span></a></li>
                     <li><a href="working-holiday.html">일본 워킹홀리데이</a></li>
                     <div class="dropdown-category" style="margin-top: 8px; border-top: 1px solid #e2e8f0; padding-top: 12px;">For Foreigners (외국인 대상)</div>
                     <li><a href="evisa.html">Japan e-Visa</a></li>
@@ -192,6 +193,10 @@ function unifyBranding() {
                     <li><a href="thailand-visa.html">Thailand Visa Guide</a></li>
                 </ul>
             </li>
+            <li><a href="japan_evisa.html" style="position: relative;">
+                <span class="nav-en">e-Visa (COE)<span style="position: absolute; top: -3px; right: -8px; width: 6px; height: 6px; background-color: var(--secondary-color); border-radius: 50%;"></span></span>
+                <span class="nav-kr">일본 전자비자(재류자격)</span>
+            </a></li>
             <li><a href="index.html#location">
                 <span class="nav-en">Location</span>
                 <span class="nav-kr">오시는길</span>
@@ -209,6 +214,7 @@ function unifyBranding() {
                 <a href="index.html" style="text-decoration:none; color:inherit;">Home (홈)</a>
                 <a href="index.html#about" style="text-decoration:none; color:inherit;">About Us (회사소개)</a>
                 <a href="index.html" style="text-decoration:none; color:inherit;">Japan Visa (일본비자)</a>
+                <a href="japan_evisa.html" style="text-decoration:none; color:inherit; font-weight:600;">e-Visa (COE) <span style="color:var(--secondary-color);">●</span></a>
                 <a href="global-visa.html" style="text-decoration:none; color:inherit;">Global Visa (전세계비자)</a>
                 <a href="index.html#location" style="text-decoration:none; color:inherit;">Location (오시는길)</a>
                 <a href="${contactLink}" style="text-decoration:none; color:inherit;">Contact (상담/문의)</a>
